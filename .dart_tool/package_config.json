@@ -56,6 +56,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "fading_edge_scrollview",
+      "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/fading_edge_scrollview-1.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -70,6 +76,12 @@
     {
       "name": "image",
       "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/image-2.1.12",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "marquee",
+      "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/marquee-1.5.2",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
@@ -170,7 +182,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-07-07T06:39:31.942370Z",
+  "generated": "2020-07-07T10:49:51.239493Z",
   "generator": "pub",
   "generatorVersion": "2.8.4"
 }
