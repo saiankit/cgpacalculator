@@ -1,18 +1,24 @@
 import 'package:CgpaCalculator/models/courseDetails.dart';
-import 'package:CgpaCalculator/widgets/addCourseButton.dart';
+import 'package:CgpaCalculator/widgets/updateCourseButton.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 
-class AddCourseScreen extends StatefulWidget {
+class CourseUpdate extends StatefulWidget {
+  final String courseCode;
+  final String courseID;
+  final String courseTitle;
+  final int courseGrade;
+  CourseUpdate(
+      {this.courseCode, this.courseGrade, this.courseID, this.courseTitle});
   @override
-  _AddCourseScreenState createState() => _AddCourseScreenState();
+  _CourseUpdateState createState() => _CourseUpdateState();
 }
 
-class _AddCourseScreenState extends State<AddCourseScreen> {
-  String _chosenCourseCode = 'CS';
-  String _chosenCourseID = 'F111';
+class _CourseUpdateState extends State<CourseUpdate> {
   @override
   Widget build(BuildContext context) {
+    String _chosenCourseCode = widget.courseCode;
+    String _chosenCourseID = widget.courseID;
     return Scaffold(
       body: Container(
         child: Column(
@@ -115,22 +121,21 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                       borderRadius: BorderRadius.circular(15.0),
                     ),
                     child: Center(
-                      child: Marquee(
-                        text: 'Add the Course Details for the TItle to appear',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20.0,
-                          color: Colors.black,
-                        ),
-                        blankSpace: 100,
-                        velocity: 10,
+                        child: Marquee(
+                      text: widget.courseTitle,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20.0,
+                        color: Colors.black,
                       ),
-                    ),
+                      blankSpace: 100,
+                      velocity: 10,
+                    )),
                   ),
                 ),
               ],
             ),
-            AddCourseButton(),
+            UpdateCourseButton(),
           ],
         ),
       ),

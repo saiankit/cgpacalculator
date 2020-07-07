@@ -1,4 +1,7 @@
+import 'package:CgpaCalculator/models/courseDetails.dart';
+import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Appbar extends StatefulWidget {
   @override
@@ -6,7 +9,6 @@ class Appbar extends StatefulWidget {
 }
 
 class _AppbarState extends State<Appbar> {
-  String _chosenValue = '1 - 1';
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -37,26 +39,17 @@ class _AppbarState extends State<Appbar> {
                     fontSize: 20.0,
                   ),
                   underline: Container(),
-                  value: _chosenValue,
-                  items: <String>[
-                    '1 - 1',
-                    '1 - 2',
-                    '2 - 1',
-                    '2 - 2',
-                    '3 - 1',
-                    '3 - 2',
-                    '4 - 1',
-                    '4 - 2'
-                  ].map<DropdownMenuItem<String>>((String value) {
+                  value: Provider.of<SemesterState>(context).selectedSemester,
+                  items: semesterList
+                      .map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem(
                       value: value,
                       child: Text(value),
                     );
                   }).toList(),
                   onChanged: (String value) {
-                    setState(() {
-                      _chosenValue = value;
-                    });
+                    Provider.of<SemesterState>(context, listen: false)
+                        .changeToSemester(value);
                   },
                 ),
               ),
