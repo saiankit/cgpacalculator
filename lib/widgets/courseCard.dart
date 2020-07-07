@@ -1,3 +1,4 @@
+import 'package:CgpaCalculator/screens/courseUpdate.dart';
 import 'package:flutter/material.dart';
 
 class CourseCard extends StatefulWidget {
@@ -15,6 +16,19 @@ class _CourseCardState extends State<CourseCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CourseUpdate(
+              courseCode: widget.courseCode,
+              courseGrade: widget.courseGrade,
+              courseID: widget.courseID,
+              courseTitle: widget.courseTitle,
+            ),
+          ),
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
         child: Container(
