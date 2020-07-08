@@ -1,3 +1,4 @@
+import 'package:CgpaCalculator/components/gradePointSelector.dart';
 import 'package:CgpaCalculator/models/courseDetails.dart';
 import 'package:CgpaCalculator/widgets/updateCourseButton.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,8 @@ class CourseUpdate extends StatefulWidget {
 class _CourseUpdateState extends State<CourseUpdate> {
   @override
   Widget build(BuildContext context) {
-    String _chosenCourseCode = widget.courseCode;
+    String a = widget.courseCode;
+    String _chosenCourseCode = a;
     String _chosenCourseID = widget.courseID;
     return Scaffold(
       body: Container(
@@ -135,6 +137,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
                 ),
               ],
             ),
+            GradePointSelector(),
             UpdateCourseButton(),
           ],
         ),
