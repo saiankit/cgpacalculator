@@ -1,5 +1,7 @@
+import 'package:CgpaCalculator/components/gradePointSelector.dart';
 import 'package:CgpaCalculator/models/courseDetails.dart';
 import 'package:CgpaCalculator/widgets/addCourseButton.dart';
+import 'package:CgpaCalculator/widgets/gradePointCard.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 
@@ -130,6 +132,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                 ),
               ],
             ),
+            GradePointSelector(),
             AddCourseButton(),
           ],
         ),

@@ -30,6 +30,7 @@ class _AppbarState extends State<Appbar> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: DropdownButton<String>(
+                  dropdownColor: Colors.white,
                   isExpanded: true,
                   icon: Icon(Icons.keyboard_arrow_down),
                   style: TextStyle(

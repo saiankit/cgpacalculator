@@ -1,4 +1,5 @@
 import 'package:CgpaCalculator/screens/home.dart';
+import 'package:CgpaCalculator/screens/introScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.white,
-        body: HomeScreen(),
+        body: IntroScreen(),
       ),
     );
   }
