@@ -9,7 +9,9 @@ class _AddCourseButtonState extends State<AddCourseButton> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: null,
+      onTap: () {
+        Navigator.pop(context);
+      },
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: 100.0,

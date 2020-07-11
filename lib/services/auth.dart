@@ -7,6 +7,9 @@ class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final Firestore _db = Firestore.instance;
 
+  String name;
+  String email;
+  String imageURL;
   Future<String> signInWithGoogle() async {
     final GoogleSignInAccount googleSignInAccount =
         await _googleSignIn.signIn();
@@ -20,6 +23,13 @@ class AuthService {
 
     assert(!user.isAnonymous);
     assert(await user.getIdToken() != null);
+    assert(user.email != null);
+    assert(user.displayName != null);
+    assert(user.photoUrl != null);
+
+    name = user.displayName;
+    email = user.email;
+    imageURL = user.photoUrl;
 
     final FirebaseUser currentUser = await _auth.currentUser();
     assert(user.uid == currentUser.uid);

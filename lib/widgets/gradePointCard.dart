@@ -24,8 +24,9 @@ class _GradePointCardState extends State<GradePointCard> {
           width: 70.0,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
-            color:
-                _isSelected ? Colors.red : Color(0xFFC4C4C4).withOpacity(0.2),
+            color: _isSelected
+                ? Colors.greenAccent
+                : Color(0xFFC4C4C4).withOpacity(0.2),
           ),
           child: Center(
             child: Text(widget.grade),

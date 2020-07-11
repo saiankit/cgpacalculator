@@ -17,10 +17,31 @@ class _CourseCardState extends State<CourseCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => CourseUpdate(
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) => CourseUpdate(
+        //       courseCode: widget.courseCode,
+        //       courseGrade: widget.courseGrade,
+        //       courseID: widget.courseID,
+        //       courseTitle: widget.courseTitle,
+        //     ),
+        //   ),
+        // );
+        showModalBottomSheet(
+          context: context,
+          isScrollControlled: true,
+          backgroundColor: Colors.transparent,
+          builder: (context) => Container(
+            height: MediaQuery.of(context).size.height * 0.85,
+            decoration: new BoxDecoration(
+              color: Colors.white,
+              borderRadius: new BorderRadius.only(
+                topLeft: const Radius.circular(30.0),
+                topRight: const Radius.circular(30.0),
+              ),
+            ),
+            child: CourseUpdate(
               courseCode: widget.courseCode,
               courseGrade: widget.courseGrade,
               courseID: widget.courseID,
