@@ -23,17 +23,17 @@ class _LoginPageState extends State<LoginPage> {
               OutlineButton(
                 splashColor: Colors.grey,
                 onPressed: () {
-                  authService.signInWithGoogle().whenComplete(() {}
-                      // () {
-                      //   Navigator.of(context).push(
-                      //     MaterialPageRoute(
-                      //       builder: (context) {
-                      //         return HomeScreen();
-                      //       },
-                      //     ),
-                      //   );
-                      // },
+                  authService.signInWithGoogle().whenComplete(
+                    () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return HomeScreen();
+                          },
+                        ),
                       );
+                    },
+                  );
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40)),

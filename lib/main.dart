@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         drawer: DrawerScreen(),
         backgroundColor: Colors.white,
-        body: LoginPage(),
+        body: HomeScreen(),
       ),
     );
   }
