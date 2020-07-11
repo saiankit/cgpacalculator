@@ -9,7 +9,9 @@ class _UpdateCourseButtonState extends State<UpdateCourseButton> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: null,
+      onTap: () {
+        Navigator.of(context).pop();
+      },
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: 100.0,

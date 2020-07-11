@@ -5,11 +5,11 @@ import 'package:google_sign_in/google_sign_in.dart';
 class AuthService {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final Firestore _db = Firestore.instance;
 
   String name;
   String email;
   String imageURL;
+  String id;
   Future<String> signInWithGoogle() async {
     final GoogleSignInAccount googleSignInAccount =
         await _googleSignIn.signIn();
@@ -28,9 +28,9 @@ class AuthService {
     assert(user.photoUrl != null);
 
     name = user.displayName;
+    id = user.uid;
     email = user.email;
     imageURL = user.photoUrl;
-
     final FirebaseUser currentUser = await _auth.currentUser();
     assert(user.uid == currentUser.uid);
 

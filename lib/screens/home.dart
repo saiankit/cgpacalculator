@@ -1,9 +1,8 @@
 import 'package:CgpaCalculator/components/appbar.dart';
-import 'package:CgpaCalculator/components/coursesList.dart';
-import 'package:CgpaCalculator/components/testList.dart';
 import 'package:CgpaCalculator/screens/addCourse.dart';
-import 'package:CgpaCalculator/services/auth.dart';
+import 'package:CgpaCalculator/services/listGenerator.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
+import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -69,12 +68,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => AddCourseScreen(),
-                        //   ),
-                        // );
                         showModalBottomSheet(
                           context: context,
                           isScrollControlled: true,
@@ -104,11 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: <Widget>[
                                 Text(
                                   'Add a new Course',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 15.0,
-                                    color: Colors.grey[600],
-                                  ),
+                                  style: ThemeStyles.titleTextStyle,
                                 ),
                                 IconButton(
                                   icon: Icon(Icons.add),
@@ -127,10 +116,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                    Provider.of<SemesterState>(context).selectedSemester ==
-                            '1 - 1'
-                        ? CoursesList()
-                        : TestList()
+                    // Provider.of<SemesterState>(context).selectedSemester ==
+                    //         '1-1'
+                    ListGenerator(semesterCode: '1-1')
+                    // : ListGenerator(semesterCode: '1-2')
                   ],
                 ),
               ),

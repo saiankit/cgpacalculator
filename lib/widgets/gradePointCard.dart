@@ -29,7 +29,13 @@ class _GradePointCardState extends State<GradePointCard> {
                 : Color(0xFFC4C4C4).withOpacity(0.2),
           ),
           child: Center(
-            child: Text(widget.grade),
+            child: Text(
+              widget.grade,
+              style: TextStyle(
+                fontWeight: FontWeight.w700,
+                fontSize: 21.0,
+              ),
+            ),
           ),
         ),
       ),
