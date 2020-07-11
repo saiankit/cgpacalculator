@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "397107940686-hldf1kd1d323chqh9oo0s45tsk7rtqhc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.CgpaCalculator",
+            "certificate_hash": "08effb38252d2a7ff966eae8bc1d6fadbd57857b"
+          }
+        },
+        {
           "client_id": "397107940686-3dffb2lh89h923p5i7cn597oa3j67epj.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -30,6 +38,13 @@
             {
               "client_id": "397107940686-3dffb2lh89h923p5i7cn597oa3j67epj.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "397107940686-54la0udphr49f035fgfvv26hjsk63uca.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.CgpaCalculator"
+              }
             }
           ]
         }
