@@ -1,3 +1,4 @@
+import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/models/courseDetails.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class _AppbarState extends State<Appbar> {
           children: <Widget>[
             IconButton(
               icon: Icon(Icons.menu),
-              onPressed: null,
+              onPressed: () => Scaffold.of(context).openDrawer(),
             ),
             Container(
               height: 40,

@@ -1,0 +1,32 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="io.flutter.plugins.firebaseanalytics" >
+4
+5    <uses-sdk android:minSdkVersion="16" />
+5-->/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.16/android/src/main/AndroidManifest.xml
+6
+7    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+7-->/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.16/android/src/main/AndroidManifest.xml:4:3-77
+7-->/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.16/android/src/main/AndroidManifest.xml:4:20-74
+8    <uses-permission android:name="android.permission.INTERNET" />
+8-->/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.16/android/src/main/AndroidManifest.xml:5:3-65
+8-->/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.16/android/src/main/AndroidManifest.xml:5:20-62
+9    <uses-permission android:name="android.permission.WAKE_LOCK" />
+9-->/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.16/android/src/main/AndroidManifest.xml:6:3-66
+9-->/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.16/android/src/main/AndroidManifest.xml:6:20-63
+10
+11    <application>
+11-->/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.16/android/src/main/AndroidManifest.xml:8:3-13:17
+12        <service android:name="com.google.firebase.components.ComponentDiscoveryService" >
+12-->/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.16/android/src/main/AndroidManifest.xml:9:5-12:15
+12-->/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.16/android/src/main/AndroidManifest.xml:9:14-85
+13            <meta-data
+13-->/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.16/android/src/main/AndroidManifest.xml:10:7-11:86
+14                android:name="com.google.firebase.components:io.flutter.plugins.firebaseanalytics.FlutterFirebaseAppRegistrar"
+14-->/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.16/android/src/main/AndroidManifest.xml:10:18-128
+15                android:value="com.google.firebase.components.ComponentRegistrar" />
+15-->/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.16/android/src/main/AndroidManifest.xml:11:18-83
+16        </service>
+17    </application>
+18
+19</manifest>

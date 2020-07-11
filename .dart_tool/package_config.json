@@ -86,6 +86,24 @@
       "languageVersion": "2.7"
     },
     {
+      "name": "firebase_analytics",
+      "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.16",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "firebase_analytics_platform_interface",
+      "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics_platform_interface-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "firebase_analytics_web",
+      "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics_web-0.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "firebase_auth",
       "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.16.1",
       "packageUri": "lib/",
@@ -138,6 +156,24 @@
       "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "2.0"
+    },
+    {
+      "name": "google_sign_in",
+      "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.5.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "google_sign_in_platform_interface",
+      "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_platform_interface-1.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "google_sign_in_web",
+      "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_web-0.9.1+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
     },
     {
       "name": "http",
@@ -290,7 +326,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-07-08T02:28:47.870129Z",
+  "generated": "2020-07-11T02:34:24.913153Z",
   "generator": "pub",
   "generatorVersion": "2.8.4"
 }

@@ -1,5 +1,6 @@
+import 'package:CgpaCalculator/screens/drawer.dart';
 import 'package:CgpaCalculator/screens/home.dart';
-import 'package:CgpaCalculator/screens/introScreen.dart';
+import 'package:CgpaCalculator/screens/login.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -13,8 +14,9 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        drawer: DrawerScreen(),
         backgroundColor: Colors.white,
-        body: IntroScreen(),
+        body: LoginPage(),
       ),
     );
   }
