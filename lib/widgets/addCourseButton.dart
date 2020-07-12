@@ -16,25 +16,20 @@ class _AddCourseButtonState extends State<AddCourseButton> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        _firestore.collection('users').getDocuments().then(
-          ((QuerySnapshot docs) {
-            _firestore.collection('users').add(
-              {
-                'userID': '${widget.userID}',
-                'userName': '${widget.userName}',
-                '${widget.semesterCode}': {
-                  'course': {
-                    'courseCode': 'BITS',
-                    'courseID': 'F112',
-                    'courseCredits': 3,
-                    'gradeAchieved': 10,
-                    'courseTitle': '${widget.userName}',
-                  }
-                }
-              },
-            );
-          }),
-        );
+        print(
+            _firestore.collection('users').document(widget.userID).snapshots());
+
+        _firestore
+            .collection('users')
+            .document(widget.userID)
+            .collection(widget.semesterCode)
+            .add({
+          'courseCode': 'BITS',
+          'courseID': 'F112',
+          'courseCredits': 3,
+          'gradeAchieved': 10,
+          'courseTitle': '${widget.userName}',
+        }).then((_) => print('Success'));
         Navigator.pop(context);
       },
       child: Container(

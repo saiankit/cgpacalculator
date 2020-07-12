@@ -1,4 +1,3 @@
-import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
 
 class NoItemsOops extends StatefulWidget {
@@ -9,8 +8,9 @@ class NoItemsOops extends StatefulWidget {
 class _NoItemsOopsState extends State<NoItemsOops> {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Container(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
             'Oops!',
@@ -28,12 +28,7 @@ class _NoItemsOopsState extends State<NoItemsOops> {
               fontWeight: FontWeight.w700,
             ),
           ),
-          Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage('assets/oops.jpeg'),
-            )),
-          )
+          SizedBox(height: 100.0),
         ],
       ),
     );
