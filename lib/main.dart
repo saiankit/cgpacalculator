@@ -1,5 +1,4 @@
 import 'package:CgpaCalculator/screens/drawer.dart';
-import 'package:CgpaCalculator/screens/home.dart';
 import 'package:CgpaCalculator/screens/login.dart';
 import 'package:flutter/material.dart';
 

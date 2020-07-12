@@ -1,4 +1,3 @@
-import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/models/courseDetails.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:flutter/material.dart';

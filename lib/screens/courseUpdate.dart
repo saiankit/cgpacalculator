@@ -141,7 +141,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
                   ),
                 ),
               ),
-              CreditSelector(),
+              CreditSelector('3'),
             ],
           ),
           GradePointSelector(),

@@ -1,4 +1,3 @@
-import 'package:CgpaCalculator/components/coursesList.dart';
 import 'package:CgpaCalculator/components/noItemsOops.dart';
 import 'package:CgpaCalculator/services/auth.dart';
 import 'package:CgpaCalculator/widgets/courseCard.dart';

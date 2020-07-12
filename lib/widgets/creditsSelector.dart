@@ -2,12 +2,13 @@ import 'package:CgpaCalculator/models/courseDetails.dart';
 import 'package:flutter/material.dart';
 
 class CreditSelector extends StatefulWidget {
+  String chosenCredits;
+  CreditSelector(this.chosenCredits);
   @override
   _CreditSelectorState createState() => _CreditSelectorState();
 }
 
 class _CreditSelectorState extends State<CreditSelector> {
-  String _chosenCredits = '1';
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -43,7 +44,7 @@ class _CreditSelectorState extends State<CreditSelector> {
                     fontSize: 20.0,
                   ),
                   underline: Container(),
-                  value: _chosenCredits,
+                  value: widget.chosenCredits,
                   items: credits.map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem(
                       value: value,
@@ -52,7 +53,7 @@ class _CreditSelectorState extends State<CreditSelector> {
                   }).toList(),
                   onChanged: (String value) {
                     setState(() {
-                      _chosenCredits = value;
+                      widget.chosenCredits = value;
                     });
                   },
                 ),

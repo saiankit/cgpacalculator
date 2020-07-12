@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 
 class AddCourseScreen extends StatefulWidget {
+  final String semesterCode;
+  AddCourseScreen(this.semesterCode);
   @override
   _AddCourseScreenState createState() => _AddCourseScreenState();
 }
@@ -14,6 +16,7 @@ class AddCourseScreen extends StatefulWidget {
 class _AddCourseScreenState extends State<AddCourseScreen> {
   String _chosenCourseCode = 'CS';
   String _chosenCourseID = 'F111';
+  String chosenCredits = '1';
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,7 +33,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                   children: <Widget>[
                     Container(
                       height: 60.0,
-                      width: 100.0,
+                      width: 120.0,
                       decoration: BoxDecoration(
                         color: Colors.grey.withOpacity(0.2),
                         borderRadius: BorderRadius.circular(12.0),
@@ -118,7 +121,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                   ),
                   child: Center(
                     child: Marquee(
-                      text: 'Add the Course Details for the TItle to appear',
+                      text: 'Add the Course Details for Title to appear',
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 20.0,
@@ -130,12 +133,14 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                   ),
                 ),
               ),
-              CreditSelector(),
+              CreditSelector(chosenCredits),
             ],
           ),
           GradePointSelector(),
           AddCourseButton(
-            semesterCode: '1-2',
+            courseCode: _chosenCourseCode,
+            courseID: _chosenCourseID,
+            semesterCode: widget.semesterCode,
             userID: authService.id,
             userName: authService.name,
           ),
