@@ -135,7 +135,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
           ),
           GradePointSelector(),
           AddCourseButton(
-            semesterCode: '1-1',
+            semesterCode: '1-2',
             userID: authService.id,
             userName: authService.name,
           ),

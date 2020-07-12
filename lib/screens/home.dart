@@ -118,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     // Provider.of<SemesterState>(context).selectedSemester ==
                     //         '1-1'
-                    ListGenerator(semesterCode: '1-1')
+                    ListGenerator(semesterCode: '1-2')
                     // : ListGenerator(semesterCode: '1-2')
                   ],
                 ),

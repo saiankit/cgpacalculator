@@ -1,3 +1,4 @@
+import 'package:CgpaCalculator/components/coursesList.dart';
 import 'package:CgpaCalculator/components/noItemsOops.dart';
 import 'package:CgpaCalculator/services/auth.dart';
 import 'package:CgpaCalculator/widgets/courseCard.dart';
@@ -20,29 +21,26 @@ class _ListGeneratorState extends State<ListGenerator> {
         child: StreamBuilder(
           stream: _firestore
               .collection("users")
-              .where('userID', isEqualTo: authService.id)
+              .document(authService.id)
+              .collection(widget.semesterCode)
               .snapshots(),
           builder: (context, snapshot) {
             if (!snapshot.hasData)
               return Center(
                 child: CircularProgressIndicator(),
               );
-            // print(snapshot.data.documents);
             if (snapshot.data.documents.isEmpty) return NoItemsOops();
             return ListView.builder(
               itemCount: snapshot.data.documents.length,
               itemBuilder: (BuildContext context, int index) {
                 return CourseCard(
-                  courseCode: snapshot.data.documents[index]
-                      [widget.semesterCode]['course']['courseCode'],
+                  courseCode: snapshot.data.documents[index]['courseCode'],
                   gradeAchieved: snapshot.data.documents[index]
-                      [widget.semesterCode]['course']['gradeAchieved'],
-                  courseID: snapshot.data.documents[index][widget.semesterCode]
-                      ['course']['courseID'],
-                  courseTitle: snapshot.data.documents[index]
-                      [widget.semesterCode]['course']['courseTitle'],
+                      ['gradeAchieved'],
+                  courseID: snapshot.data.documents[index]['courseID'],
+                  courseTitle: snapshot.data.documents[index]['courseTitle'],
                   courseCredits: snapshot.data.documents[index]
-                      [widget.semesterCode]['course']['courseCredits'],
+                      ['courseCredits'],
                 );
               },
             );
