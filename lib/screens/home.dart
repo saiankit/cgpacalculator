@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 topRight: const Radius.circular(30.0),
                               ),
                             ),
-                            child: AddCourseScreen(),
+                            child: AddCourseScreen('1-1'),
                           ),
                         );
                       },
@@ -99,16 +99,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                   'Add a new Course',
                                   style: ThemeStyles.titleTextStyle,
                                 ),
-                                IconButton(
-                                  icon: Icon(Icons.add),
-                                  onPressed: null,
-                                )
+                                Icon(Icons.add),
                               ],
                             ),
                           ),
                           decoration: BoxDecoration(
                             border: Border.all(
-                                color: Color(0xFFC4C4C4).withOpacity(0.5)),
+                              color: Color(0xFFC4C4C4).withOpacity(0.5),
+                            ),
                             borderRadius: BorderRadius.circular(8.0),
                             color: Color(0xFFC4C4C4).withOpacity(0.2),
                           ),
@@ -116,10 +114,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                    // Provider.of<SemesterState>(context).selectedSemester ==
-                    //         '1-1'
-                    ListGenerator(semesterCode: '1-2')
-                    // : ListGenerator(semesterCode: '1-2')
+                    ListGenerator(
+                        semesterCode: Provider.of<SemesterState>(context)
+                            .selectedSemester)
                   ],
                 ),
               ),
