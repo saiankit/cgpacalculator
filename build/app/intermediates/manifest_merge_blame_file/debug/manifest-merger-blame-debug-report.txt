@@ -122,17 +122,17 @@
 80                android:value="com.google.firebase.components.ComponentRegistrar" />
 80-->[:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-82
 81            <meta-data
-81-->[:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
-82                android:name="com.google.firebase.components:io.flutter.plugins.firebaseauth.FlutterFirebaseAppRegistrar"
-82-->[:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-122
+81-->[:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+82                android:name="com.google.firebase.components:io.flutter.plugins.firebase.cloudfirestore.FlutterFirebaseAppRegistrar"
+82-->[:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-133
 83                android:value="com.google.firebase.components.ComponentRegistrar" />
-83-->[:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+83-->[:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 84            <meta-data
-84-->[:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
-85                android:name="com.google.firebase.components:io.flutter.plugins.firebase.cloudfirestore.FlutterFirebaseAppRegistrar"
-85-->[:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-133
+84-->[:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+85                android:name="com.google.firebase.components:io.flutter.plugins.firebaseauth.FlutterFirebaseAppRegistrar"
+85-->[:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-122
 86                android:value="com.google.firebase.components.ComponentRegistrar" />
-86-->[:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+86-->[:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 87            <meta-data
 87-->[:firebase_core] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
 88                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar"
@@ -179,118 +179,117 @@
 109-->[com.google.firebase:firebase-auth:19.2.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/83e4807954bf4fc15a7982d96bb848b9/firebase-auth-19.2.0/AndroidManifest.xml:29:13-102
 110            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 110-->[com.google.firebase:firebase-auth:19.2.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/83e4807954bf4fc15a7982d96bb848b9/firebase-auth-19.2.0/AndroidManifest.xml:30:13-72
-111
-112        <receiver
-112-->[com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:37:9-44:20
-113            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-113-->[com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:38:13-78
-114            android:exported="true"
-114-->[com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:39:13-36
-115            android:permission="com.google.android.c2dm.permission.SEND" >
-115-->[com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:40:13-73
-116            <intent-filter>
-116-->[com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:41:13-43:29
-117                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-117-->[com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:42:17-81
-117-->[com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:42:25-78
-118            </intent-filter>
-119        </receiver>
-120
-121        <provider
-121-->[com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
-122            android:name="com.google.firebase.provider.FirebaseInitProvider"
-122-->[com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
-123            android:authorities="com.example.CgpaCalculator.firebaseinitprovider"
-123-->[com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
-124            android:exported="false"
-124-->[com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
-125            android:initOrder="100" />
-125-->[com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
-126
-127        <activity
-127-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:23:9-27:75
-128            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-128-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:24:13-93
-129            android:excludeFromRecents="true"
-129-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:25:13-46
-130            android:exported="false"
-130-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:26:13-37
-131            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-131-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:27:13-72
-132        <!--
-133            Service handling Google Sign-In user revocation. For apps that do not integrate with
-134            Google Sign-In, this service will never be started.
-135        -->
-136        <service
-136-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:33:9-36:110
-137            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-137-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:34:13-89
-138            android:exported="true"
-138-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:35:13-36
-139            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-139-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:36:13-107
-140
-141        <receiver
-141-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:29:9-33:20
-142            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-142-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:30:13-85
-143            android:enabled="true"
-143-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:31:13-35
-144            android:exported="false" >
-144-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:32:13-37
-145        </receiver>
-146        <receiver
-146-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:34:9-42:20
-147            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
-147-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:35:13-100
-148            android:enabled="true"
-148-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:36:13-35
-149            android:exported="true"
-149-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:37:13-36
-150            android:permission="android.permission.INSTALL_PACKAGES" >
-150-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:38:13-69
-151            <intent-filter>
-151-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:39:13-41:29
-152                <action android:name="com.android.vending.INSTALL_REFERRER" />
-152-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:40:17-79
-152-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:40:25-76
-153            </intent-filter>
-154        </receiver>
-155
-156        <service
-156-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:44:9-47:40
-157            android:name="com.google.android.gms.measurement.AppMeasurementService"
-157-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:45:13-84
-158            android:enabled="true"
-158-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:46:13-35
-159            android:exported="false" />
-159-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:47:13-37
-160        <service
-160-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:48:9-52:72
-161            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-161-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:49:13-87
-162            android:enabled="true"
-162-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:50:13-35
-163            android:exported="false"
-163-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:51:13-37
-164            android:permission="android.permission.BIND_JOB_SERVICE" />
-164-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:52:13-69
-165
-166        <activity
-166-->[com.google.android.gms:play-services-base:17.1.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/89bc913666573dc21174d9c25fe06796/play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
-167            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-167-->[com.google.android.gms:play-services-base:17.1.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/89bc913666573dc21174d9c25fe06796/play-services-base-17.1.0/AndroidManifest.xml:24:13-79
-168            android:exported="false"
-168-->[com.google.android.gms:play-services-base:17.1.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/89bc913666573dc21174d9c25fe06796/play-services-base-17.1.0/AndroidManifest.xml:25:13-37
-169            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-169-->[com.google.android.gms:play-services-base:17.1.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/89bc913666573dc21174d9c25fe06796/play-services-base-17.1.0/AndroidManifest.xml:26:13-72
-170
-171        <meta-data
-171-->[com.google.android.gms:play-services-basement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/e91428bab0da389b0f3f75f8b37b830e/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
-172            android:name="com.google.android.gms.version"
-172-->[com.google.android.gms:play-services-basement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/e91428bab0da389b0f3f75f8b37b830e/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-173            android:value="@integer/google_play_services_version" />
-173-->[com.google.android.gms:play-services-basement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/e91428bab0da389b0f3f75f8b37b830e/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
-174    </application>
-175
-176</manifest>
+111        <activity
+111-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:23:9-27:75
+112            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+112-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:24:13-93
+113            android:excludeFromRecents="true"
+113-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:25:13-46
+114            android:exported="false"
+114-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:26:13-37
+115            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+115-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:27:13-72
+116        <!--
+117            Service handling Google Sign-In user revocation. For apps that do not integrate with
+118            Google Sign-In, this service will never be started.
+119        -->
+120        <service
+120-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:33:9-36:110
+121            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+121-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:34:13-89
+122            android:exported="true"
+122-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:35:13-36
+123            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+123-->[com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:36:13-107
+124
+125        <receiver
+125-->[com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:37:9-44:20
+126            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+126-->[com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:38:13-78
+127            android:exported="true"
+127-->[com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:39:13-36
+128            android:permission="com.google.android.c2dm.permission.SEND" >
+128-->[com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:40:13-73
+129            <intent-filter>
+129-->[com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:41:13-43:29
+130                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+130-->[com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:42:17-81
+130-->[com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:42:25-78
+131            </intent-filter>
+132        </receiver>
+133
+134        <provider
+134-->[com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+135            android:name="com.google.firebase.provider.FirebaseInitProvider"
+135-->[com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+136            android:authorities="com.example.CgpaCalculator.firebaseinitprovider"
+136-->[com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+137            android:exported="false"
+137-->[com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+138            android:initOrder="100" />
+138-->[com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+139
+140        <receiver
+140-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:29:9-33:20
+141            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+141-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:30:13-85
+142            android:enabled="true"
+142-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:31:13-35
+143            android:exported="false" >
+143-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:32:13-37
+144        </receiver>
+145        <receiver
+145-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:34:9-42:20
+146            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+146-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:35:13-100
+147            android:enabled="true"
+147-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:36:13-35
+148            android:exported="true"
+148-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:37:13-36
+149            android:permission="android.permission.INSTALL_PACKAGES" >
+149-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:38:13-69
+150            <intent-filter>
+150-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:39:13-41:29
+151                <action android:name="com.android.vending.INSTALL_REFERRER" />
+151-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:40:17-79
+151-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:40:25-76
+152            </intent-filter>
+153        </receiver>
+154
+155        <service
+155-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:44:9-47:40
+156            android:name="com.google.android.gms.measurement.AppMeasurementService"
+156-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:45:13-84
+157            android:enabled="true"
+157-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:46:13-35
+158            android:exported="false" />
+158-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:47:13-37
+159        <service
+159-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:48:9-52:72
+160            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+160-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:49:13-87
+161            android:enabled="true"
+161-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:50:13-35
+162            android:exported="false"
+162-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:51:13-37
+163            android:permission="android.permission.BIND_JOB_SERVICE" />
+163-->[com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:52:13-69
+164
+165        <activity
+165-->[com.google.android.gms:play-services-base:17.1.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/89bc913666573dc21174d9c25fe06796/play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+166            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+166-->[com.google.android.gms:play-services-base:17.1.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/89bc913666573dc21174d9c25fe06796/play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+167            android:exported="false"
+167-->[com.google.android.gms:play-services-base:17.1.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/89bc913666573dc21174d9c25fe06796/play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+168            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+168-->[com.google.android.gms:play-services-base:17.1.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/89bc913666573dc21174d9c25fe06796/play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+169
+170        <meta-data
+170-->[com.google.android.gms:play-services-basement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/e91428bab0da389b0f3f75f8b37b830e/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+171            android:name="com.google.android.gms.version"
+171-->[com.google.android.gms:play-services-basement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/e91428bab0da389b0f3f75f8b37b830e/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+172            android:value="@integer/google_play_services_version" />
+172-->[com.google.android.gms:play-services-basement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/e91428bab0da389b0f3f75f8b37b830e/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+173    </application>
+174
+175</manifest>

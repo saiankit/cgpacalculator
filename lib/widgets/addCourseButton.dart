@@ -1,7 +1,5 @@
-import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class AddCourseButton extends StatefulWidget {
   final String semesterCode;
@@ -9,12 +7,17 @@ class AddCourseButton extends StatefulWidget {
   final String userName;
   final String courseCode;
   final String courseID;
-  AddCourseButton(
-      {this.semesterCode,
-      this.userID,
-      this.userName,
-      this.courseCode,
-      this.courseID});
+  final int courseCredits;
+  final int gradeAchieved;
+  AddCourseButton({
+    this.semesterCode,
+    this.userID,
+    this.userName,
+    this.courseCode,
+    this.courseID,
+    this.courseCredits,
+    this.gradeAchieved,
+  });
   @override
   _AddCourseButtonState createState() => _AddCourseButtonState();
 }
@@ -25,7 +28,6 @@ class _AddCourseButtonState extends State<AddCourseButton> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print(widget.semesterCode);
         _firestore
             .collection('users')
             .document(widget.userID)
@@ -33,10 +35,10 @@ class _AddCourseButtonState extends State<AddCourseButton> {
             .add({
           'courseCode': '${widget.courseCode}',
           'courseID': '${widget.courseID}',
-          'courseCredits': 3,
-          'gradeAchieved': 10,
+          'courseCredits': widget.courseCredits,
+          'gradeAchieved': widget.gradeAchieved,
           'courseTitle': '${widget.userName}',
-        }).then((_) => print('Success'));
+        });
         Navigator.pop(context);
       },
       child: Container(

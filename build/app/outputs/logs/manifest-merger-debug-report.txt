@@ -5,20 +5,21 @@ INJECTED from /Users/SaiAnkit/Desktop/CgpaCalculator/android/app/src/main/Androi
 INJECTED from /Users/SaiAnkit/Desktop/CgpaCalculator/android/app/src/main/AndroidManifest.xml:1:1-47:12
 INJECTED from /Users/SaiAnkit/Desktop/CgpaCalculator/android/app/src/main/AndroidManifest.xml:1:1-47:12
 MERGED from /Users/SaiAnkit/Desktop/CgpaCalculator/android/app/src/main/AndroidManifest.xml:1:1-47:12
-MERGED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-19:12
-MERGED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
-MERGED from [:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:google_sign_in] /Users/SaiAnkit/Desktop/CgpaCalculator/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-19:12
+MERGED from [:path_provider] /Users/SaiAnkit/Desktop/CgpaCalculator/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
+MERGED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [com.google.firebase:firebase-core:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/81e7a0665c2e8c6d723e681b42e1083e/firebase-core-17.0.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/83e4807954bf4fc15a7982d96bb848b9/firebase-auth-19.2.0/AndroidManifest.xml:17:1-42:12
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:17:1-39:12
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/ca118bfe05f857651b36e5ace4910054/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-analytics:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/aaac9accf2ab7936a9fc19b663bc295d/firebase-analytics-17.0.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/bb77deb6642822e352e38caa2fe8e2ae/play-services-measurement-api-17.0.0/AndroidManifest.xml:17:1-36:12
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/e9b1dcf9c5a83bdd68c17a0c3501d613/firebase-auth-interop-19.0.0/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:17:1-47:12
 MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:15:1-39:12
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:17:1-39:12
 MERGED from [com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:17:1-55:12
 MERGED from [com.google.android.gms:play-services-measurement-sdk:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/328a9ce1e44fd7fcd05b1f707b79b89a/play-services-measurement-sdk-17.0.0/AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/52cb2300b9e371a87b42460d3998f2c1/jetified-play-services-auth-api-phone-16.0.0/AndroidManifest.xml:2:1-7:12
@@ -75,16 +76,18 @@ application
 ADDED from /Users/SaiAnkit/Desktop/CgpaCalculator/android/app/src/main/AndroidManifest.xml:8:5-46:19
 MERGED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-17:19
 MERGED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-17:19
-MERGED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
-MERGED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [com.google.firebase:firebase-core:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/81e7a0665c2e8c6d723e681b42e1083e/firebase-core-17.0.0/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-core:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/81e7a0665c2e8c6d723e681b42e1083e/firebase-core-17.0.0/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/83e4807954bf4fc15a7982d96bb848b9/firebase-auth-19.2.0/AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/83e4807954bf4fc15a7982d96bb848b9/firebase-auth-19.2.0/AndroidManifest.xml:23:5-40:19
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:22:5-37:19
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/ca118bfe05f857651b36e5ace4910054/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:16:5-24:19
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/ca118bfe05f857651b36e5ace4910054/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:16:5-24:19
 MERGED from [com.google.firebase:firebase-analytics:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/aaac9accf2ab7936a9fc19b663bc295d/firebase-analytics-17.0.0/AndroidManifest.xml:7:5-20
@@ -97,8 +100,6 @@ MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/ca
 MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:28:5-45:19
 MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:25:5-37:19
 MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:25:5-37:19
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:22:5-37:19
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:22:5-37:19
 MERGED from [com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:28:5-53:19
 MERGED from [com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:28:5-53:19
 MERGED from [com.google.android.gms:play-services-measurement-sdk:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/328a9ce1e44fd7fcd05b1f707b79b89a/play-services-measurement-sdk-17.0.0/AndroidManifest.xml:22:5-23:19
@@ -181,20 +182,24 @@ uses-sdk
 INJECTED from /Users/SaiAnkit/Desktop/CgpaCalculator/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/SaiAnkit/Desktop/CgpaCalculator/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/SaiAnkit/Desktop/CgpaCalculator/android/app/src/main/AndroidManifest.xml
-MERGED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in] /Users/SaiAnkit/Desktop/CgpaCalculator/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in] /Users/SaiAnkit/Desktop/CgpaCalculator/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/SaiAnkit/Desktop/CgpaCalculator/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/SaiAnkit/Desktop/CgpaCalculator/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-core:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/81e7a0665c2e8c6d723e681b42e1083e/firebase-core-17.0.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-core:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/81e7a0665c2e8c6d723e681b42e1083e/firebase-core-17.0.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/83e4807954bf4fc15a7982d96bb848b9/firebase-auth-19.2.0/AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/83e4807954bf4fc15a7982d96bb848b9/firebase-auth-19.2.0/AndroidManifest.xml:21:5-44
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/ca118bfe05f857651b36e5ace4910054/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/ca118bfe05f857651b36e5ace4910054/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-analytics:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/aaac9accf2ab7936a9fc19b663bc295d/firebase-analytics-17.0.0/AndroidManifest.xml:5:5-44
@@ -207,8 +212,6 @@ MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/ca
 MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/db8008b0ea4e8ef6652be9ee8c1447dc/firebase-iid-19.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-sdk:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/328a9ce1e44fd7fcd05b1f707b79b89a/play-services-measurement-sdk-17.0.0/AndroidManifest.xml:20:5-44
@@ -289,10 +292,10 @@ INJECTED from /Users/SaiAnkit/Desktop/CgpaCalculator/android/app/src/debug/Andro
 		INJECTED from /Users/SaiAnkit/Desktop/CgpaCalculator/android/app/src/debug/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
 ADDED from /Users/SaiAnkit/Desktop/CgpaCalculator/android/app/src/debug/AndroidManifest.xml:6:5-66
-MERGED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-67
-MERGED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-67
 MERGED from [:google_sign_in] /Users/SaiAnkit/Desktop/CgpaCalculator/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-67
 MERGED from [:google_sign_in] /Users/SaiAnkit/Desktop/CgpaCalculator/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-67
+MERGED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-67
+MERGED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-67
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/ca118bfe05f857651b36e5ace4910054/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:14:5-67
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/ca118bfe05f857651b36e5ace4910054/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:14:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/bb77deb6642822e352e38caa2fe8e2ae/play-services-measurement-api-17.0.0/AndroidManifest.xml:22:5-67
@@ -341,10 +344,10 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /U
 		ADDED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:9:22-65
 service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-16:19
-MERGED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
-MERGED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/83e4807954bf4fc15a7982d96bb848b9/firebase-auth-19.2.0/AndroidManifest.xml:33:9-39:19
@@ -371,18 +374,18 @@ ADDED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/fi
 		ADDED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-82
 	android:name
 		ADDED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:14:17-127
-meta-data#com.google.firebase.components:io.flutter.plugins.firebaseauth.FlutterFirebaseAppRegistrar
-ADDED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
-	android:value
-		ADDED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
-	android:name
-		ADDED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-122
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.cloudfirestore.FlutterFirebaseAppRegistrar
 ADDED from [:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
 	android:value
 		ADDED from [:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 	android:name
 		ADDED from [:cloud_firestore] /Users/SaiAnkit/Desktop/CgpaCalculator/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-133
+meta-data#com.google.firebase.components:io.flutter.plugins.firebaseauth.FlutterFirebaseAppRegistrar
+ADDED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:firebase_auth] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-122
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar
 ADDED from [:firebase_core] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
 	android:value
@@ -411,6 +414,24 @@ ADDED from [com.google.firebase:firebase-auth:19.2.0] /Users/SaiAnkit/.gradle/ca
 		ADDED from [com.google.firebase:firebase-auth:19.2.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/83e4807954bf4fc15a7982d96bb848b9/firebase-auth-19.2.0/AndroidManifest.xml:38:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:19.2.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/83e4807954bf4fc15a7982d96bb848b9/firebase-auth-19.2.0/AndroidManifest.xml:37:17-109
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:33:9-36:110
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:35:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:34:13-89
 meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
 ADDED from [com.google.firebase:firebase-firestore:21.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/ca118bfe05f857651b36e5ace4910054/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:20:13-22:85
 	android:value
@@ -457,24 +478,6 @@ ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/
 		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
 	android:name
 		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/8cdeaade5dc2c898136267db0aa4ac46/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
-activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:23:9-27:75
-	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:25:13-46
-	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:26:13-37
-	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:27:13-72
-	android:name
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:24:13-93
-service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:33:9-36:110
-	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:35:13-36
-	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:36:13-107
-	android:name
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/b8e671bad605d6bf8d9792f57f094bd3/jetified-play-services-auth-16.0.1/AndroidManifest.xml:34:13-89
 uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
 ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/7d612487f6d561943bba91bf00d09e77/play-services-measurement-17.0.0/AndroidManifest.xml:26:5-110
 MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/309746d174be39bf65ae8807ba135b7b/play-services-measurement-impl-17.0.0/AndroidManifest.xml:26:5-110
