@@ -1,8 +1,8 @@
-import 'package:CgpaCalculator/models/courseDetails.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CreditSelector extends StatefulWidget {
-  String chosenCredits;
+  int chosenCredits;
   CreditSelector(this.chosenCredits);
   @override
   _CreditSelectorState createState() => _CreditSelectorState();
@@ -35,7 +35,7 @@ class _CreditSelectorState extends State<CreditSelector> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Center(
-                child: DropdownButton<String>(
+                child: DropdownButton<int>(
                   isExpanded: true,
                   icon: Icon(Icons.keyboard_arrow_down),
                   style: TextStyle(
@@ -44,17 +44,21 @@ class _CreditSelectorState extends State<CreditSelector> {
                     fontSize: 20.0,
                   ),
                   underline: Container(),
-                  value: widget.chosenCredits,
-                  items: credits.map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem(
-                      value: value,
-                      child: Text(value),
+                  value: widget.chosenCredits.toInt(),
+                  items: [1, 2, 3, 4, 5].map<DropdownMenuItem<int>>(
+                    (int value) {
+                      return DropdownMenuItem(
+                        value: value.toInt(),
+                        child: Text(value.toString()),
+                      );
+                    },
+                  ).toList(),
+                  onChanged: (int value) {
+                    setState(
+                      () {
+                        widget.chosenCredits = value;
+                      },
                     );
-                  }).toList(),
-                  onChanged: (String value) {
-                    setState(() {
-                      widget.chosenCredits = value;
-                    });
                   },
                 ),
               ),

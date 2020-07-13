@@ -68,6 +68,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     GestureDetector(
                       onTap: () {
+                        var _semesterCode =
+                            Provider.of<SemesterState>(context, listen: false)
+                                .selectedSemester;
                         showModalBottomSheet(
                           context: context,
                           isScrollControlled: true,
@@ -81,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 topRight: const Radius.circular(30.0),
                               ),
                             ),
-                            child: AddCourseScreen('1-1'),
+                            child: AddCourseScreen(_semesterCode),
                           ),
                         );
                       },

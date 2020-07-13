@@ -34,8 +34,6 @@ List<String> semesterList = [
   '4 - 2'
 ];
 
-List<String> credits = ['1', '2', '3', '4', '5'];
-
 List<String> courseIDList = [
   'F110',
   'F111',
