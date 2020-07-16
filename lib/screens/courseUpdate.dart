@@ -38,10 +38,13 @@ class _CourseUpdateState extends State<CourseUpdate> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
-                      Icons.delete,
-                      size: 30.0,
-                      color: Colors.redAccent,
+                    IconButton(
+                      icon: Icon(
+                        Icons.delete,
+                        size: 30.0,
+                        color: Colors.redAccent,
+                      ),
+                      onPressed: null,
                     )
                   ],
                 ),
