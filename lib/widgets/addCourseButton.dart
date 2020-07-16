@@ -1,7 +1,5 @@
-import 'package:CgpaCalculator/services/courseInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class AddCourseButton extends StatefulWidget {
   final String semesterCode;
