@@ -156,7 +156,8 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                 userName: authService.name,
                 courseCredits:
                     Provider.of<CourseInfoState>(context).selectedCredits,
-                gradeAchieved: 8,
+                gradeAchieved:
+                    Provider.of<CourseInfoState>(context).selectedGradeAchieved,
               ),
             ],
           ),

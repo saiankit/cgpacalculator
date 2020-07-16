@@ -7,6 +7,7 @@ class GradePointSelector extends StatefulWidget {
 }
 
 class _GradePointSelectorState extends State<GradePointSelector> {
+  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     return Column(

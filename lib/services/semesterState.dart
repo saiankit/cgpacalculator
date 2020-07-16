@@ -31,7 +31,8 @@ class SemesterState extends ChangeNotifier {
       for (int e in credits) {
         cre += e;
       }
-      semesterGradePointAverage = (sum / cre).toString();
+      double sg = double.parse((sum / cre).toStringAsFixed(2));
+      semesterGradePointAverage = sg.toString();
       notifyListeners();
     });
   }

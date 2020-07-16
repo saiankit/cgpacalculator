@@ -34,8 +34,21 @@ class _CourseUpdateState extends State<CourseUpdate> {
           Column(
             children: <Widget>[
               Padding(
+                padding: const EdgeInsets.only(top: 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.delete,
+                      size: 30.0,
+                      color: Colors.redAccent,
+                    )
+                  ],
+                ),
+              ),
+              Padding(
                 padding:
-                    const EdgeInsets.only(top: 70.0, left: 20.0, right: 20.0),
+                    const EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
