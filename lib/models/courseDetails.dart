@@ -23,6 +23,41 @@ List<String> courseCodeList = [
   'PHY',
 ];
 
+final grades = '''{
+  {
+    'gradeCode': 'A',
+    'grade': 10,
+  },
+  {
+    'gradeCode': 'A-',
+    'grade': 9,
+  },
+  {
+    'gradeCode': 'B',
+    'grade': 8,
+  },
+  {
+    'gradeCode': 'B-',
+    'grade': 7,
+  },
+  {
+    'gradeCode': 'C',
+    'grade': 6,
+  },
+  {
+    'gradeCode': 'C-',
+    'grade': 5,
+  },
+  {
+    'gradeCode': 'D',
+    'grade': 4,
+  },
+  {
+    'gradeCode': 'E',
+    'grade': 3,
+  },
+}''';
+
 List<String> semesterList = [
   '1 - 1',
   '1 - 2',

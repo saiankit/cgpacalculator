@@ -1,4 +1,8 @@
+import 'package:CgpaCalculator/models/courseDetails.dart';
+import 'package:CgpaCalculator/services/courseInfo.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'dart:convert';
 
 class GradePointCard extends StatefulWidget {
   final String grade;
@@ -9,6 +13,7 @@ class GradePointCard extends StatefulWidget {
 
 class _GradePointCardState extends State<GradePointCard> {
   bool _isSelected = false;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -16,6 +21,36 @@ class _GradePointCardState extends State<GradePointCard> {
         setState(() {
           _isSelected = !_isSelected;
         });
+        switch (widget.grade) {
+          case 'A':
+            Provider.of<CourseInfoState>(context, listen: false)
+                .changeGrade(10);
+            break;
+          case 'A-':
+            Provider.of<CourseInfoState>(context, listen: false).changeGrade(9);
+            break;
+          case 'B':
+            Provider.of<CourseInfoState>(context, listen: false).changeGrade(8);
+            break;
+          case 'B-':
+            Provider.of<CourseInfoState>(context, listen: false).changeGrade(7);
+            break;
+          case 'C':
+            Provider.of<CourseInfoState>(context, listen: false).changeGrade(6);
+            break;
+          case 'C-':
+            Provider.of<CourseInfoState>(context, listen: false).changeGrade(5);
+            break;
+          case 'D':
+            Provider.of<CourseInfoState>(context, listen: false).changeGrade(4);
+            break;
+          case 'E':
+            Provider.of<CourseInfoState>(context, listen: false).changeGrade(3);
+            break;
+          default:
+            Provider.of<CourseInfoState>(context, listen: false)
+                .changeGrade(10);
+        }
       },
       child: Padding(
         padding: const EdgeInsets.all(15.0),
