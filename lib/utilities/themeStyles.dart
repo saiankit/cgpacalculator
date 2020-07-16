@@ -30,6 +30,13 @@ class ThemeStyles {
     color: Colors.black,
   );
 
+  static BoxDecoration addNewCourse = BoxDecoration(
+    border: Border.all(
+      color: Color(0xFFC4C4C4).withOpacity(0.5),
+    ),
+    borderRadius: BorderRadius.circular(8.0),
+    color: Color(0xFFC4C4C4).withOpacity(0.2),
+  );
   static BoxDecoration modalBottomSheetDecoration = BoxDecoration(
     color: Colors.white,
     borderRadius: BorderRadius.only(
