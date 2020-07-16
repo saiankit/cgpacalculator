@@ -1,4 +1,6 @@
+import 'package:CgpaCalculator/services/courseInfo.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class CreditSelector extends StatefulWidget {
@@ -59,6 +61,8 @@ class _CreditSelectorState extends State<CreditSelector> {
                         widget.chosenCredits = value;
                       },
                     );
+                    Provider.of<CourseInfoState>(context, listen: false)
+                        .changeCredits(value);
                   },
                 ),
               ),
