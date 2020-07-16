@@ -41,6 +41,7 @@ class _CourseCardState extends State<CourseCard> {
               courseGrade: widget.gradeAchieved,
               courseID: widget.courseID,
               courseTitle: widget.courseTitle,
+              courseCredits: widget.courseCredits,
             ),
           ),
         );

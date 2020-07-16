@@ -10,8 +10,13 @@ class CourseUpdate extends StatefulWidget {
   final String courseID;
   final String courseTitle;
   final int courseGrade;
+  final int courseCredits;
   CourseUpdate(
-      {this.courseCode, this.courseGrade, this.courseID, this.courseTitle});
+      {this.courseCode,
+      this.courseGrade,
+      this.courseID,
+      this.courseTitle,
+      this.courseCredits});
   @override
   _CourseUpdateState createState() => _CourseUpdateState();
 }
@@ -141,7 +146,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
                   ),
                 ),
               ),
-              CreditSelector(3),
+              CreditSelector(widget.courseCredits),
             ],
           ),
           GradePointSelector(),
