@@ -1,6 +1,8 @@
 import 'package:CgpaCalculator/screens/courseUpdate.dart';
+import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CourseCard extends StatefulWidget {
   final String courseCode;
@@ -21,71 +23,77 @@ class CourseCard extends StatefulWidget {
 class _CourseCardState extends State<CourseCard> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        showModalBottomSheet(
-          context: context,
-          isScrollControlled: true,
-          backgroundColor: Colors.transparent,
-          builder: (context) => Container(
-            height: MediaQuery.of(context).size.height * 0.85,
-            decoration: ThemeStyles.modalBottomSheetDecoration,
-            child: CourseUpdate(
-              courseCode: widget.courseCode,
-              courseGrade: widget.gradeAchieved,
-              courseID: widget.courseID,
-              courseTitle: widget.courseTitle,
-              courseCredits: widget.courseCredits,
-            ),
-          ),
-        );
-      },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
-        child: Container(
-          height: 60.0,
-          decoration: ThemeStyles.courseCardDecoration,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Container(
-                height: 60.0,
-                width: 60.0,
-                decoration: ThemeStyles.courseCardCourseInfo,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      widget.courseCode,
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Text(
-                      widget.courseID,
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ],
+    return ChangeNotifierProvider(
+      create: (_) => SemesterState(),
+      child: Consumer<SemesterState>(
+        builder: (context, semState, _) => GestureDetector(
+          onTap: () {
+            showModalBottomSheet(
+              context: context,
+              isScrollControlled: true,
+              backgroundColor: Colors.transparent,
+              builder: (context) => Container(
+                height: MediaQuery.of(context).size.height * 0.85,
+                decoration: ThemeStyles.modalBottomSheetDecoration,
+                child: CourseUpdate(
+                  courseCode: widget.courseCode,
+                  courseGrade: widget.gradeAchieved,
+                  courseID: widget.courseID,
+                  courseTitle: widget.courseTitle,
+                  courseCredits: widget.courseCredits,
                 ),
               ),
-              Expanded(
-                child: SingleChildScrollView(
-                  padding: EdgeInsets.only(left: 10.0),
-                  scrollDirection: Axis.horizontal,
-                  child: Text(widget.courseTitle,
-                      style: ThemeStyles.titleTextStyle),
-                ),
-              ),
-              Container(
-                height: 60.0,
-                width: 60.0,
-                decoration: ThemeStyles.courseCardGradeInfo,
-                child: Center(
-                  child: Text(
-                    widget.gradeAchieved.toString(),
-                    style: TextStyle(fontSize: 25.0, color: Colors.white),
+            );
+          },
+          child: Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
+            child: Container(
+              height: 60.0,
+              decoration: ThemeStyles.courseCardDecoration,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Container(
+                    height: 60.0,
+                    width: 60.0,
+                    decoration: ThemeStyles.courseCardCourseInfo,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          widget.courseCode,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        Text(
+                          widget.courseID,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      padding: EdgeInsets.only(left: 10.0),
+                      scrollDirection: Axis.horizontal,
+                      child: Text(widget.courseTitle,
+                          style: ThemeStyles.titleTextStyle),
+                    ),
+                  ),
+                  Container(
+                    height: 60.0,
+                    width: 60.0,
+                    decoration: ThemeStyles.courseCardGradeInfo,
+                    child: Center(
+                      child: Text(
+                        widget.gradeAchieved.toString(),
+                        style: TextStyle(fontSize: 25.0, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

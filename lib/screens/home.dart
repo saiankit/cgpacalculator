@@ -42,7 +42,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                               Text(
-                                Provider.of<SemesterState>(context)
+                                Provider.of<SemesterState>(context,
+                                        listen: false)
                                     .semesterGradePointAverage,
                                 style: TextStyle(
                                   fontSize: 40.0,
@@ -71,30 +72,27 @@ class _HomeScreenState extends State<HomeScreen> {
                         var _semesterCode =
                             Provider.of<SemesterState>(context, listen: false)
                                 .selectedSemester;
+                        Provider.of<SemesterState>(context, listen: false)
+                            .sgpaCalculator(_semesterCode);
                         showModalBottomSheet(
                           context: context,
                           isScrollControlled: true,
                           backgroundColor: Colors.transparent,
                           builder: (context) => Container(
                             height: MediaQuery.of(context).size.height * 0.85,
-                            decoration: new BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: new BorderRadius.only(
-                                topLeft: const Radius.circular(30.0),
-                                topRight: const Radius.circular(30.0),
-                              ),
-                            ),
+                            decoration: ThemeStyles.modalBottomSheetDecoration,
                             child: AddCourseScreen(_semesterCode),
                           ),
                         );
                       },
                       child: Padding(
-                        padding: const EdgeInsets.only(
+                        padding: EdgeInsets.only(
                             left: 15.0, right: 15.0, top: 5.0, bottom: 20.0),
                         child: Container(
+                          height: 60.0,
+                          decoration: ThemeStyles.addNewCourse,
                           child: Padding(
-                            padding:
-                                const EdgeInsets.only(left: 30.0, right: 15.0),
+                            padding: EdgeInsets.only(left: 30.0, right: 15.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
@@ -106,14 +104,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],
                             ),
                           ),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Color(0xFFC4C4C4).withOpacity(0.5),
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                            color: Color(0xFFC4C4C4).withOpacity(0.2),
-                          ),
-                          height: 60.0,
                         ),
                       ),
                     ),
