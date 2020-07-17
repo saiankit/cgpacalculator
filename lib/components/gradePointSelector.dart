@@ -11,8 +11,12 @@ class _GradePointSelectorState extends State<GradePointSelector> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             GradePointCard('A'),
             GradePointCard('A-'),
@@ -21,6 +25,8 @@ class _GradePointSelectorState extends State<GradePointSelector> {
           ],
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             GradePointCard('C'),
             GradePointCard('C-'),

@@ -27,31 +27,33 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
         builder: (context, courseInfoState, _) => Container(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 70.0, left: 20.0, right: 20.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Container(
                           height: 60.0,
-                          width: 120.0,
+                          width: 140.0,
                           decoration: BoxDecoration(
                             color: Colors.grey.withOpacity(0.2),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 10.0),
+                            padding: EdgeInsets.symmetric(horizontal: 10.0),
                             child: Center(
                               child: DropdownButton<String>(
                                 isExpanded: true,
                                 icon: Icon(Icons.keyboard_arrow_down),
                                 style: TextStyle(
-                                  fontFamily: 'Poppins',
                                   color: Colors.black,
                                   fontWeight: FontWeight.w700,
                                   fontSize: 20.0,
@@ -146,7 +148,10 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                   ),
                 ],
               ),
-              GradePointSelector(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: GradePointSelector(),
+              ),
               AddCourseButton(
                 courseCode: _chosenCourseCode,
                 courseID: _chosenCourseID,
