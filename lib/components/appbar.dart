@@ -1,3 +1,4 @@
+import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/models/courseDetails.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
@@ -19,10 +20,13 @@ class _AppbarState extends State<Appbar> {
           children: <Widget>[
             IconButton(
               icon: Icon(Icons.menu),
-              onPressed: () => Scaffold.of(context).openDrawer(),
+              onPressed: () {
+                scaffoldkey.currentState.openEndDrawer();
+                print('Hi');
+              },
             ),
             Container(
-              height: 40,
+              height: 45,
               width: 110,
               decoration: BoxDecoration(
                 border: Border.all(),
@@ -35,7 +39,6 @@ class _AppbarState extends State<Appbar> {
                   isExpanded: true,
                   icon: Icon(Icons.keyboard_arrow_down),
                   style: TextStyle(
-                    fontFamily: 'Poppins',
                     color: Colors.black,
                     fontWeight: FontWeight.w700,
                     fontSize: 20.0,
