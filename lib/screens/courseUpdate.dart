@@ -22,6 +22,35 @@ class CourseUpdate extends StatefulWidget {
 }
 
 class _CourseUpdateState extends State<CourseUpdate> {
+  void _showDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Delete Course"),
+          content: Text("Are you sure you want to delete the course ?"),
+          actions: <Widget>[
+            FlatButton(
+              child: Text(
+                'Yes',
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+              ),
+              onPressed: () => print('Hi'),
+            ),
+            FlatButton(
+              child: new Text("No"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     String a = widget.courseCode;
@@ -44,7 +73,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
                         size: 30.0,
                         color: Colors.redAccent,
                       ),
-                      onPressed: null,
+                      onPressed: _showDialog,
                     )
                   ],
                 ),
@@ -57,7 +86,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
                   children: <Widget>[
                     Container(
                       height: 60.0,
-                      width: 100.0,
+                      width: 140.0,
                       decoration: BoxDecoration(
                         color: Colors.grey.withOpacity(0.2),
                         borderRadius: BorderRadius.circular(12.0),

@@ -18,7 +18,7 @@ class AddCourseScreen extends StatefulWidget {
 class _AddCourseScreenState extends State<AddCourseScreen> {
   String _chosenCourseCode = 'CS';
   String _chosenCourseID = 'F111';
-  String chosenCredits = '1';
+  String chosenCredits = '3';
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -148,10 +148,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                   ),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                child: GradePointSelector(),
-              ),
+              GradePointSelector(),
               AddCourseButton(
                 courseCode: _chosenCourseCode,
                 courseID: _chosenCourseID,
