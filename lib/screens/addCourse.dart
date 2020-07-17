@@ -90,7 +90,6 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                                 isExpanded: true,
                                 icon: Icon(Icons.keyboard_arrow_down),
                                 style: TextStyle(
-                                  fontFamily: 'Poppins',
                                   color: Colors.black,
                                   fontWeight: FontWeight.w700,
                                   fontSize: 20.0,

@@ -1,5 +1,6 @@
 import 'package:CgpaCalculator/models/courseDetails.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
+import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -59,13 +60,7 @@ class _AppbarState extends State<Appbar> {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          child: Text(
-            'CGPA',
-            style: TextStyle(
-              fontWeight: FontWeight.w700,
-              fontSize: 15.0,
-            ),
-          ),
+          child: Text('CGPA', style: ThemeStyles.gpaTextStyle),
         )
       ],
     );

@@ -14,103 +14,98 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 10.0),
-          child: ChangeNotifierProvider(
-            create: (_) => SemesterState(),
-            child: Consumer<SemesterState>(
-              builder: (context, semState, _) => Container(
-                child: Column(
-                  children: <Widget>[
-                    Appbar(),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 15.0, left: 15.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              Padding(
-                                padding: const EdgeInsets.only(right: 20.0),
-                                child: Text(
-                                  'SGPA',
-                                  style: TextStyle(
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.w700),
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: ChangeNotifierProvider(
+              create: (_) => SemesterState(),
+              child: Consumer<SemesterState>(
+                builder: (context, semState, _) => Container(
+                  child: Column(
+                    children: <Widget>[
+                      Appbar(),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 15.0, left: 15.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 20.0),
+                                  child: Text('SGPA',
+                                      style: ThemeStyles.gpaTextStyle),
                                 ),
-                              ),
-                              Text(
-                                Provider.of<SemesterState>(context,
-                                        listen: false)
-                                    .semesterGradePointAverage,
-                                style: TextStyle(
-                                  fontSize: 40.0,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: <Widget>[
-                              Text(
-                                '8.33',
-                                style: TextStyle(
-                                  fontSize: 40.0,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        var _semesterCode =
-                            Provider.of<SemesterState>(context, listen: false)
-                                .selectedSemester;
-                        Provider.of<SemesterState>(context, listen: false)
-                            .sgpaCalculator(_semesterCode);
-                        showModalBottomSheet(
-                          context: context,
-                          isScrollControlled: true,
-                          backgroundColor: Colors.transparent,
-                          builder: (context) => Container(
-                            height: MediaQuery.of(context).size.height * 0.85,
-                            decoration: ThemeStyles.modalBottomSheetDecoration,
-                            child: AddCourseScreen(_semesterCode),
-                          ),
-                        );
-                      },
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            left: 15.0, right: 15.0, top: 5.0, bottom: 20.0),
-                        child: Container(
-                          height: 60.0,
-                          decoration: ThemeStyles.addNewCourse,
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 30.0, right: 15.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                Text(
+                                    Provider.of<SemesterState>(context,
+                                            listen: false)
+                                        .semesterGradePointAverage,
+                                    style: ThemeStyles.gpaNumberTextStyle),
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
                               children: <Widget>[
                                 Text(
-                                  'Add a new Course',
-                                  style: ThemeStyles.titleTextStyle,
-                                ),
-                                Icon(Icons.add),
+                                    Provider.of<SemesterState>(context,
+                                            listen: false)
+                                        .cummulativeGradePointAverage,
+                                    style: ThemeStyles.gpaNumberTextStyle),
                               ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          var _semesterCode =
+                              Provider.of<SemesterState>(context, listen: false)
+                                  .selectedSemester;
+                          Provider.of<SemesterState>(context, listen: false)
+                              .sgpaCalculator(_semesterCode);
+                          showModalBottomSheet(
+                            context: context,
+                            isScrollControlled: true,
+                            backgroundColor: Colors.transparent,
+                            builder: (context) => Container(
+                              height: MediaQuery.of(context).size.height * 0.85,
+                              decoration:
+                                  ThemeStyles.modalBottomSheetDecoration,
+                              child: AddCourseScreen(_semesterCode),
+                            ),
+                          );
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: 15.0, right: 15.0, top: 5.0, bottom: 20.0),
+                          child: Container(
+                            height: 60.0,
+                            decoration: ThemeStyles.addNewCourse,
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 30.0, right: 15.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text(
+                                    'Add a new Course',
+                                    style: ThemeStyles.titleTextStyle,
+                                  ),
+                                  Icon(Icons.add, color: Colors.grey[600]),
+                                ],
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    ListGenerator(
-                        semesterCode: Provider.of<SemesterState>(context)
-                            .selectedSemester)
-                  ],
+                      ListGenerator(
+                          semesterCode: Provider.of<SemesterState>(context)
+                              .selectedSemester)
+                    ],
+                  ),
                 ),
               ),
             ),

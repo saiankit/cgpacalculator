@@ -1,8 +1,6 @@
-import 'package:CgpaCalculator/models/courseDetails.dart';
 import 'package:CgpaCalculator/services/courseInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'dart:convert';
 
 class GradePointCard extends StatefulWidget {
   final String grade;
