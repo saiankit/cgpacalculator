@@ -7,6 +7,14 @@ class ThemeStyles {
     color: Colors.grey[600],
   );
 
+  static TextStyle gpaTextStyle =
+      TextStyle(fontSize: 15.0, fontWeight: FontWeight.w700);
+
+  static TextStyle gpaNumberTextStyle = TextStyle(
+    fontSize: 40.0,
+    fontWeight: FontWeight.w700,
+  );
+
   static BoxDecoration courseCardDecoration = BoxDecoration(
     border: Border.all(
       color: Colors.grey,
@@ -37,6 +45,7 @@ class ThemeStyles {
     borderRadius: BorderRadius.circular(8.0),
     color: Color(0xFFC4C4C4).withOpacity(0.2),
   );
+
   static BoxDecoration modalBottomSheetDecoration = BoxDecoration(
     color: Colors.white,
     borderRadius: BorderRadius.only(
