@@ -22,6 +22,8 @@ dependencies:
   cloud_firestore:
   firebase_analytics:
   google_sign_in:
+  shared_preferences:
+  path_provider:
 
 dev_dependencies:
   flutter_test:

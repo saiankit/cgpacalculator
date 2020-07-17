@@ -1,6 +1,7 @@
 import 'package:CgpaCalculator/widgets/loginButton.dart';
 import 'package:CgpaCalculator/widgets/loginText.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -10,6 +11,10 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return SafeArea(
       child: Column(
         children: <Widget>[

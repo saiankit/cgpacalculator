@@ -4,6 +4,7 @@ import 'package:CgpaCalculator/services/listGenerator.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,6 +15,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(

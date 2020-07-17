@@ -1,5 +1,5 @@
+import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/models/courseDetails.dart';
-import 'package:CgpaCalculator/services/auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,7 @@ class SemesterState extends ChangeNotifier {
     double cre = 0;
     _firestore
         .collection("users")
-        .document(authService.id)
+        .document(uid)
         .collection(semesterCode)
         .getDocuments()
         .then((querySnapshot) {

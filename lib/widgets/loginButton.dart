@@ -2,6 +2,7 @@ import 'package:CgpaCalculator/screens/home.dart';
 import 'package:CgpaCalculator/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginButton extends StatelessWidget {
   @override
@@ -9,7 +10,9 @@ class LoginButton extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         authService.signInWithGoogle().whenComplete(
-          () {
+          () async {
+            SharedPreferences prefs = await SharedPreferences.getInstance();
+            prefs.setString('uid', authService.id);
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) {

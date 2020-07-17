@@ -1,5 +1,5 @@
 import 'package:CgpaCalculator/components/noItemsOops.dart';
-import 'package:CgpaCalculator/services/auth.dart';
+import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:CgpaCalculator/widgets/courseCard.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +23,7 @@ class _ListGeneratorState extends State<ListGenerator> {
         child: StreamBuilder(
           stream: _firestore
               .collection("users")
-              .document(authService.id)
+              .document(uid)
               .collection(widget.semesterCode)
               .snapshots(),
           builder: (context, snapshot) {
@@ -37,6 +37,7 @@ class _ListGeneratorState extends State<ListGenerator> {
               itemBuilder: (BuildContext context, int index) {
                 Provider.of<SemesterState>(context)
                     .sgpaCalculator(widget.semesterCode);
+
                 return CourseCard(
                   courseCode: snapshot.data.documents[index]['courseCode'],
                   gradeAchieved: snapshot.data.documents[index]
@@ -45,6 +46,8 @@ class _ListGeneratorState extends State<ListGenerator> {
                   courseTitle: snapshot.data.documents[index]['courseTitle'],
                   courseCredits: snapshot.data.documents[index]
                       ['courseCredits'],
+                  documentID: snapshot.data.documents[index].documentID,
+                  semesterCode: widget.semesterCode,
                 );
               },
             );

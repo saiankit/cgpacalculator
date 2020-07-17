@@ -1,4 +1,3 @@
-import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/models/courseDetails.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
@@ -21,7 +20,7 @@ class _AppbarState extends State<Appbar> {
             IconButton(
               icon: Icon(Icons.menu),
               onPressed: () {
-                scaffoldkey.currentState.openEndDrawer();
+                // scaffoldkey.currentState.openEndDrawer();
                 print('Hi');
               },
             ),

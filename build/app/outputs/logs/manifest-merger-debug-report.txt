@@ -14,6 +14,7 @@ MERGED from [:firebase_core] /Users/SaiAnkit/Desktop/CgpaCalculator/build/fireba
 MERGED from [:firebase_core_web] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_core_web/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-19:12
 MERGED from [:path_provider] /Users/SaiAnkit/Desktop/CgpaCalculator/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:shared_preferences] /Users/SaiAnkit/Desktop/CgpaCalculator/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-core:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/eac86a89cf4016a2aac6a7ac2d96c714/firebase-core-17.0.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/bfc518f58653eb0cfd7939f279bd0f16/multidex-2.0.1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/e4577aac3afa7ec004a3464e20f578bd/firebase-auth-19.2.0/AndroidManifest.xml:17:1-42:12
@@ -204,6 +205,8 @@ MERGED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/f
 MERGED from [:firebase_analytics] /Users/SaiAnkit/Desktop/CgpaCalculator/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] /Users/SaiAnkit/Desktop/CgpaCalculator/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] /Users/SaiAnkit/Desktop/CgpaCalculator/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] /Users/SaiAnkit/Desktop/CgpaCalculator/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] /Users/SaiAnkit/Desktop/CgpaCalculator/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-core:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/eac86a89cf4016a2aac6a7ac2d96c714/firebase-core-17.0.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-core:17.0.0] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/eac86a89cf4016a2aac6a7ac2d96c714/firebase-core-17.0.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/SaiAnkit/.gradle/caches/transforms-2/files-2.1/bfc518f58653eb0cfd7939f279bd0f16/multidex-2.0.1/AndroidManifest.xml:20:5-43

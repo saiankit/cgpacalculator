@@ -10,12 +10,16 @@ class CourseCard extends StatefulWidget {
   final String courseTitle;
   final int courseCredits;
   final int gradeAchieved;
+  final String documentID;
+  final String semesterCode;
   CourseCard(
       {this.courseCode,
       this.courseCredits,
       this.gradeAchieved,
       this.courseID,
-      this.courseTitle});
+      this.courseTitle,
+      this.documentID,
+      this.semesterCode});
   @override
   _CourseCardState createState() => _CourseCardState();
 }
@@ -41,6 +45,8 @@ class _CourseCardState extends State<CourseCard> {
                   courseID: widget.courseID,
                   courseTitle: widget.courseTitle,
                   courseCredits: widget.courseCredits,
+                  documentID: widget.documentID,
+                  semesterCode: widget.semesterCode,
                 ),
               ),
             );

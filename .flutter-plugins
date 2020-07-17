@@ -12,3 +12,7 @@ google_sign_in_web=/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang
 path_provider=/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.11/
 path_provider_linux=/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-0.0.1+2/
 path_provider_macos=/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-0.0.4+3/
+shared_preferences=/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.8/
+shared_preferences_linux=/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_linux-0.0.2+1/
+shared_preferences_macos=/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-0.0.1+10/
+shared_preferences_web=/Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_web-0.1.2+7/

@@ -10,6 +10,7 @@ class AuthService {
   String name;
   String email;
   String imageURL;
+  String uid;
   String id;
   String documentID;
   Future<String> signInWithGoogle() async {
