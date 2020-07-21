@@ -24,11 +24,13 @@ dependencies:
   google_sign_in:
   shared_preferences:
   path_provider:
+  moor_flutter:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  moor_generator:
+  build_runner:
 flutter:
 
   uses-material-design: true
