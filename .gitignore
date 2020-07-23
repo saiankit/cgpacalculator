@@ -1,2 +1,3 @@
 build/ios/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/FirebaseFirestore
+build/app/outputs/apk
 build/app/outputs/apk/debug/app-debug.apk

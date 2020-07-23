@@ -1,5 +1,7 @@
+import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class AddCourseButton extends StatefulWidget {
   final String semesterCode;
@@ -28,17 +30,27 @@ class _AddCourseButtonState extends State<AddCourseButton> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        _firestore
-            .collection('users')
-            .document(widget.userID)
-            .collection(widget.semesterCode)
-            .add({
-          'courseCode': '${widget.courseCode}',
-          'courseID': '${widget.courseID}',
-          'courseCredits': widget.courseCredits,
-          'gradeAchieved': widget.gradeAchieved,
-          'courseTitle': '${widget.userName}',
-        });
+        // _firestore
+        //     .collection('users')
+        //     .document(widget.userID)
+        //     .collection(widget.semesterCode)
+        //     .add({
+        //   'courseCode': '${widget.courseCode}',
+        //   'courseID': '${widget.courseID}',
+        //   'courseCredits': widget.courseCredits,
+        //   'gradeAchieved': widget.gradeAchieved,
+        //   'courseTitle': '${widget.userName}',
+        // });
+        Provider.of<AppDatabase>(context, listen: false).insertCourse(
+          Course(
+            semesterCode: '${widget.semesterCode}',
+            courseCode: '${widget.courseCode}',
+            courseID: '${widget.courseID}',
+            courseCredits: widget.courseCredits,
+            gradeAchieved: widget.gradeAchieved,
+            courseTitle: 'Computer Programming',
+          ),
+        );
         Navigator.pop(context);
       },
       child: Container(

@@ -16,6 +16,21 @@ class Courses extends Table {
 class AppDatabase extends _$AppDatabase {
   AppDatabase()
       : super(FlutterQueryExecutor.inDatabaseFolder(
-            path: "db.sqlite", logStatements: true));
+            path: "db.sqlite", logStatements: false));
+  @override
   int get schemaVersion => 1;
+
+  // Future<List<Course>> getAllCourses() => select(courses).get();
+  Stream<List<Course>> watchAllCourses() => select(courses).watch();
+
+  Future insertCourse(Course course) => into(courses).insert(course);
+  Future updateCourse(Course course) => update(courses).replace(course);
+
+  Future deleteCourse(Course course) => delete(courses).delete(course);
+
+  Stream<List<Course>> watchCourseBySemesterCode(String semCode) {
+    return (select(courses)
+          ..where((course) => course.semesterCode.equals(semCode)))
+        .watch();
+  }
 }

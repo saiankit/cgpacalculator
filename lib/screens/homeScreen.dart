@@ -1,8 +1,11 @@
 import 'package:CgpaCalculator/components/appbar.dart';
+import 'package:CgpaCalculator/components/noItemsOops.dart';
+import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/screens/addCourse.dart';
 import 'package:CgpaCalculator/services/listGenerator.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
+import 'package:CgpaCalculator/widgets/courseCard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -15,10 +18,13 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
+    // Setting DeviceOrientation to potrait mode ONLY
+    SystemChrome.setPreferredOrientations(
+      [
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ],
+    );
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
@@ -106,9 +112,46 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      ListGenerator(
-                          semesterCode: Provider.of<SemesterState>(context)
-                              .selectedSemester)
+                      Expanded(
+                        child: StreamBuilder(
+                          stream: Provider.of<AppDatabase>(context)
+                              .watchCourseBySemesterCode(
+                                  Provider.of<SemesterState>(context)
+                                      .selectedSemester),
+                          builder:
+                              (context, AsyncSnapshot<List<Course>> snapshot) {
+                            if (!snapshot.hasData)
+                              return Center(
+                                child: CircularProgressIndicator(),
+                              );
+                            if (snapshot.data.isEmpty) return NoItemsOops();
+                            // print(Provider.of<SemesterState>(context)
+                            //     .selectedSemester);
+                            return ListView.builder(
+                              itemBuilder: (_, index) {
+                                return CourseCard(
+                                  courseCode: snapshot.data[index].courseCode,
+                                  gradeAchieved:
+                                      snapshot.data[index].gradeAchieved,
+                                  courseID: snapshot.data[index].courseID,
+                                  courseTitle: snapshot.data[index].courseTitle,
+                                  courseCredits:
+                                      snapshot.data[index].courseCredits,
+                                  semesterCode:
+                                      Provider.of<SemesterState>(context)
+                                          .selectedSemester,
+                                  documentID: snapshot.data[index].id,
+                                );
+                              },
+                              itemCount: snapshot.data.length,
+                            );
+                          },
+                        ),
+                      ),
+
+                      // ListGenerator(
+                      //     semesterCode: Provider.of<SemesterState>(context)
+                      //         .selectedSemester)
                     ],
                   ),
                 ),
