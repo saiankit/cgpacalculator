@@ -10,7 +10,7 @@ class CourseCard extends StatefulWidget {
   final String courseTitle;
   final int courseCredits;
   final int gradeAchieved;
-  final String documentID;
+  final int documentID;
   final String semesterCode;
   CourseCard(
       {this.courseCode,

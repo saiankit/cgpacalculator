@@ -1,4 +1,4 @@
-import 'package:CgpaCalculator/screens/home.dart';
+import 'package:CgpaCalculator/screens/homeScreen.dart';
 import 'package:CgpaCalculator/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

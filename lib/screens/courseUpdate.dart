@@ -1,4 +1,5 @@
 import 'package:CgpaCalculator/components/gradePointSelector.dart';
+import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/models/courseDetails.dart';
 import 'package:CgpaCalculator/widgets/creditsSelector.dart';
@@ -6,6 +7,7 @@ import 'package:CgpaCalculator/widgets/updateCourseButton.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
+import 'package:provider/provider.dart';
 
 class CourseUpdate extends StatefulWidget {
   final String courseCode;
@@ -13,7 +15,7 @@ class CourseUpdate extends StatefulWidget {
   final String courseTitle;
   final int courseGrade;
   final int courseCredits;
-  final String documentID;
+  final int documentID;
   final String semesterCode;
   CourseUpdate(
       {this.courseCode,
@@ -54,7 +56,18 @@ class _CourseUpdateState extends State<CourseUpdate> {
                   ),
                 ),
                 onPressed: () {
-                  deleteCourse(widget.documentID, widget.semesterCode);
+                  Course _course = Course(
+                    courseCode: widget.courseCode,
+                    courseCredits: widget.courseCredits,
+                    courseID: widget.courseID,
+                    courseTitle: widget.courseTitle,
+                    id: widget.documentID,
+                    gradeAchieved: widget.courseGrade,
+                    semesterCode: widget.semesterCode,
+                  );
+                  Provider.of<AppDatabase>(context, listen: false)
+                      .deleteCourse(_course);
+                  // deleteCourse(widget.documentID, widget.semesterCode);
                   Navigator.of(context).pop();
                   Navigator.of(context).pop();
                 }),

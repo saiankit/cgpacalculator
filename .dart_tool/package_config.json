@@ -194,24 +194,6 @@
       "languageVersion": "2.7"
     },
     {
-      "name": "firebase_analytics",
-      "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-5.0.16",
-      "packageUri": "lib/",
-      "languageVersion": "2.0"
-    },
-    {
-      "name": "firebase_analytics_platform_interface",
-      "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics_platform_interface-1.0.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.0"
-    },
-    {
-      "name": "firebase_analytics_web",
-      "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics_web-0.1.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.7"
-    },
-    {
       "name": "firebase_auth",
       "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.16.1",
       "packageUri": "lib/",
@@ -258,6 +240,12 @@
       "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "2.2"
+    },
+    {
+      "name": "flutter_slidable",
+      "rootUri": "file:///Users/SaiAnkit/My_Dev/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_slidable-0.5.5",
+      "packageUri": "lib/",
+      "languageVersion": "1.19"
     },
     {
       "name": "flutter_svg",
@@ -716,7 +704,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-07-18T07:12:57.868578Z",
+  "generated": "2020-07-23T03:57:49.522939Z",
   "generator": "pub",
   "generatorVersion": "2.9.0-14.1.beta"
 }
