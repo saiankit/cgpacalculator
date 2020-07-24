@@ -16,9 +16,11 @@ class _GradePointCardState extends State<GradePointCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        setState(() {
-          _isSelected = !_isSelected;
-        });
+        setState(
+          () {
+            _isSelected = !_isSelected;
+          },
+        );
         switch (widget.grade) {
           case 'A':
             Provider.of<CourseInfoState>(context, listen: false)

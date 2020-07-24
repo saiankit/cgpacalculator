@@ -92,13 +92,14 @@ class _AppbarState extends State<Appbar> {
                     ),
                     underline: Container(),
                     value: Provider.of<SemesterState>(context).selectedSemester,
-                    items: semesterList
-                        .map<DropdownMenuItem<String>>((String value) {
-                      return DropdownMenuItem(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
+                    items: semesterList.map<DropdownMenuItem<String>>(
+                      (String value) {
+                        return DropdownMenuItem(
+                          value: value,
+                          child: Text(value),
+                        );
+                      },
+                    ).toList(),
                     onChanged: (String value) {
                       Provider.of<SemesterState>(context, listen: false)
                           .changeToSemester(value);
@@ -109,19 +110,29 @@ class _AppbarState extends State<Appbar> {
             ),
           ],
         ),
-        PopupMenuButton<String>(
-          onSelected: (String string) async {
-            _showDialog();
-          },
-          itemBuilder: (context) {
-            return Constants.choices.map((String e) {
-              return PopupMenuItem<String>(
-                value: e,
-                child: Text(e),
-              );
-            }).toList();
-          },
-        ),
+        // PopupMenuButton<String>(
+        //   onSelected: (String string) async {
+        //     _showDialog();
+        //   },
+        //   itemBuilder: (context) {
+        //     return Constants.choices.map(
+        //       (String e) {
+        //         return PopupMenuItem<String>(
+        //           value: e,
+        //           child: Text(e),
+        //         );
+        //       },
+        //     ).toList();
+        //   },
+        // ),
+        IconButton(
+          icon: Icon(
+            Icons.power_settings_new,
+            size: 30.0,
+            color: Colors.redAccent,
+          ),
+          onPressed: () => _showDialog(),
+        )
       ],
     );
   }

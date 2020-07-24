@@ -68,7 +68,6 @@ class _CourseUpdateState extends State<CourseUpdate> {
                   );
                   Provider.of<AppDatabase>(context, listen: false)
                       .deleteCourse(_course);
-                  // deleteCourse(widget.documentID, widget.semesterCode);
                   Navigator.of(context).pop();
                   Navigator.of(context).pop();
                 }),
@@ -89,9 +88,6 @@ class _CourseUpdateState extends State<CourseUpdate> {
     return ChangeNotifierProvider(
       create: (_) => CourseInfoState(),
       child: Consumer<CourseInfoState>(builder: (context, courseInfoState, _) {
-        // Provider.of<CourseInfoState>(context).changeCourseID(widget.courseID);
-        // Provider.of<CourseInfoState>(context)
-        //     .changeCourseCode(widget.courseCode);
         return Container(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -117,16 +113,11 @@ class _CourseUpdateState extends State<CourseUpdate> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 30.0, left: 20.0, right: 20.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        CourseCodeSelector(
-                          existingCourseCode:
-                              Provider.of<CourseInfoState>(context).courseCode,
-                          existingCourseID:
-                              Provider.of<CourseInfoState>(context).courseID,
-                        )
-                      ],
+                    child: CourseCodeSelector(
+                      existingCourseCode:
+                          Provider.of<CourseInfoState>(context).courseCode,
+                      existingCourseID:
+                          Provider.of<CourseInfoState>(context).courseID,
                     ),
                   ),
                   SizedBox(height: 25.0),
@@ -177,10 +168,9 @@ class _CourseUpdateState extends State<CourseUpdate> {
   }
 }
 
-// ignore: must_be_immutable
 class CourseCodeSelector extends StatefulWidget {
-  String existingCourseCode;
-  String existingCourseID;
+  final String existingCourseCode;
+  final String existingCourseID;
   CourseCodeSelector({this.existingCourseCode, this.existingCourseID});
   @override
   _CourseCodeSelectorState createState() => _CourseCodeSelectorState();
@@ -196,9 +186,7 @@ class _CourseCodeSelectorState extends State<CourseCodeSelector> {
 
   @override
   Widget build(BuildContext context) {
-    // changeInfo(widget.existingCourseCode, widget.existingCourseID);
     return Container(
-      width: 300.0,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -232,12 +220,6 @@ class _CourseCodeSelectorState extends State<CourseCodeSelector> {
                     },
                   ).toList(),
                   onChanged: (String value) {
-                    print(value);
-                    // setState(
-                    //   () {
-                    //     widget.existingCourseCode = value;
-                    //   },
-                    // );
                     Provider.of<CourseInfoState>(context, listen: false)
                         .changeCourseCode(value);
                   },
@@ -275,11 +257,6 @@ class _CourseCodeSelectorState extends State<CourseCodeSelector> {
                     },
                   ).toList(),
                   onChanged: (String value) {
-                    // setState(
-                    //   () {
-                    //     widget.existingCourseID = value;
-                    //   },
-                    // );
                     Provider.of<CourseInfoState>(context, listen: false)
                         .changeCourseID(value);
                   },
