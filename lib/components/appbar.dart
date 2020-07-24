@@ -1,6 +1,5 @@
 import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/models/courseDetails.dart';
-import 'package:CgpaCalculator/screens/login.dart';
 import 'package:CgpaCalculator/services/auth.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:flutter/material.dart';
@@ -37,17 +36,26 @@ class _AppbarState extends State<Appbar> {
                 ),
               ),
               onPressed: () async {
+                String uuid;
                 authService.signInWithGoogle();
                 SharedPreferences prefs = await SharedPreferences.getInstance();
-                prefs.setString('uid', null).then((value) {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return MyApp();
-                      },
-                    ),
-                  );
-                });
+                prefs.setString('uid', null).then(
+                  (value) async {
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+                    uuid = prefs.getString('uid');
+                  },
+                ).then(
+                  (value) {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return MyApp(uuid);
+                        },
+                      ),
+                    );
+                  },
+                );
               },
             ),
             FlatButton(

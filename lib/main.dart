@@ -1,5 +1,4 @@
 import 'package:CgpaCalculator/data/moor_database.dart';
-import 'package:CgpaCalculator/screens/drawer.dart';
 import 'package:CgpaCalculator/screens/homeScreen.dart';
 import 'package:CgpaCalculator/screens/login.dart';
 import 'package:flutter/material.dart';
@@ -15,10 +14,12 @@ Future<void> main() async {
   uid = prefs.getString('uid');
   // ::Debug:: -- UID of logged-in User
   print("UID:" + uid.toString());
-  runApp(MyApp());
+  runApp(MyApp(uid));
 }
 
 class MyApp extends StatefulWidget {
+  final String uid;
+  MyApp(this.uid);
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -36,12 +37,11 @@ class _MyAppState extends State<MyApp> {
         ),
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          drawer: DrawerScreen(),
           backgroundColor: Colors.white,
           // UID of user stored in shared preferences
           // UID == null -- Connect to LoginPage
           // UID != null -- Connect to HomePage by persisting the user
-          body: uid != null ? HomeScreen() : LoginPage(),
+          body: widget.uid != null ? HomeScreen() : LoginPage(),
         ),
       ),
       dispose: (context, db) => db.close(),
