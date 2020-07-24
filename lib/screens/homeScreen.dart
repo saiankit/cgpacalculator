@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
+final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -27,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
+        key: scaffoldKey,
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.only(top: 10.0),
@@ -56,6 +59,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                               .selectedSemester),
                                   builder: (context,
                                       AsyncSnapshot<List<Course>> snapshot) {
+                                    if (!snapshot.hasData)
+                                      return Center(
+                                        child: Text('0.00',
+                                            style:
+                                                ThemeStyles.gpaNumberTextStyle),
+                                      );
+
                                     int total = 0;
                                     int cred = 0;
                                     String semesterGradePointAverage;
@@ -79,14 +89,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ],
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 20.0),
+                                  child: Text('CGPA',
+                                      style: ThemeStyles.gpaTextStyle),
+                                ),
                                 StreamBuilder(
                                   stream: Provider.of<AppDatabase>(context)
                                       .watchAllCourses(),
                                   builder: (context,
                                       AsyncSnapshot<List<Course>> snapshot) {
+                                    if (!snapshot.hasData)
+                                      return Center(
+                                        child: Text('0.00',
+                                            style:
+                                                ThemeStyles.gpaNumberTextStyle),
+                                      );
                                     int total = 0;
                                     int cred = 0;
                                     String cummulativeGradePointAverage;

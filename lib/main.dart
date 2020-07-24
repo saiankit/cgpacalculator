@@ -15,8 +15,18 @@ Future<void> main() async {
   uid = prefs.getString('uid');
   // ::Debug:: -- UID of logged-in User
   print("UID:" + uid.toString());
-  runApp(
-    Provider<AppDatabase>(
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Provider<AppDatabase>(
       create: (context) => AppDatabase(),
       child: MaterialApp(
         theme: ThemeData(
@@ -35,6 +45,6 @@ Future<void> main() async {
         ),
       ),
       dispose: (context, db) => db.close(),
-    ),
-  );
+    );
+  }
 }
