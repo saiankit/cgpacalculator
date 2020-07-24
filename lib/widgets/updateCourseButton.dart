@@ -35,7 +35,7 @@ class _UpdateCourseButtonState extends State<UpdateCourseButton> {
         final courseCode = widget.courseCode;
         final courseID = widget.courseID;
         final semesterCode = widget.semesterCode;
-        Provider.of<AppDatabase>(context, listen: false).insertCourse(
+        Provider.of<AppDatabase>(context, listen: false).updateCourse(
           Course(
             id: widget.documentID,
             courseCode: courseCode,
