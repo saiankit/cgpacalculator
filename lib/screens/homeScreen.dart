@@ -9,8 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
-
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -29,7 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
-        key: scaffoldKey,
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.only(top: 10.0),

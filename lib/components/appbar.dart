@@ -36,21 +36,14 @@ class _AppbarState extends State<Appbar> {
                 ),
               ),
               onPressed: () async {
-                String uuid;
-                authService.signInWithGoogle();
                 SharedPreferences prefs = await SharedPreferences.getInstance();
-                prefs.setString('uid', null).then(
-                  (value) async {
-                    SharedPreferences prefs =
-                        await SharedPreferences.getInstance();
-                    uuid = prefs.getString('uid');
-                  },
-                ).then(
+                authService.signOutGoogle();
+                prefs.clear().then(
                   (value) {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) {
-                          return MyApp(uuid);
+                          return MyApp();
                         },
                       ),
                     );

@@ -8,20 +8,25 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        authService.signInWithGoogle().whenComplete(
-          () async {
-            SharedPreferences prefs = await SharedPreferences.getInstance();
-            prefs.setString('uid', authService.id);
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) {
-                  return HomeScreen();
-                },
-              ),
-            );
-          },
-        );
+      onTap: () async {
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        if (prefs.getString('uid') == null) {
+          print(prefs.getString('uid'));
+          authService.signInWithGoogle().whenComplete(
+            () async {
+              prefs.setString('uid', authService.id);
+              if (prefs.getString('uid') != null) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return HomeScreen();
+                    },
+                  ),
+                );
+              }
+            },
+          );
+        }
       },
       child: Container(
         width: 250.0,
