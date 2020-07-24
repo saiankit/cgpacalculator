@@ -2,11 +2,23 @@ import 'package:flutter/material.dart';
 
 class CourseInfoState extends ChangeNotifier {
   int selectedCredits = 1;
+  String courseCode;
+  String courseID;
 
   int selectedGradeAchieved = 10;
 
   void changeCredits(int newCredits) {
     selectedCredits = newCredits;
+    notifyListeners();
+  }
+
+  void changeCourseCode(String newCourseCode) {
+    courseCode = newCourseCode;
+    notifyListeners();
+  }
+
+  void changeCourseID(String newCourseID) {
+    courseID = newCourseID;
     notifyListeners();
   }
 

@@ -2,7 +2,6 @@ import 'package:CgpaCalculator/components/appbar.dart';
 import 'package:CgpaCalculator/components/noItemsOops.dart';
 import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/screens/addCourse.dart';
-import 'package:CgpaCalculator/services/listGenerator.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/widgets/courseCard.dart';
@@ -50,21 +49,66 @@ class _HomeScreenState extends State<HomeScreen> {
                                   child: Text('SGPA',
                                       style: ThemeStyles.gpaTextStyle),
                                 ),
-                                Text(
-                                    Provider.of<SemesterState>(context,
-                                            listen: false)
-                                        .semesterGradePointAverage,
-                                    style: ThemeStyles.gpaNumberTextStyle),
+                                StreamBuilder(
+                                  stream: Provider.of<AppDatabase>(context)
+                                      .watchCoursesBySemesterCode(
+                                          Provider.of<SemesterState>(context)
+                                              .selectedSemester),
+                                  builder: (context,
+                                      AsyncSnapshot<List<Course>> snapshot) {
+                                    int total = 0;
+                                    int cred = 0;
+                                    String semesterGradePointAverage;
+                                    for (var i = 0;
+                                        i < snapshot.data.length;
+                                        i++) {
+                                      total += snapshot.data[i].gradeAchieved *
+                                          snapshot.data[i].courseCredits;
+                                      cred += snapshot.data[i].courseCredits;
+                                    }
+                                    double sg = double.parse(
+                                        (total / cred).toStringAsFixed(2));
+                                    if (sg.isNaN) {
+                                      semesterGradePointAverage = '0.00';
+                                    } else {
+                                      semesterGradePointAverage = sg.toString();
+                                    }
+                                    return Text(semesterGradePointAverage,
+                                        style: ThemeStyles.gpaNumberTextStyle);
+                                  },
+                                ),
                               ],
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: <Widget>[
-                                Text(
-                                    Provider.of<SemesterState>(context,
-                                            listen: false)
-                                        .cummulativeGradePointAverage,
-                                    style: ThemeStyles.gpaNumberTextStyle),
+                                StreamBuilder(
+                                  stream: Provider.of<AppDatabase>(context)
+                                      .watchAllCourses(),
+                                  builder: (context,
+                                      AsyncSnapshot<List<Course>> snapshot) {
+                                    int total = 0;
+                                    int cred = 0;
+                                    String cummulativeGradePointAverage;
+                                    for (var i = 0;
+                                        i < snapshot.data.length;
+                                        i++) {
+                                      total += snapshot.data[i].gradeAchieved *
+                                          snapshot.data[i].courseCredits;
+                                      cred += snapshot.data[i].courseCredits;
+                                    }
+                                    double cg = double.parse(
+                                        (total / cred).toStringAsFixed(2));
+                                    if (cg.isNaN) {
+                                      cummulativeGradePointAverage = '0.00';
+                                    } else {
+                                      cummulativeGradePointAverage =
+                                          cg.toString();
+                                    }
+                                    return Text(cummulativeGradePointAverage,
+                                        style: ThemeStyles.gpaNumberTextStyle);
+                                  },
+                                ),
                               ],
                             ),
                           ],
@@ -115,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Expanded(
                         child: StreamBuilder(
                           stream: Provider.of<AppDatabase>(context)
-                              .watchCourseBySemesterCode(
+                              .watchCoursesBySemesterCode(
                                   Provider.of<SemesterState>(context)
                                       .selectedSemester),
                           builder:
@@ -148,10 +192,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         ),
                       ),
-
-                      // ListGenerator(
-                      //     semesterCode: Provider.of<SemesterState>(context)
-                      //         .selectedSemester)
                     ],
                   ),
                 ),

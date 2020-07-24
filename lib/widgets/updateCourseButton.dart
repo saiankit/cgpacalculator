@@ -1,6 +1,28 @@
+import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class UpdateCourseButton extends StatefulWidget {
+  final String semesterCode;
+  final String userID;
+  final String userName;
+  final String courseCode;
+  final String courseTitle;
+  final String courseID;
+  final int courseCredits;
+  final int gradeAchieved;
+  final int documentID;
+  UpdateCourseButton({
+    this.courseTitle,
+    this.semesterCode,
+    this.userID,
+    this.userName,
+    this.courseCode,
+    this.courseID,
+    this.courseCredits,
+    this.gradeAchieved,
+    this.documentID,
+  });
   @override
   _UpdateCourseButtonState createState() => _UpdateCourseButtonState();
 }
@@ -10,6 +32,21 @@ class _UpdateCourseButtonState extends State<UpdateCourseButton> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        final courseCode = widget.courseCode;
+        final courseID = widget.courseID;
+        final semesterCode = widget.semesterCode;
+        Provider.of<AppDatabase>(context, listen: false).insertCourse(
+          Course(
+            id: widget.documentID,
+            courseCode: courseCode,
+            courseID: courseID,
+            courseTitle: 'Computer Programming',
+            semesterCode: semesterCode,
+            courseCredits: widget.courseCredits,
+            gradeAchieved: widget.gradeAchieved,
+          ),
+        );
+
         Navigator.of(context).pop();
       },
       child: Container(

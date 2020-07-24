@@ -15,8 +15,10 @@ class Courses extends Table {
 @UseMoor(tables: [Courses])
 class AppDatabase extends _$AppDatabase {
   AppDatabase()
-      : super(FlutterQueryExecutor.inDatabaseFolder(
-            path: "db.sqlite", logStatements: false));
+      : super(
+          FlutterQueryExecutor.inDatabaseFolder(
+              path: "db.sqlite", logStatements: true),
+        );
   @override
   int get schemaVersion => 1;
 
@@ -28,9 +30,15 @@ class AppDatabase extends _$AppDatabase {
 
   Future deleteCourse(Course course) => delete(courses).delete(course);
 
-  Stream<List<Course>> watchCourseBySemesterCode(String semCode) {
+  Stream<List<Course>> watchCoursesBySemesterCode(String semCode) {
     return (select(courses)
           ..where((course) => course.semesterCode.equals(semCode)))
         .watch();
+  }
+
+  Future<List<Course>> getCoursesBySemesterCode(String semCode) {
+    return (select(courses)
+          ..where((course) => course.semesterCode.equals(semCode)))
+        .get();
   }
 }

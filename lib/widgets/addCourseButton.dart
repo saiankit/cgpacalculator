@@ -11,8 +11,10 @@ class AddCourseButton extends StatefulWidget {
   final String courseID;
   final int courseCredits;
   final int gradeAchieved;
+  final int documentID;
   AddCourseButton({
     this.semesterCode,
+    this.documentID,
     this.userID,
     this.userName,
     this.courseCode,
@@ -43,6 +45,7 @@ class _AddCourseButtonState extends State<AddCourseButton> {
         // });
         Provider.of<AppDatabase>(context, listen: false).insertCourse(
           Course(
+            id: widget.documentID,
             semesterCode: '${widget.semesterCode}',
             courseCode: '${widget.courseCode}',
             courseID: '${widget.courseID}',
