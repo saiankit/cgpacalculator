@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 List<String> courseCodeList = [
   'BIO',
   'BIOT',
@@ -22,6 +24,42 @@ List<String> courseCodeList = [
   'PHA',
   'PHY',
 ];
+
+final courses = '''{
+  {
+    'courseCode':'CS',
+    'courseID':'F111',
+    'courseTitle':'Computer Programming'
+  },
+  {
+    'courseCode':'BIO',
+    'courseID':'F111',
+    'courseTitle':'General Biology'
+  }
+}''';
+
+class CourseInfo {
+  String courseCode;
+  String courseID;
+  String courseTitle;
+  CourseInfo({
+    this.courseCode,
+    this.courseID,
+    this.courseTitle,
+  });
+  factory CourseInfo.fromJson(Map<String, dynamic> json) {
+    return CourseInfo(
+      courseCode: json['courseCode'],
+      courseID: json['courseID'],
+      courseTitle: json['courseTitle'],
+    );
+  }
+}
+
+var data = json.decode(courses);
+var rest = data as List;
+List<CourseInfo> list =
+    rest.map<CourseInfo>((json) => CourseInfo.fromJson(json)).toList();
 
 final grades = '''{
   {

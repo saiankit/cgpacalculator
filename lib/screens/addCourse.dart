@@ -18,7 +18,8 @@ class AddCourseScreen extends StatefulWidget {
 class _AddCourseScreenState extends State<AddCourseScreen> {
   String _chosenCourseCode = 'CS';
   String _chosenCourseID = 'F111';
-  String chosenCredits = '3';
+  String chosenCredits = '4';
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -62,16 +63,19 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                                 value: _chosenCourseCode,
                                 items: courseCodeList
                                     .map<DropdownMenuItem<String>>(
-                                        (String value) {
-                                  return DropdownMenuItem(
-                                    value: value,
-                                    child: Text(value),
-                                  );
-                                }).toList(),
+                                  (String value) {
+                                    return DropdownMenuItem(
+                                      value: value,
+                                      child: Text(value),
+                                    );
+                                  },
+                                ).toList(),
                                 onChanged: (String value) {
-                                  setState(() {
-                                    _chosenCourseCode = value;
-                                  });
+                                  setState(
+                                    () {
+                                      _chosenCourseCode = value;
+                                    },
+                                  );
                                 },
                               ),
                             ),
@@ -108,9 +112,11 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                                   },
                                 ).toList(),
                                 onChanged: (String value) {
-                                  setState(() {
-                                    _chosenCourseID = value;
-                                  });
+                                  setState(
+                                    () {
+                                      _chosenCourseID = value;
+                                    },
+                                  );
                                 },
                               ),
                             ),

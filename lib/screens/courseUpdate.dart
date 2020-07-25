@@ -1,11 +1,9 @@
 import 'package:CgpaCalculator/components/gradePointSelector.dart';
 import 'package:CgpaCalculator/data/moor_database.dart';
-import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/models/courseDetails.dart';
 import 'package:CgpaCalculator/services/courseInfo.dart';
 import 'package:CgpaCalculator/widgets/creditsSelector.dart';
 import 'package:CgpaCalculator/widgets/updateCourseButton.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 import 'package:provider/provider.dart';
@@ -31,16 +29,6 @@ class CourseUpdate extends StatefulWidget {
 }
 
 class _CourseUpdateState extends State<CourseUpdate> {
-  final _firestore = Firestore.instance;
-  Future deleteCourse(String documentID, String semesterCode) async {
-    await _firestore
-        .collection("users")
-        .document(uid)
-        .collection(semesterCode)
-        .document(documentID)
-        .delete();
-  }
-
   void _showDialog() {
     showDialog(
       context: context,
@@ -113,11 +101,9 @@ class _CourseUpdateState extends State<CourseUpdate> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 30.0, left: 20.0, right: 20.0),
-                    child: CourseCodeSelector(
-                      existingCourseCode:
-                          Provider.of<CourseInfoState>(context).courseCode,
-                      existingCourseID:
-                          Provider.of<CourseInfoState>(context).courseID,
+                    child: TempWidget(
+                      existingCourseCode: widget.courseCode,
+                      existingCourseID: widget.courseID,
                     ),
                   ),
                   SizedBox(height: 25.0),
@@ -144,8 +130,8 @@ class _CourseUpdateState extends State<CourseUpdate> {
                       ),
                     ),
                   ),
-                  CreditSelector(
-                    Provider.of<CourseInfoState>(context).selectedCredits,
+                  TempCreditSelector(
+                    widget.courseCredits,
                   ),
                 ],
               ),
@@ -168,6 +154,65 @@ class _CourseUpdateState extends State<CourseUpdate> {
   }
 }
 
+class TempCreditSelector extends StatefulWidget {
+  final int courseCredits;
+  TempCreditSelector(this.courseCredits);
+  @override
+  _TempCreditSelectorState createState() => _TempCreditSelectorState();
+}
+
+class _TempCreditSelectorState extends State<TempCreditSelector> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (timeStamp) {
+        Provider.of<CourseInfoState>(context, listen: false)
+            .changeCredits(widget.courseCredits);
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return CreditSelector(
+        Provider.of<CourseInfoState>(context).selectedCredits);
+  }
+}
+
+class TempWidget extends StatefulWidget {
+  final String existingCourseCode;
+  final String existingCourseID;
+  TempWidget({this.existingCourseCode, this.existingCourseID});
+  @override
+  _TempWidgetState createState() => _TempWidgetState();
+}
+
+class _TempWidgetState extends State<TempWidget> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (timeStamp) {
+        Provider.of<CourseInfoState>(context, listen: false)
+            .changeCourseCode(widget.existingCourseCode);
+        Provider.of<CourseInfoState>(context, listen: false)
+            .changeCourseID(widget.existingCourseID);
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return CourseCodeSelector(
+      existingCourseCode:
+          Provider.of<CourseInfoState>(context, listen: false).courseCode,
+      existingCourseID:
+          Provider.of<CourseInfoState>(context, listen: false).courseID,
+    );
+  }
+}
+
 class CourseCodeSelector extends StatefulWidget {
   final String existingCourseCode;
   final String existingCourseID;
@@ -177,13 +222,6 @@ class CourseCodeSelector extends StatefulWidget {
 }
 
 class _CourseCodeSelectorState extends State<CourseCodeSelector> {
-  changeInfo(String newCourseCode, String newCourseID) {
-    Provider.of<CourseInfoState>(context, listen: false)
-        .changeCourseID(newCourseID);
-    Provider.of<CourseInfoState>(context, listen: false)
-        .changeCourseCode(newCourseCode);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
