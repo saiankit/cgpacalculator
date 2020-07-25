@@ -20,7 +20,6 @@ class _NoItemsOopsState extends State<NoItemsOops> {
               fontWeight: FontWeight.w700,
             ),
           ),
-          SizedBox(height: 100.0),
         ],
       ),
     );
