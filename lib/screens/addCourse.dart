@@ -1,5 +1,6 @@
 import 'package:CgpaCalculator/components/gradeSelector.dart';
-import 'package:CgpaCalculator/models/courseDetails.dart';
+import 'package:CgpaCalculator/localData/coursesData.dart';
+import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/services/auth.dart';
 import 'package:CgpaCalculator/services/courseInfo.dart';
 import 'package:CgpaCalculator/widgets/addCourseButton.dart';
@@ -21,10 +22,10 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
   String chosenCredits = '4';
   String text = 'Add course details to view course Title';
   search(String courseCode, String courseID) {
-    var res = coursesList
+    var res = coursesData
         .where((e) => e['courseCode'] == courseCode)
         .singleWhere((e) => e['courseID'] == courseID);
-    print(res['courseTitle']);
+    
     text = res['courseTitle'] != null ? res['courseTitle'] : 'Course Not found';
   }
 

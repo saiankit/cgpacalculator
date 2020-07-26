@@ -1,6 +1,6 @@
 import 'package:CgpaCalculator/components/gradeSelector.dart';
 import 'package:CgpaCalculator/data/moor_database.dart';
-import 'package:CgpaCalculator/models/courseDetails.dart';
+import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/services/courseInfo.dart';
 import 'package:CgpaCalculator/widgets/creditsSelector.dart';
 import 'package:CgpaCalculator/widgets/updateCourseButton.dart';
