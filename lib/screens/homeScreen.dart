@@ -144,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             isScrollControlled: true,
                             backgroundColor: Colors.transparent,
                             builder: (context) => Container(
-                              height: MediaQuery.of(context).size.height * 0.85,
+                              height: MediaQuery.of(context).size.height * 0.65,
                               decoration:
                                   ThemeStyles.modalBottomSheetDecoration,
                               child: AddCourseScreen(_semesterCode),
@@ -187,8 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: CircularProgressIndicator(),
                               );
                             if (snapshot.data.isEmpty) return NoItemsOops();
-                            // print(Provider.of<SemesterState>(context)
-                            //     .selectedSemester);
+
                             return ListView.builder(
                               itemBuilder: (_, index) {
                                 return CourseCard(

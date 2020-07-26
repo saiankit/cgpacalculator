@@ -11,6 +11,7 @@ class AddCourseButton extends StatefulWidget {
   final int courseCredits;
   final int gradeAchieved;
   final int documentID;
+  final String courseTitle;
   AddCourseButton({
     this.semesterCode,
     this.documentID,
@@ -20,6 +21,7 @@ class AddCourseButton extends StatefulWidget {
     this.courseID,
     this.courseCredits,
     this.gradeAchieved,
+    this.courseTitle,
   });
   @override
   _AddCourseButtonState createState() => _AddCourseButtonState();
@@ -38,7 +40,7 @@ class _AddCourseButtonState extends State<AddCourseButton> {
             courseID: '${widget.courseID}',
             courseCredits: widget.courseCredits,
             gradeAchieved: widget.gradeAchieved,
-            courseTitle: 'Computer Programming',
+            courseTitle: widget.courseTitle.toString(),
           ),
         );
         Navigator.pop(context);

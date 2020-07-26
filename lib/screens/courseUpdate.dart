@@ -1,4 +1,4 @@
-import 'package:CgpaCalculator/components/gradePointSelector.dart';
+import 'package:CgpaCalculator/components/gradeSelector.dart';
 import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/models/courseDetails.dart';
 import 'package:CgpaCalculator/services/courseInfo.dart';
@@ -75,82 +75,111 @@ class _CourseUpdateState extends State<CourseUpdate> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => CourseInfoState(),
-      child: Consumer<CourseInfoState>(builder: (context, courseInfoState, _) {
-        return Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(top: 25.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                          icon: Icon(
-                            Icons.delete,
-                            size: 30.0,
-                            color: Colors.redAccent,
-                          ),
-                          onPressed: _showDialog,
-                        )
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        top: 30.0, left: 20.0, right: 20.0),
-                    child: TempWidget(
-                      existingCourseCode: widget.courseCode,
-                      existingCourseID: widget.courseID,
-                    ),
-                  ),
-                  SizedBox(height: 25.0),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                    child: Container(
-                      height: 60.0,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        border: Border.all(),
-                        borderRadius: BorderRadius.circular(15.0),
+      child: Consumer<CourseInfoState>(
+        builder: (context, courseInfoState, _) {
+          return Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(top: 25.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconButton(
+                            icon: Icon(
+                              Icons.delete,
+                              size: 30.0,
+                              color: Colors.redAccent,
+                            ),
+                            onPressed: _showDialog,
+                          )
+                        ],
                       ),
-                      child: Center(
-                        child: Marquee(
-                          text: widget.courseTitle,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 20.0,
-                            color: Colors.black,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 30.0, left: 20.0, right: 20.0),
+                      child: TempWidget(
+                        existingCourseCode: widget.courseCode,
+                        existingCourseID: widget.courseID,
+                      ),
+                    ),
+                    SizedBox(height: 25.0),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                      child: Container(
+                        height: 60.0,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          border: Border.all(),
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        child: Center(
+                          child: Marquee(
+                            text: widget.courseTitle,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20.0,
+                              color: Colors.black,
+                            ),
+                            blankSpace: 100,
+                            velocity: 10,
                           ),
-                          blankSpace: 100,
-                          velocity: 10,
                         ),
                       ),
                     ),
-                  ),
-                  TempCreditSelector(
-                    widget.courseCredits,
-                  ),
-                ],
-              ),
-              GradePointSelector(),
-              UpdateCourseButton(
-                courseCode: Provider.of<CourseInfoState>(context).courseCode,
-                courseID: Provider.of<CourseInfoState>(context).courseID,
-                courseCredits:
-                    Provider.of<CourseInfoState>(context).selectedCredits,
-                semesterCode: widget.semesterCode,
-                documentID: widget.documentID,
-                gradeAchieved: widget.courseGrade,
-                courseTitle: widget.courseTitle,
-              ),
-            ],
-          ),
-        );
-      }),
+                    TempCreditSelector(
+                      widget.courseCredits,
+                    ),
+                  ],
+                ),
+                TempGradeSelector(widget.courseGrade),
+                UpdateCourseButton(
+                  courseCode: Provider.of<CourseInfoState>(context).courseCode,
+                  courseID: Provider.of<CourseInfoState>(context).courseID,
+                  courseCredits:
+                      Provider.of<CourseInfoState>(context).selectedCredits,
+                  semesterCode: widget.semesterCode,
+                  documentID: widget.documentID,
+                  gradeAchieved:
+                      Provider.of<CourseInfoState>(context).courseGrade,
+                  courseTitle: widget.courseTitle,
+                ),
+              ],
+            ),
+          );
+        },
+      ),
     );
+  }
+}
+
+class TempGradeSelector extends StatefulWidget {
+  final int courseGrade;
+  TempGradeSelector(this.courseGrade);
+  @override
+  _TempGradeSelectorState createState() => _TempGradeSelectorState();
+}
+
+class _TempGradeSelectorState extends State<TempGradeSelector> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (timeStamp) {
+        Provider.of<CourseInfoState>(context, listen: false)
+            .changeGrade(widget.courseGrade);
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GradeSelector(
+        Provider.of<CourseInfoState>(context, listen: false).courseGrade);
   }
 }
 

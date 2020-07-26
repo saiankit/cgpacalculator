@@ -4,8 +4,7 @@ class CourseInfoState extends ChangeNotifier {
   int selectedCredits = 1;
   String courseCode;
   String courseID;
-
-  int selectedGradeAchieved = 10;
+  int courseGrade = 10;
 
   void changeCredits(int newCredits) {
     selectedCredits = newCredits;
@@ -23,7 +22,7 @@ class CourseInfoState extends ChangeNotifier {
   }
 
   void changeGrade(int newGrade) {
-    selectedGradeAchieved = newGrade;
+    courseGrade = newGrade;
     notifyListeners();
   }
 }

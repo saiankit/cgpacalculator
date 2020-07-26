@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 List<String> courseCodeList = [
   'BIO',
   'BIOT',
@@ -25,76 +23,89 @@ List<String> courseCodeList = [
   'PHY',
 ];
 
-final courses = '''{
+List<Map<String, dynamic>> coursesList = [
   {
-    'courseCode':'CS',
-    'courseID':'F111',
-    'courseTitle':'Computer Programming'
+    'courseCode': 'BITS',
+    'courseID': 'F110',
+    'courseTitle': 'Engineering Graphics',
   },
   {
-    'courseCode':'BIO',
-    'courseID':'F111',
-    'courseTitle':'General Biology'
-  }
-}''';
-
-class CourseInfo {
-  String courseCode;
-  String courseID;
-  String courseTitle;
-  CourseInfo({
-    this.courseCode,
-    this.courseID,
-    this.courseTitle,
-  });
-  factory CourseInfo.fromJson(Map<String, dynamic> json) {
-    return CourseInfo(
-      courseCode: json['courseCode'],
-      courseID: json['courseID'],
-      courseTitle: json['courseTitle'],
-    );
-  }
-}
-
-var data = json.decode(courses);
-var rest = data as List;
-List<CourseInfo> list =
-    rest.map<CourseInfo>((json) => CourseInfo.fromJson(json)).toList();
-
-final grades = '''{
-  {
-    'gradeCode': 'A',
-    'grade': 10,
+    'courseCode': 'BITS',
+    'courseID': 'F111',
+    'courseTitle': 'Thermodynamics',
   },
   {
-    'gradeCode': 'A-',
-    'grade': 9,
+    'courseCode': 'BITS',
+    'courseID': 'F112',
+    'courseTitle': 'Technical Report Writing',
   },
   {
-    'gradeCode': 'B',
-    'grade': 8,
+    'courseCode': 'BITS',
+    'courseID': 'F114',
+    'courseTitle': 'General Mathematics II',
   },
   {
-    'gradeCode': 'B-',
-    'grade': 7,
+    'courseCode': 'BITS',
+    'courseID': 'F225',
+    'courseTitle': 'Environmental Studies',
   },
   {
-    'gradeCode': 'C',
-    'grade': 6,
+    'courseCode': 'BITS',
+    'courseID': 'F211',
+    'courseTitle': 'Introduction to IPR'
   },
   {
-    'gradeCode': 'C-',
-    'grade': 5,
+    'courseCode': 'BITS',
+    'courseID': 'F212',
+    'courseTitle': 'Introduction to Human Rights'
   },
   {
-    'gradeCode': 'D',
-    'grade': 4,
+    'courseCode': 'BITS',
+    'courseID': 'F213',
+    'courseTitle': 'Introduction to Environmental Studies'
   },
   {
-    'gradeCode': 'E',
-    'grade': 3,
+    'courseCode': 'BITS',
+    'courseID': 'F214',
+    'courseTitle': 'Science, Technology and Modernity',
   },
-}''';
+  {
+    'courseCode': 'BITS',
+    'courseID': 'F215',
+    'courseTitle':
+        'Applications of Bio-Medical Instrumentation Techniques in Healthcare'
+  },
+  {
+    'courseCode': 'BITS',
+    'courseID': 'F217',
+    'courseTitle': ' Environment, Development and Climate Change'
+  },
+  {
+    'courseCode': 'BITS',
+    'courseID': 'F218',
+    'courseTitle': 'General Mathematics III'
+  },
+  {
+    'courseCode': 'BITS',
+    'courseID': 'F219',
+    'courseTitle': 'Process Engineering'
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'F111',
+    'courseTitle': 'General Biology',
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'F110',
+    'courseTitle': 'Biology laboratory',
+  },
+  {
+    'courseCode': 'CS',
+    'courseID': 'F111',
+    'courseTitle': 'Computer Programming'
+  },
+];
 
 List<String> semesterList = [
   '1 - 1',
@@ -112,6 +123,7 @@ List<String> courseIDList = [
   'F111',
   'F112',
   'F113',
+  'F114',
   'F211',
   'F212',
   'F213',

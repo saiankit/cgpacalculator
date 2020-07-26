@@ -1,4 +1,4 @@
-import 'package:CgpaCalculator/components/gradePointSelector.dart';
+import 'package:CgpaCalculator/components/gradeSelector.dart';
 import 'package:CgpaCalculator/models/courseDetails.dart';
 import 'package:CgpaCalculator/services/auth.dart';
 import 'package:CgpaCalculator/services/courseInfo.dart';
@@ -19,6 +19,14 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
   String _chosenCourseCode = 'CS';
   String _chosenCourseID = 'F111';
   String chosenCredits = '4';
+  String text = 'Add course details to view course Title';
+  search(String courseCode, String courseID) {
+    var res = coursesList
+        .where((e) => e['courseCode'] == courseCode)
+        .singleWhere((e) => e['courseID'] == courseID);
+    print(res['courseTitle']);
+    text = res['courseTitle'] != null ? res['courseTitle'] : 'Course Not found';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +84,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                                       _chosenCourseCode = value;
                                     },
                                   );
+                                  search(_chosenCourseCode, _chosenCourseID);
                                 },
                               ),
                             ),
@@ -117,6 +126,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                                       _chosenCourseID = value;
                                     },
                                   );
+                                  search(_chosenCourseCode, _chosenCourseID);
                                 },
                               ),
                             ),
@@ -137,7 +147,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                       ),
                       child: Center(
                         child: Marquee(
-                          text: 'Add the Course Details for Title to appear',
+                          text: text,
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 20.0,
@@ -154,8 +164,9 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                   ),
                 ],
               ),
-              GradePointSelector(),
+              GradeSelector(Provider.of<CourseInfoState>(context).courseGrade),
               AddCourseButton(
+                courseTitle: text,
                 courseCode: _chosenCourseCode,
                 courseID: _chosenCourseID,
                 semesterCode: widget.semesterCode,
@@ -164,7 +175,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                 courseCredits:
                     Provider.of<CourseInfoState>(context).selectedCredits,
                 gradeAchieved:
-                    Provider.of<CourseInfoState>(context).selectedGradeAchieved,
+                    Provider.of<CourseInfoState>(context).courseGrade,
               ),
             ],
           ),
