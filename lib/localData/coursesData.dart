@@ -2269,4 +2269,2238 @@ List<Map<String, dynamic>> coursesData = [
     'courseID': 'F491',
     'courseTitle': 'Special Projects',
   },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F111',
+    'courseTitle': 'Electrical Sciences',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F211',
+    'courseTitle': 'Electrical Machines',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F212',
+    'courseTitle': 'Electromagnetic Theory',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F214',
+    'courseTitle': 'Electronic Devices',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F215',
+    'courseTitle': 'Digital Design',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F241',
+    'courseTitle': 'Microprocessors and Interfacing',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F242',
+    'courseTitle': 'Control Systems',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F243',
+    'courseTitle': 'Signals & Systems',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F244',
+    'courseTitle': 'Microelectronic Circuits',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F245',
+    'courseTitle': 'Control System Laboratory',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F246',
+    'courseTitle': 'Electrical and Electronic Circuits Laboratory',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F266',
+    'courseTitle': 'Study Project',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F311',
+    'courseTitle': 'Communication Systems',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F312',
+    'courseTitle': 'Power Systems',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F313',
+    'courseTitle': 'Analog & Digital VLSI Design',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F341',
+    'courseTitle': 'Analog Electronics',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F342',
+    'courseTitle': 'Power Electronics',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F345',
+    'courseTitle': 'Power Apparatus & Networks',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F346',
+    'courseTitle': 'Data Communication Networks',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F347',
+    'courseTitle': 'Communication Networks Laboratory',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F348',
+    'courseTitle': 'FPGA Based System Design Laboratory',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F366',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F367',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F376',
+    'courseTitle': 'Design Project',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F377',
+    'courseTitle': 'Design Project',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F411',
+    'courseTitle': 'Internet of Things',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F414',
+    'courseTitle': 'Telecommunication Switching Systems & Networks',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F416',
+    'courseTitle': 'Digital Communication',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F417',
+    'courseTitle': 'Computer Based Control Systems',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F418',
+    'courseTitle': 'Modern Communication Technologies',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F422',
+    'courseTitle': 'Modern Control Systems',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F425',
+    'courseTitle': 'Power System Analysis and Control',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F426',
+    'courseTitle': 'Fiber Optics & Optoelectronics',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F427',
+    'courseTitle': 'Electric Power Utilization and Illumination',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F431',
+    'courseTitle': 'Mobile Telecommunication Networks',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F432',
+    'courseTitle': 'Medical Instrumentation',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F433',
+    'courseTitle': 'Electromagnetic Fields & Waves',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F434',
+    'courseTitle': 'Digital Signal Processing',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F435',
+    'courseTitle': 'Digital Image Processing',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F462',
+    'courseTitle': 'Advanced Power Systems',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F472',
+    'courseTitle': 'Satellite Communication',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F473',
+    'courseTitle': 'Wind Electrical Systems',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F474',
+    'courseTitle': 'Antenna Theory and Design',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F475',
+    'courseTitle': 'Special Electrical Machines',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F476',
+    'courseTitle': 'Switchgear and Protection',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F477',
+    'courseTitle': 'Modeling of Field-Effect NanoDevices',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F478',
+    'courseTitle': ' Power Systems Laboratory',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'F491',
+    'courseTitle': 'Special Projects',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F212',
+    'courseTitle': 'Fundamentals of Finance and Accounts',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F213',
+    'courseTitle': 'Mathematical and Statistical Methods',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F214',
+    'courseTitle': 'Economic Environment of Business',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F242',
+    'courseTitle': 'Introduction to Financial Mathematics',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F243',
+    'courseTitle': 'Functions and Working of Stock Exchanges',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F244',
+    'courseTitle': 'Indian Financial System',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F266',
+    'courseTitle': 'Study Project',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F311',
+    'courseTitle': 'Derivatives & Risk Management',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F312',
+    'courseTitle': 'Fundamental of Taxation & Audit',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F313',
+    'courseTitle': 'Security Analysis and Portfolio Management',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F314',
+    'courseTitle': 'Investment Banking and Financial Services',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F315',
+    'courseTitle': 'Financial Management',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F341',
+    'courseTitle': 'International Financial Markets and Services',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F342',
+    'courseTitle': 'Project Finance',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F366',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F367',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F414',
+    'courseTitle': 'Financial Risk Analytics and Management',
+  },
+  {
+    'courseCode': 'FIN',
+    'courseID': 'F491',
+    'courseTitle': 'Special Projects',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F211',
+    'courseTitle': 'Modern Political Concepts',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F212',
+    'courseTitle': 'Environment, Development & Climate Change',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F213',
+    'courseTitle': 'Development Theories',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F221',
+    'courseTitle': 'Business Communication',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F222',
+    'courseTitle': 'Language Lab Practice',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F223',
+    'courseTitle': 'Introduction to Mass Communication',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F224',
+    'courseTitle': 'Print and Audio-Visual Advertising',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F231',
+    'courseTitle': 'Dynamics of Social Change',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F232',
+    'courseTitle': 'Introductory Psychology',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F233',
+    'courseTitle': 'Public Policy',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F234',
+    'courseTitle': 'Development EconomicsGS F241 Creative Writing',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F242',
+    'courseTitle': 'Cultural Studies',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F243',
+    'courseTitle': 'Current Affairs',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F244',
+    'courseTitle': 'Reporting and Writing for Media',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F245',
+    'courseTitle': 'Effective Public Speaking',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F266',
+    'courseTitle': 'Study Project',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F311',
+    'courseTitle': 'Introduction to Conflict Management',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F312',
+    'courseTitle': 'Applied Philosophy',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F313',
+    'courseTitle': 'Marxian Thoughts',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F321',
+    'courseTitle': 'Mass Media Content & Design',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F322',
+    'courseTitle': 'Critical Analysis of Literature and Cinema',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F325',
+    'courseTitle': 'Journalism',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F326',
+    'courseTitle': 'Creative Thinking',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F327',
+    'courseTitle': 'Selected Reading',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F331',
+    'courseTitle': 'Techniques in Social Research',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F332',
+    'courseTitle': 'Contemporary India',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F333',
+    'courseTitle': 'Public Administration',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F334',
+    'courseTitle': 'Global Business, Technology and Knowledge Sharing',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F342',
+    'courseTitle': 'Computer Mediated Communication',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F343',
+    'courseTitle': 'Short Film and Video Production',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F344',
+    'courseTitle': 'CopywritingGS F366 Lab Project',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F367',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F491',
+    'courseTitle': 'Special Projects',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F221',
+    'courseTitle': ' Readings from Drama',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F222',
+    'courseTitle': ' Linguistics',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F223',
+    'courseTitle': ' Appreciation of Indian Music',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F226',
+    'courseTitle': ' Postmodernism',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F227',
+    'courseTitle': ' Cross Cultural Skills',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F228',
+    'courseTitle': ' Phonetics and Spoken English',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F229',
+    'courseTitle': ' Introduction to Western Music',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F232',
+    'courseTitle': ' Introduction to Development Studies',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F233',
+    'courseTitle': ' Main Trends in Indian History',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F234',
+    'courseTitle': ' Main Currents of Modern History',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F235',
+    'courseTitle': ' Introductory Philosophy',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F236',
+    'courseTitle': ' Symbolic Logic',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F237',
+    'courseTitle': ' Contemporary Indian English Fiction',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F238',
+    'courseTitle': ' Sports and Society',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F242',
+    'courseTitle': ' Introduction to Phonology',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F243',
+    'courseTitle': ' Introduction to Critical Pedagogy',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F244',
+    'courseTitle': ' Crime and New Media',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F245',
+    'courseTitle': ' Gender, Science and Technology',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F246',
+    'courseTitle': ' Philosophy of Nagarjuna',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F266',
+    'courseTitle': ' Study Project',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F311',
+    'courseTitle': ' Introduction to Videogame Studies',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F312',
+    'courseTitle': ' Bureaucracy',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F313',
+    'courseTitle': ' Introduction to Contemporary Arts',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F315',
+    'courseTitle': ' Society, Business and Politics',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F316',
+    'courseTitle': ' Popular Literature and Culture of South Asia',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F317',
+    'courseTitle': ' Introduction to Globalization',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F318',
+    'courseTitle': ' Introduction to Anthropology',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F319',
+    'courseTitle': ' Lighting for Theatre and Films',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F323',
+    'courseTitle': '  Organizational Psychology',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F325',
+    'courseTitle': ' Cinematic Adaptation',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F326',
+    'courseTitle': ' Humanities and Design',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F327',
+    'courseTitle': ' Contemporary Drama',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F328',
+    'courseTitle': ' Human Resource Development',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F329',
+    'courseTitle': ' Musicology – An Introduction',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F330',
+    'courseTitle': ' Appreciation of Art',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F331',
+    'courseTitle': ' Sankara’s Thoughts',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F332',
+    'courseTitle': ' Cinematic Art',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F333',
+    'courseTitle': ' Comparative Religion',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F334',
+    'courseTitle': ' Srimad Bhagavad Gita',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F335',
+    'courseTitle': ' Literary Criticism',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F336',
+    'courseTitle': ' Modern Fiction',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F337',
+    'courseTitle': ' English Literary Forms and Movements',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F338',
+    'courseTitle': ' Comparative Indian Literature',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F339',
+    'courseTitle': ' Theatre Art-Acting and Production',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F340',
+    'courseTitle': ' Post Colonial Literature',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F341',
+    'courseTitle': ' Performance Design',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F342',
+    'courseTitle': ' Advanced Communicative English',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F343',
+    'courseTitle': ' Professional Ethics',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F344',
+    'courseTitle': ' Heritage of India',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F345',
+    'courseTitle': ' Gandhian Thoughts',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F346',
+    'courseTitle': ' International Relations',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F347',
+    'courseTitle': ' Introduction to Carnatic Music',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F348',
+    'courseTitle': ' Introduction to Hindustani Music',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F349',
+    'courseTitle': ' Ecocriticism',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F350',
+    'courseTitle': ' Human Rights: History, Theory & Practice',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F351',
+    'courseTitle': ' Social and Political Ecology',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F352',
+    'courseTitle': ' Technology, Work and Society',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F353',
+    'courseTitle': ' Philosophy of Aesthetics',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F354',
+    'courseTitle': ' Introduction to Islamic Economy',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F355',
+    'courseTitle': ' Dictatorship, Democracy & Development',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F356',
+    'courseTitle': ' Social Movements and Protest Politics',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F361',
+    'courseTitle': ' Urban Policy and Governance',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F362',
+    'courseTitle': ' Local Governance and Participation',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F363',
+    'courseTitle': ' Disaster and Development',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F364',
+    'courseTitle': ' Political Economy of Gulf Cooperation Council States',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F365',
+    'courseTitle': ' Science of Sustainable Happiness',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F368',
+    'courseTitle': ' Asian Cinemas and Cultures',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F369',
+    'courseTitle': ' Caste and Gender in India',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F371',
+    'courseTitle': ' Cities-Life, Issues and Conflicts',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F372',
+    'courseTitle': ' Introduction to Social Psychology',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F373',
+    'courseTitle': ' Shakespeare and Popular Culture',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F374',
+    'courseTitle': ' Urban Modernity and the Renewal of Paris',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F399',
+    'courseTitle': ' Introduction to American Literature',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F211',
+    'courseTitle': 'Electrical Machines',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F212',
+    'courseTitle': 'Electromagnetic Theory',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F214',
+    'courseTitle': 'Electronic Devices',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F215',
+    'courseTitle': 'Digital Design',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F241',
+    'courseTitle': 'Microprocessors and Interfacing',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F242',
+    'courseTitle': 'Control Systems',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F243',
+    'courseTitle': 'Signals & Systems',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F244',
+    'courseTitle': 'Microelectronic Circuits',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F266',
+    'courseTitle': 'Study Project',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F311',
+    'courseTitle': 'Electronic Instrumentation & Instrumentation Technology',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F312',
+    'courseTitle': 'Transducers and Measurement Systems',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F313',
+    'courseTitle': 'Analog & Digital VLSI Design',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F341',
+    'courseTitle': 'Analog Electronics',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F342',
+    'courseTitle': 'Power Electronics',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F343',
+    'courseTitle': 'Industrial Instrumentation and  Control',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F366',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F367',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F376',
+    'courseTitle': 'Design Project',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F377',
+    'courseTitle': 'Design Project',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F411',
+    'courseTitle': 'Opto-Electronic Instruments',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F412',
+    'courseTitle': 'Analysis Instrumentation',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F413',
+    'courseTitle': 'Advanced Process Control',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F414',
+    'courseTitle': 'Telecommunication Switching Systems & Networks',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F415',
+    'courseTitle': 'Digital Control',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F419',
+    'courseTitle': 'Virtual Instrumentation',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F420',
+    'courseTitle': 'Design of Instrumentation Systems',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F422',
+    'courseTitle': 'Instrumentation for Petrochemical Industry',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F432',
+    'courseTitle': 'Medical Instrumentation',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F473',
+    'courseTitle': 'Wind Electrical Systems',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'F491',
+    'courseTitle':
+        'Special Projects                                                                                                                          ',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F211',
+    'courseTitle': 'Data Structures & Algorithms',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F213',
+    'courseTitle': 'Object Oriented Programming',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F214',
+    'courseTitle': 'Logic in Computer Science',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F222',
+    'courseTitle': 'Discrete Structures for Computer Science',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F241',
+    'courseTitle': 'Digital Electronics and Microprocesors',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F242',
+    'courseTitle': 'Computer Organization',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F243',
+    'courseTitle': 'Database Systems & Application',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F266',
+    'courseTitle': 'Study Project',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F301',
+    'courseTitle': 'Principles of Programming Languages',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F303',
+    'courseTitle': 'Computer Networks',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F311',
+    'courseTitle': 'Computer Graphics',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F322',
+    'courseTitle': 'Software Testing',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F341',
+    'courseTitle': 'Software Engineering',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F342',
+    'courseTitle': 'Compiler Design',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F366',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F367',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F376',
+    'courseTitle': 'Design Project',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F377',
+    'courseTitle': 'Design Project',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F372',
+    'courseTitle': 'Operating Systems',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F462',
+    'courseTitle': 'Network Programming',
+  },
+  {
+    'courseCode': 'IS',
+    'courseID': 'F491',
+    'courseTitle': 'Special Projects',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F111',
+    'courseTitle': 'Mathematics I',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F112',
+    'courseTitle': 'Mathematics II',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F113',
+    'courseTitle': 'Probability & Statistics',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F211',
+    'courseTitle': 'Mathematics III',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F212',
+    'courseTitle': 'Optimization',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F213',
+    'courseTitle': 'Discrete Mathematics',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F214',
+    'courseTitle': 'Elementary Real Analysis',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F215',
+    'courseTitle': 'Algebra-I',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F231',
+    'courseTitle': 'Number Theory',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F241',
+    'courseTitle': 'Mathematical Methods',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F242',
+    'courseTitle': 'Operations Research',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F243',
+    'courseTitle': 'Graphs and Networks',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F244',
+    'courseTitle': 'Measure and Integration',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F266',
+    'courseTitle': 'Study Project',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F311',
+    'courseTitle': 'Introduction to Topology',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F312',
+    'courseTitle': 'Ordinary Differential Equations',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F313',
+    'courseTitle': 'Numerical Analysis',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F314',
+    'courseTitle': 'Algebra II',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F341',
+    'courseTitle': 'Introduction to Functional Analysis',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F342',
+    'courseTitle':
+        'Differential Geometry	MATH F343 Partial Differential Equations',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F344',
+    'courseTitle': 'Mathematical Fluid Dynamics',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F353',
+    'courseTitle': 'Statistical Inference and Applications',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F354',
+    'courseTitle': 'Complex Analysis',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F366',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F367',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'MAT',
+    'courseID': ' F37',
+    'courseTitle': ' Design Project',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F377',
+    'courseTitle': 'Design Project',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F378',
+    'courseTitle': 'Advanced Probability Theory',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F420',
+    'courseTitle': 'Mathematical Modeling',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F421',
+    'courseTitle': 'Combinatorial Mathematics',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F422',
+    'courseTitle': 'Numerical Methodology for Partial Differential Equations',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F423',
+    'courseTitle': 'Introduction to Algebraic Topology',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F424',
+    'courseTitle': 'Applied Stochastic Process',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F431',
+    'courseTitle': 'Distribution Theory',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F432',
+    'courseTitle': ' Applied Statistical Methods',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F441',
+    'courseTitle': 'Discrete Mathematical Structures',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F444',
+    'courseTitle': 'Numerical Solutions of Ordinary Differential Equations',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F445',
+    'courseTitle': 'Mathematical Fluid Dynamics',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F456',
+    'courseTitle': 'Cosmology',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F471',
+    'courseTitle': 'Nonlinear Optimization',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F481',
+    'courseTitle': 'Commutative Algebra',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F491',
+    'courseTitle': 'Special Projects',
+  },
+  {
+    'courseCode': 'MATH',
+    'courseID': 'F492',
+    'courseTitle':
+        'Wavelet analysis and applications                                                                                    ',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F110',
+    'courseTitle': 'Workshop Practice',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F211',
+    'courseTitle': 'Mechanics of Solids',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F212',
+    'courseTitle': 'Fluid Mechanics',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F213',
+    'courseTitle': 'Materials Science & Engineering',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F214',
+    'courseTitle': 'Applied Thermodynamics',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F215',
+    'courseTitle': 'Mechanical Engineering Laboratory',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F241',
+    'courseTitle': 'Machine Design & Drawing',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F242',
+    'courseTitle': 'IC Engines',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F243',
+    'courseTitle': 'Production Techniques I',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F244',
+    'courseTitle': 'Kinematics & Dynamics of Machinery',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F266',
+    'courseTitle': 'Study Project',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F311',
+    'courseTitle': 'Heat Transfer',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F312',
+    'courseTitle': 'Advanced Mechanics of Solids',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F313',
+    'courseTitle': 'Production Techniques II',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F340',
+    'courseTitle': ' Introduction to Sports Engineering',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F341',
+    'courseTitle': 'Prime Movers & Fluid Machines',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F342',
+    'courseTitle': 'Computer Aided Design',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F343',
+    'courseTitle': 'Mechanical Vibrations',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F344',
+    'courseTitle': 'Engineering Optimization',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F366',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F367',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F376',
+    'courseTitle': 'Design Project',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F377',
+    'courseTitle': 'Design Project',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F411',
+    'courseTitle': 'Fluid Power Systems',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F412',
+    'courseTitle': 'Production Planning and Control',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F413',
+    'courseTitle': 'Nonlinear Vibrations',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F414',
+    'courseTitle': 'Fuel Cell Science and Technology',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F415',
+    'courseTitle': 'Gas Dynamics',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F416',
+    'courseTitle': 'Reverse Engineering and Rapid  Prototyping',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F417',
+    'courseTitle': 'Advanced Metal Forming',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F418',
+    'courseTitle': 'Rocket and Spacecraft Propulsion',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F419',
+    'courseTitle': 'Total Product Integration Engineering',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F420',
+    'courseTitle': 'Power Plant Engineering',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F423',
+    'courseTitle': 'Micro Fluidics and its Application',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F424',
+    'courseTitle': 'Energy Management',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F425',
+    'courseTitle': 'Additive Manufacturing',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F426',
+    'courseTitle': 'Industry 4.0 in Manufacturing',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F432',
+    'courseTitle': 'Computer Aided Manufacturing',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F433',
+    'courseTitle': 'Solar Thermal Process Engineering',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F441',
+    'courseTitle': 'Automotive Vehicles',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F443',
+    'courseTitle': 'Quality Control, Assurance and Reliability',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F451',
+    'courseTitle': 'Mechanical Equipment Design',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F452',
+    'courseTitle': 'Composite Materials & Design',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F461',
+    'courseTitle': 'Refrigeration and Air conditioning',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F472',
+    'courseTitle': 'Precision Engineering',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F481',
+    'courseTitle': 'Project Appraisal',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F482',
+    'courseTitle': 'Combustion',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F483',
+    'courseTitle': 'Wind Energy',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F484',
+    'courseTitle': 'Automotive Technology',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F485',
+    'courseTitle': 'Numerical Techniques for Fluid Flow and Heat Transfe',
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'F491',
+    'courseTitle':
+        'Special Projects                                                                                                               ',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F211',
+    'courseTitle': 'Mechanics of Solids',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F212',
+    'courseTitle': 'Fluid Mechanics',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F213',
+    'courseTitle': 'Materials Science & Engineering',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F214',
+    'courseTitle': 'Applied Thermodynamics',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F215',
+    'courseTitle': 'Mechanical Engineering Laboratory',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F241',
+    'courseTitle': 'Machine Design & Drawing',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F242',
+    'courseTitle': 'Manufacturing Management',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F243',
+    'courseTitle': 'Manufacturing Processes',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F244',
+    'courseTitle': 'Kinematics & Dynamics of Machinery',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F266',
+    'courseTitle': 'Study Project',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F311',
+    'courseTitle': 'Mechatronics & Automation',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F312',
+    'courseTitle': 'Tool and Fixture Design',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F313',
+    'courseTitle': 'Metal Forming and Machining',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F341',
+    'courseTitle': 'Design of Machine Tools',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F342',
+    'courseTitle': 'Computer Aided Design',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F343',
+    'courseTitle': 'Casting and Welding',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F344',
+    'courseTitle': 'Engineering Optimization',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F366',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F367',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F376',
+    'courseTitle': 'Design Project',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F377',
+    'courseTitle': 'Design Project',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F411',
+    'courseTitle': 'Fluid Power Systems',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F412',
+    'courseTitle': 'Automotive Systems',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F413',
+    'courseTitle': 'Mechanical Vibrations and Acoustics',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F414',
+    'courseTitle': 'Manufacturing Excellence',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F415',
+    'courseTitle': 'Noise Engineering',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F416',
+    'courseTitle': 'Work System Design',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F418',
+    'courseTitle': 'Lean Manufacturing',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F421',
+    'courseTitle': 'Supply Chain Management',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F442',
+    'courseTitle': 'Advances in Materials Science',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F453',
+    'courseTitle': 'Industrial Relations',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F463',
+    'courseTitle': 'Maintenance and Safety',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F471',
+    'courseTitle': 'Instrumentation and Control',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F472',
+    'courseTitle': 'Precision Engineering',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F473',
+    'courseTitle': 'Product Design and Development',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F474',
+    'courseTitle': 'Product Design and Development Projects',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F485',
+    'courseTitle': 'Sustainable Manufacturing',
+  },
+  {
+    'courseCode': 'MF',
+    'courseID': 'F491',
+    'courseTitle': 'Special Projects',
+  },
+  {
+    'courseCode': 'MGTS',
+    'courseID': 'F211',
+    'courseTitle': 'Principles of Management',
+  },
+  {
+    'courseCode': 'MGTS',
+    'courseID': 'F351',
+    'courseTitle': 'Organisational Behaviour',
+  },
+  {
+    'courseCode': 'MGTS',
+    'courseID': 'F433',
+    'courseTitle': 'Advertising and Sales Promotion',
+  },
+  {
+    'courseCode': 'MST',
+    'courseID': 'F331',
+    'courseTitle': 'Materials Characterization',
+  },
+  {
+    'courseCode': 'MST',
+    'courseID': 'F332',
+    'courseTitle': 'Materials Processing',
+  },
+  {
+    'courseCode': 'MST',
+    'courseID': 'F333',
+    'courseTitle': 'Introduction to Biomaterials',
+  },
+  {
+    'courseCode': 'MST',
+    'courseID': 'F334',
+    'courseTitle': 'Materials for Catalytic applications',
+  },
+  {
+    'courseCode': 'MST',
+    'courseID': 'F335',
+    'courseTitle': 'Coating and Thin film technology',
+  },
+  {
+    'courseCode': 'MST',
+    'courseID': 'F336',
+    'courseTitle': 'Glass Technology',
+  },
+  {
+    'courseCode': 'MST',
+    'courseID': 'F337',
+    'courseTitle': 'Materials for Energy Applications',
+  },
+  {
+    'courseCode': 'MST',
+    'courseID': 'F338',
+    'courseTitle': 'Metals and Alloys',
+  },
+  {
+    'courseCode': 'MST',
+    'courseID': 'F339',
+    'courseTitle': 'Polymer Materials',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F211',
+    'courseTitle': 'Pharmaceutical Analysis',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F212',
+    'courseTitle': 'Dispensing Pharmacy',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F213',
+    'courseTitle': 'Microbiology',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F214',
+    'courseTitle': 'Anatomy Physiology & Hygiene',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F215',
+    'courseTitle': 'Introduction to Molecular Biology & Immunology',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F241',
+    'courseTitle': 'Pharmaceutical Chemistry',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F242',
+    'courseTitle': 'Biological Chemistry',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F243',
+    'courseTitle': 'Industrial Pharmacy',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F244',
+    'courseTitle': 'Physical Pharmacy',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F266',
+    'courseTitle': 'Study Project',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F311',
+    'courseTitle': 'Pharmacology I',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F312',
+    'courseTitle': 'Medicinal Chemistry I',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F313',
+    'courseTitle': 'Instrumental Methods of Analysis',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F314',
+    'courseTitle': 'Pharmaceutical Formulations and Biopharmaceutics',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F341',
+    'courseTitle': 'Pharmacology II',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F342',
+    'courseTitle': 'Medicinal Chemistry II',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F343',
+    'courseTitle': 'Forensic Pharmacy',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F344',
+    'courseTitle': 'Natural Drugs',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F366',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F367',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F376',
+    'courseTitle': 'Design Project',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F377',
+    'courseTitle': 'Design Project',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F413',
+    'courseTitle': 'Pharmaceutical Management and Quality Control',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F414',
+    'courseTitle': 'Biopharmaceutics',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F415',
+    'courseTitle': 'Pathophysiology',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F416',
+    'courseTitle': 'Chemistry of Synthetic Drugs',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F417',
+    'courseTitle': 'Pharmacoeconomics',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F422',
+    'courseTitle': 'Cosmetic Science',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F432',
+    'courseTitle': 'Hospital Pharmacy',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F441',
+    'courseTitle': 'Biochemical Engineering',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F442',
+    'courseTitle': 'Applied Pharmaceutical Chemistry',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F461',
+    'courseTitle': 'Phytochemistry',
+  },
+  {
+    'courseCode': 'PHA',
+    'courseID': 'F491',
+    'courseTitle': 'Special Projects',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F110',
+    'courseTitle': 'Physics Laboratory',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F111',
+    'courseTitle': 'Mechanics, Oscillations and Waves',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F112',
+    'courseTitle': 'General Physics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F211',
+    'courseTitle': 'Classical Mechanics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F212',
+    'courseTitle': 'Electromagnetic Theory I',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F213',
+    'courseTitle': 'Optics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F214',
+    'courseTitle': 'Electricity, Magnetism, and Optics Lab',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F215',
+    'courseTitle': 'Introduction to Astronomy and Astrophysics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F241',
+    'courseTitle': 'Electromagnetic Theory II',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F242',
+    'courseTitle': 'Quantum Mechanics I',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F243',
+    'courseTitle': 'Mathematical Methods of Physics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F244',
+    'courseTitle': 'Modern Physics Lab',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F266',
+    'courseTitle': 'Study Project',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F311',
+    'courseTitle': 'Quantum Mechanics II',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F312',
+    'courseTitle': 'Statistical Mechanics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F313',
+    'courseTitle': 'Computational Physics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F315',
+    'courseTitle': 'Theory of Relativity',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F316',
+    'courseTitle': 'Musical Acoustics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F317',
+    'courseTitle': 'Introduction to Radio Astronomy',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F341',
+    'courseTitle': 'Solid State Physics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F342',
+    'courseTitle': 'Atomic and Molecular Physics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F343',
+    'courseTitle': 'Nuclear and Particle Physics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F344',
+    'courseTitle': 'Advanced Physics Lab',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F345',
+    'courseTitle': 'Quantum Mechanics for Engineers',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F366',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F367',
+    'courseTitle': 'Lab Project',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F376',
+    'courseTitle': 'Design Project',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F377',
+    'courseTitle': 'Design Project',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F378',
+    'courseTitle': 'Plasma Physics and its Applications',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F379',
+    'courseTitle': 'Thin Film Technology',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F412',
+    'courseTitle': 'Introduction to Quantum Field Theory',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F413',
+    'courseTitle': 'Particle Physics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F414',
+    'courseTitle': 'Physics of Advanced Materials',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F415',
+    'courseTitle': 'General Theory of Relativity and Cosmology',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F416',
+    'courseTitle': 'Soft Condensed Matter Physics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F417',
+    'courseTitle': 'Experimental Methods of Physics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F418',
+    'courseTitle': 'Lasers and Applications',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F419',
+    'courseTitle': 'Advanced Solid State Physics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F420',
+    'courseTitle': 'Quantum Optics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F421',
+    'courseTitle': 'Advanced Quantum Mechanics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F422',
+    'courseTitle': 'Group Theory and Applications',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F423',
+    'courseTitle': 'Special Topics in Statistical Mechanics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F424',
+    'courseTitle': 'Advanced Electrodynamics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F431',
+    'courseTitle': ' Geometrical Methods in Physics',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F432',
+    'courseTitle': ' Classical Theory of Fields: A Symmetry Perspective',
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'F491',
+    'courseTitle': 'Special Projects',
+  },
 ];
