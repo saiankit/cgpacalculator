@@ -43,7 +43,10 @@ class _AppbarState extends State<Appbar> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) {
-                          return MyApp();
+                          return WillPopScope(
+                            onWillPop: () async => false,
+                            child: MyApp(),
+                          );
                         },
                       ),
                     );

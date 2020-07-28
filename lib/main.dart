@@ -1,6 +1,6 @@
 import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/screens/homeScreen.dart';
-import 'package:CgpaCalculator/screens/login.dart';
+import 'package:CgpaCalculator/screens/loginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
