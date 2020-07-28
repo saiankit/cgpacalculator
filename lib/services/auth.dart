@@ -12,7 +12,7 @@ class AuthService {
   String imageURL;
   String id;
   String documentID;
-  Future<String> signInWithGoogle() async {
+  Future<void> signInWithGoogle() async {
     final GoogleSignInAccount googleSignInAccount =
         await _googleSignIn.signIn();
     final GoogleSignInAuthentication googleSignInAuthentication =
@@ -36,17 +36,16 @@ class AuthService {
     final FirebaseUser currentUser = await _auth.currentUser();
     assert(user.uid == currentUser.uid);
     print(id);
-    _firestore.collection('users').document(id).setData({
-      'userID': '$id',
-      'userName': '$name',
-    });
-    return 'signInWithGoogle succeeded: $user';
+    _firestore.collection('users').document(id).setData(
+      {
+        'userID': '$id',
+        'userName': '$name',
+      },
+    );
   }
 
-  void signOutGoogle() async {
+  Future<void> signOutGoogle() async {
     await _googleSignIn.signOut();
-
-    print('User signed out');
   }
 }
 

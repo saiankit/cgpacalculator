@@ -172,7 +172,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                 courseCode: _chosenCourseCode,
                 courseID: _chosenCourseID,
                 semesterCode: widget.semesterCode,
-                userID: uid,
+                userID: authService.id,
                 userName: authService.name,
                 courseCredits:
                     Provider.of<CourseInfoState>(context).selectedCredits,

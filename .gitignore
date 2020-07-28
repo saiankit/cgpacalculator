@@ -1,2 +1,3 @@
 build/ios/Debug-iphonesimulator
 build/app/outputs
+build/ios/iphonesimulator/Runner.app

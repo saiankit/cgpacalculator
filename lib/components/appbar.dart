@@ -6,21 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Constants {
-  static const String logout = 'Logout';
-
-  static const List<String> choices = <String>[
-    logout,
-  ];
-}
-
 class Appbar extends StatefulWidget {
   @override
   _AppbarState createState() => _AppbarState();
 }
 
 class _AppbarState extends State<Appbar> {
-  void _showDialog() {
+  void _showLogOutDialog() {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -37,7 +29,7 @@ class _AppbarState extends State<Appbar> {
               ),
               onPressed: () async {
                 SharedPreferences prefs = await SharedPreferences.getInstance();
-                authService.signOutGoogle();
+                await authService.signOutGoogle();
                 prefs.clear().then(
                   (value) {
                     Navigator.of(context).push(
@@ -65,7 +57,7 @@ class _AppbarState extends State<Appbar> {
       },
     );
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -113,28 +105,13 @@ class _AppbarState extends State<Appbar> {
             ),
           ],
         ),
-        // PopupMenuButton<String>(
-        //   onSelected: (String string) async {
-        //     _showDialog();
-        //   },
-        //   itemBuilder: (context) {
-        //     return Constants.choices.map(
-        //       (String e) {
-        //         return PopupMenuItem<String>(
-        //           value: e,
-        //           child: Text(e),
-        //         );
-        //       },
-        //     ).toList();
-        //   },
-        // ),
         IconButton(
           icon: Icon(
             Icons.power_settings_new,
             size: 30.0,
             color: Colors.redAccent,
           ),
-          onPressed: () => _showDialog(),
+          onPressed: () => _showLogOutDialog(),
         )
       ],
     );

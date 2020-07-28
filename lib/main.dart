@@ -24,10 +24,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   verifyLogin() async {
-    print('Hi');
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String fuid = prefs.getString('uid');
-
     return fuid;
   }
 

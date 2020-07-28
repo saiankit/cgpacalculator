@@ -1,4 +1,4 @@
-import 'package:CgpaCalculator/components/noItemsOops.dart';
+import 'package:CgpaCalculator/components/noItems.dart';
 import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:CgpaCalculator/widgets/courseCard.dart';

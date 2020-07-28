@@ -1,8 +1,9 @@
 import 'package:CgpaCalculator/components/appbar.dart';
-import 'package:CgpaCalculator/components/noItemsOops.dart';
+import 'package:CgpaCalculator/components/noItems.dart';
 import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/screens/addCourse.dart';
+import 'package:CgpaCalculator/services/auth.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/widgets/courseCard.dart';
@@ -55,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       .watchCoursesBySemesterCode(
                                           Provider.of<SemesterState>(context)
                                               .selectedSemester,
-                                          uid),
+                                          authService.id),
                                   builder: (context,
                                       AsyncSnapshot<List<Course>> snapshot) {
                                     if (!snapshot.hasData)
@@ -98,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 StreamBuilder(
                                   stream: Provider.of<AppDatabase>(context)
-                                      .watchAllCourses(uid),
+                                      .watchAllCourses(authService.id),
                                   builder: (context,
                                       AsyncSnapshot<List<Course>> snapshot) {
                                     if (!snapshot.hasData)
@@ -182,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               .watchCoursesBySemesterCode(
                                   Provider.of<SemesterState>(context)
                                       .selectedSemester,
-                                  uid),
+                                  authService.id),
                           builder:
                               (context, AsyncSnapshot<List<Course>> snapshot) {
                             if (!snapshot.hasData)
