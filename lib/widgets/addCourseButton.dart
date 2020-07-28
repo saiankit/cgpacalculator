@@ -32,19 +32,30 @@ class _AddCourseButtonState extends State<AddCourseButton> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Provider.of<AppDatabase>(context, listen: false).insertCourse(
-          Course(
-            id: widget.documentID,
-            semesterCode: '${widget.semesterCode}',
-            courseCode: '${widget.courseCode}',
-            courseID: '${widget.courseID}',
-            courseCredits: widget.courseCredits,
-            gradeAchieved: widget.gradeAchieved,
-            courseTitle: widget.courseTitle.toString(),
-            userID: widget.userID.toString(),
-          ),
-        );
-        Navigator.pop(context);
+        if (widget.courseTitle == 'Course Not found') {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text("Course Not Found"),
+              );
+            },
+          );
+        } else {
+          Provider.of<AppDatabase>(context, listen: false).insertCourse(
+            Course(
+              id: widget.documentID,
+              semesterCode: '${widget.semesterCode}',
+              courseCode: '${widget.courseCode}',
+              courseID: '${widget.courseID}',
+              courseCredits: widget.courseCredits,
+              gradeAchieved: widget.gradeAchieved,
+              courseTitle: widget.courseTitle.toString(),
+              userID: widget.userID.toString(),
+            ),
+          );
+          Navigator.pop(context);
+        }
       },
       child: Container(
         width: MediaQuery.of(context).size.width,

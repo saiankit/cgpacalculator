@@ -57,7 +57,7 @@ class _AppbarState extends State<Appbar> {
       },
     );
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Row(

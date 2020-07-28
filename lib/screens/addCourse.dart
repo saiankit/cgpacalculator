@@ -9,6 +9,7 @@ import 'package:CgpaCalculator/widgets/creditsSelector.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 import 'package:provider/provider.dart';
+import '../screens/homeScreen.dart';
 
 class AddCourseScreen extends StatefulWidget {
   final String semesterCode;
@@ -21,13 +22,16 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
   String _chosenCourseCode = 'CS';
   String _chosenCourseID = 'F111';
   String chosenCredits = '4';
-  String text = 'Add course details to view course Title';
+  String text = 'Computer Programming';
   search(String courseCode, String courseID) {
     var res = coursesData
         .where((e) => e['courseCode'] == courseCode)
-        .singleWhere((e) => e['courseID'] == courseID);
-
-    text = res['courseTitle'] != null ? res['courseTitle'] : 'Course Not found';
+        .singleWhere((e) => e['courseID'] == courseID, orElse: () => null);
+    if (res == null) {
+      text = 'Course Not found';
+    } else {
+      text = res['courseTitle'];
+    }
   }
 
   @override
@@ -172,7 +176,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                 courseCode: _chosenCourseCode,
                 courseID: _chosenCourseID,
                 semesterCode: widget.semesterCode,
-                userID: authService.id,
+                userID: fuid,
                 userName: authService.name,
                 courseCredits:
                     Provider.of<CourseInfoState>(context).selectedCredits,

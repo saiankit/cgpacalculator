@@ -41,7 +41,7 @@ class _UpdateCourseButtonState extends State<UpdateCourseButton> {
             id: widget.documentID,
             courseCode: courseCode,
             courseID: courseID,
-            courseTitle: 'Computer Programming',
+            courseTitle: widget.courseTitle,
             semesterCode: semesterCode,
             courseCredits: widget.courseCredits,
             gradeAchieved: widget.gradeAchieved,

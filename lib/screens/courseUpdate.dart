@@ -1,12 +1,26 @@
 import 'package:CgpaCalculator/components/gradeSelector.dart';
 import 'package:CgpaCalculator/data/moor_database.dart';
+import 'package:CgpaCalculator/localData/coursesData.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
+import 'package:CgpaCalculator/screens/homeScreen.dart';
 import 'package:CgpaCalculator/services/courseInfo.dart';
 import 'package:CgpaCalculator/widgets/creditsSelector.dart';
 import 'package:CgpaCalculator/widgets/updateCourseButton.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 import 'package:provider/provider.dart';
+
+String text = ' ';
+search(String courseCode, String courseID) {
+  var res = coursesData
+      .where((e) => e['courseCode'] == courseCode)
+      .singleWhere((e) => e['courseID'] == courseID, orElse: () => null);
+  if (res == null) {
+    text = 'Course Not found';
+  } else {
+    text = res['courseTitle'];
+  }
+}
 
 class CourseUpdate extends StatefulWidget {
   final String courseCode;
@@ -123,7 +137,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
                         ),
                         child: Center(
                           child: Marquee(
-                            text: widget.courseTitle,
+                            text: text,
                             style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 20.0,
@@ -142,6 +156,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
                 ),
                 TempGradeSelector(widget.courseGrade),
                 UpdateCourseButton(
+                  userID: fuid,
                   courseCode: Provider.of<CourseInfoState>(context).courseCode,
                   courseID: Provider.of<CourseInfoState>(context).courseID,
                   courseCredits:
@@ -150,7 +165,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
                   documentID: widget.documentID,
                   gradeAchieved:
                       Provider.of<CourseInfoState>(context).courseGrade,
-                  courseTitle: widget.courseTitle,
+                  courseTitle: text,
                 ),
               ],
             ),
@@ -293,6 +308,10 @@ class _CourseCodeSelectorState extends State<CourseCodeSelector> {
                   onChanged: (String value) {
                     Provider.of<CourseInfoState>(context, listen: false)
                         .changeCourseCode(value);
+                    search(
+                        value,
+                        Provider.of<CourseInfoState>(context, listen: false)
+                            .courseID);
                   },
                 ),
               ),
@@ -330,6 +349,10 @@ class _CourseCodeSelectorState extends State<CourseCodeSelector> {
                   onChanged: (String value) {
                     Provider.of<CourseInfoState>(context, listen: false)
                         .changeCourseID(value);
+                    search(
+                        Provider.of<CourseInfoState>(context, listen: false)
+                            .courseCode,
+                        value);
                   },
                 ),
               ),
