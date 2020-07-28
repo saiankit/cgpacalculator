@@ -41,6 +41,7 @@ class _AddCourseButtonState extends State<AddCourseButton> {
             courseCredits: widget.courseCredits,
             gradeAchieved: widget.gradeAchieved,
             courseTitle: widget.courseTitle.toString(),
+            userID: widget.userID.toString(),
           ),
         );
         Navigator.pop(context);

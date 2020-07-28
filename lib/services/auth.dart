@@ -10,7 +10,6 @@ class AuthService {
   String name;
   String email;
   String imageURL;
-  String uid;
   String id;
   String documentID;
   Future<String> signInWithGoogle() async {
@@ -36,7 +35,7 @@ class AuthService {
     imageURL = user.photoUrl;
     final FirebaseUser currentUser = await _auth.currentUser();
     assert(user.uid == currentUser.uid);
-
+    print(id);
     _firestore.collection('users').document(id).setData({
       'userID': '$id',
       'userName': '$name',

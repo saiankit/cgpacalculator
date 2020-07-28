@@ -15,6 +15,7 @@ class Course extends DataClass implements Insertable<Course> {
   final String semesterCode;
   final int courseCredits;
   final int gradeAchieved;
+  final String userID;
   Course(
       {@required this.id,
       @required this.courseCode,
@@ -22,7 +23,8 @@ class Course extends DataClass implements Insertable<Course> {
       @required this.courseTitle,
       @required this.semesterCode,
       @required this.courseCredits,
-      @required this.gradeAchieved});
+      @required this.gradeAchieved,
+      @required this.userID});
   factory Course.fromData(Map<String, dynamic> data, GeneratedDatabase db,
       {String prefix}) {
     final effectivePrefix = prefix ?? '';
@@ -42,6 +44,8 @@ class Course extends DataClass implements Insertable<Course> {
           .mapFromDatabaseResponse(data['${effectivePrefix}course_credits']),
       gradeAchieved: intType
           .mapFromDatabaseResponse(data['${effectivePrefix}grade_achieved']),
+      userID: stringType
+          .mapFromDatabaseResponse(data['${effectivePrefix}user_i_d']),
     );
   }
   @override
@@ -68,6 +72,9 @@ class Course extends DataClass implements Insertable<Course> {
     if (!nullToAbsent || gradeAchieved != null) {
       map['grade_achieved'] = Variable<int>(gradeAchieved);
     }
+    if (!nullToAbsent || userID != null) {
+      map['user_i_d'] = Variable<String>(userID);
+    }
     return map;
   }
 
@@ -92,6 +99,8 @@ class Course extends DataClass implements Insertable<Course> {
       gradeAchieved: gradeAchieved == null && nullToAbsent
           ? const Value.absent()
           : Value(gradeAchieved),
+      userID:
+          userID == null && nullToAbsent ? const Value.absent() : Value(userID),
     );
   }
 
@@ -106,6 +115,7 @@ class Course extends DataClass implements Insertable<Course> {
       semesterCode: serializer.fromJson<String>(json['semesterCode']),
       courseCredits: serializer.fromJson<int>(json['courseCredits']),
       gradeAchieved: serializer.fromJson<int>(json['gradeAchieved']),
+      userID: serializer.fromJson<String>(json['userID']),
     );
   }
   @override
@@ -119,6 +129,7 @@ class Course extends DataClass implements Insertable<Course> {
       'semesterCode': serializer.toJson<String>(semesterCode),
       'courseCredits': serializer.toJson<int>(courseCredits),
       'gradeAchieved': serializer.toJson<int>(gradeAchieved),
+      'userID': serializer.toJson<String>(userID),
     };
   }
 
@@ -129,7 +140,8 @@ class Course extends DataClass implements Insertable<Course> {
           String courseTitle,
           String semesterCode,
           int courseCredits,
-          int gradeAchieved}) =>
+          int gradeAchieved,
+          String userID}) =>
       Course(
         id: id ?? this.id,
         courseCode: courseCode ?? this.courseCode,
@@ -138,6 +150,7 @@ class Course extends DataClass implements Insertable<Course> {
         semesterCode: semesterCode ?? this.semesterCode,
         courseCredits: courseCredits ?? this.courseCredits,
         gradeAchieved: gradeAchieved ?? this.gradeAchieved,
+        userID: userID ?? this.userID,
       );
   @override
   String toString() {
@@ -148,7 +161,8 @@ class Course extends DataClass implements Insertable<Course> {
           ..write('courseTitle: $courseTitle, ')
           ..write('semesterCode: $semesterCode, ')
           ..write('courseCredits: $courseCredits, ')
-          ..write('gradeAchieved: $gradeAchieved')
+          ..write('gradeAchieved: $gradeAchieved, ')
+          ..write('userID: $userID')
           ..write(')'))
         .toString();
   }
@@ -164,8 +178,8 @@ class Course extends DataClass implements Insertable<Course> {
                   courseTitle.hashCode,
                   $mrjc(
                       semesterCode.hashCode,
-                      $mrjc(
-                          courseCredits.hashCode, gradeAchieved.hashCode)))))));
+                      $mrjc(courseCredits.hashCode,
+                          $mrjc(gradeAchieved.hashCode, userID.hashCode))))))));
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
@@ -176,7 +190,8 @@ class Course extends DataClass implements Insertable<Course> {
           other.courseTitle == this.courseTitle &&
           other.semesterCode == this.semesterCode &&
           other.courseCredits == this.courseCredits &&
-          other.gradeAchieved == this.gradeAchieved);
+          other.gradeAchieved == this.gradeAchieved &&
+          other.userID == this.userID);
 }
 
 class CoursesCompanion extends UpdateCompanion<Course> {
@@ -187,6 +202,7 @@ class CoursesCompanion extends UpdateCompanion<Course> {
   final Value<String> semesterCode;
   final Value<int> courseCredits;
   final Value<int> gradeAchieved;
+  final Value<String> userID;
   const CoursesCompanion({
     this.id = const Value.absent(),
     this.courseCode = const Value.absent(),
@@ -195,6 +211,7 @@ class CoursesCompanion extends UpdateCompanion<Course> {
     this.semesterCode = const Value.absent(),
     this.courseCredits = const Value.absent(),
     this.gradeAchieved = const Value.absent(),
+    this.userID = const Value.absent(),
   });
   CoursesCompanion.insert({
     this.id = const Value.absent(),
@@ -204,12 +221,14 @@ class CoursesCompanion extends UpdateCompanion<Course> {
     @required String semesterCode,
     @required int courseCredits,
     @required int gradeAchieved,
+    @required String userID,
   })  : courseCode = Value(courseCode),
         courseID = Value(courseID),
         courseTitle = Value(courseTitle),
         semesterCode = Value(semesterCode),
         courseCredits = Value(courseCredits),
-        gradeAchieved = Value(gradeAchieved);
+        gradeAchieved = Value(gradeAchieved),
+        userID = Value(userID);
   static Insertable<Course> custom({
     Expression<int> id,
     Expression<String> courseCode,
@@ -218,6 +237,7 @@ class CoursesCompanion extends UpdateCompanion<Course> {
     Expression<String> semesterCode,
     Expression<int> courseCredits,
     Expression<int> gradeAchieved,
+    Expression<String> userID,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
@@ -227,6 +247,7 @@ class CoursesCompanion extends UpdateCompanion<Course> {
       if (semesterCode != null) 'semester_code': semesterCode,
       if (courseCredits != null) 'course_credits': courseCredits,
       if (gradeAchieved != null) 'grade_achieved': gradeAchieved,
+      if (userID != null) 'user_i_d': userID,
     });
   }
 
@@ -237,7 +258,8 @@ class CoursesCompanion extends UpdateCompanion<Course> {
       Value<String> courseTitle,
       Value<String> semesterCode,
       Value<int> courseCredits,
-      Value<int> gradeAchieved}) {
+      Value<int> gradeAchieved,
+      Value<String> userID}) {
     return CoursesCompanion(
       id: id ?? this.id,
       courseCode: courseCode ?? this.courseCode,
@@ -246,6 +268,7 @@ class CoursesCompanion extends UpdateCompanion<Course> {
       semesterCode: semesterCode ?? this.semesterCode,
       courseCredits: courseCredits ?? this.courseCredits,
       gradeAchieved: gradeAchieved ?? this.gradeAchieved,
+      userID: userID ?? this.userID,
     );
   }
 
@@ -273,6 +296,9 @@ class CoursesCompanion extends UpdateCompanion<Course> {
     if (gradeAchieved.present) {
       map['grade_achieved'] = Variable<int>(gradeAchieved.value);
     }
+    if (userID.present) {
+      map['user_i_d'] = Variable<String>(userID.value);
+    }
     return map;
   }
 
@@ -285,7 +311,8 @@ class CoursesCompanion extends UpdateCompanion<Course> {
           ..write('courseTitle: $courseTitle, ')
           ..write('semesterCode: $semesterCode, ')
           ..write('courseCredits: $courseCredits, ')
-          ..write('gradeAchieved: $gradeAchieved')
+          ..write('gradeAchieved: $gradeAchieved, ')
+          ..write('userID: $userID')
           ..write(')'))
         .toString();
   }
@@ -384,6 +411,18 @@ class $CoursesTable extends Courses with TableInfo<$CoursesTable, Course> {
     );
   }
 
+  final VerificationMeta _userIDMeta = const VerificationMeta('userID');
+  GeneratedTextColumn _userID;
+  @override
+  GeneratedTextColumn get userID => _userID ??= _constructUserID();
+  GeneratedTextColumn _constructUserID() {
+    return GeneratedTextColumn(
+      'user_i_d',
+      $tableName,
+      false,
+    );
+  }
+
   @override
   List<GeneratedColumn> get $columns => [
         id,
@@ -392,7 +431,8 @@ class $CoursesTable extends Courses with TableInfo<$CoursesTable, Course> {
         courseTitle,
         semesterCode,
         courseCredits,
-        gradeAchieved
+        gradeAchieved,
+        userID
       ];
   @override
   $CoursesTable get asDslTable => this;
@@ -453,6 +493,12 @@ class $CoursesTable extends Courses with TableInfo<$CoursesTable, Course> {
               data['grade_achieved'], _gradeAchievedMeta));
     } else if (isInserting) {
       context.missing(_gradeAchievedMeta);
+    }
+    if (data.containsKey('user_i_d')) {
+      context.handle(_userIDMeta,
+          userID.isAcceptableOrUnknown(data['user_i_d'], _userIDMeta));
+    } else if (isInserting) {
+      context.missing(_userIDMeta);
     }
     return context;
   }

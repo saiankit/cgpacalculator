@@ -1,6 +1,7 @@
 import 'package:CgpaCalculator/components/gradeSelector.dart';
 import 'package:CgpaCalculator/localData/coursesData.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
+import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/services/auth.dart';
 import 'package:CgpaCalculator/services/courseInfo.dart';
 import 'package:CgpaCalculator/widgets/addCourseButton.dart';
@@ -25,7 +26,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
     var res = coursesData
         .where((e) => e['courseCode'] == courseCode)
         .singleWhere((e) => e['courseID'] == courseID);
-    
+
     text = res['courseTitle'] != null ? res['courseTitle'] : 'Course Not found';
   }
 
@@ -171,7 +172,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                 courseCode: _chosenCourseCode,
                 courseID: _chosenCourseID,
                 semesterCode: widget.semesterCode,
-                userID: authService.id,
+                userID: uid,
                 userName: authService.name,
                 courseCredits:
                     Provider.of<CourseInfoState>(context).selectedCredits,

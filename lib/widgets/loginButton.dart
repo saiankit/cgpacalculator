@@ -38,11 +38,11 @@ class LoginButton extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: const Color(0xff000000).withOpacity(0.25),
-              blurRadius: 8.0, // has the effect of softening the shadow
-              spreadRadius: 0.5, // has the effect of extending the shadow
+              blurRadius: 8.0, 
+              spreadRadius: 0.5,
               offset: Offset(
-                2.0, // horizontal, move right 10
-                10.0, // vertical, move down 10
+                2.0, 
+                10.0,
               ),
             ),
           ],

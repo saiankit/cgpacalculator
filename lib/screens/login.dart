@@ -39,12 +39,14 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                      'CGPA',
-                      style: TextStyle(
-                        fontSize: 100.0,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.grey[850],
+                    Center(
+                      child: Text(
+                        'CGPA',
+                        style: TextStyle(
+                          fontSize: 100.0,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.grey[850],
+                        ),
                       ),
                     ),
                   ],

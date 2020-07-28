@@ -16,6 +16,7 @@ class CourseUpdate extends StatefulWidget {
   final int courseCredits;
   final int documentID;
   final String semesterCode;
+  final String userID;
   CourseUpdate(
       {this.courseCode,
       this.courseGrade,
@@ -23,6 +24,7 @@ class CourseUpdate extends StatefulWidget {
       this.courseTitle,
       this.courseCredits,
       this.documentID,
+      this.userID,
       this.semesterCode});
   @override
   _CourseUpdateState createState() => _CourseUpdateState();
@@ -38,27 +40,29 @@ class _CourseUpdateState extends State<CourseUpdate> {
           content: Text("Are you sure you want to delete the course ?"),
           actions: <Widget>[
             FlatButton(
-                child: Text(
-                  'Yes',
-                  style: TextStyle(
-                    color: Colors.red,
-                  ),
+              child: Text(
+                'Yes',
+                style: TextStyle(
+                  color: Colors.red,
                 ),
-                onPressed: () {
-                  Course _course = Course(
-                    courseCode: widget.courseCode,
-                    courseCredits: widget.courseCredits,
-                    courseID: widget.courseID,
-                    courseTitle: widget.courseTitle,
-                    id: widget.documentID,
-                    gradeAchieved: widget.courseGrade,
-                    semesterCode: widget.semesterCode,
-                  );
-                  Provider.of<AppDatabase>(context, listen: false)
-                      .deleteCourse(_course);
-                  Navigator.of(context).pop();
-                  Navigator.of(context).pop();
-                }),
+              ),
+              onPressed: () {
+                Course _course = Course(
+                  userID: widget.userID,
+                  courseCode: widget.courseCode,
+                  courseCredits: widget.courseCredits,
+                  courseID: widget.courseID,
+                  courseTitle: widget.courseTitle,
+                  id: widget.documentID,
+                  gradeAchieved: widget.courseGrade,
+                  semesterCode: widget.semesterCode,
+                );
+                Provider.of<AppDatabase>(context, listen: false)
+                    .deleteCourse(_course);
+                Navigator.of(context).pop();
+                Navigator.of(context).pop();
+              },
+            ),
             FlatButton(
               child: new Text("No"),
               onPressed: () {
