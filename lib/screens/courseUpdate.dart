@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 import 'package:provider/provider.dart';
 
-String text = ' ';
+String text = '';
 search(String courseCode, String courseID) {
   var res = coursesData
       .where((e) => e['courseCode'] == courseCode)
