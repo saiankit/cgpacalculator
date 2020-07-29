@@ -32,6 +32,7 @@ class _AppbarState extends State<Appbar> {
                 await authService.signOutGoogle();
                 prefs.clear().then(
                   (value) {
+                    Navigator.of(context).pop();
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) {

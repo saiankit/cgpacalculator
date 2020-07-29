@@ -45,6 +45,10 @@ class CourseUpdate extends StatefulWidget {
 }
 
 class _CourseUpdateState extends State<CourseUpdate> {
+  deleteCourse(Course courseToBeDeleted) {
+    Provider.of<AppDatabase>(context, listen: false)
+        .deleteCourse(courseToBeDeleted);
+  }
   void _showDialog() {
     showDialog(
       context: context,
@@ -61,7 +65,8 @@ class _CourseUpdateState extends State<CourseUpdate> {
                 ),
               ),
               onPressed: () {
-                Course _course = Course(
+                Navigator.of(context).pop();
+                Course _courseToBeDeleted = Course(
                   userID: widget.userID,
                   courseCode: widget.courseCode,
                   courseCredits: widget.courseCredits,
@@ -71,9 +76,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
                   gradeAchieved: widget.courseGrade,
                   semesterCode: widget.semesterCode,
                 );
-                Provider.of<AppDatabase>(context, listen: false)
-                    .deleteCourse(_course);
-                Navigator.of(context).pop();
+                deleteCourse(_courseToBeDeleted);
                 Navigator.of(context).pop();
               },
             ),
