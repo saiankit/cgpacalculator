@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 class AddCourseButton extends StatefulWidget {
   final String semesterCode;
   final String userID;
-  final String userName;
   final String courseCode;
   final String courseID;
   final int courseCredits;
@@ -17,7 +16,6 @@ class AddCourseButton extends StatefulWidget {
     this.semesterCode,
     this.documentID,
     this.userID,
-    this.userName,
     this.courseCode,
     this.courseID,
     this.courseCredits,
@@ -38,7 +36,11 @@ class _AddCourseButtonState extends State<AddCourseButton> {
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
-                title: Text("Course Not Found"),
+                title: Text('Course Not Found',
+                    style: ThemeStyles.marqueeTextStyle),
+                content: Text(
+                    'Course cannot be added into the journal because it is not found.',
+                    style: ThemeStyles.titleTextStyle),
               );
             },
           );

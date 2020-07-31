@@ -196,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     builder: (context) => Container(
                                       height:
                                           MediaQuery.of(context).size.height *
-                                              0.65,
+                                              0.60,
                                       decoration: ThemeStyles
                                           .modalBottomSheetDecoration,
                                       child: AddCourseScreen(_semesterCode),

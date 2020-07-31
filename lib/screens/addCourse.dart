@@ -155,25 +155,15 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Credits', style: ThemeStyles.marqueeTextStyle),
-                    Text('Grade', style: ThemeStyles.marqueeTextStyle),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GradeSelector(
-                        Provider.of<CourseInfoState>(context).courseGrade),
                     CreditSelector(
                       Provider.of<CourseInfoState>(context).selectedCredits,
                     ),
+                    GradeSelector(
+                        Provider.of<CourseInfoState>(context).courseGrade),
                   ],
                 ),
               ),
@@ -183,7 +173,6 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                 courseID: _chosenCourseID,
                 semesterCode: widget.semesterCode,
                 userID: fuid,
-                userName: authService.name,
                 courseCredits:
                     Provider.of<CourseInfoState>(context).selectedCredits,
                 gradeAchieved:

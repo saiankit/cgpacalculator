@@ -1,4 +1,5 @@
 import 'package:CgpaCalculator/data/moor_database.dart';
+import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -40,7 +41,11 @@ class _UpdateCourseButtonState extends State<UpdateCourseButton> {
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
-                title: Text("Course Not Found"),
+                title: Text('Course Not Found',
+                    style: ThemeStyles.marqueeTextStyle),
+                content: Text(
+                    'Course cannot be added into the journal because it is not found.',
+                    style: ThemeStyles.titleTextStyle),
               );
             },
           );
@@ -57,7 +62,6 @@ class _UpdateCourseButtonState extends State<UpdateCourseButton> {
               gradeAchieved: widget.gradeAchieved,
             ),
           );
-
           Navigator.of(context).pop();
         }
       },
@@ -67,8 +71,7 @@ class _UpdateCourseButtonState extends State<UpdateCourseButton> {
         decoration: BoxDecoration(
           color: Colors.black,
         ),
-        child: Padding(
-          padding: const EdgeInsets.only(left: 130.0, top: 28.0),
+        child: Center(
           child: Text(
             'Update Course',
             style: TextStyle(

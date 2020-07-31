@@ -41,7 +41,7 @@ class _CourseCardState extends State<CourseCard> {
               isScrollControlled: true,
               backgroundColor: Colors.transparent,
               builder: (context) => Container(
-                height: MediaQuery.of(context).size.height * 0.65,
+                height: MediaQuery.of(context).size.height * 0.60,
                 decoration: ThemeStyles.modalBottomSheetDecoration,
                 child: CourseUpdate(
                   courseCode: widget.courseCode,

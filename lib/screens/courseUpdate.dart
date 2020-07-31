@@ -4,6 +4,7 @@ import 'package:CgpaCalculator/localData/coursesData.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/screens/homeScreen.dart';
 import 'package:CgpaCalculator/services/courseInfo.dart';
+import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/widgets/creditsSelector.dart';
 import 'package:CgpaCalculator/widgets/updateCourseButton.dart';
 import 'package:flutter/material.dart';
@@ -49,6 +50,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
     Provider.of<AppDatabase>(context, listen: false)
         .deleteCourse(courseToBeDeleted);
   }
+
   void _showDialog() {
     showDialog(
       context: context,
@@ -102,62 +104,90 @@ class _CourseUpdateState extends State<CourseUpdate> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(top: 25.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                            icon: Icon(
-                              Icons.delete,
-                              size: 30.0,
-                              color: Colors.redAccent,
-                            ),
-                            onPressed: _showDialog,
-                          )
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          top: 30.0, left: 20.0, right: 20.0),
-                      child: TempWidget(
-                        existingCourseCode: widget.courseCode,
-                        existingCourseID: widget.courseID,
-                      ),
-                    ),
-                    SizedBox(height: 25.0),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                      child: Container(
-                        height: 60.0,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(15.0),
-                        ),
-                        child: Center(
-                          child: Marquee(
-                            text: text,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 20.0,
-                              color: Colors.black,
-                            ),
-                            blankSpace: 100,
-                            velocity: 10,
+                Padding(
+                  padding: const EdgeInsets.only(top: 25.0, right: 25.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          _showDialog();
+                        },
+                        child: Container(
+                          width: 225.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12.0),
+                            border: Border.all(color: Colors.redAccent),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Delete Course',
+                                style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              IconButton(
+                                icon: Icon(
+                                  Icons.delete,
+                                  size: 30.0,
+                                  color: Colors.redAccent,
+                                ),
+                                onPressed: null,
+                              )
+                            ],
                           ),
                         ),
                       ),
-                    ),
-                    TempCreditSelector(
-                      widget.courseCredits,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-                TempGradeSelector(widget.courseGrade),
+                Padding(
+                  padding:
+                      const EdgeInsets.only( left: 20.0, right: 20.0),
+                  child: TempWidget(
+                    existingCourseCode: widget.courseCode,
+                    existingCourseID: widget.courseID,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                  child: Container(
+                    height: 60.0,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      border: Border.all(),
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    child: Center(
+                      child: Marquee(
+                        text: text,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 20.0,
+                          color: Colors.black,
+                        ),
+                        blankSpace: 100,
+                        velocity: 10,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TempCreditSelector(
+                        widget.courseCredits,
+                      ),
+                      TempGradeSelector(widget.courseGrade),
+                    ],
+                  ),
+                ),
                 UpdateCourseButton(
                   userID: fuid,
                   courseCode: Provider.of<CourseInfoState>(context).courseCode,
