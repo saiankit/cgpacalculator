@@ -15,6 +15,17 @@ class ThemeStyles {
     fontWeight: FontWeight.w700,
   );
 
+  static TextStyle addButtonTextStyle = TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.w700,
+    fontSize: 25.0,
+  );
+
+  static TextStyle marqueeTextStyle = TextStyle(
+    fontWeight: FontWeight.w700,
+    fontSize: 20.0,
+    color: Colors.black,
+  );
   static BoxDecoration courseCardDecoration = BoxDecoration(
     border: Border.all(
       color: Colors.grey,

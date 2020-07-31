@@ -35,20 +35,31 @@ class _UpdateCourseButtonState extends State<UpdateCourseButton> {
         final courseCode = widget.courseCode;
         final courseID = widget.courseID;
         final semesterCode = widget.semesterCode;
-        Provider.of<AppDatabase>(context, listen: false).updateCourse(
-          Course(
-            userID: widget.userID,
-            id: widget.documentID,
-            courseCode: courseCode,
-            courseID: courseID,
-            courseTitle: widget.courseTitle,
-            semesterCode: semesterCode,
-            courseCredits: widget.courseCredits,
-            gradeAchieved: widget.gradeAchieved,
-          ),
-        );
+        if (widget.courseTitle == 'Course Not found') {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text("Course Not Found"),
+              );
+            },
+          );
+        } else {
+          Provider.of<AppDatabase>(context, listen: false).updateCourse(
+            Course(
+              userID: widget.userID,
+              id: widget.documentID,
+              courseCode: courseCode,
+              courseID: courseID,
+              courseTitle: widget.courseTitle,
+              semesterCode: semesterCode,
+              courseCredits: widget.courseCredits,
+              gradeAchieved: widget.gradeAchieved,
+            ),
+          );
 
-        Navigator.of(context).pop();
+          Navigator.of(context).pop();
+        }
       },
       child: Container(
         width: MediaQuery.of(context).size.width,

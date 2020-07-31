@@ -1,4 +1,5 @@
 import 'package:CgpaCalculator/data/moor_database.dart';
+import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -65,14 +66,7 @@ class _AddCourseButtonState extends State<AddCourseButton> {
         ),
         child: Padding(
           padding: const EdgeInsets.only(left: 130.0, top: 28.0),
-          child: Text(
-            'Add Course',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w700,
-              fontSize: 25.0,
-            ),
-          ),
+          child: Text('Add Course', style: ThemeStyles.addButtonTextStyle),
         ),
       ),
     );
