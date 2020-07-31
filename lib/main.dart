@@ -71,7 +71,7 @@ class _MyAppState extends State<MyApp> {
             body: LoginPage(),
           ),
         ),
-        // dispose: (context, db) => db.close(),
+        dispose: (context, db) => db.close(),
       );
     }
   }
