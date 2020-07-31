@@ -1,3 +1,4 @@
+import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/widgets/loginButton.dart';
 import 'package:CgpaCalculator/widgets/loginText.dart';
 import 'package:flutter/material.dart';
@@ -56,8 +57,15 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Cummulative   Grade   Point   Average',
+                    style: ThemeStyles.titleTextStyle),
+              ],
+            ),
             Padding(
-              padding: const EdgeInsets.only(top: 150.0),
+              padding: const EdgeInsets.only(top: 125.0),
               child: LoginButton(),
             ),
           ],

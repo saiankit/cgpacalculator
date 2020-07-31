@@ -67,7 +67,7 @@ class _AppbarState extends State<Appbar> {
         Row(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              padding: const EdgeInsets.only(left: 15.0),
               child: Container(
                 height: 45,
                 width: 110,

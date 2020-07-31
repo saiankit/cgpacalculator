@@ -8,21 +8,8 @@ class LoginText extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
-          Column(
-            children: <Widget>[
-              Container(
-                height: 150.0,
-                width: 150.0,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/bits-logo.png'),
-                  ),
-                ),
-              )
-            ],
-          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
