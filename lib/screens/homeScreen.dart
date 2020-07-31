@@ -1,9 +1,7 @@
 import 'package:CgpaCalculator/components/appbar.dart';
 import 'package:CgpaCalculator/components/noItems.dart';
 import 'package:CgpaCalculator/data/moor_database.dart';
-import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/screens/addCourse.dart';
-import 'package:CgpaCalculator/services/auth.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/widgets/courseCard.dart';

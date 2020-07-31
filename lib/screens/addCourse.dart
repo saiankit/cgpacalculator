@@ -1,8 +1,6 @@
 import 'package:CgpaCalculator/components/gradeSelector.dart';
 import 'package:CgpaCalculator/localData/coursesData.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
-import 'package:CgpaCalculator/main.dart';
-import 'package:CgpaCalculator/services/auth.dart';
 import 'package:CgpaCalculator/services/courseInfo.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/widgets/addCourseButton.dart';

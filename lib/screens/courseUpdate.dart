@@ -4,7 +4,6 @@ import 'package:CgpaCalculator/localData/coursesData.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/screens/homeScreen.dart';
 import 'package:CgpaCalculator/services/courseInfo.dart';
-import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/widgets/creditsSelector.dart';
 import 'package:CgpaCalculator/widgets/updateCourseButton.dart';
 import 'package:flutter/material.dart';
@@ -146,8 +145,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
                   ),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.only( left: 20.0, right: 20.0),
+                  padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                   child: TempWidget(
                     existingCourseCode: widget.courseCode,
                     existingCourseID: widget.courseID,
