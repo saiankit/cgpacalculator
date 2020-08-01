@@ -1,4 +1,4 @@
-package com.example.CgpaCalculator
+package com.saiankit.cgpacalculator
 
 import io.flutter.embedding.android.FlutterActivity
 

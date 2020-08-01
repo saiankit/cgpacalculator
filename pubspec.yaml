@@ -25,12 +25,18 @@ dependencies:
   shared_preferences:
   path_provider:
   moor_flutter:
+  flutter_launcher_icons: ^0.7.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   moor_generator:
   build_runner:
+flutter_icons:
+  ios: true
+  android: true
+  image_path_ios: "assets/launcher/icon.png"
+  image_path_android: "assets/launcher/icon.png"
 flutter:
 
   uses-material-design: true

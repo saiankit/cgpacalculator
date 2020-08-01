@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>397107940686-54la0udphr49f035fgfvv26hjsk63uca.apps.googleusercontent.com</string>
+	<string>397107940686-921msp532ffi1v5r092mrv32gqnrq7dh.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.397107940686-54la0udphr49f035fgfvv26hjsk63uca</string>
+	<string>com.googleusercontent.apps.397107940686-921msp532ffi1v5r092mrv32gqnrq7dh</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>397107940686-hldf1kd1d323chqh9oo0s45tsk7rtqhc.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBTCmz2It1dJUJMuN-osRfWFWqo10Bm2lU</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.CgpaCalculator</string>
+	<string>com.saiankit.cgpacalculator</string>
 	<key>PROJECT_ID</key>
 	<string>cgpacalculator-d9ce6</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:397107940686:ios:512d9f9c14c856b8ff621f</string>
+	<string>1:397107940686:ios:8e01ddaddfb12d61ff621f</string>
 	<key>DATABASE_URL</key>
 	<string>https://cgpacalculator-d9ce6.firebaseio.com</string>
 </dict>
