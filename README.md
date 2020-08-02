@@ -1,16 +1,6 @@
-# CgpaCalculator
+# CGPA Calculator App
+## CGPA Calculator is mainly aimed at enabling BITS’ians to calculate and journalese their grades achieved in different semesters with the feature of calculating their SGPA and CGPA. The calculation is automatic and without any hassle. Just add the course you are pursuing in a semester, the course title is automatically detected. Add credits of that course and your grade achieved to add that course for SGPA and CGPA calculation. You can plug and play with the courses anytime you want. 
+## CGPA Calculator App is developed using Flutter. Authentication is performed using Firebase and the data of the user is stored inside the phone storage itself using persistent data storage SQFlite package called Moor. 
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Created and Maintained by 
+## Sai Ankit ( [Code Studio Sai Ankit](https://www.youtube.com/c/CodeStudioSaiAnkit?sub_confirmation=1) ) 
