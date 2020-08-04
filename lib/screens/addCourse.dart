@@ -20,9 +20,9 @@ class AddCourseScreen extends StatefulWidget {
 class _AddCourseScreenState extends State<AddCourseScreen> {
   String _chosenCourseCode = 'CS';
   String _chosenCourseID = 'F111';
-  String chosenCredits = '4';
+  int chosenCredits = 4;
   String text = 'Computer Programming';
-  search(String courseCode, String courseID) {
+  searchCourseTitle(String courseCode, String courseID) {
     var res = coursesData
         .where((e) => e['courseCode'] == courseCode)
         .singleWhere((e) => e['courseID'] == courseID, orElse: () => null);
@@ -30,6 +30,17 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
       text = 'Course Not found';
     } else {
       text = res['courseTitle'];
+    }
+  }
+
+  searchCourseCredits(String courseCode, String courseID) {
+    var res = coursesData
+        .where((e) => e['courseCode'] == courseCode)
+        .singleWhere((e) => e['courseID'] == courseID, orElse: () => null);
+    if (res == null) {
+      chosenCredits = 1;
+    } else {
+      chosenCredits = int.parse(res['courseCredits']);
     }
   }
 
@@ -84,7 +95,13 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                                   _chosenCourseCode = value;
                                 },
                               );
-                              search(_chosenCourseCode, _chosenCourseID);
+                              searchCourseTitle(
+                                  _chosenCourseCode, _chosenCourseID);
+                              searchCourseCredits(
+                                  _chosenCourseCode, _chosenCourseID);
+                              Provider.of<CourseInfoState>(context,
+                                      listen: false)
+                                  .changeCredits(chosenCredits);
                             },
                           ),
                         ),
@@ -124,7 +141,13 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                                   _chosenCourseID = value;
                                 },
                               );
-                              search(_chosenCourseCode, _chosenCourseID);
+                              searchCourseTitle(
+                                  _chosenCourseCode, _chosenCourseID);
+                              searchCourseCredits(
+                                  _chosenCourseCode, _chosenCourseID);
+                              Provider.of<CourseInfoState>(context,
+                                      listen: false)
+                                  .changeCredits(chosenCredits);
                             },
                           ),
                         ),
@@ -157,8 +180,42 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CreditSelector(
-                      Provider.of<CourseInfoState>(context).selectedCredits,
+                    // CreditSelector(
+                    //   Provider.of<CourseInfoState>(context).selectedCredits,
+                    // ),
+                    Column(
+                      children: [
+                        Text('Credits', style: ThemeStyles.marqueeTextStyle),
+                        SizedBox(height: 10.0),
+                        Container(
+                          height: 60.0,
+                          width: 80.0,
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 10.0),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 15.0),
+                              child: Center(
+                                child: Text(
+                                  Provider.of<CourseInfoState>(context)
+                                      .selectedCredits
+                                      .toString(),
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     GradeSelector(
                         Provider.of<CourseInfoState>(context).courseGrade),

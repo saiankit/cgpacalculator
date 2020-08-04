@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CourseInfoState extends ChangeNotifier {
-  int selectedCredits = 1;
+  int selectedCredits = 4;
   String courseCode;
   String courseID;
   int courseGrade = 10;

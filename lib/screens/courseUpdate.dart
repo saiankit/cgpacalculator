@@ -4,14 +4,15 @@ import 'package:CgpaCalculator/localData/coursesData.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/screens/homeScreen.dart';
 import 'package:CgpaCalculator/services/courseInfo.dart';
-import 'package:CgpaCalculator/widgets/creditsSelector.dart';
+import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/widgets/updateCourseButton.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 import 'package:provider/provider.dart';
 
 String text = '';
-search(String courseCode, String courseID) {
+int credits = 1;
+searchCourseTitle(String courseCode, String courseID) {
   var res = coursesData
       .where((e) => e['courseCode'] == courseCode)
       .singleWhere((e) => e['courseID'] == courseID, orElse: () => null);
@@ -19,6 +20,17 @@ search(String courseCode, String courseID) {
     text = 'Course Not found';
   } else {
     text = res['courseTitle'];
+  }
+}
+
+searchCourseCredits(String courseCode, String courseID) {
+  var res = coursesData
+      .where((e) => e['courseCode'] == courseCode)
+      .singleWhere((e) => e['courseID'] == courseID, orElse: () => null);
+  if (res == null) {
+    credits = 1;
+  } else {
+    credits = int.parse(res['courseCredits']);
   }
 }
 
@@ -254,8 +266,40 @@ class _TempCreditSelectorState extends State<TempCreditSelector> {
 
   @override
   Widget build(BuildContext context) {
-    return CreditSelector(
-        Provider.of<CourseInfoState>(context).selectedCredits);
+    return Column(
+      children: [
+        Text('Credits', style: ThemeStyles.marqueeTextStyle),
+        SizedBox(height: 10.0),
+        Container(
+          height: 60.0,
+          width: 80.0,
+          decoration: BoxDecoration(
+            color: Colors.grey.withOpacity(0.2),
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: Center(
+                child: Text(
+                  Provider.of<CourseInfoState>(context)
+                      .selectedCredits
+                      .toString(),
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+    // return CreditSelector(
+    //     Provider.of<CourseInfoState>(context).selectedCredits);
   }
 }
 
@@ -339,10 +383,16 @@ class _CourseCodeSelectorState extends State<CourseCodeSelector> {
                   onChanged: (String value) {
                     Provider.of<CourseInfoState>(context, listen: false)
                         .changeCourseCode(value);
-                    search(
+                    searchCourseTitle(
                         value,
                         Provider.of<CourseInfoState>(context, listen: false)
                             .courseID);
+                    searchCourseCredits(
+                        value,
+                        Provider.of<CourseInfoState>(context, listen: false)
+                            .courseID);
+                    Provider.of<CourseInfoState>(context, listen: false)
+                        .changeCredits(credits);
                   },
                 ),
               ),
@@ -380,10 +430,16 @@ class _CourseCodeSelectorState extends State<CourseCodeSelector> {
                   onChanged: (String value) {
                     Provider.of<CourseInfoState>(context, listen: false)
                         .changeCourseID(value);
-                    search(
+                    searchCourseTitle(
                         Provider.of<CourseInfoState>(context, listen: false)
                             .courseCode,
                         value);
+                    searchCourseCredits(
+                        Provider.of<CourseInfoState>(context, listen: false)
+                            .courseCode,
+                        value);
+                    Provider.of<CourseInfoState>(context, listen: false)
+                        .changeCredits(credits);
                   },
                 ),
               ),

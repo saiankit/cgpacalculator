@@ -21,7 +21,7 @@ List<String> courseCodeList = [
   'MST',
   'PHA',
   'PHY',
-  'SANS'
+  'SANS',
 ];
 
 List<String> semesterList = [

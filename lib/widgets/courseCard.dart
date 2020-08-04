@@ -35,7 +35,7 @@ class _CourseCardState extends State<CourseCard> {
       child: Consumer<SemesterState>(
         builder: (context, semState, _) => GestureDetector(
           onTap: () {
-            search(widget.courseCode, widget.courseID);
+            searchCourseTitle(widget.courseCode, widget.courseID);
             showModalBottomSheet(
               context: context,
               isScrollControlled: true,
