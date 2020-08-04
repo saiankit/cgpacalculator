@@ -3,6 +3,7 @@ import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/services/auth.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:flutter/material.dart';
+import 'package:marquee/marquee.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
