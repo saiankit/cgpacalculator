@@ -4,7 +4,6 @@ import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/services/courseInfo.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/widgets/addCourseButton.dart';
-import 'package:CgpaCalculator/widgets/creditsSelector.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 import 'package:provider/provider.dart';
@@ -59,7 +58,6 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                     const EdgeInsets.only(top: 70.0, left: 20.0, right: 20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Container(
                       height: 60.0,
@@ -95,6 +93,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                                   _chosenCourseCode = value;
                                 },
                               );
+                              print(coursesData.length);
                               searchCourseTitle(
                                   _chosenCourseCode, _chosenCourseID);
                               searchCourseCredits(

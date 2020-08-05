@@ -20,54 +20,42 @@ class _LoginPageState extends State<LoginPage> {
       onWillPop: () async => false,
       child: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 60.0),
-              child: LoginText(),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 55.0),
-              child: Container(
-                height: 150.0,
-                width: 350.0,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 3.0,
-                  ),
-                  borderRadius: BorderRadius.circular(50.0),
-                  color: Colors.grey[200].withOpacity(0.5),
-                ),
-                child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Center(
-                        child: Text(
-                          'CGPA',
-                          style: TextStyle(
-                            fontSize: 100.0,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.grey[850],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            LoginText(),
+            Column(
               children: [
-                Text('Cummulative   Grade   Point   Average',
-                    style: ThemeStyles.titleTextStyle),
+                Container(
+                  height: 150.0,
+                  width: 350.0,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 3.0,
+                    ),
+                    borderRadius: BorderRadius.circular(50.0),
+                    color: Colors.grey[200].withOpacity(0.5),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'CGPA',
+                      style: TextStyle(
+                        fontSize: 100.0,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.grey[850],
+                      ),
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Cummulative   Grade   Point   Average',
+                        style: ThemeStyles.titleTextStyle),
+                  ],
+                ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 125.0),
-              child: LoginButton(),
-            ),
+            LoginButton(),
           ],
         ),
       ),

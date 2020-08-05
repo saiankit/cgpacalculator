@@ -4,6 +4,7 @@ import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/screens/addCourse.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
+import 'package:CgpaCalculator/widgets/addAnewCourseButtonHomeScreen.dart';
 import 'package:CgpaCalculator/widgets/courseCard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -49,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Scaffold(
                 body: SafeArea(
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 10.0),
+                    padding: const EdgeInsets.only(top: 20.0),
                     child: ChangeNotifierProvider(
                       create: (_) => SemesterState(),
                       child: Consumer<SemesterState>(
@@ -178,6 +179,107 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ],
                                 ),
                               ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    right: 15.0, left: 15.0),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Row(
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              right: 20.0),
+                                          child: Text('Credits',
+                                              style: ThemeStyles.gpaTextStyle),
+                                        ),
+                                        StreamBuilder(
+                                          stream: Provider.of<AppDatabase>(
+                                                  context)
+                                              .watchCoursesBySemesterCode(
+                                                  Provider.of<SemesterState>(
+                                                          context)
+                                                      .selectedSemester,
+                                                  fuid),
+                                          builder: (context,
+                                              AsyncSnapshot<List<Course>>
+                                                  snapshot) {
+                                            if (!snapshot.hasData)
+                                              return Center(
+                                                child: Text('0.00',
+                                                    style: ThemeStyles
+                                                        .gpaNumberTextStyle),
+                                              );
+
+                                            int cred = 0;
+                                            String credits;
+
+                                            for (var i = 0;
+                                                i < snapshot.data.length;
+                                                i++) {
+                                              cred += snapshot
+                                                  .data[i].courseCredits;
+                                            }
+
+                                            if (cred.isNaN) {
+                                              credits = '0.00';
+                                            } else {
+                                              credits = cred.toString();
+                                            }
+                                            return Text(credits,
+                                                style: ThemeStyles
+                                                    .creditTextStyle);
+                                          },
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              right: 20.0),
+                                          child: Text('Credits',
+                                              style: ThemeStyles.gpaTextStyle),
+                                        ),
+                                        StreamBuilder(
+                                          stream:
+                                              Provider.of<AppDatabase>(context)
+                                                  .watchAllCourses(fuid),
+                                          builder: (context,
+                                              AsyncSnapshot<List<Course>>
+                                                  snapshot) {
+                                            if (!snapshot.hasData)
+                                              return Center(
+                                                child: Text('0.00',
+                                                    style: ThemeStyles
+                                                        .gpaNumberTextStyle),
+                                              );
+                                            int cred = 0;
+                                            String credits;
+                                            for (var i = 0;
+                                                i < snapshot.data.length;
+                                                i++) {
+                                              cred += snapshot
+                                                  .data[i].courseCredits;
+                                            }
+                                            if (cred.isNaN) {
+                                              credits = '0.00';
+                                            } else {
+                                              credits = cred.toString();
+                                            }
+                                            return Text(credits,
+                                                style: ThemeStyles
+                                                    .creditTextStyle);
+                                          },
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
                               GestureDetector(
                                 onTap: () {
                                   var _semesterCode =
@@ -201,33 +303,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   );
                                 },
-                                child: Padding(
-                                  padding: EdgeInsets.only(
-                                      left: 15.0,
-                                      right: 15.0,
-                                      top: 5.0,
-                                      bottom: 20.0),
-                                  child: Container(
-                                    height: 60.0,
-                                    decoration: ThemeStyles.addNewCourse,
-                                    child: Padding(
-                                      padding: EdgeInsets.only(
-                                          left: 30.0, right: 15.0),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: <Widget>[
-                                          Text(
-                                            'Add a new Course',
-                                            style: ThemeStyles.titleTextStyle,
-                                          ),
-                                          Icon(Icons.add,
-                                              color: Colors.grey[600]),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                                child: AddAnewCourseButton(),
                               ),
                               Expanded(
                                 child: StreamBuilder(
@@ -286,6 +362,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
-

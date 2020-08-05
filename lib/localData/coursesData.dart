@@ -4723,7 +4723,6 @@ List<Map<String, dynamic>> coursesData = [
     'courseID': 'F413',
     'courseTitle': 'Pharmaceutical Management and Quality Control',
     'courseCredits': '3',
-    'courseCredits': '3',
   },
   {
     'courseCode': 'PHA',

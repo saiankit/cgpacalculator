@@ -14,6 +14,10 @@ class ThemeStyles {
     fontSize: 40.0,
     fontWeight: FontWeight.w700,
   );
+  static TextStyle creditTextStyle = TextStyle(
+    fontSize: 25.0,
+    fontWeight: FontWeight.w700,
+  );
 
   static TextStyle addButtonTextStyle = TextStyle(
     color: Colors.white,
