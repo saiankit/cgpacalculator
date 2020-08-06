@@ -220,6 +220,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 i++) {
                                               cred += snapshot
                                                   .data[i].courseCredits;
+                                             
                                             }
 
                                             if (cred.isNaN) {
@@ -264,6 +265,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 i++) {
                                               cred += snapshot
                                                   .data[i].courseCredits;
+                                              print(snapshot
+                                                  .data[i].semesterCode);
                                             }
                                             if (cred.isNaN) {
                                               credits = '0.00';
@@ -286,9 +289,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                       Provider.of<SemesterState>(context,
                                               listen: false)
                                           .selectedSemester;
-                                  Provider.of<SemesterState>(context,
-                                          listen: false)
-                                      .sgpaCalculator(_semesterCode);
                                   showModalBottomSheet(
                                     context: context,
                                     isScrollControlled: true,
@@ -356,7 +356,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             );
-          // snapshot.data  :- get your object which is pass from your downloadData() function
         }
       },
     );

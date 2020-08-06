@@ -90,10 +90,19 @@ class _AppbarState extends State<Appbar> {
                     value: Provider.of<SemesterState>(context).selectedSemester,
                     items: semesterList.map<DropdownMenuItem<String>>(
                       (String value) {
-                        return DropdownMenuItem(
-                          value: value,
-                          child: Text(value),
-                        );
+                        if (value == 'ST1' ||
+                            value == 'ST 2' ||
+                            value == 'ST 3') {
+                          return DropdownMenuItem(
+                            value: value,
+                            child: Text(value),
+                          );
+                        } else {
+                          return DropdownMenuItem(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }
                       },
                     ).toList(),
                     onChanged: (String value) {

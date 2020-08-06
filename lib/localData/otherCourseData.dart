@@ -27,15 +27,15 @@ List<String> courseCodeList = [
 List<String> semesterList = [
   '1 - 1',
   '1 - 2',
-  'ST',
+  'ST 1',
   '2 - 1',
   '2 - 2',
-  'PS 1',
   '3 - 1',
   '3 - 2',
-  'ST',
+  'ST 2',
   '4 - 1',
   '4 - 2',
+  'ST 3',
   '5 - 1',
   '5 - 2',
 ];

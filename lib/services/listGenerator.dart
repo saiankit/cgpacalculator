@@ -1,10 +1,8 @@
 import 'package:CgpaCalculator/components/noItems.dart';
 import 'package:CgpaCalculator/main.dart';
-import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:CgpaCalculator/widgets/courseCard.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:provider/provider.dart';
 
 class ListGenerator extends StatefulWidget {
   final String semesterCode;
@@ -35,9 +33,6 @@ class _ListGeneratorState extends State<ListGenerator> {
             return ListView.builder(
               itemCount: snapshot.data.documents.length,
               itemBuilder: (BuildContext context, int index) {
-                Provider.of<SemesterState>(context)
-                    .sgpaCalculator(widget.semesterCode);
-
                 return CourseCard(
                   courseCode: snapshot.data.documents[index]['courseCode'],
                   gradeAchieved: snapshot.data.documents[index]
