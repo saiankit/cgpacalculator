@@ -1,5 +1,5 @@
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
-import 'package:CgpaCalculator/services/courseInfo.dart';
+import 'package:CgpaCalculator/providerStates/courseInfo.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';

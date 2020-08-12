@@ -3,7 +3,7 @@ import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/localData/coursesData.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/screens/homeScreen.dart';
-import 'package:CgpaCalculator/services/courseInfo.dart';
+import 'package:CgpaCalculator/providerStates/courseInfo.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/widgets/updateCourseButton.dart';
 import 'package:flutter/material.dart';
