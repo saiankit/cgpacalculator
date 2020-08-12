@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-String uid;
+String userIDSharedPreferences;
 
 Future<void> main() async {
   // Using Shared Preferences to persist the logged in user into the device
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  uid = prefs.getString('uid');
+  userIDSharedPreferences = prefs.getString('uid');
   // ::Debug:: -- UID of logged-in User
-  print("UID:" + uid.toString());
-  runApp(MyAppSecond(uid));
+  // print("UID:" + userIDSharedPreferences.toString());
+  runApp(MyAppSecond(userIDSharedPreferences));
 }
 
 class MyApp extends StatefulWidget {
@@ -23,16 +23,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  verifyLogin() async {
+  verifyUserLoggedIn() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String fuid = prefs.getString('uid');
-    return fuid;
+    String userIDSharedPreferences = prefs.getString('uid');
+    return userIDSharedPreferences;
   }
 
   @override
   Widget build(BuildContext context) {
     String val;
-    verifyLogin().then(
+    verifyUserLoggedIn().then(
       (value) {
         val = value;
       },

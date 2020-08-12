@@ -1,10 +1,13 @@
 import 'package:CgpaCalculator/components/appbar.dart';
+import 'package:CgpaCalculator/components/creditRow.dart';
 import 'package:CgpaCalculator/components/noItems.dart';
 import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/screens/addCourse.dart';
+import 'package:CgpaCalculator/screens/manualEntry.dart';
 import 'package:CgpaCalculator/services/semesterState.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/widgets/addAnewCourseButtonHomeScreen.dart';
+import 'package:CgpaCalculator/components/calculatorRow.dart';
 import 'package:CgpaCalculator/widgets/courseCard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -27,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Setting DeviceOrientation to potrait mode ONLY
+    // Setting DeviceOrientation to potrait mode ONLY - flutter services plugin required
     SystemChrome.setPreferredOrientations(
       [
         DeviceOrientation.portraitUp,
@@ -36,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
 
     return FutureBuilder<String>(
-      future: getID(), // function where you call your api
+      future: getID(), // future call to read the User ID
       builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
         // AsyncSnapshot<Your object type>
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -58,231 +61,56 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             children: <Widget>[
                               Appbar(),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    right: 15.0, left: 15.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[
-                                    Row(
-                                      children: <Widget>[
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              right: 20.0),
-                                          child: Text('SGPA',
-                                              style: ThemeStyles.gpaTextStyle),
-                                        ),
-                                        StreamBuilder(
-                                          stream: Provider.of<AppDatabase>(
-                                                  context)
-                                              .watchCoursesBySemesterCode(
-                                                  Provider.of<SemesterState>(
-                                                          context)
-                                                      .selectedSemester,
-                                                  fuid),
-                                          builder: (context,
-                                              AsyncSnapshot<List<Course>>
-                                                  snapshot) {
-                                            if (!snapshot.hasData)
-                                              return Center(
-                                                child: Text('0.00',
-                                                    style: ThemeStyles
-                                                        .gpaNumberTextStyle),
-                                              );
-
-                                            int total = 0;
-                                            int cred = 0;
-                                            String semesterGradePointAverage;
-                                            for (var i = 0;
-                                                i < snapshot.data.length;
-                                                i++) {
-                                              total += snapshot
-                                                      .data[i].gradeAchieved *
-                                                  snapshot
-                                                      .data[i].courseCredits;
-                                              cred += snapshot
-                                                  .data[i].courseCredits;
-                                            }
-                                            double sg = double.parse(
-                                                (total / cred)
-                                                    .toStringAsFixed(2));
-                                            if (sg.isNaN) {
-                                              semesterGradePointAverage =
-                                                  '0.00';
-                                            } else {
-                                              semesterGradePointAverage =
-                                                  sg.toString();
-                                            }
-                                            return Text(
-                                                semesterGradePointAverage,
-                                                style: ThemeStyles
-                                                    .gpaNumberTextStyle);
-                                          },
-                                        ),
-                                      ],
+                              GestureDetector(
+                                onTap: () {
+                                  showModalBottomSheet(
+                                    context: context,
+                                    isScrollControlled: true,
+                                    backgroundColor: Colors.transparent,
+                                    builder: (context) => Container(
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.30,
+                                      decoration: ThemeStyles
+                                          .modalBottomSheetDecoration,
+                                      child: ManualEntry(),
                                     ),
-                                    Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: <Widget>[
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              right: 20.0),
-                                          child: Text('CGPA',
-                                              style: ThemeStyles.gpaTextStyle),
-                                        ),
-                                        StreamBuilder(
-                                          stream:
-                                              Provider.of<AppDatabase>(context)
-                                                  .watchAllCourses(fuid),
-                                          builder: (context,
-                                              AsyncSnapshot<List<Course>>
-                                                  snapshot) {
-                                            if (!snapshot.hasData)
-                                              return Center(
-                                                child: Text('0.00',
-                                                    style: ThemeStyles
-                                                        .gpaNumberTextStyle),
-                                              );
-                                            int total = 0;
-                                            int cred = 0;
-                                            String cummulativeGradePointAverage;
-                                            for (var i = 0;
-                                                i < snapshot.data.length;
-                                                i++) {
-                                              total += snapshot
-                                                      .data[i].gradeAchieved *
-                                                  snapshot
-                                                      .data[i].courseCredits;
-                                              cred += snapshot
-                                                  .data[i].courseCredits;
-                                            }
-                                            double cg = double.parse(
-                                                (total / cred)
-                                                    .toStringAsFixed(2));
-                                            if (cg.isNaN) {
-                                              cummulativeGradePointAverage =
-                                                  '0.00';
-                                            } else {
-                                              cummulativeGradePointAverage =
-                                                  cg.toString();
-                                            }
-                                            return Text(
-                                                cummulativeGradePointAverage,
-                                                style: ThemeStyles
-                                                    .gpaNumberTextStyle);
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                  );
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 15.0, top: 10.0, right: 15.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Container(
+                                          decoration: BoxDecoration(
+                                            border: Border.all(),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Row(
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 5.0),
+                                                  child: Icon(Icons.add_alert),
+                                                ),
+                                                Text(
+                                                    'Add CG to particular semester'),
+                                              ],
+                                            ),
+                                          ))
+                                    ],
+                                  ),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    right: 15.0, left: 15.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[
-                                    Row(
-                                      children: <Widget>[
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              right: 20.0),
-                                          child: Text('Credits',
-                                              style: ThemeStyles.gpaTextStyle),
-                                        ),
-                                        StreamBuilder(
-                                          stream: Provider.of<AppDatabase>(
-                                                  context)
-                                              .watchCoursesBySemesterCode(
-                                                  Provider.of<SemesterState>(
-                                                          context)
-                                                      .selectedSemester,
-                                                  fuid),
-                                          builder: (context,
-                                              AsyncSnapshot<List<Course>>
-                                                  snapshot) {
-                                            if (!snapshot.hasData)
-                                              return Center(
-                                                child: Text('0.00',
-                                                    style: ThemeStyles
-                                                        .gpaNumberTextStyle),
-                                              );
-
-                                            int cred = 0;
-                                            String credits;
-
-                                            for (var i = 0;
-                                                i < snapshot.data.length;
-                                                i++) {
-                                              cred += snapshot
-                                                  .data[i].courseCredits;
-                                             
-                                            }
-
-                                            if (cred.isNaN) {
-                                              credits = '0.00';
-                                            } else {
-                                              credits = cred.toString();
-                                            }
-                                            return Text(credits,
-                                                style: ThemeStyles
-                                                    .creditTextStyle);
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: <Widget>[
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              right: 20.0),
-                                          child: Text('Credits',
-                                              style: ThemeStyles.gpaTextStyle),
-                                        ),
-                                        StreamBuilder(
-                                          stream:
-                                              Provider.of<AppDatabase>(context)
-                                                  .watchAllCourses(fuid),
-                                          builder: (context,
-                                              AsyncSnapshot<List<Course>>
-                                                  snapshot) {
-                                            if (!snapshot.hasData)
-                                              return Center(
-                                                child: Text('0.00',
-                                                    style: ThemeStyles
-                                                        .gpaNumberTextStyle),
-                                              );
-                                            int cred = 0;
-                                            String credits;
-                                            for (var i = 0;
-                                                i < snapshot.data.length;
-                                                i++) {
-                                              cred += snapshot
-                                                  .data[i].courseCredits;
-                                              print(snapshot
-                                                  .data[i].semesterCode);
-                                            }
-                                            if (cred.isNaN) {
-                                              credits = '0.00';
-                                            } else {
-                                              credits = cred.toString();
-                                            }
-                                            return Text(credits,
-                                                style: ThemeStyles
-                                                    .creditTextStyle);
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              CalculatorRow(
+                                  fuid: fuid, homeScreenContext: context),
+                              CreditRow(fuid: fuid, homeScreenContext: context),
                               GestureDetector(
                                 onTap: () {
                                   var _semesterCode =

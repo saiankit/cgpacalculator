@@ -23,7 +23,6 @@ class AppDatabase extends _$AppDatabase {
   @override
   int get schemaVersion => 1;
 
-  // Future<List<Course>> getAllCourses() => select(courses).get();
   Stream<List<Course>> watchAllCourses(String userID) {
     return (select(courses)..where((course) => course.userID.equals(userID)))
         .watch();
