@@ -40,11 +40,8 @@ class _CreditRowState extends State<CreditRow> {
                       child:
                           Text('0.00', style: ThemeStyles.gpaNumberTextStyle),
                     );
-                  String semCredits = countCredits(
-                      snapshot: snapshot,
-                      isCGPA: false,
-                      homeScreenContext: widget.homeScreenContext);
-                  return Text(semCredits, style: ThemeStyles.creditTextStyle);
+                  String totalCredits = countSemCredits(snapshot);
+                  return Text(totalCredits, style: ThemeStyles.creditTextStyle);
                 },
               ),
             ],
@@ -65,11 +62,22 @@ class _CreditRowState extends State<CreditRow> {
                       child:
                           Text('0.00', style: ThemeStyles.gpaNumberTextStyle),
                     );
-                  String totalCredits = countCredits(
-                      snapshot: snapshot,
-                      isCGPA: true,
-                      homeScreenContext: widget.homeScreenContext);
-                  return Text(totalCredits, style: ThemeStyles.creditTextStyle);
+                  return FutureBuilder(
+                    future: countCredits(snapshot),
+                    builder:
+                        (BuildContext context, AsyncSnapshot<String> snapshot) {
+                      List<Widget> children;
+                      if (snapshot.hasData) {
+                        children = [
+                          Text(snapshot.data,
+                              style: ThemeStyles.creditTextStyle)
+                        ];
+                      } else {
+                        children = [Text('..')];
+                      }
+                      return Column(children: children);
+                    },
+                  );
                 },
               ),
             ],
@@ -79,3 +87,54 @@ class _CreditRowState extends State<CreditRow> {
     );
   }
 }
+// Text(semCredits, style: ThemeStyles.creditTextStyle);
+
+// FutureBuilder<String>(
+//       future: _calculation, // a previously-obtained Future<String> or null
+//       builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+//         List<Widget> children;
+//         if (snapshot.hasData) {
+//           children = <Widget>[
+//             Icon(
+//               Icons.check_circle_outline,
+//               color: Colors.green,
+//               size: 60,
+//             ),
+//             Padding(
+//               padding: const EdgeInsets.only(top: 16),
+//               child: Text('Result: ${snapshot.data}'),
+//             )
+//           ];
+// } else if (snapshot.hasError) {
+//   children = <Widget>[
+//     Icon(
+//       Icons.error_outline,
+//       color: Colors.red,
+//       size: 60,
+//     ),
+//     Padding(
+//       padding: const EdgeInsets.only(top: 16),
+//       child: Text('Error: ${snapshot.error}'),
+//     )
+//   ];
+// } else {
+//           children = <Widget>[
+//             SizedBox(
+//               child: CircularProgressIndicator(),
+//               width: 60,
+//               height: 60,
+//             ),
+//             const Padding(
+//               padding: EdgeInsets.only(top: 16),
+//               child: Text('Awaiting result...'),
+//             )
+//           ];
+//         }
+//         return Center(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             crossAxisAlignment: CrossAxisAlignment.center,
+//             children: children,
+//           ),
+//         );
+//       },

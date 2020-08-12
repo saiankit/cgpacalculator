@@ -1,9 +1,11 @@
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/providerStates/courseInfo.dart';
+import 'package:CgpaCalculator/screens/homeScreen.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ManualEntry extends StatefulWidget {
   @override
@@ -129,13 +131,40 @@ class _ManualEntryState extends State<ManualEntry> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {
-                    print(Provider.of<CourseInfoState>(context, listen: false)
-                        .manualEntryCG);
-                    print(Provider.of<CourseInfoState>(context, listen: false)
-                        .manualExhaust);
-                    print(Provider.of<CourseInfoState>(context, listen: false)
-                        .defaultSemesterManual);
+                  onTap: () async {
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+                    String man =
+                        Provider.of<CourseInfoState>(context, listen: false)
+                            .manualExhaust;
+                    prefs.setString('manualCredits', man).then(
+                      (value) {
+                        // setState(() {
+                        //   isLoading = false;
+                        // });
+                        String manualCG =
+                            Provider.of<CourseInfoState>(context, listen: false)
+                                .manualEntryCG;
+                        prefs.setString('manualCG', manualCG);
+                      },
+                    ).then(
+                      (value) {
+                        String manualAddSem =
+                            Provider.of<CourseInfoState>(context, listen: false)
+                                .defaultSemesterManual;
+                        prefs.setString('manualSem', manualAddSem);
+                      },
+                    ).then((value) {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).pop();
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return HomeScreen();
+                          },
+                        ),
+                      );
+                    });
                   },
                   child: Container(
                     width: double.infinity,

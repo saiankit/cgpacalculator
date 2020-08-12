@@ -61,8 +61,28 @@ class _CalculatorRowState extends State<CalculatorRow> {
                       child:
                           Text('0.00', style: ThemeStyles.gpaNumberTextStyle),
                     );
-                  String cGPA = calculateGPA(snapshot);
-                  return Text(cGPA, style: ThemeStyles.gpaNumberTextStyle);
+                  return FutureBuilder(
+                    future: calculateCGPA(snapshot),
+                    builder:
+                        (BuildContext context, AsyncSnapshot<String> snapshot) {
+                      List<Widget> children;
+                      if (snapshot.hasData) {
+                        children = [
+                          Text(snapshot.data,
+                              style: ThemeStyles.gpaNumberTextStyle)
+                        ];
+                      } else if (snapshot.data == null) {
+                        children = [
+                          Text('0.00', style: ThemeStyles.gpaNumberTextStyle)
+                        ];
+                      } else {
+                        children = [
+                          Text('..', style: ThemeStyles.creditTextStyle)
+                        ];
+                      }
+                      return Column(children: children);
+                    },
+                  );
                 },
               ),
             ],
