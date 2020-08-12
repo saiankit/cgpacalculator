@@ -2,9 +2,9 @@ import 'package:CgpaCalculator/components/appbar.dart';
 import 'package:CgpaCalculator/components/creditRow.dart';
 import 'package:CgpaCalculator/components/noItems.dart';
 import 'package:CgpaCalculator/data/moor_database.dart';
+import 'package:CgpaCalculator/providerStates/courseInfo.dart';
 import 'package:CgpaCalculator/screens/addCourse.dart';
 import 'package:CgpaCalculator/screens/manualEntry.dart';
-import 'package:CgpaCalculator/providerStates/semesterState.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/widgets/addAnewCourseButtonHomeScreen.dart';
 import 'package:CgpaCalculator/components/calculatorRow.dart';
@@ -55,25 +55,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 20.0),
                     child: ChangeNotifierProvider(
-                      create: (_) => SemesterState(),
-                      child: Consumer<SemesterState>(
+                      create: (_) => CourseInfoState(),
+                      child: Consumer<CourseInfoState>(
                         builder: (context, semState, _) => Container(
                           child: Column(
                             children: <Widget>[
                               Appbar(),
                               GestureDetector(
                                 onTap: () {
-                                  showModalBottomSheet(
-                                    context: context,
-                                    isScrollControlled: true,
-                                    backgroundColor: Colors.transparent,
-                                    builder: (context) => Container(
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.30,
-                                      decoration: ThemeStyles
-                                          .modalBottomSheetDecoration,
-                                      child: ManualEntry(),
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return ManualEntry();
+                                      },
                                     ),
                                   );
                                 },
@@ -114,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               GestureDetector(
                                 onTap: () {
                                   var _semesterCode =
-                                      Provider.of<SemesterState>(context,
+                                      Provider.of<CourseInfoState>(context,
                                               listen: false)
                                           .selectedSemester;
                                   showModalBottomSheet(
@@ -137,7 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: StreamBuilder(
                                   stream: Provider.of<AppDatabase>(context)
                                       .watchCoursesBySemesterCode(
-                                          Provider.of<SemesterState>(context)
+                                          Provider.of<CourseInfoState>(context)
                                               .selectedSemester,
                                           fuid),
                                   builder: (context,
@@ -164,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           courseCredits: snapshot
                                               .data[index].courseCredits,
                                           semesterCode:
-                                              Provider.of<SemesterState>(
+                                              Provider.of<CourseInfoState>(
                                                       context)
                                                   .selectedSemester,
                                           documentID: snapshot.data[index].id,

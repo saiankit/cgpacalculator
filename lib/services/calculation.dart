@@ -1,5 +1,7 @@
 import 'package:CgpaCalculator/data/moor_database.dart';
+import 'package:CgpaCalculator/providerStates/courseInfo.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 String calculateGPA(AsyncSnapshot<List<Course>> snapshot) {
   int theProduct = 0;
@@ -22,18 +24,27 @@ String calculateGPA(AsyncSnapshot<List<Course>> snapshot) {
   return semesterGradePointAverage;
 }
 
-String countCredits(AsyncSnapshot<List<Course>> snapshot) {
+String countCredits(
+    {AsyncSnapshot<List<Course>> snapshot,
+    bool isCGPA,
+    BuildContext homeScreenContext}) {
   int cred = 0;
   String credits;
 
   for (var i = 0; i < snapshot.data.length; i++) {
     cred += snapshot.data[i].courseCredits;
   }
-
+  String manual = Provider.of<CourseInfoState>(homeScreenContext, listen: false)
+      .manualExhaust;
+  int credManual = int.parse(manual);
   if (cred.isNaN) {
     credits = '0.00';
   } else {
-    credits = cred.toString();
+    if (isCGPA) {
+      credits = (cred + credManual).toString();
+    } else {
+      credits = cred.toString();
+    }
   }
 
   return credits;

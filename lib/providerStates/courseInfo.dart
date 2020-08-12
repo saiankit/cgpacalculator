@@ -1,3 +1,4 @@
+import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:flutter/material.dart';
 
 class CourseInfoState extends ChangeNotifier {
@@ -6,6 +7,26 @@ class CourseInfoState extends ChangeNotifier {
   String courseCode;
   String courseID;
   int courseGrade = 10;
+  String manualEntryCG = '0';
+  String manualExhaust = '0';
+  var selectedSemester = semesterList[0];
+  String cummulativeGradePointAverage = "0.00";
+  String semesterGradePointAverage = "0.00";
+
+  void changeToSemester(String newSemester) {
+    selectedSemester = newSemester;
+    notifyListeners();
+  }
+
+  void changeManualCredits(String newManualCredits) {
+    manualExhaust = newManualCredits;
+    notifyListeners();
+  }
+
+  void changeManualCG(String newManualAdd) {
+    manualEntryCG = newManualAdd;
+    notifyListeners();
+  }
 
   void changeManualSemester(String newSemester) {
     defaultSemesterManual = newSemester;

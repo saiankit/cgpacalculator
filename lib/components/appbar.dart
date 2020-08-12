@@ -1,7 +1,7 @@
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/main.dart';
+import 'package:CgpaCalculator/providerStates/courseInfo.dart';
 import 'package:CgpaCalculator/services/auth.dart';
-import 'package:CgpaCalculator/providerStates/semesterState.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -87,7 +87,8 @@ class _AppbarState extends State<Appbar> {
                       fontSize: 20.0,
                     ),
                     underline: Container(),
-                    value: Provider.of<SemesterState>(context).selectedSemester,
+                    value:
+                        Provider.of<CourseInfoState>(context).selectedSemester,
                     items: semesterList.map<DropdownMenuItem<String>>(
                       (String value) {
                         if (value == 'ST1' ||
@@ -106,7 +107,7 @@ class _AppbarState extends State<Appbar> {
                       },
                     ).toList(),
                     onChanged: (String value) {
-                      Provider.of<SemesterState>(context, listen: false)
+                      Provider.of<CourseInfoState>(context, listen: false)
                           .changeToSemester(value);
                     },
                   ),

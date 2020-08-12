@@ -1,6 +1,6 @@
 import 'package:CgpaCalculator/data/moor_database.dart';
+import 'package:CgpaCalculator/providerStates/courseInfo.dart';
 import 'package:CgpaCalculator/services/calculation.dart';
-import 'package:CgpaCalculator/providerStates/semesterState.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -30,7 +30,7 @@ class _CalculatorRowState extends State<CalculatorRow> {
               StreamBuilder(
                 stream: Provider.of<AppDatabase>(widget.homeScreenContext)
                     .watchCoursesBySemesterCode(
-                        Provider.of<SemesterState>(widget.homeScreenContext)
+                        Provider.of<CourseInfoState>(widget.homeScreenContext)
                             .selectedSemester,
                         widget.fuid),
                 builder: (context, AsyncSnapshot<List<Course>> snapshot) {

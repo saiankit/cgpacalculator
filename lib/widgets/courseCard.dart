@@ -1,5 +1,5 @@
+import 'package:CgpaCalculator/providerStates/courseInfo.dart';
 import 'package:CgpaCalculator/screens/courseUpdate.dart';
-import 'package:CgpaCalculator/providerStates/semesterState.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -31,8 +31,8 @@ class _CourseCardState extends State<CourseCard> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => SemesterState(),
-      child: Consumer<SemesterState>(
+      create: (_) => CourseInfoState(),
+      child: Consumer<CourseInfoState>(
         builder: (context, semState, _) => GestureDetector(
           onTap: () {
             searchCourseTitle(widget.courseCode, widget.courseID);
