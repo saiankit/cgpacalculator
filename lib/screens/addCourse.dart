@@ -93,7 +93,6 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                                   _chosenCourseCode = value;
                                 },
                               );
-                              print(coursesData.length);
                               searchCourseTitle(
                                   _chosenCourseCode, _chosenCourseID);
                               searchCourseCredits(

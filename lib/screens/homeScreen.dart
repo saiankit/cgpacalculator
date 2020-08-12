@@ -4,7 +4,6 @@ import 'package:CgpaCalculator/components/noItems.dart';
 import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/providerStates/courseInfo.dart';
 import 'package:CgpaCalculator/screens/addCourse.dart';
-import 'package:CgpaCalculator/screens/manualEntry.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/widgets/addAnewCourseButtonHomeScreen.dart';
 import 'package:CgpaCalculator/components/calculatorRow.dart';
@@ -61,47 +60,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             children: <Widget>[
                               Appbar(),
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return ManualEntry();
-                                      },
-                                    ),
-                                  );
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 15.0, top: 10.0, right: 15.0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Container(
-                                          decoration: BoxDecoration(
-                                            border: Border.all(),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: Row(
-                                              children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          right: 5.0),
-                                                  child: Icon(Icons.add_alert),
-                                                ),
-                                                Text(
-                                                    'Add CG to particular semester'),
-                                              ],
-                                            ),
-                                          ))
-                                    ],
-                                  ),
-                                ),
-                              ),
                               CalculatorRow(
                                   fuid: fuid, homeScreenContext: context),
                               CreditRow(fuid: fuid, homeScreenContext: context),

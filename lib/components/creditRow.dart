@@ -1,6 +1,6 @@
 import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/providerStates/courseInfo.dart';
-import 'package:CgpaCalculator/services/calculation.dart';
+import 'package:CgpaCalculator/services/creditsCalculator.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -72,8 +72,12 @@ class _CreditRowState extends State<CreditRow> {
                           Text(snapshot.data,
                               style: ThemeStyles.creditTextStyle)
                         ];
+                      } else if (snapshot.data == null) {
+                        children = [
+                          Text('0', style: ThemeStyles.creditTextStyle)
+                        ];
                       } else {
-                        children = [Text('..')];
+                        children = [Text('Loading')];
                       }
                       return Column(children: children);
                     },
@@ -87,54 +91,3 @@ class _CreditRowState extends State<CreditRow> {
     );
   }
 }
-// Text(semCredits, style: ThemeStyles.creditTextStyle);
-
-// FutureBuilder<String>(
-//       future: _calculation, // a previously-obtained Future<String> or null
-//       builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-//         List<Widget> children;
-//         if (snapshot.hasData) {
-//           children = <Widget>[
-//             Icon(
-//               Icons.check_circle_outline,
-//               color: Colors.green,
-//               size: 60,
-//             ),
-//             Padding(
-//               padding: const EdgeInsets.only(top: 16),
-//               child: Text('Result: ${snapshot.data}'),
-//             )
-//           ];
-// } else if (snapshot.hasError) {
-//   children = <Widget>[
-//     Icon(
-//       Icons.error_outline,
-//       color: Colors.red,
-//       size: 60,
-//     ),
-//     Padding(
-//       padding: const EdgeInsets.only(top: 16),
-//       child: Text('Error: ${snapshot.error}'),
-//     )
-//   ];
-// } else {
-//           children = <Widget>[
-//             SizedBox(
-//               child: CircularProgressIndicator(),
-//               width: 60,
-//               height: 60,
-//             ),
-//             const Padding(
-//               padding: EdgeInsets.only(top: 16),
-//               child: Text('Awaiting result...'),
-//             )
-//           ];
-//         }
-//         return Center(
-//           child: Column(
-//             mainAxisAlignment: MainAxisAlignment.center,
-//             crossAxisAlignment: CrossAxisAlignment.center,
-//             children: children,
-//           ),
-//         );
-//       },
