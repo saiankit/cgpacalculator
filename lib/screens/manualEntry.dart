@@ -1,6 +1,6 @@
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
+import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/providerStates/courseInfo.dart';
-import 'package:CgpaCalculator/screens/homeScreen.dart';
 import 'package:CgpaCalculator/services/auth.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
@@ -159,14 +159,19 @@ class _ManualEntryState extends State<ManualEntry> {
                       (value) {
                         //Pop out Manual Screen
                         // Push Home Screen into Stack again
-                        prefs.setString('uid', authService.id);
-                        Navigator.of(context).pop();
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return HomeScreen();
-                            },
-                          ),
+                        prefs.setString('uid', authService.id).then(
+                          (value) {
+                            String userIDSharedPreferences =
+                                prefs.getString('uid');
+                            Navigator.of(context).pop();
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return MyApp(userIDSharedPreferences);
+                                },
+                              ),
+                            );
+                          },
                         );
                       },
                     );
