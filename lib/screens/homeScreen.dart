@@ -28,7 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print(fuid);
     return FutureBuilder<String>(
       future: getID(), // future call to read the User ID
       builder: (BuildContext context, AsyncSnapshot<String> snapshot) {

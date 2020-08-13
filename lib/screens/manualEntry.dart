@@ -157,17 +157,17 @@ class _ManualEntryState extends State<ManualEntry> {
                       },
                     ).then(
                       (value) {
-                        //Pop out Manual Screen
-                        // Push Home Screen into Stack again
                         prefs.setString('uid', authService.id).then(
                           (value) {
-                            String userIDSharedPreferences =
-                                prefs.getString('uid');
-                            Navigator.of(context).pop();
+                            String userID = prefs.getString('uid');
+                            Navigator.of(context)
+                                .pop(); // Pop out the Manual Entry Screen
+                            Navigator.of(context)
+                                .pop(); // Pop out the Home Screen
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return MyApp(userIDSharedPreferences);
+                                  return MyApp(userID);
                                 },
                               ),
                             );

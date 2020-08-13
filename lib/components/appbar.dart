@@ -26,7 +26,7 @@ class _AppbarState extends State<Appbar> {
               child: Text(
                 'Yes',
                 style: TextStyle(
-                  color: Colors.red,
+                  color: Colors.black,
                 ),
               ),
               onPressed: () async {
@@ -35,7 +35,6 @@ class _AppbarState extends State<Appbar> {
                 prefs.clear().then(
                   (value) {
                     Navigator.of(context).pop(); //Pop out the dialog box
-                    Navigator.of(context).pop(); // Pop out the Home Screen
                     // Push in the Manual Entry Page
                     Navigator.of(context).push(
                       MaterialPageRoute(
