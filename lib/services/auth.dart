@@ -1,17 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final Firestore _firestore = Firestore.instance;
+  // final Firestore _firestore = Firestore.instance;
 
   String name;
   String email;
-  String imageURL;
   String id;
-  String documentID;
+
   Future<void> signInWithGoogle() async {
     final GoogleSignInAccount googleSignInAccount =
         await _googleSignIn.signIn();
@@ -32,15 +31,15 @@ class AuthService {
     name = user.displayName;
     id = user.uid;
     email = user.email;
-    imageURL = user.photoUrl;
     final FirebaseUser currentUser = await _auth.currentUser();
     assert(user.uid == currentUser.uid);
-    _firestore.collection('users').document(id).setData(
-      {
-        'userID': '$id',
-        'userName': '$name',
-      },
-    );
+    //Commenting the below code because we aren't using Firestore currently to store the user data
+    // _firestore.collection('users').document(id).setData(
+    //   {
+    //     'userID': '$id',
+    //     'userName': '$name',
+    //   },
+    // );
   }
 
   Future<void> signOutGoogle() async {

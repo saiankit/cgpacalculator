@@ -34,7 +34,9 @@ class _AppbarState extends State<Appbar> {
                 await authService.signOutGoogle();
                 prefs.clear().then(
                   (value) {
-                    Navigator.of(context).pop();
+                    Navigator.of(context).pop(); //Pop out the dialog box
+                    Navigator.of(context).pop(); // Pop out the Home Screen
+                    // Push in the Manual Entry Page
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) {
@@ -76,7 +78,7 @@ class _AppbarState extends State<Appbar> {
               onPressed: () async {
                 SharedPreferences prefs = await SharedPreferences.getInstance();
                 await authService.signOutGoogle();
-                prefs.clear().then(
+                prefs.setString('uid', null).then(
                   (value) {
                     Navigator.of(context).pop();
                     Navigator.of(context).pop();

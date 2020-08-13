@@ -9,7 +9,6 @@ import 'package:CgpaCalculator/widgets/addAnewCourseButtonHomeScreen.dart';
 import 'package:CgpaCalculator/components/calculatorRow.dart';
 import 'package:CgpaCalculator/widgets/courseCard.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -29,14 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Setting DeviceOrientation to potrait mode ONLY - flutter services plugin required
-    SystemChrome.setPreferredOrientations(
-      [
-        DeviceOrientation.portraitUp,
-        DeviceOrientation.portraitDown,
-      ],
-    );
-
+    print(fuid);
     return FutureBuilder<String>(
       future: getID(), // future call to read the User ID
       builder: (BuildContext context, AsyncSnapshot<String> snapshot) {

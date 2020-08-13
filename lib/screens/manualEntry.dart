@@ -1,5 +1,7 @@
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/providerStates/courseInfo.dart';
+import 'package:CgpaCalculator/screens/homeScreen.dart';
+import 'package:CgpaCalculator/services/auth.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
 
@@ -153,17 +155,21 @@ class _ManualEntryState extends State<ManualEntry> {
                                 .defaultSemesterManual;
                         prefs.setString('manualSem', manualAddSem);
                       },
-                    ).then((value) {
-                      Navigator.of(context).pop();
-                      // Navigator.of(context).pop();
-                      // Navigator.of(context).push(
-                      //   MaterialPageRoute(
-                      //     builder: (context) {
-                      //       return HomeScreen();
-                      //     },
-                      //   ),
-                      // );
-                    });
+                    ).then(
+                      (value) {
+                        //Pop out Manual Screen
+                        // Push Home Screen into Stack again
+                        prefs.setString('uid', authService.id);
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return HomeScreen();
+                            },
+                          ),
+                        );
+                      },
+                    );
                   },
                   child: Container(
                     width: double.infinity,

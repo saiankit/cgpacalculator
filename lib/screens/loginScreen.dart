@@ -1,11 +1,8 @@
 import 'package:CgpaCalculator/screens/homeScreen.dart';
+import 'package:CgpaCalculator/screens/loadingScreen/loginLoading.dart';
 import 'package:CgpaCalculator/services/auth.dart';
-import 'package:CgpaCalculator/utilities/themeStyles.dart';
-import 'package:CgpaCalculator/widgets/loginButton.dart';
-import 'package:CgpaCalculator/widgets/loginText.dart';
+import 'package:CgpaCalculator/ui/loginScreenUI.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
@@ -17,88 +14,51 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
   bool isLoading = false;
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
     return SafeArea(
       child: isLoading
-          ? Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Please Wait...', style: ThemeStyles.gpaTextStyle),
-                SpinKitPouringHourglass(color: Colors.black),
-              ],
-            )
+          ? loginLoading()
           : Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                LoginText(),
-                Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(25.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 3.0,
-                          ),
-                          borderRadius: BorderRadius.circular(50.0),
-                          color: Colors.grey[200].withOpacity(0.5),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'CGPA',
-                            style: TextStyle(
-                              fontSize: 100.0,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.grey[850],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Cummulative   Grade   Point   Average',
-                            style: ThemeStyles.titleTextStyle),
-                      ],
-                    ),
-                  ],
-                ),
+                loginOnBoardingText(),
+                centerContainerLogin(),
                 FlatButton(
                   onPressed: () async {
                     setState(() {
                       isLoading = true;
-                    });
+                    }); // Setting the state of the screen to load when we actually await for the response from the Shared Preferences
                     SharedPreferences prefs =
                         await SharedPreferences.getInstance();
-                    if (prefs.getString('uid') == null) {
-                      authService.signInWithGoogle().whenComplete(
-                        () async {
-                          prefs.setString('uid', authService.id).then(
-                            (value) {
-                              if (prefs.getString('uid') != null) {
-                                setState(() {
-                                  isLoading = false;
-                                });
-                                Navigator.of(context).pop();
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return HomeScreen();
-                                    },
-                                  ),
-                                );
-                              }
-                            },
-                          );
-                        },
-                      );
-                    }
+                    // String userIDSharedPreferences = prefs.getString(
+                    //     'uid'); // Since we are in the login screen the 'uid' is null
+                    //Re-asserting the 'uid'
+                    // if (userIDSharedPreferences == null) {
+                    authService.signInWithGoogle().whenComplete(
+                      () {
+                        prefs.setString('uid', authService.id).then(
+                          (_) {
+                            Navigator.of(context).pop();
+                            // if (prefs.getString('uid') != null) {
+                            setState(() {
+                              isLoading = false;
+                            });
+                            //Popping the Login Screen out of the Stack
+                            // Pushing in the HomeScreen into the stack
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return HomeScreen();
+                                },
+                              ),
+                            );
+                            // }
+                          },
+                        );
+                      },
+                    );
                   },
-                  child: LoginButton(),
+                  // },
+                  child: loginButton(),
                 ),
               ],
             ),
