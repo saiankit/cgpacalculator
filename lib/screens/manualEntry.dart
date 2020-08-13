@@ -1,6 +1,5 @@
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/providerStates/courseInfo.dart';
-import 'package:CgpaCalculator/screens/homeScreen.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
 
@@ -156,14 +155,14 @@ class _ManualEntryState extends State<ManualEntry> {
                       },
                     ).then((value) {
                       Navigator.of(context).pop();
-                      Navigator.of(context).pop();
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return HomeScreen();
-                          },
-                        ),
-                      );
+                      // Navigator.of(context).pop();
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(
+                      //     builder: (context) {
+                      //       return HomeScreen();
+                      //     },
+                      //   ),
+                      // );
                     });
                   },
                   child: Container(

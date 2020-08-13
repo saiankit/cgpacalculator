@@ -26,6 +26,7 @@ dependencies:
   path_provider:
   moor_flutter:
   flutter_launcher_icons: ^0.7.5
+  flutter_spinkit:
 
 dev_dependencies:
   flutter_test:

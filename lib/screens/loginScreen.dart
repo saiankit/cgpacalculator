@@ -5,6 +5,7 @@ import 'package:CgpaCalculator/widgets/loginButton.dart';
 import 'package:CgpaCalculator/widgets/loginText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
@@ -12,7 +13,7 @@ class LoginPage extends StatefulWidget {
   _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
   bool isLoading = false;
   @override
   Widget build(BuildContext context) {
@@ -20,20 +21,24 @@ class _LoginPageState extends State<LoginPage> {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return WillPopScope(
-      onWillPop: () async => false,
-      child: SafeArea(
-        child: isLoading
-            ? Center(child: CircularProgressIndicator())
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  LoginText(),
-                  Column(
-                    children: [
-                      Container(
-                        height: 150.0,
-                        width: 350.0,
+    return SafeArea(
+      child: isLoading
+          ? Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Please Wait...', style: ThemeStyles.gpaTextStyle),
+                SpinKitPouringHourglass(color: Colors.black),
+              ],
+            )
+          : Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                LoginText(),
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(25.0),
+                      child: Container(
                         decoration: BoxDecoration(
                           border: Border.all(
                             width: 3.0,
@@ -52,50 +57,51 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('Cummulative   Grade   Point   Average',
-                              style: ThemeStyles.titleTextStyle),
-                        ],
-                      ),
-                    ],
-                  ),
-                  FlatButton(
-                    onPressed: () async {
-                      setState(() {
-                        isLoading = true;
-                      });
-                      SharedPreferences prefs =
-                          await SharedPreferences.getInstance();
-                      if (prefs.getString('uid') == null) {
-                        authService.signInWithGoogle().whenComplete(
-                          () async {
-                            prefs.setString('uid', authService.id).then(
-                              (value) {
-                                if (prefs.getString('uid') != null) {
-                                  setState(() {
-                                    isLoading = false;
-                                  });
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return HomeScreen();
-                                      },
-                                    ),
-                                  );
-                                }
-                              },
-                            );
-                          },
-                        );
-                      }
-                    },
-                    child: LoginButton(),
-                  ),
-                ],
-              ),
-      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Cummulative   Grade   Point   Average',
+                            style: ThemeStyles.titleTextStyle),
+                      ],
+                    ),
+                  ],
+                ),
+                FlatButton(
+                  onPressed: () async {
+                    setState(() {
+                      isLoading = true;
+                    });
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+                    if (prefs.getString('uid') == null) {
+                      authService.signInWithGoogle().whenComplete(
+                        () async {
+                          prefs.setString('uid', authService.id).then(
+                            (value) {
+                              if (prefs.getString('uid') != null) {
+                                setState(() {
+                                  isLoading = false;
+                                });
+                                Navigator.of(context).pop();
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return HomeScreen();
+                                    },
+                                  ),
+                                );
+                              }
+                            },
+                          );
+                        },
+                      );
+                    }
+                  },
+                  child: LoginButton(),
+                ),
+              ],
+            ),
     );
   }
 }

@@ -37,11 +37,13 @@ Future<String> countCredits(AsyncSnapshot<List<Course>> snapshot) async {
   for (var i = 0; i < snapshot.data.length; i++) {
     creditsCount += snapshot.data[i].courseCredits;
   }
+
   //Asserting the total Credits
   if (creditsCount.isNaN) {
     totalCredits = '0';
   } else {
-    totalCredits = totalCredits.toString();
+    totalCredits = creditsCount.toString();
   }
+
   return totalCredits;
 }

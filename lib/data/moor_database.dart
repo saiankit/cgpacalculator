@@ -18,7 +18,8 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase()
       : super(
           FlutterQueryExecutor.inDatabaseFolder(
-              path: "db.sqlite", logStatements: true),
+              path:
+                  "db.sqlite"), //For Log statements add this after the path in this sentence[, logStatements: true]
         );
   @override
   int get schemaVersion => 1;

@@ -79,13 +79,11 @@ class _AppbarState extends State<Appbar> {
                 prefs.clear().then(
                   (value) {
                     Navigator.of(context).pop();
+                    Navigator.of(context).pop();
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) {
-                          return WillPopScope(
-                            onWillPop: () async => false,
-                            child: MyApp(),
-                          );
+                          return MyApp(prefs.getString('uid'));
                         },
                       ),
                     );

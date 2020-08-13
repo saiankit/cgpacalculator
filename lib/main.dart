@@ -15,31 +15,20 @@ Future<void> main() async {
   userIDSharedPreferences = prefs.getString('uid');
   // ::Debug:: -- UID of logged-in User
   // print("UID:" + userIDSharedPreferences.toString());
-  runApp(MyAppSecond(userIDSharedPreferences));
+  runApp(MyApp(userIDSharedPreferences));
 }
 
 class MyApp extends StatefulWidget {
+  final String userIDSharedPreferences;
+  MyApp(this.userIDSharedPreferences);
   @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  verifyUserLoggedIn() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String userIDSharedPreferences = prefs.getString('uid');
-    return userIDSharedPreferences;
-  }
-
   @override
   Widget build(BuildContext context) {
-    String val;
-    verifyUserLoggedIn().then(
-      (value) {
-        val = value;
-      },
-    );
-    if (val != null) {
-      print('Error In logout');
+    if (widget.userIDSharedPreferences != null) {
       return Provider<AppDatabase>(
         create: (context) => AppDatabase(),
         child: MaterialApp(
@@ -57,7 +46,6 @@ class _MyAppState extends State<MyApp> {
         dispose: (context, db) => db.close(),
       );
     } else {
-      print('Successfull Logout');
       return Provider<AppDatabase>(
         create: (context) => AppDatabase(),
         child: MaterialApp(
@@ -75,37 +63,5 @@ class _MyAppState extends State<MyApp> {
         dispose: (context, db) => db.close(),
       );
     }
-  }
-}
-
-class MyAppSecond extends StatefulWidget {
-  final String uid;
-  MyAppSecond(this.uid);
-  @override
-  _MyAppSecondState createState() => _MyAppSecondState();
-}
-
-class _MyAppSecondState extends State<MyAppSecond> {
-  @override
-  Widget build(BuildContext context) {
-    return Provider<AppDatabase>(
-      create: (context) => AppDatabase(),
-      child: MaterialApp(
-        theme: ThemeData(
-          fontFamily: 'Poppins',
-          primaryColor: Colors.black,
-          accentColor: Colors.black,
-        ),
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          backgroundColor: Colors.white,
-          // UID of user stored in shared preferences
-          // UID == null -- Connect to LoginPage
-          // UID != null -- Connect to HomePage by persisting the user
-          body: widget.uid != null ? HomeScreen() : LoginPage(),
-        ),
-      ),
-      dispose: (context, db) => db.close(),
-    );
   }
 }
