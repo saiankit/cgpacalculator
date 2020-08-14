@@ -178,9 +178,6 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // CreditSelector(
-                    //   Provider.of<CourseInfoState>(context).selectedCredits,
-                    // ),
                     Column(
                       children: [
                         Text('Credits', style: ThemeStyles.marqueeTextStyle),

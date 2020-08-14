@@ -35,6 +35,7 @@ class _CreditRowState extends State<CreditRow> {
                             .selectedSemester,
                         widget.fuid),
                 builder: (context, AsyncSnapshot<List<Course>> snapshot) {
+                  print(snapshot.data);
                   if (!snapshot.hasData)
                     return Center(
                       child:
@@ -47,7 +48,6 @@ class _CreditRowState extends State<CreditRow> {
             ],
           ),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(right: 20.0),
@@ -57,35 +57,59 @@ class _CreditRowState extends State<CreditRow> {
                 stream: Provider.of<AppDatabase>(widget.homeScreenContext)
                     .watchAllCourses(widget.fuid),
                 builder: (context, AsyncSnapshot<List<Course>> snapshot) {
+                  print(snapshot.data);
                   if (!snapshot.hasData)
                     return Center(
                       child:
                           Text('0.00', style: ThemeStyles.gpaNumberTextStyle),
                     );
-                  return FutureBuilder(
-                    future: countCredits(snapshot),
-                    builder:
-                        (BuildContext context, AsyncSnapshot<String> snapshot) {
-                      List<Widget> children;
-                      if (snapshot.hasData) {
-                        children = [
-                          Text(snapshot.data,
-                              style: ThemeStyles.creditTextStyle)
-                        ];
-                      } else if (snapshot.data == null) {
-                        children = [
-                          Text('0', style: ThemeStyles.creditTextStyle)
-                        ];
-                      } else {
-                        children = [Text('Loading')];
-                      }
-                      return Column(children: children);
-                    },
-                  );
+                  String totalCredits = countCredits(snapshot);
+                  return Text(totalCredits, style: ThemeStyles.creditTextStyle);
                 },
               ),
             ],
           ),
+
+          // Row(
+          //   crossAxisAlignment: CrossAxisAlignment.center,
+          //   children: <Widget>[
+          //     Padding(
+          //       padding: const EdgeInsets.only(right: 20.0),
+          //       child: Text('Credits', style: ThemeStyles.gpaTextStyle),
+          //     ),
+          //     StreamBuilder(
+          //       stream: Provider.of<AppDatabase>(widget.homeScreenContext)
+          //           .watchAllCourses(widget.fuid),
+          //       builder: (context, AsyncSnapshot<List<Course>> snapshot) {
+          //         if (!snapshot.hasData)
+          //           return Center(
+          //             child:
+          //                 Text('0.00', style: ThemeStyles.gpaNumberTextStyle),
+          //           );
+          //         return FutureBuilder(
+          //           future: countCredits(snapshot),
+          //           builder:
+          //               (BuildContext context, AsyncSnapshot<String> snapshot) {
+          //             List<Widget> children;
+          //             if (snapshot.hasData) {
+          //               children = [
+          //                 Text(snapshot.data,
+          //                     style: ThemeStyles.creditTextStyle)
+          //               ];
+          //             } else if (snapshot.data == null) {
+          //               children = [
+          //                 Text('0', style: ThemeStyles.creditTextStyle)
+          //               ];
+          //             } else {
+          //               children = [Text('Loading')];
+          //             }
+          //             return Column(children: children);
+          //           },
+          //         );
+          //       },
+          //     ),
+          //   ],
+          // ),
         ],
       ),
     );

@@ -27,12 +27,18 @@ dependencies:
   moor_flutter:
   flutter_launcher_icons: ^0.7.5
   flutter_spinkit:
+  hive: ^1.0.0
+  hive_flutter: ^0.2.1
+  
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   moor_generator:
   build_runner:
+  hive_generator: ^0.5.1
+  
 flutter_icons:
   ios: true
   android: true

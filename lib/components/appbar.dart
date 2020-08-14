@@ -3,9 +3,9 @@ import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/providerStates/courseInfo.dart';
 import 'package:CgpaCalculator/screens/manualEntry.dart';
 import 'package:CgpaCalculator/services/auth.dart';
+import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Appbar extends StatefulWidget {
   @override
@@ -13,52 +13,6 @@ class Appbar extends StatefulWidget {
 }
 
 class _AppbarState extends State<Appbar> {
-  void _showAddCGdialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text("Add CGPA until particular semester"),
-          content: Text(
-              "Are you sure you want to add CGPA until a particular semester ?"),
-          actions: <Widget>[
-            FlatButton(
-              child: Text(
-                'Yes',
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-              ),
-              onPressed: () async {
-                SharedPreferences prefs = await SharedPreferences.getInstance();
-                await authService.signOutGoogle();
-                prefs.clear().then(
-                  (value) {
-                    Navigator.of(context).pop(); //Pop out the dialog box
-                    // Push in the Manual Entry Page
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return ManualEntry();
-                        },
-                      ),
-                    );
-                  },
-                );
-              },
-            ),
-            FlatButton(
-              child: new Text("No"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
-
   void _showLogOutDialog() {
     showDialog(
       context: context,
@@ -75,16 +29,15 @@ class _AppbarState extends State<Appbar> {
                 ),
               ),
               onPressed: () async {
-                SharedPreferences prefs = await SharedPreferences.getInstance();
                 await authService.signOutGoogle();
-                prefs.setString('uid', null).then(
+                syncPrefs.setString('uid', null).then(
                   (value) {
                     Navigator.of(context).pop();
                     Navigator.of(context).pop();
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) {
-                          return MyApp(prefs.getString('uid'));
+                          return MyApp(syncPrefs.getString('uid'));
                         },
                       ),
                     );
@@ -160,7 +113,25 @@ class _AppbarState extends State<Appbar> {
                 size: 30.0,
                 color: Colors.black,
               ),
-              onPressed: () => _showAddCGdialog(),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ManualEntry();
+                    },
+                  ),
+                );
+                // showModalBottomSheet(
+                //   context: context,
+                //   isScrollControlled: true,
+                //   backgroundColor: Colors.transparent,
+                //   builder: (context) => Container(
+                //     height: MediaQuery.of(context).size.height * 0.60,
+                //     decoration: ThemeStyles.modalBottomSheetDecoration,
+                //     child: ManualEntry(),
+                //   ),
+                // );
+              },
             ),
             IconButton(
               icon: Icon(

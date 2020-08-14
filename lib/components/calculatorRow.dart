@@ -46,11 +46,10 @@ class _CalculatorRowState extends State<CalculatorRow> {
             ],
           ),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(right: 20.0),
-                child: Text('CGPA', style: ThemeStyles.gpaTextStyle),
+                child: Text('SGPA', style: ThemeStyles.gpaTextStyle),
               ),
               StreamBuilder(
                 stream: Provider.of<AppDatabase>(widget.homeScreenContext)
@@ -61,32 +60,54 @@ class _CalculatorRowState extends State<CalculatorRow> {
                       child:
                           Text('0.00', style: ThemeStyles.gpaNumberTextStyle),
                     );
-                  return FutureBuilder(
-                    future: calculateCGPA(snapshot),
-                    builder:
-                        (BuildContext context, AsyncSnapshot<String> snapshot) {
-                      List<Widget> children;
-                      if (snapshot.hasData) {
-                        children = [
-                          Text(snapshot.data,
-                              style: ThemeStyles.gpaNumberTextStyle)
-                        ];
-                      } else if (snapshot.data == null) {
-                        children = [
-                          Text('0.00', style: ThemeStyles.gpaNumberTextStyle)
-                        ];
-                      } else {
-                        children = [
-                          Text('..', style: ThemeStyles.creditTextStyle)
-                        ];
-                      }
-                      return Column(children: children);
-                    },
-                  );
+                  String sGPA = calculateCGPA(snapshot);
+                  return Text(sGPA, style: ThemeStyles.gpaNumberTextStyle);
                 },
               ),
             ],
           ),
+          // Row(
+          //   crossAxisAlignment: CrossAxisAlignment.center,
+          //   children: <Widget>[
+          //     Padding(
+          //       padding: const EdgeInsets.only(right: 20.0),
+          //       child: Text('CGPA', style: ThemeStyles.gpaTextStyle),
+          //     ),
+          //     StreamBuilder(
+          //       stream: Provider.of<AppDatabase>(widget.homeScreenContext)
+          //           .watchAllCourses(widget.fuid),
+          //       builder: (context, AsyncSnapshot<List<Course>> snapshot) {
+          //         if (!snapshot.hasData)
+          //           return Center(
+          //             child:
+          //                 Text('0.00', style: ThemeStyles.gpaNumberTextStyle),
+          //           );
+          //         return FutureBuilder(
+          //           future: calculateCGPA(snapshot),
+          //           builder:
+          //               (BuildContext context, AsyncSnapshot<String> snapshot) {
+          //             List<Widget> children;
+          //             if (snapshot.hasData) {
+          //               children = [
+          //                 Text(snapshot.data,
+          //                     style: ThemeStyles.gpaNumberTextStyle)
+          //               ];
+          //             } else if (snapshot.data == null) {
+          //               children = [
+          //                 Text('0.00', style: ThemeStyles.gpaNumberTextStyle)
+          //               ];
+          //             } else {
+          //               children = [
+          //                 Text('..', style: ThemeStyles.creditTextStyle)
+          //               ];
+          //             }
+          //             return Column(children: children);
+          //           },
+          //         );
+          //       },
+          //     ),
+          //   ],
+          // ),
         ],
       ),
     );
