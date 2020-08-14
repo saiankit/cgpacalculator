@@ -39,7 +39,7 @@ String calculateCGPA(AsyncSnapshot<List<Course>> snapshot) {
       cummulativeGradePointAverage; //CGPA [String] that is returned by the function
 
   //Initial Values
-  double initialCGPA = hiveGetData('manualCGPA')
+  double initialCGPA = hiveGetData('manualCGPA') == null
       ? double.parse('0.00')
       : double.parse(hiveGetData('manualCGPA'));
   // double intialCGPA = double.parse(prefs.getString(

@@ -16,6 +16,6 @@ void hiveDeleteData() {
   Hive.box('manualData').delete('manualSem');
 }
 
-dynamic hiveGetData(String query) {
+String hiveGetData(String query) {
   return Hive.box('manualData').get(query);
 }
