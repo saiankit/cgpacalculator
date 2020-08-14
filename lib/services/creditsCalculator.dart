@@ -1,7 +1,6 @@
+import 'package:CgpaCalculator/data/hive_api.dart';
 import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 // [1] : Particular Semester Credits Count
 // This function is used to count credtis exhausted in a particular semester using the required stream
@@ -28,34 +27,12 @@ String countSemCredits(AsyncSnapshot<List<Course>> snapshot) {
 // This function is used to count total credits exhausted
 // It also takes care of the initial credits if any manual entry until particular semester is added by the user
 // Since it contains a future response a future builder should be used at the access location
-// Future<String> countCredits(AsyncSnapshot<List<Course>> snapshot) async {
-//   String totalCredits; //Total Credits [String] that is returned by the function
-//   SharedPreferences prefs = await SharedPreferences.getInstance();
-//   int initialCredits = int.parse(prefs.getString(
-//       'manualCredits')); //Accessing the initial credits added by the user manually stored in Shared Preferences
-//   int creditsCount =
-//       initialCredits; // The loopVariable used to count the credits in completed courses list of the user initialised by the initial credits
-//   //Loop to count the total credits from the snapshot of the watchAllCourses Stream
-//   for (var i = 0; i < snapshot.data.length; i++) {
-//     creditsCount += snapshot.data[i].courseCredits;
-//   }
-
-//   //Asserting the total Credits
-//   if (creditsCount.isNaN) {
-//     totalCredits = '0';
-//   } else {
-//     totalCredits = creditsCount.toString();
-//   }
-
-//   return totalCredits;
-// }
-
 String countCredits(AsyncSnapshot<List<Course>> snapshot) {
   String totalCredits; //Total Credits [String] that is returned by the function
 
-  int initialCredits = Hive.box('manualData').get('manualCredits') == null
+  int initialCredits = hiveGetData('manualCredits') == null
       ? 0
-      : int.parse(Hive.box('manualData').get(
+      : int.parse(hiveGetData(
           'manualCredits')); //Accessing the initial credits added by the user manually stored in Shared Preferences
   int creditsCount =
       initialCredits; // The loopVariable used to count the credits in completed courses list of the user initialised by the initial credits

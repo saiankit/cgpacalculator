@@ -1,10 +1,10 @@
+import 'package:CgpaCalculator/core/routes.dart';
+import 'package:CgpaCalculator/data/hive_api.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
-import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/providerStates/courseInfo.dart';
 import 'package:CgpaCalculator/screens/loadingScreen/loginLoading.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 
 import 'package:provider/provider.dart';
 
@@ -148,29 +148,21 @@ class _ManualEntryState extends State<ManualEntry> {
                                     listen: false)
                                 .manualEntryCG;
 
-                            String manualAddSem = Provider.of<CourseInfoState>(
+                            String manualSem = Provider.of<CourseInfoState>(
                                     context,
                                     listen: false)
                                 .defaultSemesterManual;
+                            hiveAddData(
+                                manualCGPA: manualCGPA,
+                                manualCredits: manualCredits,
+                                manualSem: manualSem);
 
-                            Hive.box('manualData')
-                                .put('manualSem', manualAddSem);
-                            Hive.box('manualData')
-                                .put('manualCredits', manualCredits);
-                            Hive.box('manualData')
-                                .put('manualCGPA', manualCGPA);
                             Navigator.of(context).pop();
                             Navigator.of(context).pop();
                             setState(() {
                               isLoading = false;
                             });
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return MyApp(syncPrefs.getString('uid'));
-                                },
-                              ),
-                            );
+                            navigateToMyApp(context);
                           },
                           child: Container(
                             width: double.infinity,

@@ -1,4 +1,4 @@
-import 'package:CgpaCalculator/screens/homeScreen.dart';
+import 'package:CgpaCalculator/core/routes.dart';
 import 'package:CgpaCalculator/screens/loadingScreen/loginLoading.dart';
 import 'package:CgpaCalculator/services/auth.dart';
 import 'package:CgpaCalculator/ui/loginScreenUI.dart';
@@ -44,13 +44,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                             });
                             //Popping the Login Screen out of the Stack
                             // Pushing in the HomeScreen into the stack
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return HomeScreen();
-                                },
-                              ),
-                            );
+                            navigateToHomeScreen(context);
                             // }
                           },
                         );
