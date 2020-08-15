@@ -29,6 +29,7 @@ dependencies:
   flutter_spinkit:
   hive: ^1.0.0
   hive_flutter: ^0.2.1
+  flushbar:
   
   
 

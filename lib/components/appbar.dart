@@ -65,7 +65,7 @@ class _AppbarState extends State<Appbar> {
           children: [
             IconButton(
               icon: Icon(
-                Icons.add,
+                Icons.open_in_browser,
                 size: 30.0,
                 color: Colors.black,
               ),

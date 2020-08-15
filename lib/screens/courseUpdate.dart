@@ -79,8 +79,6 @@ class _CourseUpdateState extends State<CourseUpdate> {
                 ),
               ),
               onPressed: () {
-                Navigator.of(context).pop();
-                print('Deleted');
                 Course _courseToBeDeleted = Course(
                   userID: widget.userID,
                   courseCode: widget.courseCode,
@@ -92,7 +90,12 @@ class _CourseUpdateState extends State<CourseUpdate> {
                   semesterCode: widget.semesterCode,
                 );
                 deleteCourse(_courseToBeDeleted);
-                Navigator.of(context).pop();
+                Navigator.of(context).pop(); // Popping the Delete Logout
+                Navigator.of(context).pop(); // Popping the Update Course Screen
+                Future.delayed(
+                    Duration.zero,
+                    () =>
+                        Navigator.of(context).pop()); // Popping the Home Screen
 
                 navigateToMyApp(context);
               },

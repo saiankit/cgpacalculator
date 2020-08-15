@@ -1,4 +1,6 @@
 import 'package:CgpaCalculator/core/routes.dart';
+import 'package:CgpaCalculator/core/valdations/manualCGPAValidations.dart';
+import 'package:CgpaCalculator/core/valdations/manualCreditsValidations.dart';
 import 'package:CgpaCalculator/data/hive_api.dart';
 import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
@@ -6,6 +8,7 @@ import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/providerStates/courseInfo.dart';
 import 'package:CgpaCalculator/screens/loadingScreen/loginLoading.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
+import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -17,6 +20,34 @@ class ManualEntry extends StatefulWidget {
 }
 
 class _ManualEntryState extends State<ManualEntry> {
+  void showFlushBarManualCGPA(BuildContext context) {
+    Flushbar(
+      title: 'Inavlid CGPA',
+      message: 'Please enter valid CGPA rounded to two decimal points',
+      icon: Icon(
+        Icons.info_outline,
+        size: 28,
+        color: Colors.blue.shade300,
+      ),
+      leftBarIndicatorColor: Colors.blue.shade300,
+      duration: Duration(seconds: 5),
+    )..show(context);
+  }
+
+  void emptyManualData(BuildContext context) {
+    Flushbar(
+      title: 'Invalid Data',
+      message: 'Please enter non empty data',
+      icon: Icon(
+        Icons.info_outline,
+        size: 28,
+        color: Colors.blue.shade300,
+      ),
+      leftBarIndicatorColor: Colors.blue.shade300,
+      duration: Duration(seconds: 5),
+    )..show(context);
+  }
+
   List<Course> coursesToBeDeleted;
   bool _keyboardIsVisible() {
     return !(MediaQuery.of(context).viewInsets.bottom == 0.0);
@@ -40,6 +71,7 @@ class _ManualEntryState extends State<ManualEntry> {
     }
 
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: Colors.white,
       body: SafeArea(
         child: ChangeNotifierProvider(
@@ -193,10 +225,6 @@ class _ManualEntryState extends State<ManualEntry> {
                             : Container(),
                         GestureDetector(
                           onTap: () {
-                            setState(() {
-                              isLoading = true;
-                            });
-
                             String manualCredits = Provider.of<CourseInfoState>(
                                     context,
                                     listen: false)
@@ -213,20 +241,47 @@ class _ManualEntryState extends State<ManualEntry> {
                                 .defaultSemesterManual;
 
                             semIndex = semesterList.indexOf(manualSem);
-                            hiveAddData(
-                                manualCGPA: manualCGPA,
-                                manualCredits: manualCredits,
-                                manualSem: manualSem);
-                            for (var i = 0; i <= semIndex; i++) {
-                              print(semesterList[i]);
-                              perform(semesterList[i]);
+
+                            //Manual Credits Validations
+                            // Manual Credits should only be a number. Validator for NaN
+                            RegExp numberValidator = new RegExp(r'^[0-9.]+$');
+                            if (!numberValidator.hasMatch(manualCredits)) {
+                              flushCreditsNaN(context);
+                            } else if (manualCredits.isEmpty ||
+                                manualCGPA.isEmpty ||
+                                int.parse(manualCredits) == 0) {
+                              emptyManualData(context);
+                            } else if (manualCredits.length > 3) {
+                              flushCreditsExceed(context);
                             }
-                            Navigator.of(context).pop();
-                            Navigator.of(context).pop();
-                            setState(() {
-                              isLoading = false;
-                            });
-                            navigateToMyApp(context);
+                            // Manual CGPA Validations
+                            else if (!numberValidator.hasMatch(manualCGPA)) {
+                              flushCGPANaN(context);
+                            } else if (!manualCGPA.contains('.')) {
+                              flushCGPANaN(context);
+                            } else if (manualCGPA.length != 4) {
+                              flushCGPAExceed(context);
+                            } else if (double.parse(manualCGPA).toInt() > 10) {
+                              flushCGPAGreaterThanTen(context);
+                            } else {
+                              setState(() {
+                                isLoading = true;
+                              });
+                              semIndex = semesterList.indexOf(manualSem);
+                              hiveAddData(
+                                  manualCGPA: manualCGPA,
+                                  manualCredits: manualCredits,
+                                  manualSem: manualSem);
+                              for (var i = 0; i <= semIndex; i++) {
+                                perform(semesterList[i]);
+                              }
+                              Navigator.of(context).pop();
+                              Navigator.of(context).pop();
+                              setState(() {
+                                isLoading = false;
+                              });
+                              navigateToMyApp(context);
+                            }
                           },
                           child: Container(
                             width: double.infinity,
