@@ -21,6 +21,7 @@ class AppDatabase extends _$AppDatabase {
               path:
                   "db.sqlite"), //For Log statements add this after the path in this sentence[, logStatements: true]
         );
+
   @override
   int get schemaVersion => 1;
 

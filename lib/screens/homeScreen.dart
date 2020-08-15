@@ -1,7 +1,9 @@
 import 'package:CgpaCalculator/components/appbar.dart';
 import 'package:CgpaCalculator/components/creditRow.dart';
 import 'package:CgpaCalculator/components/noItems.dart';
+import 'package:CgpaCalculator/data/hive_api.dart';
 import 'package:CgpaCalculator/data/moor_database.dart';
+import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/providerStates/courseInfo.dart';
 import 'package:CgpaCalculator/screens/addCourse.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
@@ -11,6 +13,7 @@ import 'package:CgpaCalculator/widgets/courseCard.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../screens/manualEntry.dart';
 
 String fuid;
 
@@ -58,18 +61,59 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Provider.of<CourseInfoState>(context,
                                             listen: false)
                                         .selectedSemester;
-                                showModalBottomSheet(
-                                  context: context,
-                                  isScrollControlled: true,
-                                  backgroundColor: Colors.transparent,
-                                  builder: (context) => Container(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.60,
-                                    decoration:
-                                        ThemeStyles.modalBottomSheetDecoration,
-                                    child: AddCourseScreen(_semesterCode),
-                                  ),
-                                );
+                                int semIndexHome =
+                                    hiveGetData('manualSem') == null
+                                        ? null
+                                        : semesterList
+                                            .indexOf(hiveGetData('manualSem'));
+
+                                if (semIndexHome == null) {
+                                  showModalBottomSheet(
+                                    context: context,
+                                    isScrollControlled: true,
+                                    backgroundColor: Colors.transparent,
+                                    builder: (context) => Container(
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.60,
+                                      decoration: ThemeStyles
+                                          .modalBottomSheetDecoration,
+                                      child: AddCourseScreen(_semesterCode),
+                                    ),
+                                  );
+                                } else {
+                                  if (semesterList.indexOf(_semesterCode) <=
+                                      semIndexHome) {
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: Text('Access Denied',
+                                              style:
+                                                  ThemeStyles.marqueeTextStyle),
+                                          content: Text(
+                                              'You cannot access addition of courses in this semester because manual data added by you is being considered for this semester.',
+                                              style:
+                                                  ThemeStyles.titleTextStyle),
+                                        );
+                                      },
+                                    );
+                                  } else {
+                                    showModalBottomSheet(
+                                      context: context,
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      builder: (context) => Container(
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                0.60,
+                                        decoration: ThemeStyles
+                                            .modalBottomSheetDecoration,
+                                        child: AddCourseScreen(_semesterCode),
+                                      ),
+                                    );
+                                  }
+                                }
                               },
                               child: AddAnewCourseButton(),
                             ),

@@ -1,4 +1,5 @@
 import 'package:CgpaCalculator/components/gradeSelector.dart';
+import 'package:CgpaCalculator/core/routes.dart';
 import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/localData/coursesData.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
@@ -79,6 +80,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
               ),
               onPressed: () {
                 Navigator.of(context).pop();
+                print('Deleted');
                 Course _courseToBeDeleted = Course(
                   userID: widget.userID,
                   courseCode: widget.courseCode,
@@ -91,6 +93,8 @@ class _CourseUpdateState extends State<CourseUpdate> {
                 );
                 deleteCourse(_courseToBeDeleted);
                 Navigator.of(context).pop();
+
+                navigateToMyApp(context);
               },
             ),
             FlatButton(

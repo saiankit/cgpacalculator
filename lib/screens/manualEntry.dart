@@ -1,12 +1,15 @@
 import 'package:CgpaCalculator/core/routes.dart';
 import 'package:CgpaCalculator/data/hive_api.dart';
+import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
+import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/providerStates/courseInfo.dart';
 import 'package:CgpaCalculator/screens/loadingScreen/loginLoading.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
+
+int semIndex;
 
 class ManualEntry extends StatefulWidget {
   @override
@@ -14,14 +17,28 @@ class ManualEntry extends StatefulWidget {
 }
 
 class _ManualEntryState extends State<ManualEntry> {
+  List<Course> coursesToBeDeleted;
   bool _keyboardIsVisible() {
     return !(MediaQuery.of(context).viewInsets.bottom == 0.0);
   }
 
   String cgpa;
   bool isLoading = false;
+
   @override
   Widget build(BuildContext context) {
+    void perform(String semCode) {
+      Stream<List<Course>> stream =
+          Provider.of<AppDatabase>(context, listen: false)
+              .watchCoursesBySemesterCode(semCode, syncPrefs.getString('uid'));
+      stream.listen((event) {
+        for (var i = 0; i < event.length; i++) {
+          Provider.of<AppDatabase>(context, listen: false)
+              .deleteCourse(event[i]);
+        }
+      });
+    }
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -179,6 +196,7 @@ class _ManualEntryState extends State<ManualEntry> {
                             setState(() {
                               isLoading = true;
                             });
+
                             String manualCredits = Provider.of<CourseInfoState>(
                                     context,
                                     listen: false)
@@ -193,11 +211,16 @@ class _ManualEntryState extends State<ManualEntry> {
                                     context,
                                     listen: false)
                                 .defaultSemesterManual;
+
+                            semIndex = semesterList.indexOf(manualSem);
                             hiveAddData(
                                 manualCGPA: manualCGPA,
                                 manualCredits: manualCredits,
                                 manualSem: manualSem);
-
+                            for (var i = 0; i <= semIndex; i++) {
+                              print(semesterList[i]);
+                              perform(semesterList[i]);
+                            }
                             Navigator.of(context).pop();
                             Navigator.of(context).pop();
                             setState(() {

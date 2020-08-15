@@ -35,7 +35,6 @@ class _CreditRowState extends State<CreditRow> {
                             .selectedSemester,
                         widget.fuid),
                 builder: (context, AsyncSnapshot<List<Course>> snapshot) {
-                  print(snapshot.data);
                   if (!snapshot.hasData)
                     return Center(
                       child:
@@ -57,7 +56,6 @@ class _CreditRowState extends State<CreditRow> {
                 stream: Provider.of<AppDatabase>(widget.homeScreenContext)
                     .watchAllCourses(widget.fuid),
                 builder: (context, AsyncSnapshot<List<Course>> snapshot) {
-                  print(snapshot.data);
                   if (!snapshot.hasData)
                     return Center(
                       child:
