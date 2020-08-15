@@ -214,7 +214,7 @@ class _ManualEntryState extends State<ManualEntry> {
                                           ),
                                         ),
                                         Text(
-                                          'By clicking here the courses added until ${Provider.of<CourseInfoState>(context).defaultSemesterManual} won\'t be considered for calculation of CGPA and would be deleted if any courses are added until ${Provider.of<CourseInfoState>(context).defaultSemesterManual} and the manual data entered would be considered',
+                                          'By clicking here the courses added until ${Provider.of<CourseInfoState>(context).defaultSemesterManual} won\'t be considered for calculation of CGPA and would be deleted if any courses are added until ${Provider.of<CourseInfoState>(context).defaultSemesterManual} and the manual data entered would be considered.',
                                           textAlign: TextAlign.justify,
                                         ),
                                       ],
@@ -259,8 +259,6 @@ class _ManualEntryState extends State<ManualEntry> {
                               flushCGPANaN(context);
                             } else if (!manualCGPA.contains('.')) {
                               flushCGPANaN(context);
-                            } else if (manualCGPA.length != 4) {
-                              flushCGPAExceed(context);
                             } else if (double.parse(manualCGPA).toInt() > 10) {
                               flushCGPAGreaterThanTen(context);
                             } else {
