@@ -12,6 +12,114 @@ class GradeSelector extends StatefulWidget {
 }
 
 class _GradeSelectorState extends State<GradeSelector> {
+  mapGrades(String letterGrade) {
+    int numericalGrade = 10;
+    switch (letterGrade) {
+      case "A":
+        {
+          numericalGrade = 10;
+        }
+        break;
+
+      case "A-":
+        {
+          numericalGrade = 9;
+        }
+        break;
+      case "B":
+        {
+          numericalGrade = 8;
+        }
+        break;
+      case "B-":
+        {
+          numericalGrade = 7;
+        }
+        break;
+      case "C":
+        {
+          numericalGrade = 6;
+        }
+        break;
+      case "C-":
+        {
+          numericalGrade = 5;
+        }
+        break;
+      case "D":
+        {
+          numericalGrade = 4;
+        }
+        break;
+      case "E":
+        {
+          numericalGrade = 2;
+        }
+        break;
+
+      default:
+        {
+          numericalGrade = 10;
+        }
+        break;
+    }
+    return numericalGrade;
+  }
+
+  mapToNumberGrades(int numericalGrade) {
+    String letterGrade = "A";
+    switch (numericalGrade) {
+      case 10:
+        {
+          letterGrade = "A";
+        }
+        break;
+
+      case 9:
+        {
+          letterGrade = "A-";
+        }
+        break;
+      case 8:
+        {
+          letterGrade = "B";
+        }
+        break;
+      case 7:
+        {
+          letterGrade = "B-";
+        }
+        break;
+      case 6:
+        {
+          letterGrade = "C";
+        }
+        break;
+      case 5:
+        {
+          letterGrade = "C-";
+        }
+        break;
+      case 4:
+        {
+          letterGrade = "D";
+        }
+        break;
+      case 2:
+        {
+          letterGrade = "E";
+        }
+        break;
+
+      default:
+        {
+          letterGrade = "A";
+        }
+        break;
+    }
+    return letterGrade;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,7 +136,7 @@ class _GradeSelectorState extends State<GradeSelector> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Center(
-              child: DropdownButton<int>(
+              child: DropdownButton<String>(
                 isExpanded: true,
                 icon: Icon(Icons.keyboard_arrow_down),
                 style: TextStyle(
@@ -37,23 +145,24 @@ class _GradeSelectorState extends State<GradeSelector> {
                   fontSize: 20.0,
                 ),
                 underline: Container(),
-                value: widget.courseGrade,
-                items: [10, 9, 8, 7, 6, 5, 4, 2].map<DropdownMenuItem<int>>(
-                  (int value) {
+                value: mapToNumberGrades(widget.courseGrade),
+                items: ["A", "A-", "B", "B-", "C", "C-", "D", "E"]
+                    .map<DropdownMenuItem<String>>(
+                  (String value) {
                     return DropdownMenuItem(
-                      value: value.toInt(),
-                      child: Text(value.toString()),
+                      value: value,
+                      child: Text(value),
                     );
                   },
                 ).toList(),
-                onChanged: (int value) {
+                onChanged: (String value) {
                   setState(
                     () {
-                      widget.courseGrade = value;
+                      widget.courseGrade = mapGrades(value);
                     },
                   );
                   Provider.of<CourseInfoState>(context, listen: false)
-                      .changeGrade(value);
+                      .changeGrade(mapGrades(value));
                 },
               ),
             ),
