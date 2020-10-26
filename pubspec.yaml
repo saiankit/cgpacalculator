@@ -3,7 +3,7 @@ description: Application To Calculate and Journalise CGPA
 
 publish_to: 'none' 
 
-version: 1.0.3+3
+version: 1.0.4+4
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -22,7 +22,7 @@ dependencies:
   cloud_firestore:
   firebase_analytics:
   google_sign_in:
-  shared_preferences:
+  shared_preferences: ^0.5.12+2
   path_provider:
   moor_flutter:
   flutter_launcher_icons: ^0.7.5
