@@ -31,6 +31,7 @@ class AuthService {
     name = user.displayName;
     id = user.uid;
     email = user.email;
+
     final FirebaseUser currentUser = await _auth.currentUser();
     assert(user.uid == currentUser.uid);
     //Commenting the below code because we aren't using Firestore currently to store the user data
