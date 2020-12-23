@@ -616,6 +616,12 @@ List<Map<String, dynamic>> coursesData = [
   },
   {
     'courseCode': 'BITS',
+    'courseID': 'F327',
+    'courseTitle': 'AI for Robotics',
+    'courseCredits': '3',
+  },
+  {
+    'courseCode': 'BITS',
     'courseID': 'F331',
     'courseTitle': 'Quantum Computation and Information',
     'courseCredits': '3',
