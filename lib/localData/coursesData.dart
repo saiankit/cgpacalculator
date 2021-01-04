@@ -2837,7 +2837,13 @@ List<Map<String, dynamic>> coursesData = [
   {
     'courseCode': 'GS',
     'courseID': 'F234',
-    'courseTitle': 'Development EconomicsGS F241 Creative Writing',
+    'courseTitle': 'Development Economics',
+    'courseCredits': '3',
+  },
+  {
+    'courseCode': 'GS',
+    'courseID': 'F241',
+    'courseTitle': 'Creative Writing',
     'courseCredits': '3',
   },
   {
