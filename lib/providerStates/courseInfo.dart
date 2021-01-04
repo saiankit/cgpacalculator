@@ -1,5 +1,7 @@
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
+import 'package:CgpaCalculator/main.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CourseInfoState extends ChangeNotifier {
   String defaultSemesterManual = '1 - 1';
@@ -9,12 +11,15 @@ class CourseInfoState extends ChangeNotifier {
   int courseGrade = 10;
   String manualEntryCG = '0';
   String manualExhaust = '0';
-  var selectedSemester = semesterList[0];
+  String selectedSemester = semesterSharedPreferences;
   String cummulativeGradePointAverage = "0.00";
   String semesterGradePointAverage = "0.00";
 
-  void changeToSemester(String newSemester) {
+  void changeToSemester(String newSemester) async {
     selectedSemester = newSemester;
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('sem', newSemester);
+    print(prefs.getString('sem'));
     notifyListeners();
   }
 

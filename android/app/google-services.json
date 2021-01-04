@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "397107940686-acqu59pna2h6tblgdnegflhvtsl2jqib.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.saiankit.cgpacalculator",
+            "certificate_hash": "728b9a7374d9e81f4ba108fcc9ca30de3003761a"
+          }
+        },
+        {
           "client_id": "397107940686-hdsirc3to0uv5vusqje5462dmr8rjoof.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -36,14 +44,14 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "397107940686-k3hh0ekmmh7i7tc0aucuit23ng0jegjt.apps.googleusercontent.com",
+              "client_id": "397107940686-3dffb2lh89h923p5i7cn597oa3j67epj.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "397107940686-921msp532ffi1v5r092mrv32gqnrq7dh.apps.googleusercontent.com",
+              "client_id": "397107940686-1l7qjg9dmfnpo2gvumv6gvbq6u6fvgm9.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.calculator.cgpa"
+                "bundle_id": "com.saiankit.cgpacalculator"
               }
             }
           ]

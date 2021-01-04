@@ -76,3 +76,4 @@ app.*.map.json
 .buildlog/
 .history
 .svn/
+.vscode

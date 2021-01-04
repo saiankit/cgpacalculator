@@ -3,7 +3,7 @@ description: Application To Calculate and Journalise CGPA
 
 publish_to: 'none' 
 
-version: 1.0.5+5
+version: 1.0.6+6
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

@@ -10,6 +10,7 @@ import 'package:path_provider/path_provider.dart' as path_provider;
 
 String userIDSharedPreferences;
 String manualCredits;
+String semesterSharedPreferences;
 
 SharedPreferences syncPrefs;
 Future<void> main() async {
@@ -17,6 +18,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   syncPrefs = await SharedPreferences.getInstance();
   userIDSharedPreferences = syncPrefs.getString('uid');
+  semesterSharedPreferences = syncPrefs.getString('sem');
   final appDocumentDir = await path_provider.getApplicationDocumentsDirectory();
   Hive.init(appDocumentDir.path);
   // ::Debug:: -- UID of logged-in User
