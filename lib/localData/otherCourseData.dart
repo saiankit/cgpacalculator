@@ -41,6 +41,32 @@ List<String> semesterList = [
   '5 - 2',
 ];
 
+List<String> primaryDisciplineList = [
+  'A1',
+  'A2',
+  'A3',
+  'A4',
+  'A5',
+  'AA',
+  'A7',
+  'A8',
+];
+
+List<String> secondaryDisciplineList = [
+  'B1',
+  'B2',
+  'B3',
+  'B4',
+  'B5',
+];
+
+List<String> minorList = [
+  'Finance',
+  'Data Science',
+  'Physics',
+  'Material Science'
+];
+
 List<String> courseIDList = [
   'F110',
   'F111',

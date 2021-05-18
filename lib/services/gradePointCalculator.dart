@@ -15,10 +15,13 @@ String calculateGPA(AsyncSnapshot<List<Course>> snapshot) {
       0; // The loopVariable used to count the credits in particular semester courses list of the user
 
   //Loop to count the SGPA from the snapshot of the watchAllCoursesBySemesterCode Stream
+
   for (var i = 0; i < snapshot.data.length; i++) {
-    productCount +=
-        snapshot.data[i].gradeAchieved * snapshot.data[i].courseCredits;
-    creditsCount += snapshot.data[i].courseCredits;
+    if (snapshot.data[i].gradeAchieved != 0) {
+      productCount +=
+          snapshot.data[i].gradeAchieved * snapshot.data[i].courseCredits;
+      creditsCount += snapshot.data[i].courseCredits;
+    }
   }
   double doubleSGPA = double.parse((productCount / creditsCount).toStringAsFixed(
       2)); // floating point value of the final result obtained after the loop by dividing the productCount and creditsCount
@@ -61,9 +64,11 @@ String calculateCGPA(AsyncSnapshot<List<Course>> snapshot) {
 
   //Loop to count the CGPA from the snapshot of the watchAllCourses Stream
   for (var i = 0; i < snapshot.data.length; i++) {
-    productCount +=
-        snapshot.data[i].gradeAchieved * snapshot.data[i].courseCredits;
-    creditsCount += snapshot.data[i].courseCredits;
+    if (snapshot.data[i].gradeAchieved != 0) {
+      productCount +=
+          snapshot.data[i].gradeAchieved * snapshot.data[i].courseCredits;
+      creditsCount += snapshot.data[i].courseCredits;
+    }
   }
 
   double doubleCGPA = double.parse((productCount / creditsCount).toStringAsFixed(

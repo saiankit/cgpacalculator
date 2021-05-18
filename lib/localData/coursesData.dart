@@ -408,6 +408,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Food Biotechnology',
     'courseCredits': '3',
   },
+
   {
     'courseCode': 'BITS',
     'courseID': 'F110',
@@ -2614,6 +2615,12 @@ List<Map<String, dynamic>> coursesData = [
   },
   {
     'courseCode': 'EEE',
+    'courseID': 'F436',
+    'courseTitle': 'Electromagnetic Compatibility',
+    'courseCredits': '4',
+  },
+  {
+    'courseCode': 'EEE',
     'courseID': 'F462',
     'courseTitle': 'Advanced Power Systems',
     'courseCredits': '3',
@@ -2822,6 +2829,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Dynamics of Social Change',
     'courseCredits': '3',
   },
+  
   {
     'courseCode': 'GS',
     'courseID': 'F232',

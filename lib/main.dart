@@ -1,6 +1,8 @@
 import 'package:CgpaCalculator/data/moor_database.dart';
-import 'package:CgpaCalculator/screens/homeScreen.dart';
-import 'package:CgpaCalculator/screens/loginScreen.dart';
+import 'package:CgpaCalculator/localData/otherCourseData.dart';
+import 'package:CgpaCalculator/viewModels/courseInfo.dart';
+import 'package:CgpaCalculator/views/screens/homeScreen.dart';
+import 'package:CgpaCalculator/views/screens/loginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +20,9 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   syncPrefs = await SharedPreferences.getInstance();
   userIDSharedPreferences = syncPrefs.getString('uid');
-  semesterSharedPreferences = syncPrefs.getString('sem');
+  semesterSharedPreferences = syncPrefs.getString('sem') == null
+      ? semesterList[0]
+      : syncPrefs.getString('sem');
   final appDocumentDir = await path_provider.getApplicationDocumentsDirectory();
   Hive.init(appDocumentDir.path);
   // ::Debug:: -- UID of logged-in User
@@ -44,37 +48,43 @@ class _MyAppState extends State<MyApp> {
       ],
     );
     if (widget.userIDSharedPreferences != null) {
-      return Provider<AppDatabase>(
-        create: (context) => AppDatabase(),
-        child: MaterialApp(
-          theme: ThemeData(
-            fontFamily: 'Poppins',
-            primaryColor: Colors.black,
-            accentColor: Colors.black,
-          ),
-          debugShowCheckedModeBanner: false,
-          home: FutureBuilder(
-              future: Hive.openBox('manualData'),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
-                  if (snapshot.hasError) {
-                    return Scaffold(
-                      appBar: AppBar(
-                        title: Text(snapshot.error.toString()),
-                      ),
-                    );
+      return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => CourseInfoState()),
+        ],
+        child: Provider<AppDatabase>(
+          create: (context) => AppDatabase(),
+          child: MaterialApp(
+            color: Colors.white,
+            theme: ThemeData(
+              fontFamily: 'Poppins',
+              primaryColor: Colors.black,
+              accentColor: Colors.black,
+            ),
+            debugShowCheckedModeBanner: false,
+            home: FutureBuilder(
+                future: Hive.openBox('manualData'),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    if (snapshot.hasError) {
+                      return Scaffold(
+                        appBar: AppBar(
+                          title: Text(snapshot.error.toString()),
+                        ),
+                      );
+                    } else {
+                      return Scaffold(
+                        backgroundColor: Colors.white,
+                        body: HomeScreen(),
+                      );
+                    }
                   } else {
-                    return Scaffold(
-                      backgroundColor: Colors.white,
-                      body: HomeScreen(),
-                    );
+                    return Scaffold();
                   }
-                } else {
-                  return Scaffold();
-                }
-              }),
+                }),
+          ),
+          dispose: (context, db) => db.close(),
         ),
-        dispose: (context, db) => db.close(),
       );
     } else {
       return Provider<AppDatabase>(

@@ -1,8 +1,9 @@
 import 'package:CgpaCalculator/main.dart';
-import 'package:CgpaCalculator/screens/AnalyticsScreen.dart';
-import 'package:CgpaCalculator/screens/homeScreen.dart';
-import 'package:CgpaCalculator/screens/manualEntry.dart';
-import 'package:CgpaCalculator/screens/settingsScreen.dart';
+
+import 'package:CgpaCalculator/views/screens/AnalyticsScreen.dart';
+import 'package:CgpaCalculator/views/screens/homeScreen.dart';
+import 'package:CgpaCalculator/views/screens/manualEntry.dart';
+import 'package:CgpaCalculator/views/screens/settingsScreen.dart';
 import 'package:flutter/material.dart';
 
 void navigateToManualEntryScreen(BuildContext context) {
@@ -15,7 +16,8 @@ void navigateToManualEntryScreen(BuildContext context) {
   );
 }
 
-void navigateToSettingsScreen(BuildContext context, BuildContext homeScreenContext, String fuid) {
+void navigateToSettingsScreen(
+    BuildContext context, BuildContext homeScreenContext, String fuid) {
   Navigator.of(context).push(
     MaterialPageRoute(
       builder: (context) {

@@ -11,7 +11,8 @@ String countSemCredits(AsyncSnapshot<List<Course>> snapshot) {
       0; // The loopVariable used to count the credits in particular semester courses list of the user
   //Loop to count the total credits from the snapshot of the watchAllCoursesBySemesterCode Stream
   for (var i = 0; i < snapshot.data.length; i++) {
-    creditsCount += snapshot.data[i].courseCredits;
+    if (snapshot.data[i].gradeAchieved != 0)
+      creditsCount += snapshot.data[i].courseCredits;
   }
   //Asserting the Credits count
   if (creditsCount.isNaN) {
@@ -38,6 +39,31 @@ String countCredits(AsyncSnapshot<List<Course>> snapshot) {
       initialCredits; // The loopVariable used to count the credits in completed courses list of the user initialised by the initial credits
   //Loop to count the total credits from the snapshot of the watchAllCourses Stream
   for (var i = 0; i < snapshot.data.length; i++) {
+    if (snapshot.data[i].gradeAchieved != 0)
+      creditsCount += snapshot.data[i].courseCredits;
+  }
+
+  //Asserting the total Credits
+  if (creditsCount.isNaN) {
+    totalCredits = '0';
+  } else {
+    totalCredits = creditsCount.toString();
+  }
+
+  return totalCredits;
+}
+
+String countAllCredits(AsyncSnapshot<List<Course>> snapshot) {
+  String totalCredits; //Total Credits [String] that is returned by the function
+
+  int initialCredits = hiveGetData('manualCredits') == null
+      ? 0
+      : int.parse(hiveGetData(
+          'manualCredits')); //Accessing the initial credits added by the user manually stored in Shared Preferences
+  int creditsCount =
+      initialCredits; // The loopVariable used to count the credits in completed courses list of the user initialised by the initial credits
+  //Loop to count the total credits from the snapshot of the watchAllCourses Stream
+  for (var i = 0; i < snapshot.data.length; i++) {
     creditsCount += snapshot.data[i].courseCredits;
   }
 
@@ -49,4 +75,18 @@ String countCredits(AsyncSnapshot<List<Course>> snapshot) {
   }
 
   return totalCredits;
+}
+
+bool isaRepeatCourse(AsyncSnapshot<List<Course>> snapshot, Course newCourse) {
+  bool isRepeat = false;
+
+  for (var i = 0; i < snapshot.data.length; i++) {
+    if ((newCourse.courseCode == snapshot.data[i].courseCode) &&
+        (newCourse.courseID == snapshot.data[i].courseID)) {
+      isRepeat = true;
+      break;
+    }
+  }
+
+  return isRepeat;
 }
