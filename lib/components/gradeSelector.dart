@@ -56,6 +56,11 @@ class _GradeSelectorState extends State<GradeSelector> {
           numericalGrade = 2;
         }
         break;
+      case "CLR":
+        {
+          numericalGrade = 0;
+        }
+        break;
 
       default:
         {
@@ -110,6 +115,11 @@ class _GradeSelectorState extends State<GradeSelector> {
           letterGrade = "E";
         }
         break;
+      case 0:
+        {
+          letterGrade = "CLR";
+        }
+        break;
 
       default:
         {
@@ -128,7 +138,7 @@ class _GradeSelectorState extends State<GradeSelector> {
         SizedBox(height: 10.0),
         Container(
           height: 60.0,
-          width: 80.0,
+          width: 100.0,
           decoration: BoxDecoration(
             color: Colors.grey.withOpacity(0.2),
             borderRadius: BorderRadius.circular(12.0),
@@ -146,8 +156,18 @@ class _GradeSelectorState extends State<GradeSelector> {
                 ),
                 underline: Container(),
                 value: mapToNumberGrades(widget.courseGrade),
-                items: ["A", "A-", "B", "B-", "C", "C-", "D", "E"]
-                    .map<DropdownMenuItem<String>>(
+                items: [
+                  "A",
+                  "A-",
+                  "B",
+                  "B-",
+                  "C",
+                  "C-",
+                  "D",
+                  "E",
+                  "NC",
+                  "CLR",
+                ].map<DropdownMenuItem<String>>(
                   (String value) {
                     return DropdownMenuItem(
                       value: value,
