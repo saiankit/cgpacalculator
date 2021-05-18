@@ -1,13 +1,14 @@
 import 'package:CgpaCalculator/core/routes.dart';
-import 'package:CgpaCalculator/data/hive_api.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
-import 'package:CgpaCalculator/main.dart';
 import 'package:CgpaCalculator/providerStates/courseInfo.dart';
-import 'package:CgpaCalculator/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Appbar extends StatefulWidget {
+  final String fuid;
+  final BuildContext homeScreenContext;
+
+  const Appbar({Key key, this.homeScreenContext, this.fuid}) : super(key: key);
   @override
   _AppbarState createState() => _AppbarState();
 }
@@ -65,64 +66,29 @@ class _AppbarState extends State<Appbar> {
           children: [
             IconButton(
               icon: Icon(
-                Icons.open_in_browser,
+                Icons.analytics,
                 size: 30.0,
                 color: Colors.black,
               ),
               onPressed: () {
-                navigateToManualEntryScreen(context);
+                navigateToAnalyticsScreen(
+                    context, widget.homeScreenContext, widget.fuid);
               },
             ),
             IconButton(
               icon: Icon(
-                Icons.power_settings_new,
+                Icons.settings,
                 size: 30.0,
-                color: Colors.redAccent,
+                color: Colors.black,
               ),
-              onPressed: () => showLogOutDialog(context),
+              onPressed: () {
+                navigateToSettingsScreen(
+                    context, widget.homeScreenContext, widget.fuid);
+              },
             ),
           ],
         )
       ],
     );
   }
-}
-
-void showLogOutDialog(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text("Logout"),
-        content: Text("Are you sure you want to logout from the App ?"),
-        actions: <Widget>[
-          FlatButton(
-            child: Text(
-              'Yes',
-              style: TextStyle(
-                color: Colors.red,
-              ),
-            ),
-            onPressed: () async {
-              await authService.signOutGoogle();
-              hiveDeleteData();
-              syncPrefs.setString('uid', null).then(
-                (value) {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).pop();
-                  navigateToMyApp(context);
-                },
-              );
-            },
-          ),
-          FlatButton(
-            child: new Text("No"),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        ],
-      );
-    },
-  );
 }
