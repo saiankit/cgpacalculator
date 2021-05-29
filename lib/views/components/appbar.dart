@@ -1,6 +1,8 @@
 import 'package:CgpaCalculator/core/routes.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/viewModels/courseInfo.dart';
+import 'package:CgpaCalculator/views/screens/settingsScreen.dart';
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -85,7 +87,7 @@ class _AppbarState extends State<Appbar> {
                 navigateToSettingsScreen(
                     context, widget.homeScreenContext, widget.fuid);
               },
-            ),
+            )
           ],
         )
       ],

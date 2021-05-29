@@ -1,4 +1,5 @@
 List<String> courseCodeList = [
+  'AN',
   'BIO',
   'BIOT',
   'BITS',
@@ -61,10 +62,16 @@ List<String> secondaryDisciplineList = [
 ];
 
 List<String> minorList = [
-  'Finance',
+  'Aeronautics',
   'Data Science',
+  'English Studies',
+  'Entrepreneurship',
+  'Film and Media',
+  'Finance',
+  'Materials Science and Engineering',
+  'Philosophy, Economics, and Politics',
   'Physics',
-  'Material Science'
+  'Public Policy',
 ];
 
 List<String> courseIDList = [
