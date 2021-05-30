@@ -19,6 +19,7 @@ List<String> courseCodeList = [
   'ME',
   'MF',
   'MGTS',
+  'MSE',
   'MST',
   'PHA',
   'PHY',
@@ -72,6 +73,7 @@ List<String> minorList = [
   'Philosophy, Economics, and Politics',
   'Physics',
   'Public Policy',
+  'Robotics and Automation',
 ];
 
 List<String> courseIDList = [

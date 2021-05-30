@@ -1,5 +1,35 @@
 List<Map<String, dynamic>> coursesData = [
   {
+    'courseCode': 'AN',
+    'courseID': 'F311',
+    'courseTitle': 'Principles of Aerodynamics',
+    'courseCredits': '3',
+  },
+  {
+    'courseCode': 'AN',
+    'courseID': 'F312',
+    'courseTitle': 'Aircraft Propulsion',
+    'courseCredits': '3',
+  },
+  {
+    'courseCode': 'AN',
+    'courseID': 'F313',
+    'courseTitle': 'Flight Mechanics and Controls',
+    'courseCredits': '3',
+  },
+  {
+    'courseCode': 'AN',
+    'courseID': 'F314',
+    'courseTitle': 'Introduction to Flight',
+    'courseCredits': '3',
+  },
+  {
+    'courseCode': 'AN',
+    'courseID': 'F315',
+    'courseTitle': 'Aircraft Structures',
+    'courseCredits': '3',
+  },
+  {
     'courseCode': 'BIO',
     'courseID': 'F110',
     'courseTitle': 'Biology laboratory',
@@ -56,8 +86,7 @@ List<Map<String, dynamic>> coursesData = [
   {
     'courseCode': 'BIO',
     'courseID': 'F217',
-    'courseTitle':
-        ' Laboratory for Water,Sanitation and Solid waste Management',
+    'courseTitle': 'Laboratory for Water,Sanitation and Solid waste Management',
     'courseCredits': '3',
   },
   {
@@ -2531,7 +2560,7 @@ List<Map<String, dynamic>> coursesData = [
   {
     'courseCode': 'EEE',
     'courseID': 'F411',
-    'courseTitle': 'Internet of Things',
+    'courseTitle': 'Internet of Things (IoT)',
     'courseCredits': '4',
   },
   {
@@ -2671,6 +2700,12 @@ List<Map<String, dynamic>> coursesData = [
     'courseID': 'F491',
     'courseTitle': 'Special Projects',
     'courseCredits': '3',
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'G512',
+    'courseTitle': 'Embedded System Design',
+    'courseCredits': '4',
   },
   {
     'courseCode': 'FIN',
@@ -3613,6 +3648,12 @@ List<Map<String, dynamic>> coursesData = [
     'courseID': 'F491',
     'courseTitle': 'Special Projects',
     'courseCredits': '3',
+  },
+  {
+    'courseCode': 'INSTR',
+    'courseID': 'G611',
+    'courseTitle': 'Advanced Control Systems',
+    'courseCredits': '5',
   },
   {
     'courseCode': 'IS',
@@ -4639,6 +4680,12 @@ List<Map<String, dynamic>> coursesData = [
     'courseID': 'F433',
     'courseTitle': 'Advertising and Sales Promotion',
     'courseCredits': '3',
+  },
+  {
+    'courseCode': 'MSE',
+    'courseID': 'G511',
+    'courseTitle': 'Mechatronics',
+    'courseCredits': '5',
   },
   {
     'courseCode': 'MST',
