@@ -72,7 +72,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
           title: Text("Delete Course"),
           content: Text("Are you sure you want to delete the course ?"),
           actions: <Widget>[
-            FlatButton(
+            TextButton(
               child: Text(
                 'Yes',
                 style: TextStyle(
@@ -101,7 +101,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
                 navigateToMyApp(context);
               },
             ),
-            FlatButton(
+            TextButton(
               child: new Text("No"),
               onPressed: () {
                 Navigator.of(context).pop();

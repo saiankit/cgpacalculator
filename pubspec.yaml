@@ -13,8 +13,8 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^0.1.3
-  flutter_svg: ^0.18.0
-  animations: ^1.0.0
+  flutter_svg: ^0.20.0-nullsafety.3
+  animations:
   marquee:
   provider:
   firebase_core:
@@ -23,13 +23,13 @@ dependencies:
   cloud_firestore:
   firebase_analytics:
   google_sign_in:
-  shared_preferences: ^0.5.12+2
+  shared_preferences:
   path_provider:
   moor_flutter:
-  flutter_launcher_icons: ^0.7.5
+  flutter_launcher_icons:
   flutter_spinkit:
-  hive: ^1.0.0
-  hive_flutter: ^0.2.1
+  hive:
+  hive_flutter:
   flushbar:
 
 
@@ -39,7 +39,7 @@ dev_dependencies:
     sdk: flutter
   moor_generator:
   build_runner:
-  hive_generator: ^0.5.1
+  hive_generator:
 
 flutter_icons:
   ios: true

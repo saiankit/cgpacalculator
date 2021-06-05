@@ -301,7 +301,7 @@ class Col extends StatelessWidget {
                         String credits;
 
                         if (title == "HEL") {
-                          
+
                           credits = countHelCredits(snapshot);
                         } else if (title == "DEL") {
                           credits = countDELCredits(snapshot, 'AA');

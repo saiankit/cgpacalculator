@@ -23,7 +23,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
               children: <Widget>[
                 loginOnBoardingText(),
                 centerContainerLogin(),
-                FlatButton(
+                TextButton(
                   onPressed: () async {
                     setState(() {
                       isLoading = true;

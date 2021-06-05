@@ -445,7 +445,7 @@ void showLogOutDialog(BuildContext context) {
         title: Text("Logout"),
         content: Text("Are you sure you want to logout from the App ?"),
         actions: <Widget>[
-          FlatButton(
+          TextButton(
             child: Text(
               'Yes',
               style: TextStyle(
@@ -465,7 +465,7 @@ void showLogOutDialog(BuildContext context) {
               );
             },
           ),
-          FlatButton(
+          TextButton(
             child: new Text("No"),
             onPressed: () {
               Navigator.of(context).pop();
