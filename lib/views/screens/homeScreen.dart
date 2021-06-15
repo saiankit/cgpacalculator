@@ -10,6 +10,7 @@ import 'package:CgpaCalculator/views/components/noItems.dart';
 import 'package:CgpaCalculator/views/widgets/addAnewCourseButtonHomeScreen.dart';
 import 'package:CgpaCalculator/views/widgets/courseCard.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -57,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             CreditRow(fuid: fuid, homeScreenContext: context),
                             GestureDetector(
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 var _semesterCode =
                                     Provider.of<CourseInfoState>(context,
                                             listen: false)

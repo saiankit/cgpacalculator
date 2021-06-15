@@ -223,6 +223,7 @@ class _ElectivesCardState extends State<ElectivesCard> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+        HapticFeedback.mediumImpact();
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) {
@@ -276,13 +277,15 @@ class _ElectivesCardState extends State<ElectivesCard> {
                         : (widget.electiveType == 2)
                             ? DisciplinaryElectiveService()
                                 .countCredits(snapshot, 'AA')
-                            : OpenElectiveService().countCredits(snapshot, 'AA');
+                            : OpenElectiveService()
+                                .countCredits(snapshot, 'AA');
                     String electiveCourses = (widget.electiveType == 1)
                         ? HumanityElectiveService().countCourses(snapshot)
                         : (widget.electiveType == 2)
                             ? DisciplinaryElectiveService()
                                 .countCourses(snapshot, 'AA')
-                            : OpenElectiveService().countCredits(snapshot, 'AA');
+                            : OpenElectiveService()
+                                .countCredits(snapshot, 'AA');
                     String maxCourses = (widget.electiveType == 1)
                         ? '3'
                         : (widget.electiveType == 2)

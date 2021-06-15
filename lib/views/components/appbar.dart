@@ -2,6 +2,7 @@ import 'package:CgpaCalculator/core/routes.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/viewModels/courseInfo.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class Appbar extends StatefulWidget {
@@ -71,6 +72,7 @@ class _AppbarState extends State<Appbar> {
                 color: Colors.black,
               ),
               onPressed: () {
+                HapticFeedback.mediumImpact();
                 navigateToAnalyticsScreen(
                     context, widget.homeScreenContext, widget.fuid);
               },
@@ -82,6 +84,7 @@ class _AppbarState extends State<Appbar> {
                 color: Colors.black,
               ),
               onPressed: () {
+                HapticFeedback.mediumImpact();
                 navigateToSettingsScreen(
                     context, widget.homeScreenContext, widget.fuid);
               },

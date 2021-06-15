@@ -5,10 +5,12 @@ import 'package:CgpaCalculator/data/hive_api.dart';
 import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/main.dart';
+import 'package:CgpaCalculator/utilities/icons.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/viewModels/courseInfo.dart';
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'loginLoading.dart';
@@ -76,8 +78,9 @@ class _ManualEntryState extends State<ManualEntry> {
         elevation: 0,
         backgroundColor: Colors.white,
         leading: IconButton(
-          icon: Icon(Icons.chevron_left, color: Colors.black, size: 40.0),
+          icon: CustomIcons.arrowBackIOS,
           onPressed: () {
+            HapticFeedback.mediumImpact();
             Navigator.of(context).pop();
           },
         ),
@@ -236,6 +239,7 @@ class _ManualEntryState extends State<ManualEntry> {
                             : Container(),
                         GestureDetector(
                           onTap: () {
+                            HapticFeedback.mediumImpact();
                             String manualCredits = Provider.of<CourseInfoState>(
                                     context,
                                     listen: false)

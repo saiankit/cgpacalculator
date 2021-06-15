@@ -3,6 +3,7 @@ import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/viewModels/courseInfo.dart';
 import 'package:CgpaCalculator/views/screens/courseUpdate.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class CourseCard extends StatefulWidget {
@@ -155,6 +156,7 @@ class _CourseCardState extends State<CourseCard> {
       child: Consumer<CourseInfoState>(
         builder: (context, semState, _) => GestureDetector(
           onTap: () {
+            HapticFeedback.mediumImpact();
             searchCourseTitle(widget.courseCode, widget.courseID);
             showModalBottomSheet(
               context: context,

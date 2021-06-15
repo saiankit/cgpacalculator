@@ -7,6 +7,7 @@ import 'package:CgpaCalculator/viewModels/courseInfo.dart';
 import 'package:CgpaCalculator/views/components/gradeSelector.dart';
 import 'package:CgpaCalculator/views/widgets/updateCourseButton.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:marquee/marquee.dart';
 import 'package:provider/provider.dart';
 
@@ -130,6 +131,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
                     children: [
                       GestureDetector(
                         onTap: () {
+                          HapticFeedback.mediumImpact();
                           _showDialog();
                         },
                         child: Container(

@@ -1,6 +1,7 @@
 import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class UpdateCourseButton extends StatefulWidget {
@@ -33,9 +34,11 @@ class _UpdateCourseButtonState extends State<UpdateCourseButton> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        HapticFeedback.mediumImpact();
         final courseCode = widget.courseCode;
         final courseID = widget.courseID;
         final semesterCode = widget.semesterCode;
+        HapticFeedback.mediumImpact();
         if (widget.courseTitle == 'Course Not found') {
           showDialog(
             context: context,

@@ -1,5 +1,6 @@
 import 'package:CgpaCalculator/core/routes.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
+import 'package:CgpaCalculator/utilities/icons.dart';
 import 'package:CgpaCalculator/viewModels/courseInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:CgpaCalculator/data/hive_api.dart';
@@ -26,9 +27,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        leading: IconButton(
-          icon: Icon(Icons.chevron_left, color: Colors.black, size: 40.0),
+       leading: IconButton(
+          icon: CustomIcons.arrowBackIOS,
           onPressed: () {
+            HapticFeedback.mediumImpact();
             Navigator.of(context).pop();
           },
         ),
