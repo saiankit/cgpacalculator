@@ -3,6 +3,7 @@ import 'package:CgpaCalculator/services/disciplinaryElectiveService.dart';
 import 'package:CgpaCalculator/services/humanityElectiveService.dart';
 import 'package:CgpaCalculator/services/openElectiveService.dart';
 import 'package:CgpaCalculator/utilities/icons.dart';
+import 'package:CgpaCalculator/viewModels/courseInfo.dart';
 import 'package:CgpaCalculator/views/components/noItems.dart';
 import 'package:CgpaCalculator/views/screens/AnalyticsScreen.dart';
 import 'package:CgpaCalculator/views/screens/moreCourses.dart';
@@ -75,39 +76,43 @@ class _ElectiveScreenState extends State<ElectiveScreen> {
                 ],
               ),
             ),
-            StreamBuilder(
-              stream: Provider.of<AppDatabase>(widget.homeScreenContext)
-                  .watchAllCourses(widget.fuid),
-              builder: (context, AsyncSnapshot<List<Course>> snapshot) {
-                if (!snapshot.hasData)
-                  return Center(
-                    child: CircularProgressIndicator(),
-                  );
-                if (snapshot.data.isEmpty) {
-                  return NoItemsOops();
-                }
-                List<DummyCourseModel> listOfCourses =
-                    (widget.electiveType == 1)
-                        ? HumanityElectiveService()
-                            .getCompletedHumanityElecitvesList(snapshot)
-                        : (widget.electiveType == 2)
-                            ? DisciplinaryElectiveService()
-                                .getCompletedDisciplinaryElecitvesList(
-                                    snapshot, 'AA')
-                            : OpenElectiveService()
-                                .getCompletedOpenElecitvesList(snapshot, 'AA');
-                if (listOfCourses == null) return NoItemsOops();
-                return ListView.builder(
-                  shrinkWrap: true,
-                  itemBuilder: (_, index) {
-                    return CourseCardUI(
-                      course: listOfCourses[index],
-                    );
-                  },
-                  itemCount: listOfCourses.length,
-                );
-              },
-            ),
+            Consumer<CourseInfoState>(
+                builder: (context, courseInfoProvider, _) => StreamBuilder(
+                      stream: Provider.of<AppDatabase>(widget.homeScreenContext)
+                          .watchAllCourses(widget.fuid),
+                      builder: (context, AsyncSnapshot<List<Course>> snapshot) {
+                        if (!snapshot.hasData)
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        if (snapshot.data.isEmpty) {
+                          return NoItemsOops();
+                        }
+                        List<DummyCourseModel> listOfCourses = (widget
+                                    .electiveType ==
+                                1)
+                            ? HumanityElectiveService()
+                                .getCompletedHumanityElecitvesList(snapshot)
+                            : (widget.electiveType == 2)
+                                ? DisciplinaryElectiveService()
+                                    .getCompletedDisciplinaryElecitvesList(
+                                        snapshot,
+                                        courseInfoProvider.primaryDiscipline)
+                                : OpenElectiveService()
+                                    .getCompletedOpenElecitvesList(snapshot,
+                                        courseInfoProvider.primaryDiscipline);
+                        if (listOfCourses == null) return NoItemsOops();
+                        return ListView.builder(
+                          shrinkWrap: true,
+                          itemBuilder: (_, index) {
+                            return CourseCardUI(
+                              course: listOfCourses[index],
+                            );
+                          },
+                          itemCount: listOfCourses.length,
+                        );
+                      },
+                    )),
           ],
         ),
       ),

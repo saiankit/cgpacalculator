@@ -5,6 +5,7 @@ import 'package:CgpaCalculator/services/humanityElectiveService.dart';
 import 'package:CgpaCalculator/services/openElectiveService.dart';
 import 'package:CgpaCalculator/utilities/icons.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
+import 'package:CgpaCalculator/viewModels/courseInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -259,93 +260,97 @@ class _ElectivesCardState extends State<ElectivesCard> {
                     fontSize: 14.0,
                   ),
                 ),
-                StreamBuilder(
-                  stream: Provider.of<AppDatabase>(widget.homeScreenContext)
-                      .watchAllCourses(widget.fuid),
-                  builder: (context, AsyncSnapshot<List<Course>> snapshot) {
-                    if (!snapshot.hasData)
-                      return Text(
-                        '0',
-                        style: TextStyle(
-                          fontSize: 38.0,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
+                Consumer<CourseInfoState>(
+                  builder: (context, courseInfoProvider, _) => StreamBuilder(
+                    stream: Provider.of<AppDatabase>(widget.homeScreenContext)
+                        .watchAllCourses(widget.fuid),
+                    builder: (context, AsyncSnapshot<List<Course>> snapshot) {
+                      if (!snapshot.hasData)
+                        return Text(
+                          '0',
+                          style: TextStyle(
+                            fontSize: 38.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        );
+                      String electiveCredits = (widget.electiveType == 1)
+                          ? HumanityElectiveService().countCredits(snapshot)
+                          : (widget.electiveType == 2)
+                              ? DisciplinaryElectiveService().countCredits(
+                                  snapshot,
+                                  courseInfoProvider.primaryDiscipline)
+                              : OpenElectiveService().countCredits(snapshot,
+                                  courseInfoProvider.primaryDiscipline);
+                      String electiveCourses = (widget.electiveType == 1)
+                          ? HumanityElectiveService().countCourses(snapshot)
+                          : (widget.electiveType == 2)
+                              ? DisciplinaryElectiveService().countCourses(
+                                  snapshot,
+                                  courseInfoProvider.primaryDiscipline)
+                              : OpenElectiveService().countCredits(snapshot,
+                                  courseInfoProvider.primaryDiscipline);
+                      String maxCourses = (widget.electiveType == 1)
+                          ? '3'
+                          : (widget.electiveType == 2)
+                              ? '5'
+                              : '5';
+                      String maxCredits = (widget.electiveType == 1)
+                          ? '9'
+                          : (widget.electiveType == 2)
+                              ? '15'
+                              : '15';
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.baseline,
+                            textBaseline: TextBaseline.ideographic,
+                            children: [
+                              Text(
+                                ' ' + electiveCourses,
+                                style: TextStyle(
+                                  fontSize: 38.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                ' /$maxCourses courses',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.baseline,
+                            textBaseline: TextBaseline.ideographic,
+                            children: [
+                              Text(
+                                ' ' + electiveCredits,
+                                style: TextStyle(
+                                  fontSize: 38.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                ' /$maxCredits credits',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       );
-                    String electiveCredits = (widget.electiveType == 1)
-                        ? HumanityElectiveService().countCredits(snapshot)
-                        : (widget.electiveType == 2)
-                            ? DisciplinaryElectiveService()
-                                .countCredits(snapshot, 'AA')
-                            : OpenElectiveService()
-                                .countCredits(snapshot, 'AA');
-                    String electiveCourses = (widget.electiveType == 1)
-                        ? HumanityElectiveService().countCourses(snapshot)
-                        : (widget.electiveType == 2)
-                            ? DisciplinaryElectiveService()
-                                .countCourses(snapshot, 'AA')
-                            : OpenElectiveService()
-                                .countCredits(snapshot, 'AA');
-                    String maxCourses = (widget.electiveType == 1)
-                        ? '3'
-                        : (widget.electiveType == 2)
-                            ? '5'
-                            : '5';
-                    String maxCredits = (widget.electiveType == 1)
-                        ? '9'
-                        : (widget.electiveType == 2)
-                            ? '15'
-                            : '15';
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.baseline,
-                          textBaseline: TextBaseline.ideographic,
-                          children: [
-                            Text(
-                              ' ' + electiveCourses,
-                              style: TextStyle(
-                                fontSize: 38.0,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              ' /$maxCourses courses',
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.baseline,
-                          textBaseline: TextBaseline.ideographic,
-                          children: [
-                            Text(
-                              ' ' + electiveCredits,
-                              style: TextStyle(
-                                fontSize: 38.0,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              ' /$maxCredits credits',
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    );
-                  },
+                    },
+                  ),
                 ),
               ],
             ),

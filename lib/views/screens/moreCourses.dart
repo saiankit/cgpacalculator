@@ -3,6 +3,7 @@ import 'package:CgpaCalculator/services/disciplinaryElectiveService.dart';
 import 'package:CgpaCalculator/services/humanityElectiveService.dart';
 import 'package:CgpaCalculator/services/openElectiveService.dart';
 import 'package:CgpaCalculator/utilities/icons.dart';
+import 'package:CgpaCalculator/viewModels/courseInfo.dart';
 
 import 'package:CgpaCalculator/views/components/noItems.dart';
 import 'package:CgpaCalculator/views/screens/AnalyticsScreen.dart';
@@ -41,8 +42,8 @@ class _MoreCoursesScreenState extends State<MoreCoursesScreen> {
         ),
       ),
       backgroundColor: Colors.white,
-      body: Container(
-        child: StreamBuilder(
+      body: Consumer<CourseInfoState>(
+        builder: (context, courseInfoProvider, _) => StreamBuilder(
           stream: Provider.of<AppDatabase>(widget.homeScreenContext)
               .watchAllCourses(widget.fuid),
           builder: (context, AsyncSnapshot<List<Course>> snapshot) {
@@ -58,9 +59,10 @@ class _MoreCoursesScreenState extends State<MoreCoursesScreen> {
                     .getMoreHumanityElecitvesList(snapshot)
                 : (widget.electiveType == 2)
                     ? DisciplinaryElectiveService()
-                        .getMoreDisciplinaryElectivesList(snapshot, 'AA')
-                    : OpenElectiveService()
-                        .getMoreDisciplinaryElectivesList(snapshot, 'AA');
+                        .getMoreDisciplinaryElectivesList(
+                            snapshot, courseInfoProvider.primaryDiscipline)
+                    : OpenElectiveService().getMoreDisciplinaryElectivesList(
+                        snapshot, courseInfoProvider.primaryDiscipline);
 
             if (listOfCourses == null) return NoItemsOops();
             return ListView.builder(
