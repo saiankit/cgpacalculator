@@ -47,17 +47,6 @@ class _AddCourseButtonState extends State<AddCourseButton> {
             },
           );
         } else {
-          Course newCourse = Course(
-            id: widget.documentID,
-            semesterCode: '${widget.semesterCode}',
-            courseCode: '${widget.courseCode}',
-            courseID: '${widget.courseID}',
-            courseCredits: widget.courseCredits,
-            gradeAchieved: widget.gradeAchieved,
-            courseTitle: widget.courseTitle.toString(),
-            userID: widget.userID.toString(),
-          );
-
           Provider.of<AppDatabase>(context, listen: false).insertCourse(
             Course(
               id: widget.documentID,

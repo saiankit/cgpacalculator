@@ -1,5 +1,6 @@
 import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
+import 'package:CgpaCalculator/utilities/sizeConfig.dart';
 import 'package:CgpaCalculator/viewModels/courseInfo.dart';
 import 'package:CgpaCalculator/views/screens/homeScreen.dart';
 import 'package:CgpaCalculator/views/screens/loginScreen.dart';
@@ -47,22 +48,24 @@ class _MyAppState extends State<MyApp> {
         DeviceOrientation.portraitDown,
       ],
     );
-    if (widget.userIDSharedPreferences != null) {
-      return MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => CourseInfoState()),
-        ],
-        child: Provider<AppDatabase>(
-          create: (context) => AppDatabase(),
-          child: MaterialApp(
-            color: Colors.white,
-            theme: ThemeData(
-              fontFamily: 'Poppins',
-              primaryColor: Colors.black,
-              accentColor: Colors.black,
-            ),
-            debugShowCheckedModeBanner: false,
-            home: FutureBuilder(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        SizeConfig().init(constraints);
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider(create: (_) => CourseInfoState()),
+          ],
+          child: Provider<AppDatabase>(
+            create: (context) => AppDatabase(),
+            child: MaterialApp(
+              color: Colors.white,
+              theme: ThemeData(
+                fontFamily: 'Poppins',
+                primaryColor: Colors.black,
+                accentColor: Colors.black,
+              ),
+              debugShowCheckedModeBanner: false,
+              home: FutureBuilder(
                 future: Hive.openBox('manualData'),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.done) {
@@ -75,50 +78,21 @@ class _MyAppState extends State<MyApp> {
                     } else {
                       return Scaffold(
                         backgroundColor: Colors.white,
-                        body: HomeScreen(),
+                        body: widget.userIDSharedPreferences != null
+                            ? HomeScreen()
+                            : LoginPage(),
                       );
                     }
                   } else {
                     return Scaffold();
                   }
-                }),
+                },
+              ),
+            ),
+            dispose: (context, db) => db.close(),
           ),
-          dispose: (context, db) => db.close(),
-        ),
-      );
-    } else {
-      return Provider<AppDatabase>(
-        create: (context) => AppDatabase(),
-        child: MaterialApp(
-          theme: ThemeData(
-            fontFamily: 'Poppins',
-            primaryColor: Colors.black,
-            accentColor: Colors.black,
-          ),
-          debugShowCheckedModeBanner: false,
-          home: FutureBuilder(
-              future: Hive.openBox('manualData'),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
-                  if (snapshot.hasError) {
-                    return Scaffold(
-                      appBar: AppBar(
-                        title: Text(snapshot.error.toString()),
-                      ),
-                    );
-                  } else {
-                    return Scaffold(
-                      backgroundColor: Colors.white,
-                      body: LoginPage(),
-                    );
-                  }
-                } else {
-                  return Scaffold();
-                }
-              }),
-        ),
-        dispose: (context, db) => db.close(),
-      );
-    }
+        );
+      },
+    );
   }
 }

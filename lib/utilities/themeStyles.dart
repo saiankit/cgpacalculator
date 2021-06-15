@@ -68,4 +68,13 @@ class ThemeStyles {
       topRight: const Radius.circular(30.0),
     ),
   );
+
+  static List<BoxShadow> shadowStyle = [
+    BoxShadow(
+      color: Colors.black,
+      spreadRadius: 1.0,
+      blurRadius: 10.0,
+      offset: Offset(3.0, 3.0),
+    )
+  ];
 }

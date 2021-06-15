@@ -30,6 +30,7 @@ class AppDatabase extends _$AppDatabase {
         .watch();
   }
 
+
   Future insertCourse(Course course) => into(courses).insert(course);
   Future updateCourse(Course course) => update(courses).replace(course);
 

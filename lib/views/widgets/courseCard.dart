@@ -1,3 +1,4 @@
+import 'package:CgpaCalculator/services/openElectiveService.dart';
 import 'package:CgpaCalculator/utilities/themeStyles.dart';
 import 'package:CgpaCalculator/viewModels/courseInfo.dart';
 import 'package:CgpaCalculator/views/screens/courseUpdate.dart';
@@ -223,6 +224,75 @@ class _CourseCardState extends State<CourseCard> {
                   ),
                 ],
               ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CourseCardUI extends StatefulWidget {
+  final DummyCourseModel course;
+
+  const CourseCardUI({Key key, this.course}) : super(key: key);
+
+  @override
+  _CourseCardUIState createState() => _CourseCardUIState();
+}
+
+class _CourseCardUIState extends State<CourseCardUI> {
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (_) => CourseInfoState(),
+      child: Consumer<CourseInfoState>(
+        builder: (context, semState, _) => Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
+          child: Container(
+            height: 60.0,
+            decoration: ThemeStyles.courseCardDecoration,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Container(
+                  height: 60.0,
+                  width: 60.0,
+                  decoration: ThemeStyles.courseCardCourseInfo,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        widget.course.courseCode,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        widget.course.courseID,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: SingleChildScrollView(
+                    padding: EdgeInsets.only(left: 10.0),
+                    scrollDirection: Axis.horizontal,
+                    child: Text(widget.course.courseTitle,
+                        style: ThemeStyles.titleTextStyle),
+                  ),
+                ),
+                Container(
+                  height: 60.0,
+                  width: 60.0,
+                  decoration: ThemeStyles.courseCardGradeInfo,
+                  child: Center(
+                    child: Text(
+                      widget.course.courseCredits,
+                      style: TextStyle(fontSize: 25.0, color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
