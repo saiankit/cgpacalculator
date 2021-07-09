@@ -77,42 +77,41 @@ class _ElectiveScreenState extends State<ElectiveScreen> {
               ),
             ),
             Consumer<CourseInfoState>(
-                builder: (context, courseInfoProvider, _) => StreamBuilder(
-                      stream: Provider.of<AppDatabase>(widget.homeScreenContext)
-                          .watchAllCourses(widget.fuid),
-                      builder: (context, AsyncSnapshot<List<Course>> snapshot) {
-                        if (!snapshot.hasData)
-                          return Center(
-                            child: CircularProgressIndicator(),
-                          );
-                        if (snapshot.data.isEmpty) {
-                          return NoItemsOops();
-                        }
-                        List<DummyCourseModel> listOfCourses = (widget
-                                    .electiveType ==
-                                1)
-                            ? HumanityElectiveService()
-                                .getCompletedHumanityElecitvesList(snapshot)
-                            : (widget.electiveType == 2)
-                                ? DisciplinaryElectiveService()
-                                    .getCompletedDisciplinaryElecitvesList(
-                                        snapshot,
-                                        courseInfoProvider.primaryDiscipline)
-                                : OpenElectiveService()
-                                    .getCompletedOpenElecitvesList(snapshot,
-                                        courseInfoProvider.primaryDiscipline);
-                        if (listOfCourses == null) return NoItemsOops();
-                        return ListView.builder(
-                          shrinkWrap: true,
-                          itemBuilder: (_, index) {
-                            return CourseCardUI(
-                              course: listOfCourses[index],
-                            );
-                          },
-                          itemCount: listOfCourses.length,
-                        );
-                      },
-                    )),
+              builder: (context, courseInfoProvider, _) => StreamBuilder(
+                stream: Provider.of<AppDatabase>(widget.homeScreenContext)
+                    .watchAllCourses(widget.fuid),
+                builder: (context, AsyncSnapshot<List<Course>> snapshot) {
+                  if (!snapshot.hasData)
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  if (snapshot.data.isEmpty) {
+                    return NoItemsOops();
+                  }
+                  List<DummyCourseModel> listOfCourses = (widget.electiveType ==
+                          1)
+                      ? HumanityElectiveService()
+                          .getCompletedHumanityElecitvesList(snapshot)
+                      : (widget.electiveType == 2)
+                          ? DisciplinaryElectiveService()
+                              .getCompletedDisciplinaryElecitvesList(snapshot,
+                                  courseInfoProvider.primaryDiscipline)
+                          : OpenElectiveService().getCompletedOpenElecitvesList(
+                              snapshot, courseInfoProvider.primaryDiscipline);
+                  if (listOfCourses == null || listOfCourses.length == 0)
+                    return NoItemsOops();
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    itemBuilder: (_, index) {
+                      return CourseCardUI(
+                        course: listOfCourses[index],
+                      );
+                    },
+                    itemCount: listOfCourses.length,
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),

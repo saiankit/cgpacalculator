@@ -74,19 +74,21 @@ class HumanityElectiveService {
       if (snapshot.data[i].courseCode.startsWith('GS') ||
           snapshot.data[i].courseCode.startsWith('HSS'))
         completedHumanities.add(snapshot.data[i]);
-
     List<DummyCourseModel> left = [];
     for (var i = 0; i < humanityCoursesData.length; i++) {
       for (var j = 0; j < completedHumanities.length; j++) {
-        if (completedHumanities[j].courseTitle !=
-            humanityCoursesData[i]['courseTitle']) {
-          DummyCourseModel newCourse = DummyCourseModel(
-            courseCode: humanityCoursesData[i]['courseCode'],
-            courseCredits: humanityCoursesData[i]['courseCredits'],
-            courseID: humanityCoursesData[i]['courseID'],
-            courseTitle: humanityCoursesData[i]['courseTitle'],
-          );
-          left.add(newCourse);
+        if ((completedHumanities[j].courseCode +
+                completedHumanities[j].courseID) !=
+            (humanityCoursesData[i]['courseCode'] +
+                humanityCoursesData[i]['courseID'])) {
+
+            DummyCourseModel newCourse = DummyCourseModel(
+              courseCode: humanityCoursesData[i]['courseCode'],
+              courseCredits: humanityCoursesData[i]['courseCredits'],
+              courseID: humanityCoursesData[i]['courseID'],
+              courseTitle: humanityCoursesData[i]['courseTitle'],
+            );
+            left.add(newCourse);
         }
       }
     }

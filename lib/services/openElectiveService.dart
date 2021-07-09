@@ -130,7 +130,7 @@ class OpenElectiveService {
     return completedOpenElectives;
   }
 
-  List<DummyCourseModel> getMoreDisciplinaryElectivesList(
+  List<DummyCourseModel> getMoreOpenElectivesList(
       AsyncSnapshot<List<Course>> snapshot, String branch) {
     List<DummyCourseModel> left = [];
     List<DummyCourseModel> completedOpenElectives =

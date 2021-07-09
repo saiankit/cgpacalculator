@@ -61,7 +61,7 @@ class _MoreCoursesScreenState extends State<MoreCoursesScreen> {
                     ? DisciplinaryElectiveService()
                         .getMoreDisciplinaryElectivesList(
                             snapshot, courseInfoProvider.primaryDiscipline)
-                    : OpenElectiveService().getMoreDisciplinaryElectivesList(
+                    : OpenElectiveService().getMoreOpenElectivesList(
                         snapshot, courseInfoProvider.primaryDiscipline);
 
             if (listOfCourses == null) return NoItemsOops();
