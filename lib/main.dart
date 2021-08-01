@@ -14,6 +14,9 @@ import 'package:path_provider/path_provider.dart' as path_provider;
 String userIDSharedPreferences;
 String manualCredits;
 String semesterSharedPreferences;
+String primaryDiscipline;
+String secondaryDiscipline;
+String minorDiscipline;
 
 SharedPreferences syncPrefs;
 Future<void> main() async {
@@ -24,6 +27,15 @@ Future<void> main() async {
   semesterSharedPreferences = syncPrefs.getString('sem') == null
       ? semesterList[0]
       : syncPrefs.getString('sem');
+  primaryDiscipline = syncPrefs.getString('primaryDiscipline') == null
+      ? 'A1'
+      : syncPrefs.getString('primaryDiscipline');
+  secondaryDiscipline = syncPrefs.getString('secondaryDiscipline') == null
+      ? 'B1'
+      : syncPrefs.getString('secondaryDiscipline');
+  minorDiscipline = syncPrefs.getString('minor') == null
+      ? 'Finance'
+      : syncPrefs.getString('minor');
   final appDocumentDir = await path_provider.getApplicationDocumentsDirectory();
   Hive.init(appDocumentDir.path);
   // ::Debug:: -- UID of logged-in User

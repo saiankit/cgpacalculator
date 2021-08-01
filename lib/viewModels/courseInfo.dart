@@ -13,9 +13,9 @@ class CourseInfoState extends ChangeNotifier {
   String selectedSemester = semesterSharedPreferences;
   String cummulativeGradePointAverage = "0.00";
   String semesterGradePointAverage = "0.00";
-  String primaryDiscipline = 'A1';
-  String secondaryDiscipline = 'B1';
-  String minor = 'Finance';
+  String selectedPrimaryDiscipline = primaryDiscipline;
+  String selectedSecondaryDiscipline = secondaryDiscipline;
+  String selectedMinor = minorDiscipline;
 
   bool minorExists = false;
   bool secondaryDisciplineExists = false;
@@ -28,23 +28,23 @@ class CourseInfoState extends ChangeNotifier {
   }
 
   void changePrimaryDiscipline(String newDiscipline) async {
-    primaryDiscipline = newDiscipline;
+    selectedPrimaryDiscipline = newDiscipline;
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('primaryDiscipline', primaryDiscipline);
+    prefs.setString('primaryDiscipline', selectedPrimaryDiscipline);
     notifyListeners();
   }
 
   void changeSecondaryDiscipline(String newDiscipline) async {
-    secondaryDiscipline = newDiscipline;
+    selectedSecondaryDiscipline = newDiscipline;
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('secondaryDiscipline', secondaryDiscipline);
+    prefs.setString('secondaryDiscipline', selectedSecondaryDiscipline);
     notifyListeners();
   }
 
   void changeMinor(String newMinor) async {
-    minor = newMinor;
+    selectedMinor = newMinor;
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('minor', minor);
+    prefs.setString('minor', selectedMinor);
     notifyListeners();
   }
 
