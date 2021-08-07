@@ -53,7 +53,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    // Setting DeviceOrientation to potrait mode ONLY - flutter services plugin required
+    // Setting DeviceOrientation to potrait mode ONLY - flutter services plugin
+    // required
     SystemChrome.setPreferredOrientations(
       [
         DeviceOrientation.portraitUp,

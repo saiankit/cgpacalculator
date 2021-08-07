@@ -87,7 +87,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 fontSize: 20.0,
                               ),
                               underline: Container(),
-                              value: courseInfoState.primaryDiscipline,
+                              value: courseInfoState.selectedPrimaryDiscipline,
                               items: primaryDisciplineList
                                   .map<DropdownMenuItem<String>>(
                                 (String value) {
@@ -184,7 +184,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     fontSize: 20.0,
                                   ),
                                   underline: Container(),
-                                  value: courseInfoState.secondaryDiscipline,
+                                  value: courseInfoState.selectedSecondaryDiscipline,
                                   items: secondaryDisciplineList
                                       .map<DropdownMenuItem<String>>(
                                     (String value) {
@@ -281,7 +281,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   fontSize: 15.0,
                                 ),
                                 underline: Container(),
-                                value: courseInfoState.minor,
+                                value: courseInfoState.selectedMinor,
                                 items: minorList.map<DropdownMenuItem<String>>(
                                   (String value) {
                                     return DropdownMenuItem(

@@ -32,7 +32,8 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -49,7 +50,7 @@ android {
         targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-    }   
+    }
    signingConfigs {
        release {
             keyAlias keystoreProperties['keyAlias']
@@ -74,6 +75,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.android.support:multidex:1.0.3'
-    implementation 'androidx.multidex:multidex:2.0.1'  
+    implementation 'androidx.multidex:multidex:2.0.1'
 }
 

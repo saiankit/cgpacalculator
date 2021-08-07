@@ -279,17 +279,17 @@ class _ElectivesCardState extends State<ElectivesCard> {
                           : (widget.electiveType == 2)
                               ? DisciplinaryElectiveService().countCredits(
                                   snapshot,
-                                  courseInfoProvider.primaryDiscipline)
+                                  courseInfoProvider.selectedPrimaryDiscipline)
                               : OpenElectiveService().countCredits(snapshot,
-                                  courseInfoProvider.primaryDiscipline);
+                                  courseInfoProvider.selectedPrimaryDiscipline);
                       String electiveCourses = (widget.electiveType == 1)
                           ? HumanityElectiveService().countCourses(snapshot)
                           : (widget.electiveType == 2)
                               ? DisciplinaryElectiveService().countCourses(
                                   snapshot,
-                                  courseInfoProvider.primaryDiscipline)
+                                  courseInfoProvider.selectedPrimaryDiscipline)
                               : OpenElectiveService().countCredits(snapshot,
-                                  courseInfoProvider.primaryDiscipline);
+                                  courseInfoProvider.selectedPrimaryDiscipline);
                       String maxCourses = (widget.electiveType == 1)
                           ? '3'
                           : (widget.electiveType == 2)

@@ -95,9 +95,9 @@ class _ElectiveScreenState extends State<ElectiveScreen> {
                       : (widget.electiveType == 2)
                           ? DisciplinaryElectiveService()
                               .getCompletedDisciplinaryElecitvesList(snapshot,
-                                  courseInfoProvider.primaryDiscipline)
+                                  courseInfoProvider.selectedPrimaryDiscipline)
                           : OpenElectiveService().getCompletedOpenElecitvesList(
-                              snapshot, courseInfoProvider.primaryDiscipline);
+                              snapshot, courseInfoProvider.selectedPrimaryDiscipline);
                   if (listOfCourses == null || listOfCourses.length == 0)
                     return NoItemsOops();
                   return ListView.builder(

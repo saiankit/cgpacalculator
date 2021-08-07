@@ -60,9 +60,9 @@ class _MoreCoursesScreenState extends State<MoreCoursesScreen> {
                 : (widget.electiveType == 2)
                     ? DisciplinaryElectiveService()
                         .getMoreDisciplinaryElectivesList(
-                            snapshot, courseInfoProvider.primaryDiscipline)
+                            snapshot, courseInfoProvider.selectedPrimaryDiscipline)
                     : OpenElectiveService().getMoreOpenElectivesList(
-                        snapshot, courseInfoProvider.primaryDiscipline);
+                        snapshot, courseInfoProvider.selectedPrimaryDiscipline);
 
             if (listOfCourses == null) return NoItemsOops();
             return ListView.builder(
