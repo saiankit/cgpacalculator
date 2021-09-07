@@ -1,3 +1,8 @@
+final int b5MinDelCredits = 12;
+final int b5MinDelCourses = 4;
+final int b5MinOpenCredits = 15;
+final int b5MinOpenCourses = 5;
+
 List<Map<String, dynamic>> b5DisciplinaryElectiveList = [
   {
     'courseCode': 'BIO',

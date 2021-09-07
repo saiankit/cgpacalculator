@@ -1,6 +1,7 @@
 import 'package:CgpaCalculator/core/routes.dart';
 import 'package:CgpaCalculator/localData/otherCourseData.dart';
 import 'package:CgpaCalculator/viewModels/courseInfo.dart';
+import 'package:CgpaCalculator/views/screens/settingsScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -63,34 +64,45 @@ class _AppbarState extends State<Appbar> {
             ),
           ],
         ),
-        Row(
-          children: [
-            IconButton(
-              icon: Icon(
-                Icons.analytics,
-                size: 30.0,
-                color: Colors.black,
-              ),
-              onPressed: () {
-                HapticFeedback.mediumImpact();
-                navigateToAnalyticsScreen(
-                    context, widget.homeScreenContext, widget.fuid);
-              },
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.settings,
-                size: 30.0,
-                color: Colors.black,
-              ),
-              onPressed: () {
-                HapticFeedback.mediumImpact();
-                navigateToSettingsScreen(
-                    context, widget.homeScreenContext, widget.fuid);
-              },
-            )
-          ],
-        )
+        IconButton(
+          icon: Icon(
+            Icons.power_settings_new,
+            size: 30.0,
+            color: Colors.redAccent,
+          ),
+          onPressed: () {
+            HapticFeedback.lightImpact();
+            showLogOutDialog(context);
+          },
+        ),
+        // Row(
+        //   children: [
+        //     IconButton(
+        //       icon: Icon(
+        //         Icons.analytics,
+        //         size: 30.0,
+        //         color: Colors.black,
+        //       ),
+        //       onPressed: () {
+        //         HapticFeedback.mediumImpact();
+        //         navigateToAnalyticsScreen(
+        //             context, widget.homeScreenContext, widget.fuid);
+        //       },
+        //     ),
+        //     IconButton(
+        //       icon: Icon(
+        //         Icons.settings,
+        //         size: 30.0,
+        //         color: Colors.black,
+        //       ),
+        //       onPressed: () {
+        //         HapticFeedback.mediumImpact();
+        //         navigateToSettingsScreen(
+        //             context, widget.homeScreenContext, widget.fuid);
+        //       },
+        //     )
+        //   ],
+        // )
       ],
     );
   }

@@ -1,7 +1,7 @@
-final int aaMinDelCredits = 12;
-final int aaMinDelCourses = 4;
-final int aaMinOpenCredits = 15;
-final int aaMinOpenCourses = 5;
+final int a5MinDelCredits = 12;
+final int a5MinDelCourses = 4;
+final int a5MinOpenCredits = 15;
+final int a5MinOpenCourses = 5;
 
 List<Map<String, dynamic>> a5DisciplinaryElectiveList = [];
 

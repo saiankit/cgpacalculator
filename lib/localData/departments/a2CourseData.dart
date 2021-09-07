@@ -1,7 +1,7 @@
-final int aaMinDelCredits = 12;
-final int aaMinDelCourses = 4;
-final int aaMinOpenCredits = 15;
-final int aaMinOpenCourses = 5;
+final int a2MinDelCredits = 12;
+final int a2MinDelCourses = 4;
+final int a2MinOpenCredits = 15;
+final int a2MinOpenCourses = 5;
 
 
 List<Map<String, dynamic>>  a2CoreCoursesList= [

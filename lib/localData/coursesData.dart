@@ -909,6 +909,18 @@ List<Map<String, dynamic>> coursesData = [
   },
   {
     'courseCode': 'BITS',
+    'courseID': 'F452',
+    'courseTitle': 'Blockchain Technology',
+    'courseCredits': '3',
+  },
+  {
+    'courseCode': 'BITS',
+    'courseID': 'F454',
+    'courseTitle': 'Bio inspired Intel Algorithms and Applications',
+    'courseCredits': '3',
+  },
+  {
+    'courseCode': 'BITS',
     'courseID': 'F461',
     'courseTitle': 'Software Engineering',
     'courseCredits': '3',
@@ -1864,6 +1876,18 @@ List<Map<String, dynamic>> coursesData = [
   },
   {
     'courseCode': 'CS',
+    'courseID': 'F315',
+    'courseTitle': 'Information and Communication Tech and Dev',
+    'courseCredits': '3',
+  },
+  {
+    'courseCode': 'CS',
+    'courseID': 'F317',
+    'courseTitle': 'Reinforcement Learning',
+    'courseCredits': '3',
+  },
+  {
+    'courseCode': 'CS',
     'courseID': 'F320',
     'courseTitle': ' Foundations of Data Science',
     'courseCredits': '3',
@@ -1974,6 +1998,24 @@ List<Map<String, dynamic>> coursesData = [
     'courseCode': 'CS',
     'courseID': 'F424',
     'courseTitle': 'Software for Embedded Systems',
+    'courseCredits': '4',
+  },
+  {
+    'courseCode': 'CS',
+    'courseID': 'F425',
+    'courseTitle': 'Deep Learning',
+    'courseCredits': '3',
+  },
+  {
+    'courseCode': 'CS',
+    'courseID': 'F426',
+    'courseTitle': 'Graph Mining',
+    'courseCredits': '4',
+  },
+  {
+    'courseCode': 'CS',
+    'courseID': 'F429',
+    'courseTitle': 'Natural Language Processing',
     'courseCredits': '4',
   },
   {
@@ -3137,6 +3179,12 @@ List<Map<String, dynamic>> coursesData = [
     'courseCode': 'HSS',
     'courseID': 'F246',
     'courseTitle': 'Philosophy of Nagarjuna',
+    'courseCredits': '3',
+  },
+  {
+    'courseCode': 'HSS',
+    'courseID': 'F248',
+    'courseTitle': 'Introduction to Disability Studies',
     'courseCredits': '3',
   },
   {

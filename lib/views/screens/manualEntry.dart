@@ -193,7 +193,7 @@ class _ManualEntryState extends State<ManualEntry> {
                                 keyboardType: TextInputType.number,
                                 decoration: InputDecoration(
                                   labelText:
-                                      "Enter credits exhausted until  ${Provider.of<CourseInfoState>(context).defaultSemesterManual}",
+                                      "Enter credits exhausted until ${Provider.of<CourseInfoState>(context).defaultSemesterManual}",
                                   fillColor: Colors.white,
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(25.0),
@@ -257,7 +257,7 @@ class _ManualEntryState extends State<ManualEntry> {
 
                             semIndex = semesterList.indexOf(manualSem);
 
-                            //Manual Credits Validations
+                            // Manual Credits Validations
                             // Manual Credits should only be a number. Validator for NaN
                             RegExp numberValidator = new RegExp(r'^[0-9.]+$');
                             if (!numberValidator.hasMatch(manualCredits)) {

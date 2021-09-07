@@ -1,7 +1,4 @@
-import 'package:CgpaCalculator/data/moor_database.dart';
 import 'package:CgpaCalculator/localData/departments/departmentExports.dart';
-import 'package:CgpaCalculator/services/openElectiveService.dart';
-import 'package:flutter/material.dart';
 
 class DisciplineRequirementService {
   int getDelCredits(String branch) {

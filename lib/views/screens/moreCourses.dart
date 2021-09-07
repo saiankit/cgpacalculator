@@ -59,8 +59,8 @@ class _MoreCoursesScreenState extends State<MoreCoursesScreen> {
                     .getMoreHumanityElecitvesList(snapshot)
                 : (widget.electiveType == 2)
                     ? DisciplinaryElectiveService()
-                        .getMoreDisciplinaryElectivesList(
-                            snapshot, courseInfoProvider.selectedPrimaryDiscipline)
+                        .getMoreDisciplinaryElectivesList(snapshot,
+                            courseInfoProvider.selectedPrimaryDiscipline)
                     : OpenElectiveService().getMoreOpenElectivesList(
                         snapshot, courseInfoProvider.selectedPrimaryDiscipline);
 
