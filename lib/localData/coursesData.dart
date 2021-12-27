@@ -2016,7 +2016,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseCode': 'CS',
     'courseID': 'F429',
     'courseTitle': 'Natural Language Processing',
-    'courseCredits': '4',
+    'courseCredits': '3',
   },
   {
     'courseCode': 'CS',

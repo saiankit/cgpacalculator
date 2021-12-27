@@ -117,6 +117,7 @@ List<String> courseIDList = [
   'F244',
   'F245',
   'F246',
+  'F248',
   'F266',
   'F301',
   'F303',

@@ -325,6 +325,12 @@ List<Map<String, dynamic>> humanityCoursesData = [
   },
   {
     'courseCode': 'HSS',
+    'courseID': 'F248',
+    'courseTitle': 'Introduction to Disability Studies',
+    'courseCredits': '3',
+  },
+  {
+    'courseCode': 'HSS',
     'courseID': 'F266',
     'courseTitle': 'Study Project',
     'courseCredits': '3',
