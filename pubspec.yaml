@@ -1,52 +1,36 @@
-name: CgpaCalculator
-description: Application To Calculate and Journalise CGPA
-
+name: cgpacalculator
+description: A new Flutter project.
 publish_to: 'none'
-
-version: 1.0.10+10
+version: 2.0.0
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.16.0-80.1.beta <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^0.1.3
-  flutter_svg: ^0.20.0-nullsafety.3
-  animations:
-  marquee:
-  provider:
-  firebase_core:
-  firebase_auth:
-  google_fonts:
-  cloud_firestore:
-  firebase_analytics:
-  google_sign_in:
-  shared_preferences:
-  path_provider:
-  moor_flutter:
-  flutter_launcher_icons:
-  flutter_spinkit:
-  hive:
-  hive_flutter:
-  flushbar:
-
+  shared_preferences: ^2.0.11
+  path_provider: ^2.0.8
+  provider: ^6.0.2
+  moor_flutter: ^4.0.0
+  google_sign_in: ^5.2.1
+  firebase_core: ^1.10.6
+  firebase_auth: ^3.3.4
+  marquee: ^2.2.0
 
 dev_dependencies:
+  moor_generator: ^4.6.0+1
+  build_runner: ^2.1.7
   flutter_test:
     sdk: flutter
-  moor_generator:
-  build_runner:
-  hive_generator:
 
 flutter_icons:
   ios: true
   android: true
   image_path_ios: "assets/launcher/icon.png"
   image_path_android: "assets/launcher/icon.png"
-flutter:
 
+flutter:
   uses-material-design: true
   assets:
     - assets/

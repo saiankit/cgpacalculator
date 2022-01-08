@@ -1,60 +1,55 @@
-import 'package:CgpaCalculator/data/moor_database.dart';
-import 'package:CgpaCalculator/localData/otherCourseData.dart';
-import 'package:CgpaCalculator/utilities/sizeConfig.dart';
-import 'package:CgpaCalculator/viewModels/courseInfo.dart';
-import 'package:CgpaCalculator/views/screens/homeScreen.dart';
-import 'package:CgpaCalculator/views/screens/loginScreen.dart';
+import 'dart:async';
+
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/services.dart';
-import 'package:path_provider/path_provider.dart' as path_provider;
+import 'package:provider/provider.dart';
 
-String userIDSharedPreferences;
-String manualCredits;
-String semesterSharedPreferences;
-String primaryDiscipline;
-String secondaryDiscipline;
-String minorDiscipline;
+import 'services/authentication_service.dart';
+import 'services/moor_database_service.dart';
+import 'services/user_details_view_model.dart';
+import 'utilities/screen_config.dart';
+import 'views/authentication_wrapper.dart';
+import 'views/screens/admin_screen.dart';
 
-SharedPreferences syncPrefs;
 Future<void> main() async {
-  // Using Shared Preferences to persist the logged in user into the device
   WidgetsFlutterBinding.ensureInitialized();
-  syncPrefs = await SharedPreferences.getInstance();
-  userIDSharedPreferences = syncPrefs.getString('uid');
-  semesterSharedPreferences = syncPrefs.getString('sem') == null
-      ? semesterList[0]
-      : syncPrefs.getString('sem');
-  primaryDiscipline = syncPrefs.getString('primaryDiscipline') == null
-      ? 'A1'
-      : syncPrefs.getString('primaryDiscipline');
-  secondaryDiscipline = syncPrefs.getString('secondaryDiscipline') == null
-      ? 'B1'
-      : syncPrefs.getString('secondaryDiscipline');
-  minorDiscipline = syncPrefs.getString('minor') == null
-      ? 'Finance'
-      : syncPrefs.getString('minor');
-  final appDocumentDir = await path_provider.getApplicationDocumentsDirectory();
-  Hive.init(appDocumentDir.path);
-  // ::Debug:: -- UID of logged-in User
-  // print("UID:" + userIDSharedPreferences.toString());
-  runApp(MyApp(userIDSharedPreferences));
+  await Firebase.initializeApp();
+
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => UserDetails()),
+        ChangeNotifierProvider(create: (_) => GoogleSignInProvider()),
+      ],
+      child: Provider<AppDatabase>(
+        create: (context) => AppDatabase(),
+        child: MyApp(),
+        dispose: (context, db) => db.close(),
+      ),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
-  final String userIDSharedPreferences;
-  MyApp(this.userIDSharedPreferences);
+  const MyApp({Key? key}) : super(key: key);
+
   @override
-  _MyAppState createState() => _MyAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
+      Provider.of<UserDetails>(context, listen: false).onStartUp();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    // Setting DeviceOrientation to potrait mode ONLY - flutter services plugin
-    // required
     SystemChrome.setPreferredOrientations(
       [
         DeviceOrientation.portraitUp,
@@ -64,45 +59,16 @@ class _MyAppState extends State<MyApp> {
     return LayoutBuilder(
       builder: (context, constraints) {
         SizeConfig().init(constraints);
-        return MultiProvider(
-          providers: [
-            ChangeNotifierProvider(create: (_) => CourseInfoState()),
-          ],
-          child: Provider<AppDatabase>(
-            create: (context) => AppDatabase(),
-            child: MaterialApp(
-              color: Colors.white,
-              theme: ThemeData(
-                fontFamily: 'Poppins',
-                primaryColor: Colors.black,
-                accentColor: Colors.black,
-              ),
-              debugShowCheckedModeBanner: false,
-              home: FutureBuilder(
-                future: Hive.openBox('manualData'),
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.done) {
-                    if (snapshot.hasError) {
-                      return Scaffold(
-                        appBar: AppBar(
-                          title: Text(snapshot.error.toString()),
-                        ),
-                      );
-                    } else {
-                      return Scaffold(
-                        backgroundColor: Colors.white,
-                        body: widget.userIDSharedPreferences != null
-                            ? HomeScreen()
-                            : LoginPage(),
-                      );
-                    }
-                  } else {
-                    return Scaffold();
-                  }
-                },
-              ),
-            ),
-            dispose: (context, db) => db.close(),
+        return MaterialApp(
+          color: Colors.white,
+          theme: ThemeData(
+            fontFamily: 'Poppins',
+            primaryColor: Colors.black,
+          ),
+          debugShowCheckedModeBanner: false,
+          home: SafeArea(
+            child: AdminScreen(),
+            // child: AuthenticationWrapper(),
           ),
         );
       },

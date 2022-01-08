@@ -15,19 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "397107940686-acqu59pna2h6tblgdnegflhvtsl2jqib.apps.googleusercontent.com",
+          "client_id": "397107940686-ch3sciroll9hk26knoorftka5nkjdljn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.saiankit.cgpacalculator",
-            "certificate_hash": "728b9a7374d9e81f4ba108fcc9ca30de3003761a"
-          }
-        },
-        {
-          "client_id": "397107940686-hdsirc3to0uv5vusqje5462dmr8rjoof.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.saiankit.cgpacalculator",
-            "certificate_hash": "08effb38252d2a7ff966eae8bc1d6fadbd57857b"
+            "certificate_hash": "ba208a175dd010c14a7295b095f70d74545a33cc"
           }
         },
         {
