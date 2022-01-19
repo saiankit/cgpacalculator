@@ -182,7 +182,8 @@ class _CourseUpdateState extends State<CourseUpdate> {
                               (String value) {
                                 return DropdownMenuItem(
                                   value: value,
-                                  child: Text(value),
+                                  child: Text(value,
+                                      style: ThemeStyles.t20TextStyle),
                                 );
                               },
                             ).toList(),
@@ -218,7 +219,8 @@ class _CourseUpdateState extends State<CourseUpdate> {
                               (String value) {
                                 return DropdownMenuItem(
                                   value: value,
-                                  child: Text(value),
+                                  child: Text(value,
+                                      style: ThemeStyles.t20TextStyle),
                                 );
                               },
                             ).toList(),
@@ -319,7 +321,8 @@ class _CourseUpdateState extends State<CourseUpdate> {
                                   (String value) {
                                     return DropdownMenuItem(
                                       value: value,
-                                      child: Text(value),
+                                      child: Text(value,
+                                          style: ThemeStyles.t20TextStyle),
                                     );
                                   },
                                 ).toList(),

@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 import '../../data/course_meta_data.dart';
@@ -26,8 +26,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
     WidgetsBinding.instance!.addPostFrameCallback(
       (timeStamp) {
         setState(() {
-          primaryDiscipline =
-              Provider.of<UserDetails>(context, listen: false).primarDiscipline;
+          primaryDiscipline = Provider.of<UserDetails>(context, listen: false)
+              .primaryDiscipline;
           secondaryDiscipline = Provider.of<UserDetails>(context, listen: false)
               .secondaryDiscipline;
           minorDiscipline =
@@ -254,60 +254,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ],
                   ),
                 ),
-                // InkWell(
-                //   onTap: () {
-                //     HapticFeedback.mediumImpact();
-                //     // navigateToManualEntryScreen(context);
-                //   },
-                //   child: Container(
-                //     child: Padding(
-                //       padding: EdgeInsets.all(Converts.c20),
-                //       child: Row(
-                //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //         children: [
-                //           Row(
-                //             children: [
-                //               Container(
-                //                 height: Converts.c40,
-                //                 width: Converts.c40,
-                //                 decoration: BoxDecoration(
-                //                   shape: BoxShape.circle,
-                //                   color: Colors.black.withOpacity(0.1),
-                //                 ),
-                //                 child: Icon(Icons.open_in_browser),
-                //               ),
-                //               SizedBox(width: Converts.c16),
-                //               Text(
-                //                 'Manual Entry',
-                //                 style: ThemeStyles.t20TextStyle.copyWith(
-                //                   fontWeight: FontWeight.w100,
-                //                 ),
-                //               ),
-                //               SizedBox(width: Converts.c16),
-                //             ],
-                //           ),
-                //           Container(
-                //             height: Converts.c40,
-                //             width: Converts.c40,
-                //             decoration: BoxDecoration(
-                //               shape: BoxShape.circle,
-                //               color: Colors.black.withOpacity(0.1),
-                //             ),
-                //             child: Icon(Icons.chevron_right),
-                //           ),
-                //         ],
-                //       ),
-                //     ),
-                //   ),
-                // ),
                 InkWell(
                   onTap: () {
                     HapticFeedback.mediumImpact();
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return AnalyticsScreen();
-                        },
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        curve: Curves.easeInOutSine,
+                        type: PageTransitionType.fade,
+                        child: AnalyticsScreen(),
                       ),
                     );
                   },

@@ -1,3 +1,5 @@
+import 'package:cgpacalculator/models/course_model_simplified.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -123,71 +125,78 @@ class _CourseCardState extends State<CourseCard> {
   }
 }
 
-// class CourseCardUI extends StatefulWidget {
-//   final DummyCourseModel course;
+class CourseCardUI extends StatefulWidget {
+  final CourseSimplified course;
 
-//   const CourseCardUI({Key? key, required this.course}) : super(key: key);
+  const CourseCardUI({Key? key, required this.course}) : super(key: key);
 
-//   @override
-//   _CourseCardUIState createState() => _CourseCardUIState();
-// }
+  @override
+  _CourseCardUIState createState() => _CourseCardUIState();
+}
 
-// class _CourseCardUIState extends State<CourseCardUI> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return ChangeNotifierProvider(
-//       create: (_) => CourseInfoState(),
-//       child: Consumer<CourseInfoState>(
-//         builder: (context, semState, _) => Padding(
-//           padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
-//           child: Container(
-//             height: 64.0,
-//             decoration: ThemeStyles.courseCardDecoration,
-//             child: Row(
-//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//               children: <Widget>[
-//                 Container(
-//                   height: 64.0,
-//                   width: 64.0,
-//                   decoration: ThemeStyles.courseCardCourseInfo,
-//                   child: Column(
-//                     mainAxisAlignment: MainAxisAlignment.center,
-//                     children: <Widget>[
-//                       Text(
-//                         widget.course.courseCode,
-//                         style: TextStyle(color: Colors.white),
-//                       ),
-//                       Text(
-//                         widget.course.courseID,
-//                         style: TextStyle(color: Colors.white),
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//                 Expanded(
-//                   child: SingleChildScrollView(
-//                     padding: EdgeInsets.only(left: 10.0),
-//                     scrollDirection: Axis.horizontal,
-//                     child: Text(widget.course.courseTitle,
-//                         style: ThemeStyles.titleTextStyle),
-//                   ),
-//                 ),
-//                 Container(
-//                   height: 64.0,
-//                   width: 64.0,
-//                   decoration: ThemeStyles.courseCardGradeInfo,
-//                   child: Center(
-//                     child: Text(
-//                       widget.course.courseCredits,
-//                       style: TextStyle(fontSize: 25.0, color: Colors.white),
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
+class _CourseCardUIState extends State<CourseCardUI> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: Converts.c8),
+      child: Container(
+        height: Converts.c64,
+        decoration: ThemeStyles.courseCardDecoration,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Container(
+              height: Converts.c64,
+              width: Converts.c64,
+              decoration: ThemeStyles.courseCardCourseInfo,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    widget.course.courseCode,
+                    style: ThemeStyles.t12TextStyle.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w100,
+                    ),
+                  ),
+                  Text(
+                    widget.course.courseID,
+                    style: ThemeStyles.t12TextStyle.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w100,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                padding: EdgeInsets.only(left: Converts.c8),
+                scrollDirection: Axis.horizontal,
+                child: Text(
+                  widget.course.courseTitle,
+                  style: ThemeStyles.t16TextStyle
+                      .copyWith(color: Colors.grey[600]),
+                ),
+              ),
+            ),
+            Container(
+              height: Converts.c64,
+              width: Converts.c64,
+              decoration: ThemeStyles.courseCardGradeInfo,
+              child: Center(
+                child: Text(
+                  widget.course.courseCredits,
+                  style: ThemeStyles.t20TextStyle.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w100,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

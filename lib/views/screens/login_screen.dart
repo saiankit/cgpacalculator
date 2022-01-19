@@ -50,6 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Text('Designed and Developed by Sai Ankit'),
                     ],
                   ),
+                  SizedBox(height: Converts.c24),
                 ],
               ),
             ),

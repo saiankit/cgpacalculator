@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-
 import '../../data/course_meta_data.dart';
 import '../../services/moor_database_service.dart';
 import '../../services/user_details_view_model.dart';

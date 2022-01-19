@@ -6,46 +6,70 @@ import '../models/course_model_simplified.dart';
 import 'moor_database_service.dart';
 
 class OpenElectiveService {
+  String maxCourses(String primaryDiscipline) {
+    return "5";
+  }
+
+  String maxCredits(String primaryDiscipline) {
+    return "15";
+  }
+
   bool isCourseOpenElective(String courseID, String courseCode, String branch) {
-    bool isCoreElective = false;
+    // If a course is not a Humanity Elective and not a Discipline Elective
+    // and not a CDC and not a Common Course then it is an Open Elective
+    
+    bool isCDC = false;
     bool isDEL = false;
+
+    // Check if the course is a CDC
+    labelCDCOutLoop:
     for (var i = 0; i < coursesData.length; i++) {
-      if (coursesData[i]['cdcList'] != null) {
+      if ((coursesData[i]['courseCode'] == courseCode) &&
+          (coursesData[i]['courseID'] == courseID)) {
         for (var j = 0; j < coursesData[i]['cdcList'].length; j++) {
           if (coursesData[i]['cdcList'][j] == branch) {
-            isCoreElective = true;
+            isCDC = true;
+            break labelCDCOutLoop;
           }
         }
       }
     }
 
+    // Check if the course is a DEL
+    labelDELOutLoop:
     for (var i = 0; i < coursesData.length; i++) {
-      if (coursesData[i]['delList'] != null) {
+      if ((coursesData[i]['courseCode'] == courseCode) &&
+          (coursesData[i]['courseID'] == courseID)) {
         for (var j = 0; j < coursesData[i]['delList'].length; j++) {
           if (coursesData[i]['delList'][j] == branch) {
             isDEL = true;
+            break labelDELOutLoop;
           }
         }
       }
     }
 
-    bool existsComp = compulsoryCoursesList.any((course) =>
+    bool isCompulsoryCourse = compulsoryCoursesList.any((course) =>
         (course['courseCode'] == courseCode) &&
         (course['courseID'] == courseID));
-    bool existsHEL = (courseCode == "HSS") || (courseCode == "GS");
-    if (!isDEL && !isCoreElective && !existsComp && !existsHEL) return true;
+
+    bool isHEL = (courseCode == "HSS") || (courseCode == "GS");
+
+    if (!isDEL && !isCDC && !isCompulsoryCourse && !isHEL) return true;
+
     return false;
   }
 
   String countCredits(AsyncSnapshot<List<Course>> snapshot, String branch) {
-    String
-        totalCredits; //Total Credits [String] that is returned by the function
+    String totalCredits;
+    //Total Credits [String] that is returned by the function
     int creditsCount = 0;
 
     for (var i = 0; i < snapshot.data!.length; i++) {
-      var data = snapshot.data![i];
-      if (isCourseOpenElective(data.courseID, data.courseCode, branch)) {
-        creditsCount += data.courseCredits;
+      var completedCourse = snapshot.data![i];
+      if (isCourseOpenElective(
+          completedCourse.courseID, completedCourse.courseCode, branch)) {
+        creditsCount += completedCourse.courseCredits;
       }
     }
 
@@ -60,10 +84,10 @@ class OpenElectiveService {
   }
 
   String countCourses(AsyncSnapshot<List<Course>> snapshot, String branch) {
-    String
-        coursesCountString; //Total Credits [String] that is returned by the function
-    int coursesCount =
-        0; // The loopVariable used to count the credits in completed courses list of the user initialised by the initial credits
+    String coursesCountString;
+    //Total Credits [String] that is returned by the function
+    int coursesCount = 0;
+    // The loopVariable used to count the credits in completed courses list of the user initialised by the initial credits
     //Loop to count the total credits from the snapshot of the watchAllCourses Stream
     for (var i = 0; i < snapshot.data!.length; i++) {
       var data = snapshot.data![i];
@@ -108,20 +132,25 @@ class OpenElectiveService {
         getCompletedOpenElecitvesList(snapshot, branch);
 
     for (var i = 0; i < coursesData.length; i++) {
-      for (var j = 0; j < completedOpenElectives.length; j++) {
-        if (isCourseOpenElective(
-            coursesData[i]['courseID'], coursesData[i]['courseCode'], branch)) {
+      if (isCourseOpenElective(
+          coursesData[i]['courseID'], coursesData[i]['courseCode'], branch)) {
+        bool isCourseCompleted = false;
+        for (var j = 0; j < completedOpenElectives.length; j++) {
           if ((completedOpenElectives[j].courseCode +
-                  completedOpenElectives[j].courseID) !=
+                  completedOpenElectives[j].courseID) ==
               (coursesData[i]['courseCode'] + coursesData[i]['courseID'])) {
-            CourseSimplified newCourse = CourseSimplified(
-              courseCode: coursesData[i]['courseCode'],
-              courseCredits: coursesData[i]['courseCredits'],
-              courseID: coursesData[i]['courseID'],
-              courseTitle: coursesData[i]['courseTitle'],
-            );
-            left.add(newCourse);
+            isCourseCompleted = true;
+            break;
           }
+        }
+        if (!isCourseCompleted) {
+          CourseSimplified newCourse = CourseSimplified(
+            courseCode: coursesData[i]['courseCode'],
+            courseCredits: coursesData[i]['courseCredits'],
+            courseID: coursesData[i]['courseID'],
+            courseTitle: coursesData[i]['courseTitle'],
+          );
+          left.add(newCourse);
         }
       }
     }

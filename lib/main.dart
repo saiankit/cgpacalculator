@@ -66,10 +66,7 @@ class _MyAppState extends State<MyApp> {
             primaryColor: Colors.black,
           ),
           debugShowCheckedModeBanner: false,
-          home: SafeArea(
-            child: AdminScreen(),
-            // child: AuthenticationWrapper(),
-          ),
+          home: AuthenticationWrapper(),
         );
       },
     );

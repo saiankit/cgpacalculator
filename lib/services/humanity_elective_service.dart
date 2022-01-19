@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import '../data/courses_data.dart';
@@ -5,11 +7,19 @@ import '../models/course_model_simplified.dart';
 import 'moor_database_service.dart';
 
 class HumanityElectiveService {
+  String maxCourses(String primaryDiscipline) {
+    return "3";
+  }
+
+  String maxCredits(String primaryDiscipline) {
+    return "8";
+  }
+
   String countCredits(AsyncSnapshot<List<Course>> snapshot) {
-    String
-        totalCredits; //Total Credits [String] that is returned by the function
-    int creditsCount =
-        0; // The loopVariable used to count the credits in completed courses list of the user initialised by the initial credits
+    String totalCredits;
+    //Total Credits [String] that is returned by the function
+    int creditsCount = 0;
+    // The loopVariable used to count the credits in completed courses list of the user initialised by the initial credits
     //Loop to count the total credits from the snapshot of the watchAllCourses Stream
     for (var i = 0; i < snapshot.data!.length; i++) {
       if (snapshot.data![i].courseCode.startsWith('GS') ||
@@ -69,32 +79,34 @@ class HumanityElectiveService {
 
   List<CourseSimplified> getMoreHumanityElecitvesList(
       AsyncSnapshot<List<Course>> snapshot) {
-    List<Course> completedHumanities = [];
-
-    for (var i = 0; i < snapshot.data!.length; i++)
-      if (snapshot.data![i].courseCode.startsWith('GS') ||
-          snapshot.data![i].courseCode.startsWith('HSS'))
-        completedHumanities.add(snapshot.data![i]);
+    List<CourseSimplified> completedHumanities =
+        getCompletedHumanityElecitvesList(snapshot);
     List<CourseSimplified> left = [];
+    Set<CourseSimplified> leftSet = Set();
+
     for (var i = 0; i < coursesData.length; i++) {
       if (coursesData[i]['courseCode'].startsWith('GS') ||
           coursesData[i]['courseCode'].startsWith('HSS')) {
+        bool isCourseCompleted = false;
         for (var j = 0; j < completedHumanities.length; j++) {
           if ((completedHumanities[j].courseCode +
-                  completedHumanities[j].courseID) !=
+                  completedHumanities[j].courseID) ==
               (coursesData[i]['courseCode'] + coursesData[i]['courseID'])) {
-            CourseSimplified newCourse = CourseSimplified(
-              courseCode: coursesData[i]['courseCode'],
-              courseCredits: coursesData[i]['courseCredits'],
-              courseID: coursesData[i]['courseID'],
-              courseTitle: coursesData[i]['courseTitle'],
-            );
-            left.add(newCourse);
+            isCourseCompleted = true;
+            break;
           }
+        }
+        if (!isCourseCompleted) {
+          CourseSimplified newCourse = CourseSimplified(
+            courseCode: coursesData[i]['courseCode'],
+            courseCredits: coursesData[i]['courseCredits'],
+            courseID: coursesData[i]['courseID'],
+            courseTitle: coursesData[i]['courseTitle'],
+          );
+          left.add(newCourse);
         }
       }
     }
-
     return left;
   }
 }

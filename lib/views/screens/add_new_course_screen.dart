@@ -78,7 +78,8 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                             (String value) {
                               return DropdownMenuItem(
                                 value: value,
-                                child: Text(value),
+                                child: Text(value,
+                                    style: ThemeStyles.t20TextStyle),
                               );
                             },
                           ).toList(),
@@ -114,7 +115,8 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                             (String value) {
                               return DropdownMenuItem(
                                 value: value,
-                                child: Text(value),
+                                child: Text(value,
+                                    style: ThemeStyles.t20TextStyle),
                               );
                             },
                           ).toList(),
@@ -196,7 +198,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                       SizedBox(height: Converts.c8),
                       Container(
                         height: Converts.c64,
-                        width: Converts.c96,
+                        width: Converts.c104,
                         decoration: BoxDecoration(
                           color: Colors.grey.withOpacity(0.2),
                           borderRadius: BorderRadius.circular(Converts.c16),
@@ -215,7 +217,8 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                                 (String value) {
                                   return DropdownMenuItem(
                                     value: value,
-                                    child: Text(value),
+                                    child: Text(value,
+                                        style: ThemeStyles.t20TextStyle),
                                   );
                                 },
                               ).toList(),

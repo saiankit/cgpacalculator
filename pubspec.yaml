@@ -17,6 +17,7 @@ dependencies:
   firebase_core: ^1.10.6
   firebase_auth: ^3.3.4
   marquee: ^2.2.0
+  page_transition: "^2.0.4"
 
 dev_dependencies:
   moor_generator: ^4.6.0+1
@@ -40,3 +41,5 @@ flutter:
         - asset: fonts/Poppins-Regular.ttf
         - asset: fonts/Poppins-SemiBold.ttf
           weight: 700
+        - asset: fonts/Poppins-Medium.ttf
+          weight: 100

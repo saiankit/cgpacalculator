@@ -100,12 +100,12 @@ class ThemeStyles {
 
   static BoxDecoration courseCardCourseInfo = BoxDecoration(
     borderRadius: BorderRadius.circular(Converts.c8),
-    color: Colors.black,
+    color: Color(0xff212121),
   );
 
   static BoxDecoration courseCardGradeInfo = BoxDecoration(
     borderRadius: BorderRadius.circular(Converts.c32),
-    color: Colors.black,
+    color: Color(0xff212121),
   );
 
   static BoxDecoration addNewCourse = BoxDecoration(

@@ -5,6 +5,20 @@ import '../models/course_model_simplified.dart';
 import 'moor_database_service.dart';
 
 class DisciplinaryElectiveService {
+  String maxCourses(String primaryDiscipline) {
+    if (primaryDiscipline == 'A1') {
+      return "5";
+    }
+    return "4";
+  }
+
+  String maxCredits(String primaryDiscipline) {
+    if (primaryDiscipline == 'A1') {
+      return "15";
+    }
+    return "12";
+  }
+
   String countCredits(AsyncSnapshot<List<Course>> snapshot, String branch) {
     String totalCredits;
     //Total Credits [String] that is returned by the function
@@ -41,21 +55,19 @@ class DisciplinaryElectiveService {
 
   String countCourses(AsyncSnapshot<List<Course>> snapshot, String branch) {
     String coursesCountString;
-    //Total Credits [String] that is returned by the function
+    // Total Credits [String] that is returned by the function
     int coursesCount = 0;
     // The loopVariable used to count the credits in completed courses list of the user initialised by the initial credits
-    //Loop to count the total credits from the snapshot of the watchAllCourses Stream
+    // Loop to count the total credits from the snapshot of the watchAllCourses Stream
 
     for (var i = 0; i < coursesData.length; i++) {
-      if (coursesData[i]['delList'] != null) {
-        for (var j = 0; j < coursesData[i]['delList'].length; j++) {
-          if (coursesData[i]['delList'][j] == branch) {
-            for (var k = 0; k < snapshot.data!.length; k++) {
-              var data = snapshot.data![k];
-              if (data.courseCode == coursesData[i]['courseCode'] &&
-                  data.courseID == coursesData[i]['courseID']) {
-                coursesCount += 1;
-              }
+      for (var j = 0; j < coursesData[i]['delList'].length; j++) {
+        if (coursesData[i]['delList'][j] == branch) {
+          for (var k = 0; k < snapshot.data!.length; k++) {
+            var data = snapshot.data![k];
+            if (data.courseCode == coursesData[i]['courseCode'] &&
+                data.courseID == coursesData[i]['courseID']) {
+              coursesCount += 1;
             }
           }
         }
@@ -105,30 +117,31 @@ class DisciplinaryElectiveService {
       AsyncSnapshot<List<Course>> snapshot, String branch) {
     List<CourseSimplified> completedDisciplinaryElectives =
         getCompletedDisciplinaryElecitvesList(snapshot, branch);
-
     List<CourseSimplified> left = [];
     for (var i = 0; i < coursesData.length; i++) {
-      if (coursesData[i]['delList'] != null) {
-        for (var j = 0; j < coursesData[i]['delList'].length; j++) {
-          if (coursesData[i]['delList'][j] == branch) {
-            for (var k = 0; k < completedDisciplinaryElectives.length; k++) {
-              if ((completedDisciplinaryElectives[j].courseCode +
-                      completedDisciplinaryElectives[j].courseID) !=
-                  (coursesData[i]['courseCode'] + coursesData[i]['courseID'])) {
-                CourseSimplified newCourse = CourseSimplified(
-                  courseCode: coursesData[i]['courseCode'],
-                  courseCredits: coursesData[i]['courseCredits'],
-                  courseID: coursesData[i]['courseID'],
-                  courseTitle: coursesData[i]['courseTitle'],
-                );
-                left.add(newCourse);
-              }
+      for (var j = 0; j < coursesData[i]['delList'].length; j++) {
+        if (coursesData[i]['delList'][j] == branch) {
+          bool isCourseCompleted = false;
+          for (var k = 0; k < completedDisciplinaryElectives.length; k++) {
+            if ((completedDisciplinaryElectives[k].courseCode +
+                    completedDisciplinaryElectives[k].courseID) ==
+                (coursesData[i]['courseCode'] + coursesData[i]['courseID'])) {
+              isCourseCompleted = true;
+              break;
             }
+          }
+          if (!isCourseCompleted) {
+            CourseSimplified newCourse = CourseSimplified(
+              courseCode: coursesData[i]['courseCode'],
+              courseCredits: coursesData[i]['courseCredits'],
+              courseID: coursesData[i]['courseID'],
+              courseTitle: coursesData[i]['courseTitle'],
+            );
+            left.add(newCourse);
           }
         }
       }
     }
-
     return left;
   }
 }

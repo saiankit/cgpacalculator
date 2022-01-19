@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
 import '../../data/course_meta_data.dart';
 import '../../services/user_details_view_model.dart';
 import '../../utilities/theme_styles.dart';
@@ -43,7 +42,7 @@ class _AdminScreenState extends State<AdminScreen> {
                       (String value) {
                         return DropdownMenuItem(
                           value: value,
-                          child: Text(value),
+                          child: Text(value, style: ThemeStyles.t20TextStyle),
                         );
                       },
                     ).toList(),

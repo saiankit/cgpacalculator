@@ -7,7 +7,7 @@ import '../data/courses_data.dart';
 
 class UserDetails extends ChangeNotifier {
   String sem = '1 - 4';
-  String primarDiscipline = 'None';
+  String primaryDiscipline = 'None';
   String secondaryDiscipline = 'None';
   String minorDiscipline = 'None';
   String id = 'None';
@@ -66,10 +66,10 @@ class UserDetails extends ChangeNotifier {
 
     if (cprimaryDiscipline == null) {
       _prefs.setString('primaryDiscipline', 'None');
-      primarDiscipline = 'None';
+      primaryDiscipline = 'None';
       notifyListeners();
     } else {
-      primarDiscipline = cprimaryDiscipline;
+      primaryDiscipline = cprimaryDiscipline;
       notifyListeners();
     }
     if (csecondaryDiscipline == null) {
@@ -122,9 +122,9 @@ class UserDetails extends ChangeNotifier {
   }
 
   void changePrimaryDiscipline(String newDiscipline) async {
-    primarDiscipline = newDiscipline;
+    primaryDiscipline = newDiscipline;
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('primaryDiscipline', primarDiscipline);
+    prefs.setString('primaryDiscipline', primaryDiscipline);
     notifyListeners();
   }
 

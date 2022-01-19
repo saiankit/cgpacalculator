@@ -7,6 +7,7 @@ import '../../services/user_details_view_model.dart';
 import '../../utilities/theme_styles.dart';
 import '../screens/analytics_screen.dart';
 import '../screens/settings_screen.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Appbar extends StatelessWidget {
   const Appbar({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class Appbar extends StatelessWidget {
               width: Converts.c112,
               decoration: BoxDecoration(
                 border: Border.all(),
-                borderRadius: BorderRadius.circular(Converts.c16),
+                borderRadius: BorderRadius.circular(Converts.c8),
               ),
               child: Consumer<UserDetails>(
                 builder: (context, courseInfoState, _) => Padding(
@@ -39,7 +40,7 @@ class Appbar extends StatelessWidget {
                       (String value) {
                         return DropdownMenuItem(
                           value: value,
-                          child: Text(value),
+                          child: Text(value, style: ThemeStyles.t20TextStyle),
                         );
                       },
                     ).toList(),
@@ -62,11 +63,12 @@ class Appbar extends StatelessWidget {
               ),
               onPressed: () {
                 HapticFeedback.mediumImpact();
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return AnalyticsScreen();
-                    },
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    curve: Curves.easeInOutSine,
+                    type: PageTransitionType.fade,
+                    child: AnalyticsScreen(),
                   ),
                 );
               },
@@ -79,11 +81,12 @@ class Appbar extends StatelessWidget {
               ),
               onPressed: () {
                 HapticFeedback.mediumImpact();
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return SettingsScreen();
-                    },
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    curve: Curves.easeInOutSine,
+                    type: PageTransitionType.fade,
+                    child: SettingsScreen(),
                   ),
                 );
               },
