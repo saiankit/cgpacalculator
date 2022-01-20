@@ -3,6 +3,7 @@ import 'package:cgpacalculator/services/cdc_service.dart';
 import 'package:cgpacalculator/services/user_details_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 import '../../services/disciplinary_elective_service.dart';
@@ -53,13 +54,15 @@ class _ElectiveScreenState extends State<ElectiveScreen> {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return MoreCoursesScreen(
-                            electiveType: widget.electiveType,
-                          );
-                        },
+                    HapticFeedback.mediumImpact();
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        curve: Curves.easeInOutSine,
+                        type: PageTransitionType.fade,
+                        child: MoreCoursesScreen(
+                          electiveType: widget.electiveType,
+                        ),
                       ),
                     );
                   },

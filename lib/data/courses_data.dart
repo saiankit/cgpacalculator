@@ -101,7 +101,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Biophysics',
     'courseCredits': '3',
     'cdcList': ['B1'],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'BIO',
@@ -109,7 +109,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Water,Sanitation and Solid Waste Management',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'BIO',
@@ -117,7 +117,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Laboratory for Water,Sanitation and Solid waste Management',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'BIO',
@@ -125,7 +125,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Biology Project Laboratory',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'BIO',
@@ -197,7 +197,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Conservation Biology',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'BIO',
@@ -205,7 +205,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Applied Nutrition and Nutraceutisuitable case-studies',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'BIO',
@@ -229,7 +229,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Cell and Tissue Culture Technology',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'BIO',
@@ -237,7 +237,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Lab Project',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['B5']
+    'delList': ['B1']
   },
   {
     'courseCode': 'BIO',
@@ -245,7 +245,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Lab Project',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['B5']
+    'delList': ['B1']
   },
   {
     'courseCode': 'BIO',
@@ -253,7 +253,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Design Project',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['B5']
+    'delList': ['B1']
   },
   {
     'courseCode': 'BIO',
@@ -261,7 +261,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Design Project',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['B5']
+    'delList': ['B1']
   },
   {
     'courseCode': 'BIO',
@@ -340,6 +340,166 @@ List<Map<String, dynamic>> coursesData = [
     'courseID': 'F491',
     'courseTitle': 'Special Project',
     'courseCredits': '3',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G512',
+    'courseTitle': 'Molecular Mechanism of Gene Expression',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G513',
+    'courseTitle': 'Microbial and Fermentation Technology',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G515',
+    'courseTitle': 'Stem Cell and Regenerative Biology',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G522',
+    'courseTitle': 'Interferon Technology',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G523',
+    'courseTitle': 'Advanced and Applied Microbiology',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G524',
+    'courseTitle': 'Animal Cell Technology',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G525',
+    'courseTitle': 'Environmental Biotechnology & Waste Management',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G526',
+    'courseTitle': 'Cancer Biology',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G544',
+    'courseTitle': 'Bioremediation and Biometallurgy',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G545',
+    'courseTitle': 'Molecular Parasitology and Vector Biology',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G561',
+    'courseTitle': 'Advances in Recombinant DNA Technology',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G570',
+    'courseTitle': 'Recent Developments in Biology',
+    'courseCredits': '1',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G612',
+    'courseTitle': 'Human Genetics',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G631',
+    'courseTitle': 'Membrane and Liposome Technology',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G632',
+    'courseTitle': 'Transgenic Technology',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G642',
+    'courseTitle': 'Experimental Techniques',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G643',
+    'courseTitle': 'Plant Biotechnology',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G651',
+    'courseTitle': 'Protein and Enzyme Bioengineering',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G661',
+    'courseTitle': 'Gene Toxicology',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['B1']
+  },
+  {
+    'courseCode': 'BIO',
+    'courseID': 'G671',
+    'courseTitle': 'Bioconversion Technology',
+    'courseCredits': '5',
     'cdcList': [],
     'delList': ['B1']
   },
@@ -469,7 +629,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Proteomics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'BIOT',
@@ -477,7 +637,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Genomics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'BIOT',
@@ -485,7 +645,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Immunotechnology',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'BIOT',
@@ -541,7 +701,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Introduction to Pharmaceutical Biotechnology',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'BIOT',
@@ -565,7 +725,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Nanobiotechnology',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'BIOT',
@@ -581,7 +741,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Food Biotechnology',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'BITS',
@@ -750,7 +910,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Neural Networks and Fuzzy Logic',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['A7']
+    'delList': ['A7', 'A3', 'A8']
   },
   {
     'courseCode': 'BITS',
@@ -767,7 +927,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Game Theory and Its Application',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3', 'B4']
   },
   {
     'courseCode': 'BITS',
@@ -783,7 +943,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Nonlinear Dynamics and Chaos',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'BITS',
@@ -791,7 +951,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Theoretical Neuroscience',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'BITS',
@@ -868,10 +1028,10 @@ List<Map<String, dynamic>> coursesData = [
   {
     'courseCode': 'BITS',
     'courseID': 'F331',
-    'courseTitle': 'Quantum Computation and Information',
+    'courseTitle': 'Quantum Information and Computation',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7', 'B5']
   },
   {
     'courseCode': 'BITS',
@@ -895,7 +1055,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Fuzzy Logic and Applications',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['A7']
+    'delList': ['A7', 'B4']
   },
   {
     'courseCode': 'BITS',
@@ -1023,7 +1183,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Introduction to MEMS',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': ['AA', 'A4', 'A1']
+    'delList': ['AA', 'A4', 'A1', 'A3', 'A8']
   },
   {
     'courseCode': 'BITS',
@@ -1031,7 +1191,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Introduction to Nanoscience',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['A1']
+    'delList': ['A1', 'B5']
   },
   {
     'courseCode': 'BITS',
@@ -1039,7 +1199,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Microfluidics and Its Application',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': ['A1']
+    'delList': ['A1', 'B5']
   },
   {
     'courseCode': 'BITS',
@@ -1047,7 +1207,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Introduction to Biomedical Engineering',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'BITS',
@@ -1183,7 +1343,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Pattern Recognition',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'BITS',
@@ -1247,7 +1407,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Cryptography',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A7', 'B4']
   },
   {
     'courseCode': 'BITS',
@@ -1255,7 +1415,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Machine Learning',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'BITS',
@@ -1263,7 +1423,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Enterprise Computing',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'BITS',
@@ -1271,7 +1431,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Service Oriented Computing',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'BITS',
@@ -1279,7 +1439,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Bioethics and Biosafety',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'BITS',
@@ -2051,6 +2211,246 @@ List<Map<String, dynamic>> coursesData = [
     'delList': ['A1']
   },
   {
+    'courseCode': 'CHE',
+    'courseID': 'G511',
+    'courseTitle': 'Fluidization Engineering',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G512',
+    'courseTitle': 'Petroleum Refining and Petrochemicals',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G513',
+    'courseTitle': 'Environmental Management Systems',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G522',
+    'courseTitle': 'Polymer Technology',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G523',
+    'courseTitle': 'Mathematical Methods in Chemical Engineering',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G524',
+    'courseTitle': 'Introduction to Multiphase flow',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G526',
+    'courseTitle': 'Nuclear Engineering',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G526',
+    'courseTitle': 'Nuclear Engineering',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G526',
+    'courseTitle': 'Nuclear Engineering',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G527',
+    'courseTitle': 'Energy Conservation and Management',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G528',
+    'courseTitle': 'Introduction to Nanoscience & Technology',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G529',
+    'courseTitle': 'Pulp & Paper Technology',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G532',
+    'courseTitle': 'Alternate Energy Resources',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G533',
+    'courseTitle': 'Petroleum Product Characterization',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G551',
+    'courseTitle': 'Advanced Separation Technology',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G552',
+    'courseTitle': 'Advanced Transport Phenomena',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G554',
+    'courseTitle': 'Computational Fluid Dynamics',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G556',
+    'courseTitle': 'Electrochemical Engineering',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G557',
+    'courseTitle': 'Energy Systems Engineering',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G558',
+    'courseTitle': 'Chemical Process Optimization',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G568',
+    'courseTitle': 'Modeling and Simulation in Petroleum Refining',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G613',
+    'courseTitle': 'Advanced Mass Transfer',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G614',
+    'courseTitle': 'Advanced Heat Transfer',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G616',
+    'courseTitle': 'Petroleum Reservoir Engineering',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G617',
+    'courseTitle': 'Petroleum Refinery Engineering',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G618',
+    'courseTitle': 'Petroleum Downstream Processing',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G619',
+    'courseTitle': 'Process Intensification',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G620',
+    'courseTitle': 'Energy Integration Analysis',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G622',
+    'courseTitle': 'Advanced Chemical Engineering Thermodynamics',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
+    'courseCode': 'CHE',
+    'courseID': 'G641',
+    'courseTitle': 'Reaction Engineering',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A1']
+  },
+  {
     'courseCode': 'CHEM',
     'courseID': 'F110',
     'courseTitle': 'Chemistry Laboratory',
@@ -2080,7 +2480,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Organic Chemistry I',
     'courseCredits': '3',
     'cdcList': ['B2'],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'CHEM',
@@ -2088,7 +2488,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Physical Chemistry II',
     'courseCredits': '3',
     'cdcList': ['B2'],
-    'delList': []
+    'delList': ['B1']
   },
   {
     'courseCode': 'CHEM',
@@ -2104,7 +2504,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Colloid and Surface Chemistry',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2176,7 +2576,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Introductory Computational Chemistry Laboratory',
     'courseCredits': '2',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2184,7 +2584,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Biophysical Chemistry',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2192,7 +2592,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Numerical Methods in Chemistry',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2200,7 +2600,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Polymer Chemistry',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['A1']
+    'delList': ['A1', 'B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2208,7 +2608,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Solid State Chemistry',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2216,7 +2616,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Electrochemistry: Fundamentals and Applications',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2224,7 +2624,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Supramolecular Chemistry',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2232,7 +2632,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Analytical Chemistry',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2240,7 +2640,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Photophysical Chemistry',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2248,7 +2648,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Chemistry of Materials',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2256,7 +2656,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Magnetic Resonance',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2264,7 +2664,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Organic Chemistry and Drug Design',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2272,7 +2672,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Nanochemistry',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2280,7 +2680,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Green Chemistry and Catalysis',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2344,7 +2744,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Photochemistry and Laser Spectroscopy',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2352,7 +2752,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Electron Correlation in Atoms and Molecules',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2360,7 +2760,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Bio and Chemical Sensors',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2368,7 +2768,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Frontiers in Organic Synthesis',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2376,7 +2776,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Statistical Thermodynamics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2384,7 +2784,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Atmospheric Chemistry',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
@@ -2392,13 +2792,21 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Sustainable Chemistry using Renewables',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B2']
   },
   {
     'courseCode': 'CHEM',
     'courseID': 'F491',
     'courseTitle': 'Special Projects',
     'courseCredits': '3',
+    'cdcList': [],
+    'delList': ['B2']
+  },
+  {
+    'courseCode': 'CHEM',
+    'courseID': 'G521',
+    'courseTitle': 'Environmental Chemistry',
+    'courseCredits': '5',
     'cdcList': [],
     'delList': ['B2']
   },
@@ -2416,7 +2824,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Data Structures & Algorithms',
     'courseCredits': '4',
     'cdcList': ['A7'],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'CS',
@@ -2432,7 +2840,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Object Oriented Programming',
     'courseCredits': '4',
     'cdcList': ['A7'],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'CS',
@@ -2496,7 +2904,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Software Development for Portable Devices',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2512,7 +2920,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Reinforcement Learning',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2520,7 +2928,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': ' Foundations of Data Science',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2528,7 +2936,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Computer Architecture',
     'courseCredits': '4',
     'cdcList': ['A7'],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'CS',
@@ -2552,7 +2960,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Design and Analysis of Algorithms',
     'courseCredits': '3',
     'cdcList': ['A7'],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'CS',
@@ -2576,7 +2984,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Operating Systems',
     'courseCredits': '3',
     'cdcList': ['A7'],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'CS',
@@ -2600,7 +3008,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Multimedia Computing',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2608,7 +3016,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Computational Geometry',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2632,7 +3040,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Artificial Intelligence',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2640,7 +3048,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Internetworking Technologies',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2648,7 +3056,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Data Mining',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2656,7 +3064,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Parallel Computing',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2664,7 +3072,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Software for Embedded Systems',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2672,7 +3080,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Deep Learning',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2680,7 +3088,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Graph Mining',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2688,7 +3096,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Natural Language Processing',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2696,7 +3104,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Selected Topics from Computer Science',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2704,7 +3112,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Real – Time Systems',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2712,7 +3120,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Data Storage Technologies and Networks',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2720,7 +3128,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Combinatorial Mathematics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A3', 'A8']
   },
   {
     'courseCode': 'CS',
@@ -2728,7 +3136,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Information Security Project',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2736,7 +3144,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Information Retrieval',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'CS',
@@ -2744,12 +3152,28 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Reconfigurable Computing',
     'courseCredits': '5',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'CS',
     'courseID': 'F491',
     'courseTitle': 'Special Projects',
+    'courseCredits': '3',
+    'cdcList': [],
+    'delList': ['A7']
+  },
+  {
+    'courseCode': 'CS',
+    'courseID': 'FG513',
+    'courseTitle': 'Network Security',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['A7']
+  },
+  {
+    'courseCode': 'CS',
+    'courseID': 'FG527',
+    'courseTitle': 'Cloud Computing',
     'courseCredits': '3',
     'cdcList': [],
     'delList': ['A7']
@@ -2840,7 +3264,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'EM Fields and Microwave Engineering Laboratory',
     'courseCredits': '1',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'ECE',
@@ -2848,7 +3272,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Electromagnetic Fields and Microwave Engineering',
     'courseCredits': '3',
     'cdcList': ['AA'],
-    'delList': []
+    'delList': ['A8']
   },
   {
     'courseCode': 'ECE',
@@ -2864,7 +3288,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Communication Networks',
     'courseCredits': '3',
     'cdcList': ['AA'],
-    'delList': []
+    'delList': ['A3']
   },
   {
     'courseCode': 'ECE',
@@ -3064,7 +3488,15 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Industrial Economics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
+  },
+  {
+    'courseCode': 'ECON',
+    'courseID': 'F315',
+    'courseTitle': 'Financial Management',
+    'courseCredits': '3',
+    'cdcList': [],
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3104,7 +3536,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Behavioral Economics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3112,7 +3544,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Indian Economic Development',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3120,7 +3552,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Management of Banks and Financial Institutions',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3128,7 +3560,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Energy Economics and Policy',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3136,7 +3568,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Derivatives and Risk Management',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3144,7 +3576,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Business Analysis and Valuation',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3152,7 +3584,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Strategic Financial Management',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3160,7 +3592,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Management Control System',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3200,7 +3632,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Project Appraisal',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['A4']
+    'delList': ['A4', 'B3']
   },
   {
     'courseCode': 'ECON',
@@ -3208,7 +3640,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Security Analysis and Portfolio Management',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3216,7 +3648,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Financial Engineering',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3224,7 +3656,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Creating and Leading Entrepreneurial Organizations',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3232,7 +3664,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'New Venture Creation',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3248,7 +3680,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Quantitative Analysis of International Trade',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3256,7 +3688,23 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Functions and Working of Stock Exchanges',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
+  },
+  {
+    'courseCode': 'ECON',
+    'courseID': 'F434',
+    'courseTitle': 'International Business',
+    'courseCredits': '3',
+    'cdcList': [],
+    'delList': ['B3']
+  },
+  {
+    'courseCode': 'ECON',
+    'courseID': 'F435',
+    'courseTitle': 'Marketing Research',
+    'courseCredits': '3',
+    'cdcList': [],
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3264,7 +3712,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Resources and Environmental Economics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'ECON',
@@ -3352,7 +3800,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Control System Laboratory',
     'courseCredits': '1',
     'cdcList': ['A3'],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3360,7 +3808,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Electrical and Electronic Circuits Laboratory',
     'courseCredits': '2',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3368,7 +3816,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Study Project',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3376,7 +3824,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Communication Systems',
     'courseCredits': '4',
     'cdcList': ['A3'],
-    'delList': []
+    'delList': ['A8']
   },
   {
     'courseCode': 'EEE',
@@ -3416,7 +3864,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Power Apparatus & Networks',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3424,7 +3872,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Data Communication Networks',
     'courseCredits': '2',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3440,7 +3888,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'FPGA Based System Design Laboratory',
     'courseCredits': '2',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3480,7 +3928,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Internet of Things (IoT)',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3488,7 +3936,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Telecommunication Switching Systems & Networks',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A3']
   },
   {
     'courseCode': 'EEE',
@@ -3496,7 +3944,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Digital Communication',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A3']
   },
   {
     'courseCode': 'EEE',
@@ -3504,7 +3952,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Computer Based Control Systems',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3512,7 +3960,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Modern Communication Technologies',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A3']
   },
   {
     'courseCode': 'EEE',
@@ -3520,7 +3968,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Modern Control Systems',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3528,7 +3976,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Power System Analysis and Control',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A3']
   },
   {
     'courseCode': 'EEE',
@@ -3536,7 +3984,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Fiber Optics & Optoelectronics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8', 'B5']
   },
   {
     'courseCode': 'EEE',
@@ -3544,7 +3992,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Electric Power Utilization and Illumination',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3552,7 +4000,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Mobile Telecommunication Networks',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3560,7 +4008,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Medical Instrumentation',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3']
   },
   {
     'courseCode': 'EEE',
@@ -3568,7 +4016,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Electromagnetic Fields & Waves',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3576,7 +4024,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Digital Signal Processing',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3584,7 +4032,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Digital Image Processing',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3592,7 +4040,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Electromagnetic Compatibility',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3600,7 +4048,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Advanced Power Systems',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A3']
   },
   {
     'courseCode': 'EEE',
@@ -3608,7 +4056,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Satellite Communication',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3616,7 +4064,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Wind Electrical Systems',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A3']
   },
   {
     'courseCode': 'EEE',
@@ -3624,7 +4072,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Antenna Theory and Design',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3632,7 +4080,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Special Electrical Machines',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3640,7 +4088,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Switchgear and Protection',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3648,7 +4096,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Modeling of Field-Effect NanoDevices',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3656,7 +4104,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': ' Power Systems Laboratory',
     'courseCredits': '2',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'EEE',
@@ -3672,7 +4120,15 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Embedded System Design',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': ['AA']
+    'delList': ['AA', 'A3', 'A8']
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'G512',
+    'courseTitle': 'Hardware Software Co-Design',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'FIN',
@@ -3760,7 +4216,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Investment Banking and Financial Services',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'FIN',
@@ -3808,7 +4264,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Financial Risk Analytics and Management',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'FIN',
@@ -4872,7 +5328,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Advanced Process Control',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A8']
   },
   {
     'courseCode': 'INSTR',
@@ -4880,7 +5336,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Telecommunication Switching Systems & Networks',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A8']
   },
   {
     'courseCode': 'INSTR',
@@ -4888,7 +5344,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Digital Control',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A8']
   },
   {
     'courseCode': 'INSTR',
@@ -4896,7 +5352,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Virtual Instrumentation',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['A8']
   },
   {
     'courseCode': 'INSTR',
@@ -4904,7 +5360,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Design of Instrumentation Systems',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A8']
   },
   {
     'courseCode': 'INSTR',
@@ -4912,7 +5368,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Instrumentation for Petrochemical Industry',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A8']
   },
   {
     'courseCode': 'INSTR',
@@ -4920,7 +5376,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Medical Instrumentation',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A8']
   },
   {
     'courseCode': 'INSTR',
@@ -4928,7 +5384,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Wind Electrical Systems',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A8']
   },
   {
     'courseCode': 'INSTR',
@@ -5048,7 +5504,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Software Engineering',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'IS',
@@ -5104,7 +5560,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Network Programming',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7']
   },
   {
     'courseCode': 'IS',
@@ -5152,7 +5608,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Optimization',
     'courseCredits': '3',
     'cdcList': ['A3', 'B4'],
-    'delList': []
+    'delList': ['A5', 'B3', 'B1']
   },
   {
     'courseCode': 'MATH',
@@ -5184,7 +5640,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Number Theory',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': ['B4']
+    'delList': ['B4', 'A7', 'B4']
   },
   {
     'courseCode': 'MATH',
@@ -5200,7 +5656,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Operations Research',
     'courseCredits': '3',
     'cdcList': ['B4'],
-    'delList': []
+    'delList': ['B3']
   },
   {
     'courseCode': 'MATH',
@@ -5256,7 +5712,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Algebra II',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'MATH',
@@ -5296,7 +5752,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Statistical Inference and Applications',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'MATH',
@@ -5304,7 +5760,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Complex Analysis',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'MATH',
@@ -5344,7 +5800,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Advanced Probability Theory',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'MATH',
@@ -5352,7 +5808,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Mathematical Modeling',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'MATH',
@@ -5360,7 +5816,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Combinatorial Mathematics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7', 'B4']
   },
   {
     'courseCode': 'MATH',
@@ -5368,7 +5824,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Numerical Methodology for Partial Differential Equations',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'MATH',
@@ -5376,7 +5832,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Introduction to Algebraic Topology',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'MATH',
@@ -5384,7 +5840,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Applied Stochastic Process',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4', 'B5']
   },
   {
     'courseCode': 'MATH',
@@ -5392,7 +5848,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Distribution Theory',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'MATH',
@@ -5400,7 +5856,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': ' Applied Statistical Methods',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'MATH',
@@ -5408,7 +5864,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Discrete Mathematical Structures',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A7', 'B4']
   },
   {
     'courseCode': 'MATH',
@@ -5416,7 +5872,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Numerical Solutions of Ordinary Differential Equations',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'MATH',
@@ -5424,7 +5880,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Mathematical Fluid Dynamics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'MATH',
@@ -5432,7 +5888,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Cosmology',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4', 'B5']
   },
   {
     'courseCode': 'MATH',
@@ -5440,7 +5896,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Nonlinear Optimization',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'MATH',
@@ -5448,7 +5904,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Commutative Algebra',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'MATH',
@@ -5464,7 +5920,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Wavelet analysis and applications',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B4']
   },
   {
     'courseCode': 'ME',
@@ -5987,6 +6443,62 @@ List<Map<String, dynamic>> coursesData = [
     'delList': ['A4']
   },
   {
+    'courseCode': 'ME',
+    'courseID': 'G511',
+    'courseTitle': 'Mechanism and Robotics',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A4']
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'G512',
+    'courseTitle': 'Finite Element Methods',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A4']
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'G514',
+    'courseTitle': 'Turbo Machinery',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A4']
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'G515',
+    'courseTitle': 'Computational Fluid Dynamics',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A4']
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'G533',
+    'courseTitle': 'Conduction and Radiation Heat Transfer',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A4']
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'G533',
+    'courseTitle': 'Convective Heat and Mass Transfer',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A4']
+  },
+  {
+    'courseCode': 'ME',
+    'courseID': 'G511',
+    'courseTitle': 'Mechanism and Robotics',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A4']
+  },
+  {
     'courseCode': 'MF',
     'courseID': 'F211',
     'courseTitle': 'Mechanics of Solids',
@@ -6395,6 +6907,14 @@ List<Map<String, dynamic>> coursesData = [
     'delList': []
   },
   {
+    'courseCode': 'MST',
+    'courseID': 'G522',
+    'courseTitle': 'Advanced Composites',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A4']
+  },
+  {
     'courseCode': 'PHA',
     'courseID': 'F211',
     'courseTitle': 'Pharmaceutical Analysis',
@@ -6576,7 +7096,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Pharmaceutical Management and Quality Control',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A5']
   },
   {
     'courseCode': 'PHA',
@@ -6584,7 +7104,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Biopharmaceutics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A5']
   },
   {
     'courseCode': 'PHA',
@@ -6592,7 +7112,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Pathophysiology',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A5']
   },
   {
     'courseCode': 'PHA',
@@ -6600,7 +7120,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Chemistry of Synthetic Drugs',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A5']
   },
   {
     'courseCode': 'PHA',
@@ -6608,7 +7128,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Pharmacoeconomics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A5']
   },
   {
     'courseCode': 'PHA',
@@ -6616,7 +7136,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Cosmetic Science',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A5']
   },
   {
     'courseCode': 'PHA',
@@ -6624,7 +7144,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Hospital Pharmacy',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A5']
   },
   {
     'courseCode': 'PHA',
@@ -6632,7 +7152,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Biochemical Engineering',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A5']
   },
   {
     'courseCode': 'PHA',
@@ -6640,7 +7160,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Applied Pharmaceutical Chemistry',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A5']
   },
   {
     'courseCode': 'PHA',
@@ -6648,7 +7168,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Phytochemistry',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['A5']
   },
   {
     'courseCode': 'PHA',
@@ -6720,7 +7240,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Introduction to Astronomy and Astrophysics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6792,7 +7312,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Theory of Relativity',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6800,7 +7320,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Musical Acoustics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6808,7 +7328,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Introduction to Radio Astronomy',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6888,7 +7408,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Plasma Physics and its Applications',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6896,7 +7416,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Thin Film Technology',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6904,7 +7424,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Introduction to Quantum Field Theory',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6912,7 +7432,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Particle Physics',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6920,7 +7440,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Physics of Advanced Materials',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6928,7 +7448,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'General Theory of Relativity and Cosmology',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6936,7 +7456,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Soft Condensed Matter Physics',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6944,7 +7464,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Experimental Methods of Physics',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6952,7 +7472,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Lasers and Applications',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6960,7 +7480,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Advanced Solid State Physics',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6968,7 +7488,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Quantum Optics',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6976,7 +7496,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Advanced Quantum Mechanics',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6984,7 +7504,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Group Theory and Applications',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -6992,7 +7512,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Special Topics in Statistical Mechanics',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -7000,7 +7520,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Advanced Electrodynamics',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -7008,7 +7528,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Advanced Mathematical Methods of Physics',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -7016,7 +7536,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Physics of Semiconductor Devices',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -7024,7 +7544,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Atmospheric Physics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -7032,7 +7552,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': 'Quantum Information Theory',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -7040,7 +7560,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': ' Geometrical Methods in Physics',
     'courseCredits': '3',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
@@ -7048,12 +7568,20 @@ List<Map<String, dynamic>> coursesData = [
     'courseTitle': ' Classical Theory of Fields: A Symmetry Perspective',
     'courseCredits': '4',
     'cdcList': [],
-    'delList': []
+    'delList': ['B5']
   },
   {
     'courseCode': 'PHY',
     'courseID': 'F491',
     'courseTitle': 'Special Projects',
+    'courseCredits': '3',
+    'cdcList': [],
+    'delList': ['B5']
+  },
+  {
+    'courseCode': 'PHY',
+    'courseID': 'G512',
+    'courseTitle': 'Advanced Quantum Field Theory',
     'courseCredits': '3',
     'cdcList': [],
     'delList': ['B5']

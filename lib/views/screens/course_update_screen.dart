@@ -35,12 +35,28 @@ class CourseUpdate extends StatefulWidget {
 }
 
 class _CourseUpdateState extends State<CourseUpdate> {
+  List<String> courseIDListUpdated = courseIDList;
+
   String _chosenCourseCode = 'CS';
   String _chosenCourseID = 'F111';
   String _courseTitle = 'Computer Programming';
   int _chosenCredits = 4;
   int _chosenGrade = 10;
   String _chosenLetterGrade = 'A';
+  updateDropDownList() {
+    Set<String> courseIDdropDownItemsSet = Set<String>();
+    for (int i = 0; i < coursesData.length; ++i) {
+      if (coursesData[i]['courseCode'] == _chosenCourseCode) {
+        courseIDdropDownItemsSet.add(coursesData[i]['courseID']);
+      }
+    }
+
+    setState(() {
+      courseIDListUpdated = [];
+      courseIDListUpdated = courseIDdropDownItemsSet.toList();
+      _chosenCourseID = courseIDListUpdated[0];
+    });
+  }
 
   searchCourse(String courseCode, String courseID) {
     var res = coursesData
@@ -73,6 +89,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
           _chosenLetterGrade =
               CourseViewModel.mapToLetterGrades(_chosenCredits);
         });
+        updateDropDownList();
       },
     );
   }
@@ -193,6 +210,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
                                   _chosenCourseCode = value!;
                                 },
                               );
+                              updateDropDownList();
                               searchCourse(_chosenCourseCode, _chosenCourseID);
                             },
                           ),
@@ -215,7 +233,8 @@ class _CourseUpdateState extends State<CourseUpdate> {
                             style: ThemeStyles.t20TextStyle,
                             underline: Container(),
                             value: _chosenCourseID,
-                            items: courseIDList.map<DropdownMenuItem<String>>(
+                            items: courseIDListUpdated
+                                .map<DropdownMenuItem<String>>(
                               (String value) {
                                 return DropdownMenuItem(
                                   value: value,

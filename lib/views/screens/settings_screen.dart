@@ -1,3 +1,5 @@
+import 'package:cgpacalculator/views/screens/export_csv.dart';
+import 'package:cgpacalculator/views/screens/import_csv.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:page_transition/page_transition.dart';
@@ -286,6 +288,112 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               SizedBox(width: Converts.c16),
                               Text(
                                 'Analytics',
+                                style: ThemeStyles.t20TextStyle.copyWith(
+                                  fontWeight: FontWeight.w100,
+                                ),
+                              ),
+                              SizedBox(width: Converts.c16),
+                            ],
+                          ),
+                          Container(
+                            height: Converts.c40,
+                            width: Converts.c40,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.black.withOpacity(0.1),
+                            ),
+                            child: Icon(Icons.chevron_right),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    HapticFeedback.mediumImpact();
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        curve: Curves.easeInOutSine,
+                        type: PageTransitionType.fade,
+                        child: ImportCSVScreen(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    child: Padding(
+                      padding: EdgeInsets.all(Converts.c20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                height: Converts.c40,
+                                width: Converts.c40,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.black.withOpacity(0.1),
+                                ),
+                                child: Icon(Icons.file_download),
+                              ),
+                              SizedBox(width: Converts.c16),
+                              Text(
+                                'Import CSV',
+                                style: ThemeStyles.t20TextStyle.copyWith(
+                                  fontWeight: FontWeight.w100,
+                                ),
+                              ),
+                              SizedBox(width: Converts.c16),
+                            ],
+                          ),
+                          Container(
+                            height: Converts.c40,
+                            width: Converts.c40,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.black.withOpacity(0.1),
+                            ),
+                            child: Icon(Icons.chevron_right),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    HapticFeedback.mediumImpact();
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        curve: Curves.easeInOutSine,
+                        type: PageTransitionType.fade,
+                        child: ExportCSVScreen(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    child: Padding(
+                      padding: EdgeInsets.all(Converts.c20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                height: Converts.c40,
+                                width: Converts.c40,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.black.withOpacity(0.1),
+                                ),
+                                child: Icon(Icons.file_upload),
+                              ),
+                              SizedBox(width: Converts.c16),
+                              Text(
+                                'Export CSV',
                                 style: ThemeStyles.t20TextStyle.copyWith(
                                   fontWeight: FontWeight.w100,
                                 ),

@@ -19,12 +19,28 @@ class AddCourseScreen extends StatefulWidget {
 }
 
 class _AddCourseScreenState extends State<AddCourseScreen> {
+  List<String> courseIDListUpdated = courseIDList;
   String _chosenCourseCode = 'CS';
   String _chosenCourseID = 'F111';
   String _courseTitle = 'Computer Programming';
   int _chosenCredits = 4;
   int _chosenGrade = 10;
   String _chosenLetterGrade = 'A';
+
+  updateDropDownList() {
+    Set<String> courseIDdropDownItemsSet = Set<String>();
+    for (int i = 0; i < coursesData.length; ++i) {
+      if (coursesData[i]['courseCode'] == _chosenCourseCode) {
+        courseIDdropDownItemsSet.add(coursesData[i]['courseID']);
+      }
+    }
+
+    setState(() {
+      courseIDListUpdated = [];
+      courseIDListUpdated = courseIDdropDownItemsSet.toList();
+      _chosenCourseID = courseIDListUpdated[0];
+    });
+  }
 
   searchCourse(String courseCode, String courseID) {
     var res = coursesData
@@ -42,6 +58,15 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
         _chosenCredits = int.parse(res['courseCredits']);
       });
     }
+  }
+
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance!.addPostFrameCallback(
+      (timeStamp) {
+        updateDropDownList();
+      },
+    );
   }
 
   @override
@@ -89,6 +114,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                                 _chosenCourseCode = value!;
                               },
                             );
+                            updateDropDownList();
                             searchCourse(_chosenCourseCode, _chosenCourseID);
                           },
                         ),
@@ -111,7 +137,8 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
                           style: ThemeStyles.t20TextStyle,
                           underline: Container(),
                           value: _chosenCourseID,
-                          items: courseIDList.map<DropdownMenuItem<String>>(
+                          items:
+                              courseIDListUpdated.map<DropdownMenuItem<String>>(
                             (String value) {
                               return DropdownMenuItem(
                                 value: value,
