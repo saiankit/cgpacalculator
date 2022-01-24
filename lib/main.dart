@@ -10,7 +10,6 @@ import 'services/moor_database_service.dart';
 import 'services/user_details_view_model.dart';
 import 'utilities/screen_config.dart';
 import 'views/authentication_wrapper.dart';
-import 'views/screens/admin_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

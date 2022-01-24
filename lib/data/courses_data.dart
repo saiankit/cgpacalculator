@@ -1911,7 +1911,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseID': 'F211',
     'courseTitle': 'Chemical Process Calculations',
     'courseCredits': '3',
-    'cdcList': ['B1'],
+    'cdcList': ['A1'],
     'delList': []
   },
   {

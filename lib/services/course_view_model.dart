@@ -50,6 +50,11 @@ class CourseViewModel {
           numericalGrade = 0;
         }
         break;
+      case "GD":
+        {
+          numericalGrade = -1;
+        }
+        break;
 
       default:
         {
@@ -107,6 +112,11 @@ class CourseViewModel {
       case 0:
         {
           letterGrade = "CLR";
+        }
+        break;
+      case -1:
+        {
+          letterGrade = "GD";
         }
         break;
 

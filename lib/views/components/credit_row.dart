@@ -65,8 +65,7 @@ class CreditRow extends StatelessWidget {
                         style: ThemeStyles.t24TextStyle,
                       ),
                     );
-                  String totalCredits =
-                      countCredits(snapshot, userDetails.manualCredits);
+                  String totalCredits = countAllCredits(snapshot);
                   return Text(
                     totalCredits,
                     style: ThemeStyles.t24TextStyle,

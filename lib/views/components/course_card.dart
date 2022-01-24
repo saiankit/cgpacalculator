@@ -39,6 +39,7 @@ class _CourseCardState extends State<CourseCard> {
       builder: (context, userDetails, _) => GestureDetector(
         onTap: () {
           HapticFeedback.mediumImpact();
+
           showModalBottomSheet(
             context: context,
             isScrollControlled: true,

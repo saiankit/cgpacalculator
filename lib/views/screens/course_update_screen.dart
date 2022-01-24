@@ -42,7 +42,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
   String _courseTitle = 'Computer Programming';
   int _chosenCredits = 4;
   int _chosenGrade = 10;
-  String _chosenLetterGrade = 'A';
+  String _chosenLetterGrade = 'A-';
   updateDropDownList() {
     Set<String> courseIDdropDownItemsSet = Set<String>();
     for (int i = 0; i < coursesData.length; ++i) {
@@ -86,8 +86,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
           },
         );
         setState(() {
-          _chosenLetterGrade =
-              CourseViewModel.mapToLetterGrades(_chosenCredits);
+          _chosenLetterGrade = CourseViewModel.mapToLetterGrades(_chosenGrade);
         });
         updateDropDownList();
       },
@@ -168,7 +167,6 @@ class _CourseUpdateState extends State<CourseUpdate> {
                   ],
                 ),
               ),
-              // ---------------------------------------------
 
               // Course Code and ID Selector for updating the course
               // Initialise with the current selected course

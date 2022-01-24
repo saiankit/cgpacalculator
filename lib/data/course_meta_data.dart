@@ -65,6 +65,7 @@ List<String> gradesList = [
   "E",
   "NC",
   "CLR",
+  "GD",
 ];
 List<String> secondaryDisciplineList = [
   'B1',

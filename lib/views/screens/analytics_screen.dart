@@ -121,8 +121,8 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                                             ),
                                           );
                                         String credits = countAllCredits(
-                                            snapshot,
-                                            userDetails.manualCredits);
+                                          snapshot,
+                                        );
                                         return Row(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.baseline,
@@ -137,7 +137,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                                               ),
                                             ),
                                             Text(
-                                              ' /145',
+                                              ' /144',
                                               style: ThemeStyles.t20TextStyle
                                                   .copyWith(
                                                 color: Colors.white,
@@ -150,65 +150,6 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                                     ),
                                   ],
                                 ),
-                                Container(
-                                  height: Converts.c104,
-                                  width: Converts.c104,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      width: 3.0,
-                                    ),
-                                    shape: BoxShape.circle,
-                                    color: Colors.white,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      StreamBuilder(
-                                        stream: Provider.of<AppDatabase>(
-                                                context)
-                                            .watchAllCourses(userDetails.id),
-                                        builder: (context,
-                                            AsyncSnapshot<List<Course>>
-                                                snapshot) {
-                                          if (!snapshot.hasData)
-                                            return Center(
-                                              child: Text(
-                                                ' 0' + '%',
-                                                style: ThemeStyles.t32TextStyle
-                                                    .copyWith(
-                                                  color: Colors.white,
-                                                ),
-                                              ),
-                                            );
-
-                                          String credits = countAllCredits(
-                                              snapshot, userDetails.id);
-                                          String percentage =
-                                              ((int.parse(credits) / 145) * 100)
-                                                  .toStringAsFixed(2);
-                                          return Text(
-                                            ' ' + percentage + '%',
-                                            style: ThemeStyles.t20TextStyle,
-                                          );
-                                        },
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SizedBox(width: 5),
-                                          Text(
-                                            'done',
-                                            style: ThemeStyles.t12TextStyle
-                                                .copyWith(
-                                              fontWeight: FontWeight.w100,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                )
                               ],
                             ),
                           ),
