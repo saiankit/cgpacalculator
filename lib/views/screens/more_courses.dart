@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 
 import '../../services/cdc_service.dart';
 import '../../services/disciplinary_elective_service.dart';
+import '../../services/elective_mapper_service.dart';
 import '../../services/humanity_elective_service.dart';
 import '../../services/moor_database_service.dart';
 import '../../services/open_elective_service.dart';
@@ -56,18 +57,12 @@ class _MoreCoursesScreenState extends State<MoreCoursesScreen> {
                 child: Text('No Courses'),
               );
             }
-            List<CourseSimplified> listOfCourses = (widget.electiveType == 1)
-                ? HumanityElectiveService()
-                    .getMoreHumanityElecitvesList(snapshot)
-                : (widget.electiveType == 2)
-                    ? DisciplinaryElectiveService()
-                        .getMoreDisciplinaryElectivesList(
-                            snapshot, courseInfoProvider.primaryDiscipline)
-                    : (widget.electiveType == 3)
-                        ? OpenElectiveService().getMoreOpenElectivesList(
-                            snapshot, courseInfoProvider.primaryDiscipline)
-                        : CDCService().getMoreCDCCourses(
-                            snapshot, courseInfoProvider.primaryDiscipline);
+            List<CourseSimplified> listOfCourses = ElectiveMapperService()
+                .getMoreList(
+                    courseInfoProvider.primaryDiscipline,
+                    widget.electiveType,
+                    courseInfoProvider.secondaryDiscipline,
+                    snapshot);
 
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: Converts.c16),

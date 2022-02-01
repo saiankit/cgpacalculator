@@ -23,8 +23,12 @@ class HumanityElectiveService {
     //Loop to count the total credits from the snapshot of the watchAllCourses Stream
     for (var i = 0; i < snapshot.data!.length; i++) {
       if (snapshot.data![i].courseCode.startsWith('GS') ||
-          snapshot.data![i].courseCode.startsWith('HSS'))
+          snapshot.data![i].courseCode.startsWith('HSS')) {
         creditsCount += snapshot.data![i].courseCredits;
+      } else if (snapshot.data![i].courseCode == 'BITS' &&
+          snapshot.data![i].courseID == 'F214') {
+        creditsCount += snapshot.data![i].courseCredits;
+      }
     }
 
     //Asserting the total HEL Credits

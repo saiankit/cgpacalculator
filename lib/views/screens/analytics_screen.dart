@@ -169,6 +169,15 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                           ElectiveCard(electiveType: 4),
                         ],
                       ),
+                      userDetails.secondaryDiscipline == 'None'
+                          ? Container()
+                          : Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                ElectiveCard(electiveType: 5),
+                                ElectiveCard(electiveType: 6),
+                              ],
+                            ),
                     ],
                   ),
                 ),
@@ -180,9 +189,11 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
 
 Map<int, String> electiveMap = {
   1: 'Humanity Electives',
-  2: 'Disciplinary Electives',
-  3: 'Open Electives',
-  4: 'CDC'
+  2: 'Open Electives',
+  3: 'CDC',
+  4: 'Disciplinary Electives',
+  5: 'CDC',
+  6: 'Disciplinary Electives'
 };
 
 class ElectiveCard extends StatelessWidget {
@@ -231,18 +242,34 @@ class ElectiveCard extends StatelessWidget {
           ),
           child: Padding(
             padding: EdgeInsets.all(Converts.c12),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  electiveMap[this.electiveType]!,
-                  style: ThemeStyles.t16TextStyle.copyWith(
-                    fontWeight: FontWeight.w100,
+            child: Consumer<UserDetails>(
+              builder: (context, userDetails, _) => Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    electiveMap[this.electiveType]!,
+                    style: ThemeStyles.t16TextStyle.copyWith(
+                      fontWeight: FontWeight.w100,
+                    ),
                   ),
-                ),
-                Consumer<UserDetails>(
-                  builder: (context, userDetails, _) => StreamBuilder(
+                  (this.electiveType == 3 || this.electiveType == 4)
+                      ? Text(
+                          userDetails.primaryDiscipline,
+                          style: ThemeStyles.t16TextStyle.copyWith(
+                            fontWeight: FontWeight.w100,
+                          ),
+                        )
+                      : Container(),
+                  (this.electiveType == 5 || this.electiveType == 6)
+                      ? Text(
+                          userDetails.secondaryDiscipline,
+                          style: ThemeStyles.t16TextStyle.copyWith(
+                            fontWeight: FontWeight.w100,
+                          ),
+                        )
+                      : Container(),
+                  StreamBuilder(
                     stream: Provider.of<AppDatabase>(context)
                         .watchAllCourses(userDetails.id),
                     builder: (context, AsyncSnapshot<List<Course>> snapshot) {
@@ -252,19 +279,26 @@ class ElectiveCard extends StatelessWidget {
                           style: ThemeStyles.t20TextStyle,
                         );
                       String electiveCredits = ElectiveMapperService()
-                          .getCompletedCredits(userDetails.primaryDiscipline,
-                              this.electiveType, snapshot);
-
+                          .getCompletedCredits(
+                              userDetails.primaryDiscipline,
+                              this.electiveType,
+                              userDetails.secondaryDiscipline,
+                              snapshot);
                       String electiveCourses = ElectiveMapperService()
-                          .getCompletedCourses(userDetails.primaryDiscipline,
-                              this.electiveType, snapshot);
+                          .getCompletedCourses(
+                              userDetails.primaryDiscipline,
+                              this.electiveType,
+                              userDetails.secondaryDiscipline,
+                              snapshot);
                       String maxCourses = ElectiveMapperService().getMaxCourses(
                           userDetails.primaryDiscipline,
                           this.electiveType,
+                          userDetails.secondaryDiscipline,
                           snapshot);
                       String maxCredits = ElectiveMapperService().getMaxCredits(
                           userDetails.primaryDiscipline,
                           this.electiveType,
+                          userDetails.secondaryDiscipline,
                           snapshot);
                       return Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -327,8 +361,8 @@ class ElectiveCard extends StatelessWidget {
                       );
                     },
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
