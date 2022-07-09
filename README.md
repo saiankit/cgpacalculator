@@ -2,7 +2,7 @@
 Journaling and Analysing Courses and CGPA Made Easy
 
 ![1](screenshots/Showcase.png)
-![1](screenshots/Statistics.png)
+![1](screenshots/Stats.png)
 
 #### Introduction
 
