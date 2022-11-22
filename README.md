@@ -1,10 +1,15 @@
-## CGPA Calculator
-Journaling and Analysing Courses and CGPA Made Easy
+<h3 align="center">
+	CGPA Calculator
+</h3>
+<h5 align="center">
+  Journaling and Analysing Courses and CGPA Made Easy
+</h5>
+
 
 ![1](screenshots/Showcase.png)
 ![1](screenshots/Stats.png)
 
-#### Introduction
+## Introduction
 
 CGPA Calculator is mainly aimed at enabling BITS’ians to calculate and journalise their grades achieved in different semesters with the feature of calculating their SGPA and CGPA.
 
@@ -19,13 +24,6 @@ CGPA Calculator App is developed using Flutter. Authentication is performed usin
 
 ------
 
-#### Salient Features of CGPA Calculator
-
-###### Video Version : https://youtu.be/fHrFlq0kOGY
-
-###### Photographic Version :
-
-
 | ![1](assets/1.png) | ![1](assets/2.png) | ![1](assets/3.png) | ![1](assets/4.png) |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
 | ![1](assets/5.png) | ![1](assets/6.png) | ![1](assets/7.png) |  |
@@ -33,7 +31,7 @@ CGPA Calculator App is developed using Flutter. Authentication is performed usin
 ------
 
 
-#### How to use the app locally on your machine ?
+## How to use the app locally on your machine ?
 
 <u>Requirements</u>
 
@@ -52,7 +50,7 @@ CGPA Calculator App is developed using Flutter. Authentication is performed usin
 
 ``` flutter run```
 
-- - - -
+&nbsp;
 
 ### Designed and Developed by
 #### Sai Ankit ( [Code Studio](https://www.youtube.com/c/CodeStudioSaiAnkit?sub_confirmation=1) )
