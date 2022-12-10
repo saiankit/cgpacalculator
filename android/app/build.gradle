@@ -52,7 +52,7 @@ android {
         applicationId "com.saiankit.cgpacalculator"
         minSdkVersion 21
         multiDexEnabled true
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }

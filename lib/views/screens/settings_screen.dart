@@ -25,7 +25,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   String minorDiscipline = 'None';
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback(
+    WidgetsBinding.instance.addPostFrameCallback(
       (timeStamp) {
         setState(() {
           primaryDiscipline = Provider.of<UserDetails>(context, listen: false)

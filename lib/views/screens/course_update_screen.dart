@@ -54,7 +54,6 @@ class _CourseUpdateState extends State<CourseUpdate> {
     setState(() {
       courseIDListUpdated = [];
       courseIDListUpdated = courseIDdropDownItemsSet.toList();
-      _chosenCourseID = courseIDListUpdated[0];
     });
   }
 
@@ -74,7 +73,7 @@ class _CourseUpdateState extends State<CourseUpdate> {
 
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback(
+    WidgetsBinding.instance.addPostFrameCallback(
       (timeStamp) {
         setState(
           () {

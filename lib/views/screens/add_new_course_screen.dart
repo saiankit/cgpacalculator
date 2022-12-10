@@ -62,7 +62,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
 
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback(
+    WidgetsBinding.instance.addPostFrameCallback(
       (timeStamp) {
         updateDropDownList();
       },

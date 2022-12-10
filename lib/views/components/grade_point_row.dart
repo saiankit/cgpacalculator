@@ -16,7 +16,7 @@ class _GradePointUIState extends State<GradePointUI> {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       Provider.of<UserDetails>(context, listen: false).onStartUp();
     });
   }
