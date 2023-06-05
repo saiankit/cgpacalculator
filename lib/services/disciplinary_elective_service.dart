@@ -6,14 +6,14 @@ import 'moor_database_service.dart';
 
 class DisciplinaryElectiveService {
   String maxCourses(String primaryDiscipline) {
-    if (primaryDiscipline == 'A1') {
+    if (primaryDiscipline == 'A1' || primaryDiscipline=="B4") {
       return "5";
     }
     return "4";
   }
 
   String maxCredits(String primaryDiscipline) {
-    if (primaryDiscipline == 'A1') {
+    if (primaryDiscipline == 'A1' || primaryDiscipline=="B4") {
       return "15";
     }
     return "12";
