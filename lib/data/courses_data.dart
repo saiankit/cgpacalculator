@@ -3100,6 +3100,14 @@ List<Map<String, dynamic>> coursesData = [
   },
   {
     'courseCode': 'CS',
+    'courseID': 'F437',
+    'courseTitle': 'Generative AI',
+    'courseCredits': '3',
+    'cdcList': [],
+    'delList': ['A7']
+  },
+  {
+    'courseCode': 'CS',
     'courseID': 'F441',
     'courseTitle': 'Selected Topics from Computer Science',
     'courseCredits': '3',
@@ -6806,6 +6814,14 @@ List<Map<String, dynamic>> coursesData = [
     'courseCode': 'MGTS',
     'courseID': 'F211',
     'courseTitle': 'Principles of Management',
+    'courseCredits': '3',
+    'cdcList': [],
+    'delList': []
+  },
+ {
+    'courseCode': 'MGTS',
+    'courseID': 'F315',
+    'courseTitle': 'Managerial and Leadership Skills',
     'courseCredits': '3',
     'cdcList': [],
     'delList': []
