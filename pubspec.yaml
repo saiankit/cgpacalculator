@@ -1,31 +1,32 @@
 name: cgpacalculator
 description: Journaling and Analysing Courses and CGPA Made Easy
 publish_to: 'none'
-version: 1.0.12+12
+version: 1.0.14+14
 
 environment:
-  sdk: '>=2.12.0-4.0.pre <3.0.0'
+  sdk: '>=3.2.6 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^2.0.11
-  path_provider: ^2.0.8
-  provider: ^6.0.2
-  moor_flutter: ^4.0.0
-  google_sign_in: ^5.2.1
-  firebase_core: ^1.10.6
-  firebase_auth: ^3.3.4
-  marquee: ^2.2.0
-  page_transition: '^2.0.4'
-  flutter_launcher_icons: ^0.9.2
+  shared_preferences: ^2.2.2
+  path_provider: ^2.1.2
+  provider: ^6.1.1
+  drift_sqflite: ^2.0.1
+  drift: ^2.15.0
+  google_sign_in: ^6.2.1
+  firebase_core: ^2.25.4
+  firebase_auth: ^4.17.4
+  marquee: ^2.2.3
+  page_transition: ^2.1.0
+  flutter_launcher_icons: ^0.13.1
+  sqlite3_flutter_libs:
 
 dev_dependencies:
-  moor_generator: ^4.6.0+1
-  build_runner: ^2.1.7
-  flutter_test:
-    sdk: flutter
-
+  drift_dev: ^2.15.0
+  build_runner: ^2.4.8
+dependency_overrides:
+  watcher: ^1.1.0
 flutter_icons:
   image_path_android: 'assets/launcher/icon.png'
   image_path_ios: 'assets/launcher/icon.png'

@@ -15,11 +15,35 @@
       },
       "oauth_client": [
         {
-          "client_id": "397107940686-ch3sciroll9hk26knoorftka5nkjdljn.apps.googleusercontent.com",
+          "client_id": "397107940686-f25vhitkj9u81jrvhh1kv327f4tagmjt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.saiankit.cgpacalculator",
-            "certificate_hash": "ba208a175dd010c14a7295b095f70d74545a33cc"
+            "certificate_hash": "a8d8787ad97d1b3a88504cc25306fc8bd744a07c"
+          }
+        },
+        {
+          "client_id": "397107940686-fq9m8fmd3edf8nsqmjfu1bf5v7c44qrf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.saiankit.cgpacalculator",
+            "certificate_hash": "728b9a7374d9e81f4ba108fcc9ca30de3003761a"
+          }
+        },
+        {
+          "client_id": "397107940686-iuj0apqpc7i5poaq1uedkcgb8lbnlj32.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.saiankit.cgpacalculator",
+            "certificate_hash": "9089ca7ee4235ae369ac2e76653ef60c1f27c68c"
+          }
+        },
+        {
+          "client_id": "397107940686-qfd7on5h11grc7c6pvmkr6enphtchema.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.saiankit.cgpacalculator",
+            "certificate_hash": "67805cff5ca0cba29e2db0ad81a80a032257bc76"
           }
         },
         {

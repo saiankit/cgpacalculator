@@ -2,11 +2,172 @@
 
 part of 'moor_database_service.dart';
 
-// **************************************************************************
-// MoorGenerator
-// **************************************************************************
+// ignore_for_file: type=lint
+class $CoursesTable extends Courses with TableInfo<$CoursesTable, Course> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $CoursesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+      'id', aliasedName, false,
+      hasAutoIncrement: true,
+      type: DriftSqlType.int,
+      requiredDuringInsert: false,
+      defaultConstraints:
+          GeneratedColumn.constraintIsAlways('PRIMARY KEY AUTOINCREMENT'));
+  static const VerificationMeta _courseCodeMeta =
+      const VerificationMeta('courseCode');
+  @override
+  late final GeneratedColumn<String> courseCode = GeneratedColumn<String>(
+      'course_code', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _courseIDMeta =
+      const VerificationMeta('courseID');
+  @override
+  late final GeneratedColumn<String> courseID = GeneratedColumn<String>(
+      'course_i_d', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _courseTitleMeta =
+      const VerificationMeta('courseTitle');
+  @override
+  late final GeneratedColumn<String> courseTitle = GeneratedColumn<String>(
+      'course_title', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _semesterCodeMeta =
+      const VerificationMeta('semesterCode');
+  @override
+  late final GeneratedColumn<String> semesterCode = GeneratedColumn<String>(
+      'semester_code', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _courseCreditsMeta =
+      const VerificationMeta('courseCredits');
+  @override
+  late final GeneratedColumn<int> courseCredits = GeneratedColumn<int>(
+      'course_credits', aliasedName, false,
+      type: DriftSqlType.int, requiredDuringInsert: true);
+  static const VerificationMeta _gradeAchievedMeta =
+      const VerificationMeta('gradeAchieved');
+  @override
+  late final GeneratedColumn<int> gradeAchieved = GeneratedColumn<int>(
+      'grade_achieved', aliasedName, false,
+      type: DriftSqlType.int, requiredDuringInsert: true);
+  static const VerificationMeta _userIDMeta = const VerificationMeta('userID');
+  @override
+  late final GeneratedColumn<String> userID = GeneratedColumn<String>(
+      'user_i_d', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  @override
+  List<GeneratedColumn> get $columns => [
+        id,
+        courseCode,
+        courseID,
+        courseTitle,
+        semesterCode,
+        courseCredits,
+        gradeAchieved,
+        userID
+      ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'courses';
+  @override
+  VerificationContext validateIntegrity(Insertable<Course> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('course_code')) {
+      context.handle(
+          _courseCodeMeta,
+          courseCode.isAcceptableOrUnknown(
+              data['course_code']!, _courseCodeMeta));
+    } else if (isInserting) {
+      context.missing(_courseCodeMeta);
+    }
+    if (data.containsKey('course_i_d')) {
+      context.handle(_courseIDMeta,
+          courseID.isAcceptableOrUnknown(data['course_i_d']!, _courseIDMeta));
+    } else if (isInserting) {
+      context.missing(_courseIDMeta);
+    }
+    if (data.containsKey('course_title')) {
+      context.handle(
+          _courseTitleMeta,
+          courseTitle.isAcceptableOrUnknown(
+              data['course_title']!, _courseTitleMeta));
+    } else if (isInserting) {
+      context.missing(_courseTitleMeta);
+    }
+    if (data.containsKey('semester_code')) {
+      context.handle(
+          _semesterCodeMeta,
+          semesterCode.isAcceptableOrUnknown(
+              data['semester_code']!, _semesterCodeMeta));
+    } else if (isInserting) {
+      context.missing(_semesterCodeMeta);
+    }
+    if (data.containsKey('course_credits')) {
+      context.handle(
+          _courseCreditsMeta,
+          courseCredits.isAcceptableOrUnknown(
+              data['course_credits']!, _courseCreditsMeta));
+    } else if (isInserting) {
+      context.missing(_courseCreditsMeta);
+    }
+    if (data.containsKey('grade_achieved')) {
+      context.handle(
+          _gradeAchievedMeta,
+          gradeAchieved.isAcceptableOrUnknown(
+              data['grade_achieved']!, _gradeAchievedMeta));
+    } else if (isInserting) {
+      context.missing(_gradeAchievedMeta);
+    }
+    if (data.containsKey('user_i_d')) {
+      context.handle(_userIDMeta,
+          userID.isAcceptableOrUnknown(data['user_i_d']!, _userIDMeta));
+    } else if (isInserting) {
+      context.missing(_userIDMeta);
+    }
+    return context;
+  }
 
-// ignore_for_file: unnecessary_brace_in_string_interps, unnecessary_this
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  Course map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return Course(
+      id: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}id'])!,
+      courseCode: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}course_code'])!,
+      courseID: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}course_i_d'])!,
+      courseTitle: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}course_title'])!,
+      semesterCode: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}semester_code'])!,
+      courseCredits: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}course_credits'])!,
+      gradeAchieved: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}grade_achieved'])!,
+      userID: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}user_i_d'])!,
+    );
+  }
+
+  @override
+  $CoursesTable createAlias(String alias) {
+    return $CoursesTable(attachedDatabase, alias);
+  }
+}
+
 class Course extends DataClass implements Insertable<Course> {
   final int id;
   final String courseCode;
@@ -16,7 +177,7 @@ class Course extends DataClass implements Insertable<Course> {
   final int courseCredits;
   final int gradeAchieved;
   final String userID;
-  Course(
+  const Course(
       {required this.id,
       required this.courseCode,
       required this.courseID,
@@ -25,28 +186,6 @@ class Course extends DataClass implements Insertable<Course> {
       required this.courseCredits,
       required this.gradeAchieved,
       required this.userID});
-  factory Course.fromData(Map<String, dynamic> data, GeneratedDatabase db,
-      {String? prefix}) {
-    final effectivePrefix = prefix ?? '';
-    return Course(
-      id: const IntType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}id'])!,
-      courseCode: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}course_code'])!,
-      courseID: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}course_i_d'])!,
-      courseTitle: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}course_title'])!,
-      semesterCode: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}semester_code'])!,
-      courseCredits: const IntType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}course_credits'])!,
-      gradeAchieved: const IntType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}grade_achieved'])!,
-      userID: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}user_i_d'])!,
-    );
-  }
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -76,7 +215,7 @@ class Course extends DataClass implements Insertable<Course> {
 
   factory Course.fromJson(Map<String, dynamic> json,
       {ValueSerializer? serializer}) {
-    serializer ??= moorRuntimeOptions.defaultSerializer;
+    serializer ??= driftRuntimeOptions.defaultSerializer;
     return Course(
       id: serializer.fromJson<int>(json['id']),
       courseCode: serializer.fromJson<String>(json['courseCode']),
@@ -90,7 +229,7 @@ class Course extends DataClass implements Insertable<Course> {
   }
   @override
   Map<String, dynamic> toJson({ValueSerializer? serializer}) {
-    serializer ??= moorRuntimeOptions.defaultSerializer;
+    serializer ??= driftRuntimeOptions.defaultSerializer;
     return <String, dynamic>{
       'id': serializer.toJson<int>(id),
       'courseCode': serializer.toJson<String>(courseCode),
@@ -278,153 +417,12 @@ class CoursesCompanion extends UpdateCompanion<Course> {
   }
 }
 
-class $CoursesTable extends Courses with TableInfo<$CoursesTable, Course> {
-  final GeneratedDatabase _db;
-  final String? _alias;
-  $CoursesTable(this._db, [this._alias]);
-  final VerificationMeta _idMeta = const VerificationMeta('id');
-  @override
-  late final GeneratedColumn<int?> id = GeneratedColumn<int?>(
-      'id', aliasedName, false,
-      type: const IntType(),
-      requiredDuringInsert: false,
-      defaultConstraints: 'PRIMARY KEY AUTOINCREMENT');
-  final VerificationMeta _courseCodeMeta = const VerificationMeta('courseCode');
-  @override
-  late final GeneratedColumn<String?> courseCode = GeneratedColumn<String?>(
-      'course_code', aliasedName, false,
-      type: const StringType(), requiredDuringInsert: true);
-  final VerificationMeta _courseIDMeta = const VerificationMeta('courseID');
-  @override
-  late final GeneratedColumn<String?> courseID = GeneratedColumn<String?>(
-      'course_i_d', aliasedName, false,
-      type: const StringType(), requiredDuringInsert: true);
-  final VerificationMeta _courseTitleMeta =
-      const VerificationMeta('courseTitle');
-  @override
-  late final GeneratedColumn<String?> courseTitle = GeneratedColumn<String?>(
-      'course_title', aliasedName, false,
-      type: const StringType(), requiredDuringInsert: true);
-  final VerificationMeta _semesterCodeMeta =
-      const VerificationMeta('semesterCode');
-  @override
-  late final GeneratedColumn<String?> semesterCode = GeneratedColumn<String?>(
-      'semester_code', aliasedName, false,
-      type: const StringType(), requiredDuringInsert: true);
-  final VerificationMeta _courseCreditsMeta =
-      const VerificationMeta('courseCredits');
-  @override
-  late final GeneratedColumn<int?> courseCredits = GeneratedColumn<int?>(
-      'course_credits', aliasedName, false,
-      type: const IntType(), requiredDuringInsert: true);
-  final VerificationMeta _gradeAchievedMeta =
-      const VerificationMeta('gradeAchieved');
-  @override
-  late final GeneratedColumn<int?> gradeAchieved = GeneratedColumn<int?>(
-      'grade_achieved', aliasedName, false,
-      type: const IntType(), requiredDuringInsert: true);
-  final VerificationMeta _userIDMeta = const VerificationMeta('userID');
-  @override
-  late final GeneratedColumn<String?> userID = GeneratedColumn<String?>(
-      'user_i_d', aliasedName, false,
-      type: const StringType(), requiredDuringInsert: true);
-  @override
-  List<GeneratedColumn> get $columns => [
-        id,
-        courseCode,
-        courseID,
-        courseTitle,
-        semesterCode,
-        courseCredits,
-        gradeAchieved,
-        userID
-      ];
-  @override
-  String get aliasedName => _alias ?? 'courses';
-  @override
-  String get actualTableName => 'courses';
-  @override
-  VerificationContext validateIntegrity(Insertable<Course> instance,
-      {bool isInserting = false}) {
-    final context = VerificationContext();
-    final data = instance.toColumns(true);
-    if (data.containsKey('id')) {
-      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
-    }
-    if (data.containsKey('course_code')) {
-      context.handle(
-          _courseCodeMeta,
-          courseCode.isAcceptableOrUnknown(
-              data['course_code']!, _courseCodeMeta));
-    } else if (isInserting) {
-      context.missing(_courseCodeMeta);
-    }
-    if (data.containsKey('course_i_d')) {
-      context.handle(_courseIDMeta,
-          courseID.isAcceptableOrUnknown(data['course_i_d']!, _courseIDMeta));
-    } else if (isInserting) {
-      context.missing(_courseIDMeta);
-    }
-    if (data.containsKey('course_title')) {
-      context.handle(
-          _courseTitleMeta,
-          courseTitle.isAcceptableOrUnknown(
-              data['course_title']!, _courseTitleMeta));
-    } else if (isInserting) {
-      context.missing(_courseTitleMeta);
-    }
-    if (data.containsKey('semester_code')) {
-      context.handle(
-          _semesterCodeMeta,
-          semesterCode.isAcceptableOrUnknown(
-              data['semester_code']!, _semesterCodeMeta));
-    } else if (isInserting) {
-      context.missing(_semesterCodeMeta);
-    }
-    if (data.containsKey('course_credits')) {
-      context.handle(
-          _courseCreditsMeta,
-          courseCredits.isAcceptableOrUnknown(
-              data['course_credits']!, _courseCreditsMeta));
-    } else if (isInserting) {
-      context.missing(_courseCreditsMeta);
-    }
-    if (data.containsKey('grade_achieved')) {
-      context.handle(
-          _gradeAchievedMeta,
-          gradeAchieved.isAcceptableOrUnknown(
-              data['grade_achieved']!, _gradeAchievedMeta));
-    } else if (isInserting) {
-      context.missing(_gradeAchievedMeta);
-    }
-    if (data.containsKey('user_i_d')) {
-      context.handle(_userIDMeta,
-          userID.isAcceptableOrUnknown(data['user_i_d']!, _userIDMeta));
-    } else if (isInserting) {
-      context.missing(_userIDMeta);
-    }
-    return context;
-  }
-
-  @override
-  Set<GeneratedColumn> get $primaryKey => {id};
-  @override
-  Course map(Map<String, dynamic> data, {String? tablePrefix}) {
-    return Course.fromData(data, _db,
-        prefix: tablePrefix != null ? '$tablePrefix.' : null);
-  }
-
-  @override
-  $CoursesTable createAlias(String alias) {
-    return $CoursesTable(_db, alias);
-  }
-}
-
 abstract class _$AppDatabase extends GeneratedDatabase {
-  _$AppDatabase(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
+  _$AppDatabase(QueryExecutor e) : super(e);
   late final $CoursesTable courses = $CoursesTable(this);
   @override
-  Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
+  Iterable<TableInfo<Table, Object?>> get allTables =>
+      allSchemaEntities.whereType<TableInfo<Table, Object?>>();
   @override
   List<DatabaseSchemaEntity> get allSchemaEntities => [courses];
 }

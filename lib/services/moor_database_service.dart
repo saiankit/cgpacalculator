@@ -1,6 +1,21 @@
-import 'package:moor_flutter/moor_flutter.dart';
+import 'dart:io';
 
+import 'package:drift/drift.dart';
+import 'package:drift/native.dart';
+import 'package:path/path.dart' as path;
+import 'package:path_provider/path_provider.dart';
 part 'moor_database_service.g.dart';
+
+LazyDatabase _openConnection() {
+  return LazyDatabase(() async {
+    final dbFolder = await getApplicationDocumentsDirectory();
+    final file = File(path.join(dbFolder.path, "db.sqlite"));
+    return DatabaseConnection(NativeDatabase.createInBackground(
+      file,
+      logStatements: true,
+    ));
+  });
+}
 
 class Courses extends Table {
   IntColumn get id => integer().autoIncrement()();
@@ -13,15 +28,9 @@ class Courses extends Table {
   TextColumn get userID => text()();
 }
 
-@UseMoor(tables: [Courses])
+@DriftDatabase(tables: [Courses])
 class AppDatabase extends _$AppDatabase {
-  AppDatabase()
-      : super(
-          FlutterQueryExecutor.inDatabaseFolder(
-            path: "db.sqlite",
-            logStatements: true,
-          ),
-        );
+  AppDatabase() : super(_openConnection());
 
   @override
   int get schemaVersion => 1;
