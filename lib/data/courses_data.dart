@@ -3187,6 +3187,14 @@ List<Map<String, dynamic>> coursesData = [
     'delList': ['A7']
   },
   {
+    'courseCode': 'CS',
+    'courseID': 'G557',
+    'courseTitle': 'Distributed Computing',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['A7']
+  },
+  {
     'courseCode': 'ECE',
     'courseID': 'F211',
     'courseTitle': 'Electrical Machines',
