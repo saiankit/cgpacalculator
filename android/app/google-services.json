@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "397107940686-0fg4864ou5753bsbao966l25oh05peuk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.saiankit.cgpacalculator",
+            "certificate_hash": "7909859c19fa15a9cb96dbe276d831fb85e2b1a4"
+          }
+        },
+        {
           "client_id": "397107940686-f25vhitkj9u81jrvhh1kv327f4tagmjt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
