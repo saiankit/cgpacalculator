@@ -4140,7 +4140,7 @@ List<Map<String, dynamic>> coursesData = [
   },
   {
     'courseCode': 'EEE',
-    'courseID': 'G512',
+    'courseID': 'G626',
     'courseTitle': 'Hardware Software Co-Design',
     'courseCredits': '4',
     'cdcList': [],
@@ -6826,7 +6826,7 @@ List<Map<String, dynamic>> coursesData = [
     'cdcList': [],
     'delList': []
   },
- {
+  {
     'courseCode': 'MGTS',
     'courseID': 'F315',
     'courseTitle': 'Managerial and Leadership Skills',
