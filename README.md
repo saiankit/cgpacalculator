@@ -9,7 +9,7 @@
 ![1](screenshots/Showcase.png)
 ![1](screenshots/Stats.png)
 
-## Introduction
+# Introduction
 
 CGPA Calculator is mainly aimed at enabling BITS’ians to calculate and journalise their grades achieved in different semesters with the feature of calculating their SGPA and CGPA.
 
