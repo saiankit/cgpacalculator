@@ -890,6 +890,14 @@ List<Map<String, dynamic>> coursesData = [
   },
   {
     'courseCode': 'BITS',
+    'courseID': 'F232',
+    'courseTitle': 'Foundations of Data Structures and Algorithms',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': []
+  },
+  {
+    'courseCode': 'BITS',
     'courseID': 'F241',
     'courseTitle': 'Practice School I',
     'courseCredits': '5',
