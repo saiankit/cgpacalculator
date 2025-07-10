@@ -7574,7 +7574,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseCode': 'PHY',
     'courseID': 'F426',
     'courseTitle': 'Physics of Semiconductor Devices',
-    'courseCredits': '3',
+    'courseCredits': '4',
     'cdcList': [],
     'delList': ['B5']
   },
