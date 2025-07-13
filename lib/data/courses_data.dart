@@ -890,6 +890,14 @@ List<Map<String, dynamic>> coursesData = [
   },
   {
     'courseCode': 'BITS',
+    'courseID': 'F232',
+    'courseTitle': 'Foundations of Data Structures and Algorithms',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': []
+  },
+  {
+    'courseCode': 'BITS',
     'courseID': 'F241',
     'courseTitle': 'Practice School I',
     'courseCredits': '5',
@@ -3156,14 +3164,6 @@ List<Map<String, dynamic>> coursesData = [
   },
   {
     'courseCode': 'CS',
-    'courseID': 'G553',
-    'courseTitle': 'Reconfigurable Computing',
-    'courseCredits': '5',
-    'cdcList': [],
-    'delList': ['AA', 'A3', 'A8']
-  },
-  {
-    'courseCode': 'CS',
     'courseID': 'F491',
     'courseTitle': 'Special Projects',
     'courseCredits': '3',
@@ -3185,6 +3185,14 @@ List<Map<String, dynamic>> coursesData = [
     'courseCredits': '3',
     'cdcList': [],
     'delList': ['A7']
+  },
+  {
+    'courseCode': 'CS',
+    'courseID': 'G553',
+    'courseTitle': 'Reconfigurable Computing',
+    'courseCredits': '5',
+    'cdcList': [],
+    'delList': ['AA', 'A3', 'A8']
   },
   {
     'courseCode': 'CS',
@@ -4134,6 +4142,14 @@ List<Map<String, dynamic>> coursesData = [
     'courseCode': 'EEE',
     'courseID': 'G512',
     'courseTitle': 'Embedded System Design',
+    'courseCredits': '4',
+    'cdcList': [],
+    'delList': ['AA', 'A3', 'A8']
+  },
+  {
+    'courseCode': 'EEE',
+    'courseID': 'G513',
+    'courseTitle': 'Machine Learning For Elec Engg',
     'courseCredits': '4',
     'cdcList': [],
     'delList': ['AA', 'A3', 'A8']
@@ -7566,7 +7582,7 @@ List<Map<String, dynamic>> coursesData = [
     'courseCode': 'PHY',
     'courseID': 'F426',
     'courseTitle': 'Physics of Semiconductor Devices',
-    'courseCredits': '3',
+    'courseCredits': '4',
     'cdcList': [],
     'delList': ['B5']
   },
