@@ -1,7 +1,7 @@
 name: cgpacalculator
 description: Journaling and Analysing Courses and CGPA Made Easy
 publish_to: 'none'
-version: 1.0.18+18
+version: 1.0.19+19
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
